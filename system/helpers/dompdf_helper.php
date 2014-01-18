@@ -30,16 +30,16 @@ function create_pdf($data, $filename='', $stream=TRUE, $papersize = 'letter', $o
 	$y = 45;
 	for($i = 2; $i < count($data); $i++)
 	{
-		if(strpos($data[$i], "Students") !== FALSE)
+		if(strpos($data[$i], "Student") !== FALSE)
 			$canvas->text(40, $y, $data[$i], $fontBold, 11, array(0,0,0));
 		elseif(strpos($data[$i], "College") !== FALSE)
 			$canvas->text(40, $y+=15, $data[$i], $fontBold, 11, array(0,0,0));
-		elseif(strpos($data[$i], "__") !== FALSE)
-			$canvas->text(40, $y+=8, $data[$i], $font, 11, array(0,0,0));
+		elseif(strpos($data[$i], "__") !== FALSE || $data[$i] == " ")
+			$canvas->text(40, $y+=9, $data[$i], $font, 11, array(0,0,0));
 		else
 			$canvas->text(40, $y+=15, $data[$i], $font, 11, array(0,0,0));
 		
-		if(($i+1)%54 == 0)
+		if(($i+1)%51 == 0)
 		{
 			$dompdf->get_canvas()->new_page();
 			$y = 50;

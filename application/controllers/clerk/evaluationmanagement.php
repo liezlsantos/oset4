@@ -47,7 +47,7 @@ class Evaluationmanagement extends CI_Controller
 	public function closesubmit($college_code)
 	{
 		//compute score TO DO
-		$classes = $this->classes->getClassesByStatus(0, $college_code, "", "");
+		$classes = $this->classes->getClassesByStatus(1, $college_code, "", "");
 		
 		$i = 0;
 		foreach ($classes['oset_class_id'] as $oset_class_id)
@@ -55,6 +55,7 @@ class Evaluationmanagement extends CI_Controller
 		{
 			if($this->input->post($oset_class_id)){
 				$data['open'] = 2;
+				$data['score'] = $this->classes->getScore($oset_class_id);
 				$this->classes->update($oset_class_id, $data);
 			}
 			$i++;
@@ -108,33 +109,36 @@ class Evaluationmanagement extends CI_Controller
 		$this->load->model('student');
 		$student = $this->student->getRecords($data['user_college_code'], "");
 		
+		//for pdf
+		$rows[] = " ";
+		$rows[] = " ";
+		$rows[] = "Student Evaluation of Teachers - ".$data['user_college_name']; 
+		$rows[] = "The following students still have classes to be evaluated:";
+		$rows[] = " ";
+	
 		if($student)
 		{
 			$i = 0;
-			$uscounter = 0;
 			foreach ($student['student_id'] as $student_id)
 			{
 				if($results = $this->student->getUnevaluatedClasses($student_id))
-				{	
-					$unevalStudents['name'][$uscounter] = $student['name'][$i];
-					$unevalStudents['classes'][$uscounter] = "";
+				{
+					$rows[] = " ";	
+					$rows[] = ucwords(strtolower($student['name'][$i]));
+					$unevalStudents[]['classes'] = "";
 					for($j = 0; $j < count($results['subject']); $j++)
 					{
-						$unevalStudents['classes'][$uscounter] .= $results['subject'][$j]." ".$results['section'][$j]." - ".$results['instructor'][$j]."<br/>";
+						$rows[] = $results['subject'][$j]." (".$results['section'][$j].") - ".$results['instructor'][$j];
 					}
-					$uscounter++;
 				}	
 				$i++;
 			}
-			$data['unevalStudents'] = $unevalStudents;
 		}
-		
 		$this->load->helper(array('dompdf', 'file'));
 		$this->load->helper('file');
 		
-		$html = $this->load->view('clerk/student_evaluation_status', $data, true);
-     	$pdf_data = pdf_create($html, '', false);
-        write_file('./pdf/students_with_unevaluated_classes.pdf', $pdf_data);
+		$pdf_data = create_pdf($rows, '', false);  
+		write_file('./pdf/students_with_unevaluated_classes.pdf', $pdf_data);
 			
 		$this->load->view('clerk/student_status', $data);
 	}

@@ -137,6 +137,22 @@ class Classes extends CI_Model
 		}
 		return $results;
 	}
+
+	//score
+	public function getScore($oset_class_id)
+	{
+		$sql = $this->db->query("SELECT score FROM score_per_respondent WHERE oset_class_id = '$oset_class_id'");
+		if ($sql->num_rows() == 0){
+			return null;
+		}
+		
+		$score = 0;
+		foreach ($sql->result() as $row){
+			$score += $row->score;	
+		}
+		$score /= $sql->num_rows();
+		return $score;
+	}
 	
 	//instructors_____________________________
 	public function getInstructors($class_id)

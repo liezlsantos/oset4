@@ -139,9 +139,15 @@ class Upset extends CI_Controller
 		$this->upset_model->saveResponse($data);
 		
 		//computer score
-		// TO DO
+		$score = 0;
+		for ($i = 1; $i < 27; $i++)
+		{
+			$score += $data['part3a_'.$i]; 
+		}
+		$score /= 26;
+		
 		$data2['student_id'] = $user_data['student_id'];
-		$data2['score'] = 0;
+		$data2['score'] = $score;
 		$data2['oset_class_id'] = $oset_class_id;
 		
 		$this->upset_model->saveScore($data2);
