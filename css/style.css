@@ -1,0 +1,201 @@
+body {
+	background: url(images/background.png) repeat-x;
+	font: 14px "proxima-nova", Helvetica, Arial, sans-serif;
+} 
+
+.main-content-body {
+    margin-top: -160px;
+    min-height: 200px;
+    position: relative;
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+    text-shadow: 0px 1px rgba(255, 255, 255, 0.6);
+	padding: 20px 20px;
+}
+
+.wrapper {
+    padding-top: 140px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+img.banner {
+    display: block;
+    margin: 0 auto;
+} 
+
+div.loginbar{
+	float: top;
+	float: right;
+	text-align: right;
+	padding: 3px 15px;
+	color:  #000;
+	font-size: 13px;
+	width: 100%;
+	background-color: #FFF8DC;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+
+.grid-960 {
+    margin: 0px auto;
+    width: 960px;
+}
+
+.clearfix {
+}
+
+.loginbox{
+	margin: 200px auto;
+    width: 280px;
+}
+
+.loginbox input{
+	font: 18px "Candara";
+}
+
+input.button{
+	border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px 4px 4px 4px;
+	font-size: 14px;
+	padding: 6px 12px;
+	background-color: maroon;
+	color: white;
+}
+
+input.button:hover{
+	background-color: #a11;
+}
+
+div.left {
+	float: left;
+	width: 18%;
+	margin-left: -10px;
+}
+	.module-div {
+		margin: 0 1%;
+	}
+	
+	.module-div h1{
+		border-bottom: 1px solid #391009;
+		color: maroon;
+		font-size: 90%;
+		margin: 15px 0 0;
+		padding: 3px 0;
+		padding-left: 10px;
+	}
+	
+	.module-div a {
+		background: #FFF;
+		border-bottom: 1px solid #DDD;
+		color: #444;
+		display: block;
+		padding: 6px 10px;
+		text-decoration: none;
+		padding-left: 30px;
+	}
+	
+	.module-div a:hover {
+		background: #ccc;
+	}
+	
+	.module-div a.current, #oset-lc div.module-div a.current:hover {
+		background: #ccc;
+		padding-left: 30px;
+	}
+	
+	.module-div2 {
+		margin: 0 1%;
+	}
+	
+	.module-div2 h1{
+		font-size: 16px;
+		margin: 15px 0;
+		padding: 6px 6px;
+		background-color: #39120B;
+		color: #fff;
+		font-weight: normal;
+	}
+	
+	.module-div2 a {
+		color: inherit;
+		display: block;
+	}
+	
+	.module-div2 a:hover {
+		text-decoration: underline;
+	}
+	
+	.module-div2 a.current, #oset-lc div.module-div a.current:hover {
+		background: #391009;
+		color: #FFF;
+		padding-left: 30px;
+	}
+
+div.right {
+	float: left;
+	margin-left: 3%;
+	width: 78%;
+	padding-bottom: 100px;
+}
+
+table{
+	font-size: 13px;
+	border-collapse: collapse;
+}
+
+table.records{
+	width: 100%;
+}
+
+.records tr:hover{
+	background-color: #CCCCFF;
+} 
+
+a{
+	color: maroon;
+}
+
+h2{
+	font-family: Georgia;
+}
+
+table.records td, table.records th{
+	padding: 3px;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	border-color: #ccc;
+}
+
+table.records th{
+	background-color: #113311;
+	color: #fff;
+}
+
+table.records th a{
+	color: #fff;
+}
+
+a{
+	text-decoration: none;
+}
+
+.error_msg{
+	font-size: 12px;
+	color: red;
+}
+
+
+
+
+
+
+
+
