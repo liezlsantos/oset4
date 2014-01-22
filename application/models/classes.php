@@ -233,6 +233,7 @@ class Classes extends CI_Model
 		$data['class_id'] = $class_id;
 		$data['subject'] = $sql->row()->subject;
 		$data['section'] = $sql->row()->section;
+		$data['credits'] = $sql->row()->credits;
 		$data['no_of_students'] = $sql->row()->no_of_students;
 		$data['activated'] = '0';
 		$data['department_code'] = $sql->row()->department_code;
@@ -279,6 +280,8 @@ class Classes extends CI_Model
 	//download
 	public function downloadClasses($college_code)
 	{
+		$this->deleteByCollegeCode($college_code);
+		
 		$sql = $this->db->query("SELECT * FROM flags");
 		if ($sql->num_rows() == 0){
 			return null;
@@ -304,7 +307,7 @@ class Classes extends CI_Model
 		$sem = (int)$sem * 100000;
 		$sem1 = (int)$sem1 * 100000;
 		
-		$query = "SELECT classid, extracode, section, subject, instructors, unit, enlisted from osetuser_classes_view 
+		$query = "SELECT classid, extracode, section, subject, instructors, unit, actualcredits, enlisted from osetuser_classes_view 
 		            WHERE classid>'$sem' AND classid<'$sem1' 
 		            AND subject NOT LIKE '%RESIDEN%' AND class NOT LIKE '%cancelled%' AND enlisted > '0' AND (";
 		
@@ -351,15 +354,17 @@ class Classes extends CI_Model
 			if($index = strpos($instructor, ";") > 0)
 			{
 				$instructors = explode(';', $instructor);
+				$instructor = trim($instructor);
 				
 				foreach ($instructors as $instructor)
 				{
 					$data = array(
 						'class_id'    => $row->classid,
 						'section'     => $row->section,
+						'credits'     => $row->actualcredits,
 						'no_of_students' => $row->enlisted,
 						'subject'     => $subject,
-						'instructor' => trim($instructor),
+						'instructor' => $instructor,
 						'department_code' => $row->unit,
 						'college_code' => $college_code
 						);
@@ -384,6 +389,14 @@ class Classes extends CI_Model
 									
 								$this->db->insert('faculty', $data);
 							}
+							else
+							{
+								$data = array(
+								'name' => $instructor,
+								'instructor_code'  => $instructor
+								);
+								$this->db->insert('faculty', $data);
+							}
 						}
 					}
 				}
@@ -397,6 +410,7 @@ class Classes extends CI_Model
 						'class_id'    => $row->classid,
 						'section'     => $row->section,
 						'subject'     => $subject,
+						'credits'     => $row->actualcredits,
 						'no_of_students' => $row->enlisted,
 						'instructor' => $instructor,
 						'department_code' => $row->unit,
@@ -421,6 +435,14 @@ class Classes extends CI_Model
 									'instructor_code'  => $sql2->row()->instructorcode
 									);
 									
+							$this->db->insert('faculty', $data);
+						}
+						else
+						{
+							$data = array(
+								'name' => $instructor,
+								'instructor_code'  => $instructor
+							);
 							$this->db->insert('faculty', $data);
 						}
 					}

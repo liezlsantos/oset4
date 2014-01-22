@@ -24,11 +24,4 @@ class classManagement extends CI_Controller
 		redirect('admin/classmanagement', 'refresh');
 	}
 	
-	public function redownloadClasses($college_code)
-	{
-		$this->classes->deleteByCollegeCode($college_code);
-		$this->classes->downloadClasses($college_code);
-		redirect('admin/classmanagement', 'refresh');
-	}
-	
 }

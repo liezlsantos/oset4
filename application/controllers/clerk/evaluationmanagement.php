@@ -51,7 +51,6 @@ class Evaluationmanagement extends CI_Controller
 		
 		$i = 0;
 		foreach ($classes['oset_class_id'] as $oset_class_id)
-		
 		{
 			if($this->input->post($oset_class_id)){
 				$data['open'] = 2;
@@ -106,6 +105,16 @@ class Evaluationmanagement extends CI_Controller
 	{
 		$data = $this->session->userdata('logged_in'); 
 		$data['SET']=$this->SET_model->getRecords();
+
+		if(!file_exists('./pdf/students_with_unevaluated_classes.pdf'))
+			$this->updatePDFStudentStatus();
+			
+		$this->load->view('clerk/student_status', $data);
+	}
+	
+	public function updatePDFStudentStatus()
+	{
+		$data = $this->session->userdata('logged_in'); 
 		$this->load->model('student');
 		$student = $this->student->getRecords($data['user_college_code'], "");
 		
@@ -139,8 +148,8 @@ class Evaluationmanagement extends CI_Controller
 		
 		$pdf_data = create_pdf($rows, '', false);  
 		write_file('./pdf/students_with_unevaluated_classes.pdf', $pdf_data);
-			
-		$this->load->view('clerk/student_status', $data);
+		
+		redirect('clerk/evaluationmanagement/studentstatus', 'refresh');
 	}
 	
 }

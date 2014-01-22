@@ -16,7 +16,7 @@
 		<table>
 			<tr>
 				<td>Subject:</td>
-				<td width="180"><input type="text" name="subject" <?php if(isset($search['subject'])) echo "value=".$search['subject']; ?> ></td>
+				<td width="180"><input type="text" name="subject" <?php if(isset($search['subject'])) echo "value='".$search['subject']; ?>'></td>
 				<td>Department: </td>
 				<td width="220">
 					<select name="department">

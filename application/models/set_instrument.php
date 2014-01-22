@@ -51,8 +51,8 @@ class SET_instrument extends CI_Model
 	{
 		$sql = $this->db->query("SELECT * FROM set_instrument");
 		if($sql->num_rows() == 0)
-			return false;
+			return TRUE;
 		else 
-			return true;
+			return FALSE;
 	}		
 }

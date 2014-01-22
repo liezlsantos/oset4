@@ -55,11 +55,11 @@
 		
 		<div class = "right">
 			<?php if($preview) 
-						echo '<h2>Preview of SET Instrument (UP Diliman SET)</h2>';
+						echo '<h2>Preview of SET Instrument (UP Manila CAS SET)</h2>';
 				  else 
 				  {
 				  		echo '<h2>Evaluate '.$class['subject'].' - '.$class['instructor'].'</h2>';
-				  		echo '<form method="POST" action="'.base_url('index.php/student/set/upset/submit/'.$class['oset_class_id']).'">';
+				  		echo '<form method="POST" action="'.base_url('index.php/student/set/cas_set/submit/'.$class['oset_class_id']).'">';
 				  }
 			?>
 			
@@ -73,109 +73,25 @@
 				<table class="SET">
 					<tr id="header">
 						<th colspan="2"></th>
-						<th class="narrow">Very much</th>
-						<th class="narrow">Much</th>
-						<th class="narrow">Moderately</th>
-						<th class="narrow">Little</th>
-						<th class="narrow">Not at all</th>
 					</tr>
 					<tr>
-						<td>1.</td>
-						<td>How actively did you participate in class discussions and activities? <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part1_1" value="1"></input></td>
-						<td align="center"><input type="radio" name="part1_1" value="2"></input></td>
-						<td align="center"><input type="radio" name="part1_1" value="3"></input></td>
-						<td align="center"><input type="radio" name="part1_1" value="4"></input></td>
-						<td align="center"><input type="radio" name="part1_1" value="5"></input></td>
-					</tr>
-					<tr>
-						<td>2.</td>
-						<td>Did you learn new ideas from your interactions with your teacher and classmates? <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part1_2" value="1"></input></td>
-						<td align="center"><input type="radio" name="part1_2" value="2"></input></td>
-						<td align="center"><input type="radio" name="part1_2" value="3"></input></td>
-						<td align="center"><input type="radio" name="part1_2" value="4"></input></td>
-						<td align="center"><input type="radio" name="part1_2" value="5"></input></td>
-					</tr>
-					<tr>
-						<td>3.</td>
-						<td>How receptive were you to new ideas presented by your teacher and classmates? <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part1_3" value="1"></input></td>
-						<td align="center"><input type="radio" name="part1_3" value="2"></input></td>
-						<td align="center"><input type="radio" name="part1_3" value="3"></input></td>
-						<td align="center"><input type="radio" name="part1_3" value="4"></input></td>
-						<td align="center"><input type="radio" name="part1_3" value="5"></input></td>
-					</tr>
-					<tr>
-						<td>4.</td>
-						<td>How much effort did you give to meeting the requirements in this course? (eg. term papers, reports, assigned readings) <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part1_4" value="1"></input></td>
-						<td align="center"><input type="radio" name="part1_4" value="2"></input></td>
-						<td align="center"><input type="radio" name="part1_4" value="3"></input></td>
-						<td align="center"><input type="radio" name="part1_4" value="4"></input></td>
-						<td align="center"><input type="radio" name="part1_4" value="5"></input></td>
-					</tr>
-					<tr>
-						<td>5.</td>
-						<td>Do you feel that you have performed well in this course? <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part1_5" value="1"></input></td>
-						<td align="center"><input type="radio" name="part1_5" value="2"></input></td>
-						<td align="center"><input type="radio" name="part1_5" value="3"></input></td>
-						<td align="center"><input type="radio" name="part1_5" value="4"></input></td>
-						<td align="center"><input type="radio" name="part1_5" value="5"></input></td>
-					</tr>
-					<tr>
-						<td>6.</td>
-						<td>Have your expectations of this course been met? <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part1_6" value="1"></input></td>
-						<td align="center"><input type="radio" name="part1_6" value="2"></input></td>
-						<td align="center"><input type="radio" name="part1_6" value="3"></input></td>
-						<td align="center"><input type="radio" name="part1_6" value="4"></input></td>
-						<td align="center"><input type="radio" name="part1_6" value="5"></input></td>
-					</tr>
-					
-					<tr id="header">
-						<th colspan="2"></th>
-						<th>0</th>
-						<th>1</th>
-						<th>2-3</th>
-						<th>4-5</th>
-						<th>6</th>
-					</tr>
-					<tr>
-						<td>7.</td>
-						<td>How many times have you been late*? <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part1_7" value="0"></input></td>
-						<td align="center"><input type="radio" name="part1_7" value="1"></input></td>
-						<td align="center"><input type="radio" name="part1_7" value="2-3"></input></td>
-						<td align="center"><input type="radio" name="part1_7" value="4-5"></input></td>
-						<td align="center"><input type="radio" name="part1_7" value="6"></input></td>
-					</tr>
-					<tr>
-						<td>8.</td>
-						<td>How many class meetings have you missed? <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part1_8" value="0"></input></td>
-						<td align="center"><input type="radio" name="part1_8" value="1"></input></td>
-						<td align="center"><input type="radio" name="part1_8" value="2-3"></input></td>
-						<td align="center"><input type="radio" name="part1_8" value="4-5"></input></td>
-						<td align="center"><input type="radio" name="part1_8" value="6"></input></td>
-					</tr>
-					<tr>
-						<td>9.</td>
-						<td colspan="6">What final grade will you give yourself in this course? <font color="red">*</font>
-						<select name="part1_9">
-							<option>1.0</option>
-							<option>1.25</option>
-							<option>1.5</option>
-							<option>1.75</option>
-							<option>2.0</option>
-							<option>2.25</option>
-							<option>2.5</option>
-							<option>2.75</option>
-							<option>3.0</option>
-							<option>INC</option>
-						</select>
+						<td>1. How active have you been participating in this class (eg. by way of recitation, reporting, class discussion, other class activities)<font color="red">*</font></td>
+						<td align="center">
+							<select name="part1_1">
+								<option>very active</option>
+								<option>somewhat active</option>
+								<option>not active</option>
+								<option>did not participate at all</option>
+							</select>
 						</td>
+					</tr>
+					<tr>
+						<td>2. Since the start of the semester, how many times have you been absent in this class? <font color="red">*</font></td>
+						<td align="center"><input type="number" name="part1_2"></input></td>
+					</tr>
+					<tr>
+						<td>3. Since the start of the semester, how many times have you been late in this class? <font color="red">*</font></td>
+						<td align="center"><input type="number" name="part1_2"></input></td>
 					</tr>
 				</table>
 				
@@ -195,69 +111,38 @@
 				
 				<table class="SET">
 					<tr id="header">
-						<th colspan="2" align="left">Part A.</th>
-						<th class="narrow">Strongly Agree</th>
-						<th class="narrow">Agree</th>
-						<th class="narrow">Disagree</th>
-						<th class="narrow">Strongly Disagree</th>
+						<th colspan="2" align="left">In this Subject</th>
 					</tr>
 					<tr>
-						<td>1.</td>
-						<td>This course stimulates me to study beyond the lessons assigned. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part2a_1" value="1"></input></td>
-						<td align="center"><input type="radio" name="part2a_1" value="2"></input></td>
-						<td align="center"><input type="radio" name="part2a_1" value="3"></input></td>
-						<td align="center"><input type="radio" name="part2a_1" value="4"></input></td>
+						<td>1. How many class days per week do you have? <font color="red">*</font></td>
+						<td>
+							<select name="part2_1">
+								<option>2 days (e.g. M, Th)</option>
+								<option>1 day (e.g. W or S)</option>
+								<option>more than 2 days a week</option>
+							</select>
+						</td>
 					</tr>
 					<tr>
-						<td>2.</td>
-						<td>This course has developed in me a greater sense of responsibility 
-							(i.e. self-reliance, self discipline, independent 
-							<br/> study) <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part2a_2" value="1"></input></td>
-						<td align="center"><input type="radio" name="part2a_2" value="2"></input></td>
-						<td align="center"><input type="radio" name="part2a_2" value="3"></input></td>
-						<td align="center"><input type="radio" name="part2a_2" value="4"></input></td>
+						<td>2. What time of the day is this class? <font color="red">*</font></td>
+						<td>
+							<select name="part2_2">
+								<option>early morning (7-10 am)</option>
+								<option>mid-morning (10-12 am)</option>
+								<option>early afternoon (1-3 pm)</option>
+								<option>late afternoon (4-8:30 pm)</option>
+							</select>
+						</td>
 					</tr>
 					<tr>
-						<td>3.</td>
-						<td>I have worked more conscientiously in this course more than in most other courses. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part2a_3" value="1"></input></td>
-						<td align="center"><input type="radio" name="part2a_3" value="2"></input></td>
-						<td align="center"><input type="radio" name="part2a_3" value="3"></input></td>
-						<td align="center"><input type="radio" name="part2a_3" value="4"></input></td>
-					</tr>
-					<tr>
-						<td>4.</td>
-						<td>Even if this course were not required, it would still be worthwhile taking it. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part2a_4" value="1"></input></td>
-						<td align="center"><input type="radio" name="part2a_4" value="2"></input></td>
-						<td align="center"><input type="radio" name="part2a_4" value="3"></input></td>
-						<td align="center"><input type="radio" name="part2a_4" value="4"></input></td>
-					</tr>
-					<tr>
-						<td>5.</td>
-						<td>I am fully satisfied with the way this course was handled/conducted. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part2a_5" value="1"></input></td>
-						<td align="center"><input type="radio" name="part2a_5" value="2"></input></td>
-						<td align="center"><input type="radio" name="part2a_5" value="3"></input></td>
-						<td align="center"><input type="radio" name="part2a_5" value="4"></input></td>
-					</tr>
-					<tr>
-						<td>6.</td>
-						<td>This course stimulates me to think creatively. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part2a_6" value="1"></input></td>
-						<td align="center"><input type="radio" name="part2a_6" value="2"></input></td>
-						<td align="center"><input type="radio" name="part2a_6" value="3"></input></td>
-						<td align="center"><input type="radio" name="part2a_6" value="4"></input></td>
-					</tr>
-					<tr>
-						<td>7.</td>
-						<td>This course develops critical thinking. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part2a_7" value="1"></input></td>
-						<td align="center"><input type="radio" name="part2a_7" value="2"></input></td>
-						<td align="center"><input type="radio" name="part2a_7" value="3"></input></td>
-						<td align="center"><input type="radio" name="part2a_7" value="4"></input></td>
+						<td>3. How many hours do you spend per class session? <font color="red">*</font></td>
+						<td>
+							<select name="part2_3">
+								<option>1.5 hours</option>
+								<option>3 hours or more</option>
+							</select>
+						</td>
+
 					</tr>
 				</table>
 				
@@ -336,9 +221,9 @@
 							<select name="part2b_4">
 								<option>Very Much</option>
 								<option>Much</option>
-								<option>Moderateky</option>
-								<option>Slightly</option>
-								<option>Not at all</option>
+								<option>Some</option>
+								<option>Very Little</option>
+								<option>Nothing</option>
 							</select>
 						</td>
 					</tr>
@@ -526,96 +411,6 @@
 						<td align="center"><input type="radio" name="part3a_16" value="4"></input></td>
 						<td align="center"><input type="radio" name="part3a_16" value="0"></input></td>
 					</tr>
-					<tr>
-						<td>17.</td>
-						<td>Does not invite questions from students. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_17" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_17" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_17" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_17" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_17" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>18.</td>
-						<td>Explains the grading procedure ans standards clearly and applies them. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_18" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_18" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_18" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_18" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_18" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>19.</td>
-						<td>Does not invite through behaviour and general appearance. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_19" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_19" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_19" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_19" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_19" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>20.</td>
-						<td>Explains the grading procedure ans standards clearly and applies them. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_20" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_20" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_20" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_20" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_20" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>21.</td>
-						<td>Admits errors in the presentation of subject matter, and in evaluation. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_21" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_21" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_21" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_21" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_21" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>22.</td>
-						<td>Answers students' questions adequately. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_22" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_22" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_22" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_22" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_22" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>23.</td>
-						<td>Is not available for consultation. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_23" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_23" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_23" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_23" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_23" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>24.</td>
-						<td>Is able to make students comprehend and appreciate complex ideas. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_24" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_24" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_24" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_24" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_24" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>25.</td>
-						<td>Gives unreasonable course requirements and assignments. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_25" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_25" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_25" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_25" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_25" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>26.</td>
-						<td>Uses comprehensive, up-to-date and relevant reading list. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_26" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_26" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_26" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_26" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_26" value="0"></input></td>
-					</tr>
 				</table>
 				
 				<br/><br/>
@@ -665,7 +460,7 @@
 							&nbsp;&nbsp;&nbsp;<input type="checkbox" name="papers">Papers</input><br />
 							&nbsp;&nbsp;&nbsp;<input type="checkbox" name="others" id="others" onClick="showOther('others', 'part3_Other')">Others</input><br />
 							<span style="display:none;" id="part3_Other">
-								&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Please specify." name="part3b_4Other"></input>
+								&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Please specify." "part3b_4Other"></input>
 							</span>
 							<br/>
 						</td>

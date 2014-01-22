@@ -30,9 +30,13 @@
 		
 			<h2> Generate Student Accounts </h2>
 			
-			<?php if(!$SET['accounts_generated'])
-						echo "Before generating students' accounts make sure that the college clerks have already selected all the classes that will undergo evaluation process.
+			<?php 
+				  if(!$SET['accounts_generated'])
+				  {
+						echo "Before importing the classlist make sure that the college clerks have already selected all the classes that will undergo evaluation process.
 						After the students' accounts have been generated, downloading and selection of classes will be disabled.<br/><br/><a href='studentaccountmanagement/download'>Generate student accounts</a>";
+				
+				  }
 				  else
 				  {
 						echo "Students' accounts have already been generated.";

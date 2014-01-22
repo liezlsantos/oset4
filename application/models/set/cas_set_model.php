@@ -1,14 +1,14 @@
 <?php
 	
-class UPSET_model extends CI_Model
+class CAS_SET_model extends CI_Model
 {
 	public function createTable()
 	{
 		$query =
 			"CREATE TABLE IF NOT EXISTS `up_set` (
 			  `response_id` int(11) NOT NULL AUTO_INCREMENT,
-			  `student_id` varchar(20) NOT NULL,
-			  `oset_class_id` int(11) NOT NULL,
+			  `student_ID` varchar(20) NOT NULL,
+			  `set_class_id` int(11) NOT NULL,
 			  `part1_1` int(11) NOT NULL,
 			  `part1_2` int(11) NOT NULL,
 			  `part1_3` int(11) NOT NULL,
@@ -68,7 +68,6 @@ class UPSET_model extends CI_Model
 			  `part3b_6_1` varchar(20) NOT NULL,
 			  `part3b_6_2` varchar(200) NOT NULL,
 			  `part3b_7` varchar(20) NOT NULL,
-			  `part3c` varchar(20) NOT NULL,
 			  PRIMARY KEY (`response_id`)
 			) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;";
 			

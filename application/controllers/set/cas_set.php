@@ -1,12 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Upset extends CI_Controller 
+class Cas_set extends CI_Controller 
 {
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('classes');	
-		$this->load->model('set/upset_model');	
+		$this->load->model('set/cas_set_model');	
 	}
 
 	public function index() 
@@ -19,7 +19,7 @@ class Upset extends CI_Controller
 		$this->load->model('SET_model'); 
 		$data['SET'] = $this->SET_model->getRecords(); 
 		$data['preview'] = true;
-		$this->load->view('set/UP_SET_view', $data);	
+		$this->load->view('set/CAS_SET_view', $data);	
 	}
 	
 	public function evaluate($oset_class_id)
@@ -27,7 +27,7 @@ class Upset extends CI_Controller
 		$data = $this->session->userdata('logged_in');
 		$data['preview'] = false;
 		$data['class'] = $this->classes->getInformation($oset_class_id);
-		$this->load->view('set/UP_SET_view', $data);	
+		$this->load->view('set/CAS_SET_view', $data);	
 	}
 	
 	public function submit($oset_class_id)
@@ -126,7 +126,7 @@ class Upset extends CI_Controller
 			$data['part3b_4'] .= "papers;";
 		if($this->input->post('others'))
 			$data['part3b_4'] .= $this->input->post('part3b_4Other');
-			
+		
 		$data['part3b_5'] = $this->input->post('part3b_5');		
 		$data['part3b_6_1'] = $this->input->post('part3b_6_1');		
 		$data['part3b_6_2'] = $this->input->post('part3b_6_2');		
@@ -138,9 +138,9 @@ class Upset extends CI_Controller
 		//insert to set table
 		$this->upset_model->saveResponse($data);
 		
-		//compute score
+		//computer score
 		$score = 0;
-		for ($i = 1; $i <= 26; $i++)
+		for ($i = 1; $i < 27; $i++)
 		{
 			$score += $data['part3a_'.$i]; 
 		}

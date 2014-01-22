@@ -95,7 +95,7 @@ class Student extends CI_Model
 		$this->db->update('student', $data); 
 	}
 	
-	public function downloadStudentAccounts()
+	public function importClasslist()
 	{
 		$sql = $this->db->query("SELECT * FROM flags");
 		if ($sql->num_rows() == 0){
@@ -110,7 +110,7 @@ class Student extends CI_Model
 		
 		$this->db_crs = $this->load->database('crs', TRUE);
 		
-		//import classlist
+		//delete classlist, student
 		$sql = $this->db->query("TRUNCATE classlist");
 		$sql = $this->db->query("TRUNCATE student");
 		
@@ -121,26 +121,41 @@ class Student extends CI_Model
 		}
 		
 		$i = 0;
+		$query = "INSERT INTO classlist (oset_class_id, student_id) VALUES ";
 		foreach ($activatedClasses['class_id'] as $activatedClass)
-		{
-			$sql = $this->db_crs->query("SELECT studentid, classid from osetuser_classlists_view where classid = '$activatedClass'");	
+		{			
+			$sql = $this->db_crs->query("SELECT studentid, classid from osetuser_classlists_view where classid = '$activatedClass'");		
 			foreach ($sql->result() as $row)
 			{
-				$data = array(
-					'oset_class_id' => $activatedClasses['oset_class_id'][$i],
-					'student_id'  => $row->studentid
-				);
-				$this->db->insert('classlist', $data);
+				$query .= "('".$activatedClasses['oset_class_id'][$i]."', '".$row->studentid."'), ";
 			}
+			
 			$i++;
+			if(($i) % 100 == 0)
+			{
+				$query = substr($query, 0, strlen($query)-2);
+				$sql = $this->db->query($query);
+				$query = "INSERT INTO classlist (oset_class_id, student_id) VALUES ";
+			}
 		}
-		
+		if($i % 100 != 0)
+		{
+			$query = substr($query, 0, strlen($query)-2);
+			$sql = $this->db->query($query);
+		}
+	}
+
+	public function importStudents($college_code)
+	{	
 		//import students (based on classlist)
-		$sql = $this->db->query("SELECT DISTINCT student_id from classlist");
+		$this->db_crs = $this->load->database('crs', TRUE);
+		$sql = $this->db->query("SELECT DISTINCT student_id FROM classlist");
 		foreach ($sql->result() as $row){
 			$activatedStudents[] = $row->student_id;
 		}
 	
+		$query = "INSERT INTO student (student_id, name, college_code, program, yearlevel) VALUES ";
+		$i = 0;
 		foreach ($activatedStudents as $activatedStudent)
 		{
 			$sql = $this->db_crs->query("SELECT s.studentid, unit, program, yearlevel, lastname, firstname from osetuser_students_view s, osetuser_studentterms_view st where s.studentid = st.studentid AND s.studentid = '$activatedStudent'");
@@ -149,16 +164,23 @@ class Student extends CI_Model
 			$unit = $row->unit;
 			if($row->unit == 'NTTC')
 				$unit = 'NTTCHP';
-			
-			$data = array(
-					'student_id' => $row->studentid,
-					'name'    => $row->lastname . ", " . $row->firstname,
-					'college_code'=> $unit,
-					'program'=> $row->program,
-					'yearlevel'=> $row->yearlevel
-					);
-					
-			$this->db->insert('student', $data);	
+		
+			 $query .= '("'.$row->studentid.'", "'.$row->lastname . ', ' . $row->firstname.'",
+			 			"'.$row->unit.'", "'.$row->program.'", "'.$row->yearlevel.'"), ';
+				
+			if($i % 50 == 0)
+			{
+				$query = substr($query, 0, strlen($query)-2);
+				$sql = $this->db->query($query);
+				$query = "INSERT INTO student (student_id, name, college_code, program, yearlevel) VALUES ";
+			}
+			$i++;			
+		}
+		
+		if($i % 150 != 0)
+		{
+			$query = substr($query, 0, strlen($query)-2);
+			$sql = $this->db->query($query);
 		}
 		
 		//update flags

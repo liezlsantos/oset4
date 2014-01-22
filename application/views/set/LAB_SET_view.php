@@ -55,11 +55,11 @@
 		
 		<div class = "right">
 			<?php if($preview) 
-						echo '<h2>Preview of SET Instrument (UP Diliman SET)</h2>';
+						echo '<h2>Preview of SET Instrument (Laboratory SET)</h2>';
 				  else 
 				  {
 				  		echo '<h2>Evaluate '.$class['subject'].' - '.$class['instructor'].'</h2>';
-				  		echo '<form method="POST" action="'.base_url('index.php/student/set/upset/submit/'.$class['oset_class_id']).'">';
+				  		echo '<form method="POST" action="'.base_url('index.php/student/set/lab_set/submit/'.$class['oset_class_id']).'">';
 				  }
 			?>
 			
@@ -243,22 +243,6 @@
 						<td align="center"><input type="radio" name="part2a_5" value="3"></input></td>
 						<td align="center"><input type="radio" name="part2a_5" value="4"></input></td>
 					</tr>
-					<tr>
-						<td>6.</td>
-						<td>This course stimulates me to think creatively. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part2a_6" value="1"></input></td>
-						<td align="center"><input type="radio" name="part2a_6" value="2"></input></td>
-						<td align="center"><input type="radio" name="part2a_6" value="3"></input></td>
-						<td align="center"><input type="radio" name="part2a_6" value="4"></input></td>
-					</tr>
-					<tr>
-						<td>7.</td>
-						<td>This course develops critical thinking. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part2a_7" value="1"></input></td>
-						<td align="center"><input type="radio" name="part2a_7" value="2"></input></td>
-						<td align="center"><input type="radio" name="part2a_7" value="3"></input></td>
-						<td align="center"><input type="radio" name="part2a_7" value="4"></input></td>
-					</tr>
 				</table>
 				
 				<br/><br/>
@@ -336,9 +320,9 @@
 							<select name="part2b_4">
 								<option>Very Much</option>
 								<option>Much</option>
-								<option>Moderateky</option>
-								<option>Slightly</option>
-								<option>Not at all</option>
+								<option>Some</option>
+								<option>Very Little</option>
+								<option>Nothing</option>
 							</select>
 						</td>
 					</tr>
@@ -384,7 +368,7 @@
 					</tr>
 					<tr>
 						<td>1.</td>
-						<td>Explains the course objectives, expectations and requirements of the course <font color="red">*</font></td>
+						<td>Explains the course objectives, grading system and policies <font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_1" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_1" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_1" value="3"></input></td>
@@ -393,16 +377,16 @@
 					</tr>
 					<tr>
 						<td>2.</td>
-						<td>Comes to class unprepared for the lesson. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_2" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_2" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_2" value="2"></input></td>
+						<td>Gives preliminary instructions and precautions when necessary <font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_2" value="1"></input></td>
+						<td align="center"><input type="radio" name="part3a_2" value="2"></input></td>
+						<td align="center"><input type="radio" name="part3a_2" value="3"></input></td>
+						<td align="center"><input type="radio" name="part3a_2" value="4"></input></td>
 						<td align="center"><input type="radio" name="part3a_2" value="0"></input></td>
 					</tr>
 					<tr>
 						<td>3.</td>
-						<td>Presents the subject matter clearly and systematically. <font color="red">*</font></td>
+						<td>Checks student preparation for the laboratory activity <font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_3" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_3" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_3" value="3"></input></td>
@@ -411,7 +395,7 @@
 					</tr>
 					<tr>
 						<td>4.</td>
-						<td>Relates the course to other fields and current issues/concerns. <font color="red">*</font></td>
+						<td>Explains the proper use of the apparatus to students <font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_4" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_4" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_4" value="3"></input></td>
@@ -420,7 +404,7 @@
 					</tr>
 					<tr>
 						<td>5.</td>
-						<td>Fosters a stimulating atmosphere which encourages students to participate in class discussions/activities. <font color="red">*</font></td>
+						<td>Supervises students' activities <font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_5" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_5" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_5" value="3"></input></td>
@@ -429,7 +413,7 @@
 					</tr>
 					<tr>
 						<td>6.</td>
-						<td>Stimulates the students to study more about the subject. <font color="red">*</font></td>
+						<td>Utilizes laboratory time for the maximum <font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_6" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_6" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_6" value="3"></input></td>
@@ -438,16 +422,16 @@
 					</tr>
 					<tr>
 						<td>7.</td>
-						<td>Does not encourage studetns to do their best. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_7" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_7" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_7" value="2"></input></td>
+						<td>Devotes enough time to each experiment <font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_7" value="1"></input></td>
+						<td align="center"><input type="radio" name="part3a_7" value="2"></input></td>
+						<td align="center"><input type="radio" name="part3a_7" value="3"></input></td>
+						<td align="center"><input type="radio" name="part3a_7" value="4"></input></td>
 						<td align="center"><input type="radio" name="part3a_7" value="0"></input></td>
 					</tr>
 					<tr>
 						<td>8.</td>
-						<td>Speaks clearly and audibly. <font color="red">*</font></td>
+						<td>Sees to it that students leave their areas in good order<font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_8" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_8" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_8" value="3"></input></td>
@@ -456,7 +440,7 @@
 					</tr>
 					<tr>
 						<td>9.</td>
-						<td>Uses appropriate teaching techniques and instructional materials. <font color="red">*</font></td>
+						<td>Clarifies and reinforces discussions during oral reports<font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_9" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_9" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_9" value="3"></input></td>
@@ -465,16 +449,16 @@
 					</tr>
 					<tr>
 						<td>10.</td>
-						<td>Does not respect students' ideas and viewpoints. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_10" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_10" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_10" value="2"></input></td>
+						<td>Asks relevant questions during examination<font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_10" value="1"></input></td>
+						<td align="center"><input type="radio" name="part3a_10" value="2"></input></td>
+						<td align="center"><input type="radio" name="part3a_10" value="3"></input></td>
+						<td align="center"><input type="radio" name="part3a_10" value="4"></input></td>
 						<td align="center"><input type="radio" name="part3a_10" value="0"></input></td>
 					</tr>
 					<tr>
 						<td>11.</td>
-						<td>Explains concepts again when he/she notes that the concept is not well understood. <font color="red">*</font></td>
+						<td>Treats students tactfully, does not embarrass them <font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_11" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_11" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_11" value="3"></input></td>
@@ -483,7 +467,7 @@
 					</tr>
 					<tr>
 						<td>12.</td>
-						<td>Identifies and stresses important points. <font color="red">*</font></td>
+						<td>Invites respect thought behavior and general appearance <font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_12" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_12" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_12" value="3"></input></td>
@@ -492,7 +476,7 @@
 					</tr>
 					<tr>
 						<td>13.</td>
-						<td>Demonstrates thorough and broad knowledge of the subject of the course. <font color="red">*</font></td>
+						<td>Maintains an orderly atmosphere in the laboratory <font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_13" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_13" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_13" value="3"></input></td>
@@ -501,7 +485,7 @@
 					</tr>
 					<tr>
 						<td>14.</td>
-						<td>Uses evaluation measures and tests which adequately sample what was covered in the course. <font color="red">*</font></td>
+						<td>Is firm and consistent; strict but reasonable in disciplining students <font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_14" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_14" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_14" value="3"></input></td>
@@ -510,7 +494,7 @@
 					</tr>
 					<tr>
 						<td>15.</td>
-						<td>Gives constructive criticism of students' works. <font color="red">*</font></td>
+						<td>Motivates the student to think critically <font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_15" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_15" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_15" value="3"></input></td>
@@ -519,102 +503,12 @@
 					</tr>
 					<tr>
 						<td>16.</td>
-						<td>Is firm and consistent; strict but reasonable in disciplining students. <font color="red">*</font></td>
+						<td>Is able to communicate effectively <font color="red">*</font></td>
 						<td align="center"><input type="radio" name="part3a_16" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_16" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_16" value="3"></input></td>
 						<td align="center"><input type="radio" name="part3a_16" value="4"></input></td>
 						<td align="center"><input type="radio" name="part3a_16" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>17.</td>
-						<td>Does not invite questions from students. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_17" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_17" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_17" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_17" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_17" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>18.</td>
-						<td>Explains the grading procedure ans standards clearly and applies them. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_18" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_18" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_18" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_18" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_18" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>19.</td>
-						<td>Does not invite through behaviour and general appearance. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_19" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_19" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_19" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_19" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_19" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>20.</td>
-						<td>Explains the grading procedure ans standards clearly and applies them. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_20" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_20" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_20" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_20" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_20" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>21.</td>
-						<td>Admits errors in the presentation of subject matter, and in evaluation. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_21" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_21" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_21" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_21" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_21" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>22.</td>
-						<td>Answers students' questions adequately. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_22" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_22" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_22" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_22" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_22" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>23.</td>
-						<td>Is not available for consultation. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_23" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_23" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_23" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_23" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_23" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>24.</td>
-						<td>Is able to make students comprehend and appreciate complex ideas. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_24" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_24" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_24" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_24" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_24" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>25.</td>
-						<td>Gives unreasonable course requirements and assignments. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_25" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_25" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_25" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_25" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_25" value="0"></input></td>
-					</tr>
-					<tr>
-						<td>26.</td>
-						<td>Uses comprehensive, up-to-date and relevant reading list. <font color="red">*</font></td>
-						<td align="center"><input type="radio" name="part3a_26" value="1"></input></td>
-						<td align="center"><input type="radio" name="part3a_26" value="2"></input></td>
-						<td align="center"><input type="radio" name="part3a_26" value="3"></input></td>
-						<td align="center"><input type="radio" name="part3a_26" value="4"></input></td>
-						<td align="center"><input type="radio" name="part3a_26" value="0"></input></td>
 					</tr>
 				</table>
 				
@@ -648,31 +542,15 @@
 					<tr>
 						<td>3. The teacher generally dismisses the class 
 							<select name="part3b_3">
-								<option>Too early</option>
 								<option>On Time</option>
+								<option>Early</option>
 								<option>Late</option>
-								<option>Very late</option>
 							</select>	
 						</td>
 					</tr>
-					<tr>
-						<td>4. What are the bases used by teacher for grading?<br /><br />
-							&nbsp;&nbsp;&nbsp;<input type="checkbox" name="recitation">Recitation</input><br />
-							&nbsp;&nbsp;&nbsp;<input type="checkbox" name="quizzes">Quizzes</input><br />
-							&nbsp;&nbsp;&nbsp;<input type="checkbox" name="midterms">Midterm Exams</input><br />
-							&nbsp;&nbsp;&nbsp;<input type="checkbox" name="finals">Final Exams</input><br />
-							&nbsp;&nbsp;&nbsp;<input type="checkbox" name="reports">Reports</input><br />
-							&nbsp;&nbsp;&nbsp;<input type="checkbox" name="papers">Papers</input><br />
-							&nbsp;&nbsp;&nbsp;<input type="checkbox" name="others" id="others" onClick="showOther('others', 'part3_Other')">Others</input><br />
-							<span style="display:none;" id="part3_Other">
-								&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Please specify." name="part3b_4Other"></input>
-							</span>
-							<br/>
-						</td>
-					</tr>
 					<tr>	
-						<td>5. How soon does the teacher post results or return corrected assignments, quizzes, exams, papers, etc.? 
-							<select name="part3b_5">
+						<td>4. How soon does the teacher post results or return corrected laboratory reports, quizzes, exam papers, etc.? 
+							<select name="part3b_4">
 								<option>One week</option>
 								<option>Two weeks</option>
 								<option>One month</option>
@@ -682,8 +560,8 @@
 						</td>
 					</tr>
 					<tr>	
-						<td>6. Is the teacher fair in giving grades? 
-							<select name="part3b_6_1">
+						<td>5. Is the teacher fair in giving grades? 
+							<select name="part3b_5_1">
 								<option>Always</option>
 								<option>Usually</option>
 								<option>Sometimes</option>
@@ -692,12 +570,12 @@
 							</select>	
 							<br/>
 							&nbsp;&nbsp;&nbsp; Explain your answer.<br/>
-							&nbsp;&nbsp;&nbsp;<textarea cols="50" rows="4" name="part3b_6_2"></textarea>
+							&nbsp;&nbsp;&nbsp;<textarea cols="50" rows="4" name="part3b_5_2"></textarea>
 						</td>
 					</tr>
 					<tr>	
-						<td>7. Among the teachers you have had, how would you rate this teacher?
-							<select name="part3b_7">
+						<td>6. Among the teachers you have had, how would you rate this teacher?
+							<select name="part3b_6">
 								<option>The best</option>
 								<option>Among the best</option>
 								<option>Average</option>

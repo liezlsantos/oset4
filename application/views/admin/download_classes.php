@@ -38,7 +38,7 @@
 							<td>".$records['college_code'][$i]."</td>
 							<td>";
 							if($records['downloaded'][$i])
-								echo "Classes downloaded. <a href='classmanagement/redownloadClasses/".$records['college_code'][$i]."'>Redownload classes</a>";
+								echo "Classes downloaded. <a href='classmanagement/downloadClasses/".$records['college_code'][$i]."'>Redownload classes</a>";
 							else 
 								echo "<a href='classmanagement/downloadClasses/".$records['college_code'][$i]."'>Download classes</a>";
 							echo "</td>
