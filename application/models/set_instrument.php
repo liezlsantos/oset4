@@ -30,6 +30,12 @@ class SET_instrument extends CI_Model
 		return $sql->row()->set_instrument_id;
 	}
 	
+	public function setAsDefault($set_id)
+	{
+		$sql = $this->db->query("UPDATE set_instrument SET set_as_default = '0'");
+		$sql = $this->db->query("UPDATE set_instrument SET set_as_default = '1' WHERE set_instrument_id = '$set_id'");
+	}
+	
 	public function updateRecord($data, $id)
 	{
 		$this->db->where('set_instrument_id', $id);

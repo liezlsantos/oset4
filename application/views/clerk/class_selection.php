@@ -40,7 +40,11 @@
 		</table>
 		<?php echo form_close(); ?>
 		
-		<?php if(!$SET['accounts_generated']) echo '<div align="right"><input type="checkbox" id="checkAll">Check All</div>'; ?>
+		<table width="100%">
+		<tr>
+			<td align="center"><font color="green"><?php if(isset($msg)) echo $msg; ?></font></td>
+		</tr>
+		</table>
 		<br/>
 		<?php
 			if(isset($records))
@@ -51,8 +55,9 @@
 				<th>Subject</th>
 				<th>Section</th>
 				<th>Instructors</th>
-				<th>Activated</th>
-				<th></th>
+				<th align="left">'; if(!$SET['accounts_generated']) echo '<input type="checkbox" id="checkAll">';
+				echo '
+				Activated</th><th></th>
 				</tr>';
 				echo form_open('clerk/classmanagement/saveSelection/'.$user_college_code, array('onSubmit'=>true)); 
 				for($i=0; $i<count($records['subject']); $i++) {

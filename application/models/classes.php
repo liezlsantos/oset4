@@ -4,7 +4,7 @@ class Classes extends CI_Model
 {
 	public function getRecords($college_code)
 	{
-		$sql = $this->db->query("SELECT * FROM class WHERE college_code = '$college_code'");
+		$sql = $this->db->query("SELECT * FROM class WHERE college_code = '$college_code' ORDER BY subject, section, instructor");
 		
 		if ($sql->num_rows() == 0){
 			return null;
@@ -77,7 +77,7 @@ class Classes extends CI_Model
 		set_instrument, faculty WHERE college_code = '$college_code' AND activated = '1' AND open = '0' 
 		AND class.set_instrument_id = set_instrument.set_instrument_id 
 		AND instructor = instructor_code
-		AND subject LIKE '%$subject%' AND department_code LIKE '%$department%'");
+		AND subject LIKE '%$subject%' AND department_code LIKE '%$department%' ORDER BY subject, section, instructor");
 		
 		if ($sql->num_rows() == 0){
 			return null;
@@ -100,7 +100,8 @@ class Classes extends CI_Model
 		{
 			$sql = $this->db->query("SELECT oset_class_id, open, no_of_students, no_of_respondents, name, instructor, subject, section FROM class, faculty 
 			WHERE college_code = '$college_code' AND activated = '1' AND open > '0' 
-			AND subject LIKE '%$subject%' AND department_code LIKE '%$department%' AND instructor=instructor_code");
+			AND subject LIKE '%$subject%' AND department_code LIKE '%$department%' AND instructor=instructor_code
+			ORDER BY subject, section, instructor");
 			
 			if ($sql->num_rows() == 0){
 				return null;
@@ -120,7 +121,8 @@ class Classes extends CI_Model
 		{ 
 			$sql = $this->db->query("SELECT oset_class_id, no_of_students, no_of_respondents, name, instructor, subject, section FROM class, faculty 
 			WHERE college_code = '$college_code' AND activated = '1' AND open = '$status' 
-			AND subject LIKE '%$subject%' AND department_code LIKE '%$department%' AND instructor=instructor_code");
+			AND subject LIKE '%$subject%' AND department_code LIKE '%$department%' AND instructor=instructor_code 
+			ORDER BY subject, section, instructor");
 		
 			if ($sql->num_rows() == 0){
 				return null;
@@ -182,7 +184,7 @@ class Classes extends CI_Model
 	public function getDistinctClass($college_code, $subject, $department)
 	{
 		$sql = $this->db->query("SELECT DISTINCT class_id, subject, section FROM class WHERE college_code = '$college_code' 
-								 AND subject LIKE '%$subject%' AND department_code LIKE '%$department%' ORDER BY subject ASC");
+								 AND subject LIKE '%$subject%' AND department_code LIKE '%$department%' ORDER BY subject, section ASC");
 		
 		if ($sql->num_rows() == 0){
 			return null;
@@ -354,10 +356,10 @@ class Classes extends CI_Model
 			if($index = strpos($instructor, ";") > 0)
 			{
 				$instructors = explode(';', $instructor);
-				$instructor = trim($instructor);
 				
 				foreach ($instructors as $instructor)
 				{
+					$instructor = trim($instructor);
 					$data = array(
 						'class_id'    => $row->classid,
 						'section'     => $row->section,
@@ -397,7 +399,7 @@ class Classes extends CI_Model
 								);
 								$this->db->insert('faculty', $data);
 							}
-						}
+					    }
 					}
 				}
 				

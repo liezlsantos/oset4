@@ -145,7 +145,7 @@ class Student extends CI_Model
 		}
 	}
 
-	public function importStudents($college_code)
+	public function importStudents()
 	{	
 		//import students (based on classlist)
 		$this->db_crs = $this->load->database('crs', TRUE);

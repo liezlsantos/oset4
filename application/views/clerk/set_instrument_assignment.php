@@ -41,10 +41,16 @@
 		</table>
 		<?php echo form_close(); ?>
 		
+		<table width="100%">
+		<tr>
+			<td align="center"><font color="green"><?php if(isset($_SESSION['msg'])) {echo $_SESSION['msg']; unset($_SESSION['msg']);}?></font></td>
+		</tr>
+		</table>
 		<br/>
 		<?php
 			if(isset($records))
 			{
+				echo form_open('clerk/setinstrumentassignment/submit/', array('onSubmit'=>true)); 
 				echo 
 				'<table class="records">
 				<tr>
@@ -52,7 +58,7 @@
 				<th>Section</th>
 				<th>Instructor</th>
 				<th>SET Instument</th>
-				<th></th>
+				<th align="left"><input type="checkbox" id="checkAll"></th>
 				</tr>';
 				for($i=0; $i<count($records['subject']); $i++) {
 					echo "<tr>
@@ -60,10 +66,30 @@
 							<td>".$records['section'][$i]."</td>
 							<td>".$records['instructor'][$i]."</td>
 							<td>".$records['set_instrument'][$i]."</td>";
-					echo	"<td><a href='".base_url('index.php/clerk/setinstrumentassignment/edit/'.$records['oset_class_id'][$i])."'>Change SET instrument </a></td>
+					echo	"<td><input type='checkbox' name=".$records['oset_class_id'][$i]."></th>
 						 </tr>";
 				}
 				echo "</table>";
+				
+				echo "<br/>
+					  <table>
+						<tr>
+							<td width='270px'>Choose SET instrument for selected classes: </td>
+							<td>
+								<select name='set_instrument'>";
+									for ($i = 0; $i < count($instruments['set_instrument_id']); $i++)
+									{
+										echo '<option value="'.$instruments['set_instrument_id'][$i].'">'
+										.$instruments['name'][$i].'</option>';
+									}
+	
+								echo "
+								</select>
+							</td>
+							<td><input type = 'submit' value = 'Submit'></td>
+						</tr>
+					  </table>";
+				
 			}
 			else
 			{

@@ -93,8 +93,7 @@ class setinstrumentmanagement extends CI_Controller
 	
 	public function setasdefault($set_id)
 	{
-		$data['set_as_default'] = '1';
-		$this->set_instrument->updateRecord($data, $set_id);
+		$this->set_instrument->setAsDefault($set_id);
 		redirect('admin/setinstrumentmanagement', 'refresh');
 	}
 }

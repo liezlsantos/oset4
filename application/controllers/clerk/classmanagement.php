@@ -96,7 +96,16 @@ class classmanagement extends CI_Controller
 			}
 		}
 		
-		redirect('clerk/classmanagement', 'refresh');
+		$data = $this->session->userdata('logged_in');
+		$data['records'] = $this->classes->getDistinctClass($data['user_college_code'], "", "");
+		$data['SET']=$this->SET_model->getRecords();
+		$data['departments'] = $this->college->getDepartments($data['user_college_code']);
+		$data['msg'] = "Selection saved.";
+		$_SESSION['subject_keyword'] = FALSE;
+		$_SESSION['department_keyword'] = FALSE;
+		$this->load->view('clerk/class_selection', $data);	
+		
+		//redirect('clerk/classmanagement', 'refresh');
 	}
 	
 	public function addNewInstructor($class_id)

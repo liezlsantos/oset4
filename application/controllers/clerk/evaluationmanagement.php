@@ -32,7 +32,9 @@ class Evaluationmanagement extends CI_Controller
 			}
 			$i++;
 		}
-		redirect('clerk/evaluationmanagement/open', 'refresh');
+		
+		$_SESSION['msg'] = "Evaluation for selected classes opened.";
+		redirect('clerk/evaluationmanagement/searchopen', 'refresh');	
 	}
 
 	public function close()
@@ -59,7 +61,9 @@ class Evaluationmanagement extends CI_Controller
 			}
 			$i++;
 		}
-		redirect('clerk/evaluationmanagement/close', 'refresh');
+		
+		$_SESSION['msg'] = "Evaluation for selected classes closed.";
+		redirect('clerk/evaluationmanagement/searchclose', 'refresh');	
 	}
 	
 	public function status()

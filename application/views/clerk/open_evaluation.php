@@ -41,8 +41,11 @@
 		</table>
 		<?php echo form_close(); ?>
 		
-		
-		<?php if(isset($records)) echo '<div align="right"><input type="checkbox" id="checkAll">Check All</div>';?>
+		<table width="100%">
+		<tr>
+			<td align="center"><font color="green"><?php if(isset($_SESSION['msg'])) {echo $_SESSION['msg']; unset($_SESSION['msg']);}?></font></td>
+		</tr>
+		</table>
 		<br/>
 		<?php
 			if(isset($records))
@@ -53,7 +56,7 @@
 				<th>Subject</th>
 				<th>Section</th>
 				<th>Instructor</th>
-				<th></th>
+				<th align="left"><input type="checkbox" id="checkAll"></th>
 				</tr>';
 				echo form_open('clerk/evaluationmanagement/opensubmit/'.$user_college_code, array('onSubmit'=>true)); 
 				for($i=0; $i<count($records['subject']); $i++) {
