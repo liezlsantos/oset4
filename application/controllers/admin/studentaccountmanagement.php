@@ -52,13 +52,13 @@ class StudentAccountManagement extends CI_Controller
 		$this->load->helper('file');
 		
        	$college = $students[0]['college'];
-		
-		$rows[0] = " ";
-		$rows[1] = " ";
-		$rows[2] = "Students' Passwords"; 
-		$rows[3] = " ";
-		$rows[4] = "College: ".$college;
-		$rows[5] = " ";
+
+		$rows[] = "UNIVERSITY OF THE PHILIPPINES MANILA";
+		$rows[] = "STUDENT EVALUATION OF TEACHERS";
+		$rows[] = " ";
+		$rows[] = " ";
+		$rows[] = "COLLEGE: ".strtoupper($college);
+		$rows[] = " ";
 	
 		foreach ($students as $student)
 		{

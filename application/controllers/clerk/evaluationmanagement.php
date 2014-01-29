@@ -123,9 +123,11 @@ class Evaluationmanagement extends CI_Controller
 		$student = $this->student->getRecords($data['user_college_code'], "");
 		
 		//for pdf
+		$rows[] = "UNIVERSITY OF THE PHILIPPINES MANILA";
+		$rows[] = "STUDENT EVALUATION OF TEACHERS";
 		$rows[] = " ";
 		$rows[] = " ";
-		$rows[] = "Student Evaluation of Teachers - ".$data['user_college_name']; 
+		$rows[] = strtoupper($data['user_college_name']); 
 		$rows[] = "The following students still have classes to be evaluated:";
 		$rows[] = " ";
 	
