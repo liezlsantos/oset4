@@ -77,9 +77,7 @@
 				echo form_close();
 			}
 			else
-			{
-				echo "No record found.";
-			}
+				echo "Evaluation mode for all classes is already closed.";
 			
 			if(isset($search['subject']))
 				echo '<br/><br/><a href="'.base_url('index.php/clerk/evaluationmanagement/close').'">Back to all classes </a>';

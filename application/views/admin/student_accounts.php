@@ -41,11 +41,7 @@
 				  {
 						echo "Students' accounts have already been generated.";
 				  
-				  		if($SET['accounts_generated'] == 2)
-				  			echo '<br/><br/><iframe src='.base_url('/pdf/students_passwords.pdf').' width="100%" height="1000px;"  />';
-						else
-							echo ' Click <a href='.base_url('/index.php/admin/studentaccountmanagement/generatepassword').'>here</a> to generate passwords.';
-				  }
+				 }
 			?>
 		</div>
 

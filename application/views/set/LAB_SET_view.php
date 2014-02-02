@@ -600,7 +600,7 @@
 				
 				<br/><br/>
 				<input type="button" value="< Previous Part" onClick="showPart('part2');"></input>
-				<input type="submit"></input>
+				<input type="submit" value="Submit"></input>
 				<?php if(!$preview) echo form_close(); ?>
 			</div>
 		

@@ -18,9 +18,9 @@ class StudentAccountManagement extends CI_Controller
 	
 	public function download()
 	{
-		$this->student->importClasslist();	
-		$this->student->importStudents();
-		redirect('admin/studentaccountmanagement', 'refresh');
+		//$this->student->importClasslist();	
+		//$this->student->importStudents();
+		redirect('admin/studentaccountmanagement/generatePassword');
 	}
 	
 	public function generatePassword()
@@ -73,13 +73,9 @@ class StudentAccountManagement extends CI_Controller
 			$rows[] = "Username: ".str_pad(substr_replace($student['student_id'], '-', 4, 0), 20). "Password: ".$student['pass'];
 			$rows[] = "______________________________________________________________________________________";
 		}
-	 
-		$pdf_data = create_pdf($rows, '', false);
-		write_file('./pdf/students_passwords.pdf', $pdf_data); 
-		 
+	
 		$this->student->updateFlagsAfterGeneratingPasswords();
-		
-		redirect('admin/studentaccountmanagement', 'refresh');
+		$pdf_data = create_pdf($rows, 'students_passwords', true);		
 	}
 	
 }

@@ -16,20 +16,30 @@ class classmanagement extends CI_Controller
 		$data['records'] = $this->classes->getDistinctClass($data['user_college_code'], "", "");
 		$data['SET']=$this->SET_model->getRecords();
 		$data['departments'] = $this->college->getDepartments($data['user_college_code']);
-		$_SESSION['subject_keyword'] = FALSE;
-		$_SESSION['department_keyword'] = FALSE;
+		unset($_SESSION['subject_keyword']);
+		unset($_SESSION['department_keyword']);
 		$this->load->view('clerk/class_selection', $data);	
 	}
 	
 	public function search()
 	{	
 		$data = $this->session->userdata('logged_in'); 
-		$data['records'] = $this->classes->getDistinctClass($data['user_college_code'], $this->input->post('subject'), $this->input->post('department'));
+		
+		if($this->input->post('subject'))
+		{
+			$data['records'] = $this->classes->getDistinctClass($data['user_college_code'], $this->input->post('subject'), $this->input->post('department'));
+			$_SESSION['subject_keyword'] = $this->input->post('subject');
+			$_SESSION['department_keyword'] = $this->input->post('department');
+			$data['search'] = $this->input->post();
+		}
+		else
+		{
+			$data['records'] = $this->classes->getDistinctClass($data['user_college_code'], $_SESSION['subject_keyword'], $_SESSION['department_keyword']);
+			$data['search']['subject'] = $_SESSION['subject_keyword'];
+			$data['search']['department'] = $_SESSION['department_keyword'];
+		}
 		$data['SET']=$this->SET_model->getRecords();
-		$_SESSION['subject_keyword'] = $this->input->post('subject');
-		$_SESSION['department_keyword'] = $this->input->post('department');
 		$data['departments'] = $this->college->getDepartments($data['user_college_code']);
-		$data['search'] = $this->input->post();
 		$this->load->view('clerk/class_selection', $data);	
 	}
 	
@@ -71,7 +81,11 @@ class classmanagement extends CI_Controller
 		$this->load->model('set_instrument');	
 		$default_set = $this->set_instrument->getDefaultSET();
 		
-		$classes = $this->classes->getDistinctClass($college_code, "", "");
+		if(!isset($_SESSION['subject_keyword']))		
+			$classes = $this->classes->getDistinctClass($college_code, "", "");
+		else 
+			$classes = $this->classes->getDistinctClass($college_code, $_SESSION['subject_keyword'], $_SESSION['department_keyword']);	
+		
 		
 		foreach ($classes['class_id'] as $class_id)
 		{
@@ -96,16 +110,11 @@ class classmanagement extends CI_Controller
 			}
 		}
 		
-		$data = $this->session->userdata('logged_in');
-		$data['records'] = $this->classes->getDistinctClass($data['user_college_code'], "", "");
-		$data['SET']=$this->SET_model->getRecords();
-		$data['departments'] = $this->college->getDepartments($data['user_college_code']);
-		$data['msg'] = "Selection saved.";
-		$_SESSION['subject_keyword'] = FALSE;
-		$_SESSION['department_keyword'] = FALSE;
-		$this->load->view('clerk/class_selection', $data);	
-		
-		//redirect('clerk/classmanagement', 'refresh');
+		$_SESSION['msg'] = "Selection saved.";
+		if(isset($_SESSION['subject_keyword']))
+			redirect('clerk/classmanagement/search', 'refresh');
+		else
+			redirect('clerk/classmanagement/', 'refresh');
 	}
 	
 	public function addNewInstructor($class_id)

@@ -24,5 +24,13 @@ class Home extends CI_Controller
 		else
 			redirect("login","refresh");
 	}	
+	
+	public function errordatabase() 
+	{
+		$data = $this->session->userdata('logged_in');
+		$this->load->model('SET_model');
+		$data['SET']=$this->SET_model->getRecords();
+		$this->load->view('admin/error_database', $data);
+	}
 		
 }

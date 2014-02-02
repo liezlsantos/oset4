@@ -42,7 +42,7 @@
 		
 		<table width="100%">
 		<tr>
-			<td align="center"><font color="green"><?php if(isset($msg)) echo $msg; ?></font></td>
+			<td align="center"><font color="green"><?php if(isset($_SESSION['msg'])) {echo $_SESSION['msg']; unset($_SESSION['msg']);}?></font></td>
 		</tr>
 		</table>
 		<br/>

@@ -73,9 +73,7 @@
 				echo form_close();
 			}
 			else
-			{
-				echo "No record found.";
-			}
+				echo "No class to be opened for evaluation found.";
 			
 			if(isset($search['subject']))
 				echo '<br/><br/><a href="'.base_url('index.php/clerk/evaluationmanagement/open').'">Back to all classes </a>';

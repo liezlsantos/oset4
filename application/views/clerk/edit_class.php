@@ -50,13 +50,7 @@
 		<br/><br/>
 		<?php
 			if(($_SESSION['subject_keyword']) || ($_SESSION['department_keyword']))
-				echo '
-				<form id="search_form" method="POST" action="'.base_url('/index.php/clerk/classmanagement/search').'">
-					<input type="hidden" value="'.$_SESSION['subject_keyword'].'" name="subject">
-					<input type="hidden" value="'.$_SESSION['department_keyword'].'" name="department">	
-					<a href="#" onclick="document.getElementById(\'search_form\').submit();">Back to search results</a>
-				</form>
-				';
+				echo '<a href="'.base_url('/index.php/clerk/classmanagement/search').'">Back to search results</a>';
 			else 
 				echo '<a href="'.base_url('/index.php/clerk/classmanagement/').'">Back to list of classes </a>';
 		?>

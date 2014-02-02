@@ -16,6 +16,8 @@ class Evaluationmanagement extends CI_Controller
 		$data['records'] = $this->classes->getClassesByStatus(0, $data['user_college_code'], "", "");
 		$data['SET']=$this->SET_model->getRecords();
 		$data['departments'] = $this->college->getDepartments($data['user_college_code']);
+		unset($_SESSION['subject_keyword_open']);
+		unset($_SESSION['department_keyword_open']);
 		$this->load->view('clerk/open_evaluation', $data);	
 	}
 	
@@ -34,7 +36,11 @@ class Evaluationmanagement extends CI_Controller
 		}
 		
 		$_SESSION['msg'] = "Evaluation for selected classes opened.";
-		redirect('clerk/evaluationmanagement/searchopen', 'refresh');	
+		
+		if(isset($_SESSION['subject_keyword_open']))
+			redirect('clerk/evaluationmanagement/searchopen', 'refresh');
+		else
+			redirect('clerk/evaluationmanagement/open', 'refresh');		
 	}
 
 	public function close()
@@ -43,6 +49,8 @@ class Evaluationmanagement extends CI_Controller
 		$data['records'] = $this->classes->getClassesByStatus(1, $data['user_college_code'], "", "");
 		$data['SET']=$this->SET_model->getRecords();
 		$data['departments'] = $this->college->getDepartments($data['user_college_code']);
+		unset($_SESSION['subject_keyword_close']);
+		unset($_SESSION['department_keyword_close']);
 		$this->load->view('clerk/close_evaluation', $data);	
 	}
 	
@@ -63,7 +71,11 @@ class Evaluationmanagement extends CI_Controller
 		}
 		
 		$_SESSION['msg'] = "Evaluation for selected classes closed.";
-		redirect('clerk/evaluationmanagement/searchclose', 'refresh');	
+		
+		if(isset($_SESSION['subject_keyword_close']))
+			redirect('clerk/evaluationmanagement/searchclose', 'refresh');
+		else
+			redirect('clerk/evaluationmanagement/close', 'refresh');	
 	}
 	
 	public function status()
@@ -78,20 +90,46 @@ class Evaluationmanagement extends CI_Controller
 	public function searchopen()
 	{	
 		$data = $this->session->userdata('logged_in'); 
-		$data['records'] = $this->classes->getClassesByStatus(0, $data['user_college_code'], $this->input->post('subject'), $this->input->post('department'));
+		
+		if($this->input->post('subject'))
+		{
+			$data['records'] = $this->classes->getClassesByStatus(0, $data['user_college_code'], $this->input->post('subject'), $this->input->post('department'));
+			$_SESSION['subject_keyword_open'] = $this->input->post('subject');
+			$_SESSION['department_keyword_open'] = $this->input->post('department');
+			$data['search'] = $this->input->post();
+		}
+		else
+		{
+			$data['records'] = $this->classes->getClassesByStatus(0, $data['user_college_code'], $_SESSION['subject_keyword_open'], $_SESSION['department_keyword_open']);
+			$data['search']['subject'] = $_SESSION['subject_keyword_open'];
+			$data['search']['department'] = $_SESSION['department_keyword_open'];
+		}
+		
 		$data['SET']=$this->SET_model->getRecords();
 		$data['departments'] = $this->college->getDepartments($data['user_college_code']);
-		$data['search'] = $this->input->post();
 		$this->load->view('clerk/open_evaluation', $data);	
 	}
 
 	public function searchclose()
 	{	
 		$data = $this->session->userdata('logged_in'); 
-		$data['records'] = $this->classes->getClassesByStatus(1, $data['user_college_code'], $this->input->post('subject'), $this->input->post('department'));
+		
+		if($this->input->post('subject'))
+		{
+			$data['records'] = $this->classes->getClassesByStatus(1, $data['user_college_code'], $this->input->post('subject'), $this->input->post('department'));
+			$_SESSION['subject_keyword_close'] = $this->input->post('subject');
+			$_SESSION['department_keyword_close'] = $this->input->post('department');
+			$data['search'] = $this->input->post();
+		}
+		else
+		{
+			$data['records'] = $this->classes->getClassesByStatus(1, $data['user_college_code'], $_SESSION['subject_keyword_close'], $_SESSION['department_keyword_close']);
+			$data['search']['subject'] = $_SESSION['subject_keyword_close'];
+			$data['search']['department'] = $_SESSION['department_keyword_close'];
+		}
+		
 		$data['SET']=$this->SET_model->getRecords();
 		$data['departments'] = $this->college->getDepartments($data['user_college_code']);
-		$data['search'] = $this->input->post();
 		$this->load->view('clerk/close_evaluation', $data);	
 	}
 	

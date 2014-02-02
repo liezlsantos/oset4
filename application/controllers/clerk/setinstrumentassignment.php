@@ -51,7 +51,7 @@ class Setinstrumentassignment extends CI_Controller
 			}
 		}
 		
-		$_SESSION['msg'] = "SET instrument assignement saved.";
+		$_SESSION['msg'] = "SET instrument assignment saved.";
 		redirect('clerk/setinstrumentassignment', 'refresh');
 	}
 	

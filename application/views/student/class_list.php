@@ -28,7 +28,7 @@
 							<td>".$records['instructor'][$i]."</td>
 							<td>";
 						if($records['evaluated'][$i])	
-							echo "<a>Evaluated</a>";
+							echo "<font color='green'>Evaluated</font>";
 						else
 						{
 							if($records['open'][$i] == 0)
