@@ -306,8 +306,8 @@
 								<option>Too Fast</option>
 								<option>Fast</option>
 								<option>Just Right</option>
-								<option>Too Slow</option>
 								<option>Slow</option>
+								<option>Too Slow</option>
 								<option>Others</option>
 							</select>
 							</td>
@@ -336,7 +336,7 @@
 							<select name="part2b_4">
 								<option>Very Much</option>
 								<option>Much</option>
-								<option>Moderateky</option>
+								<option>Moderately</option>
 								<option>Slightly</option>
 								<option>Not at all</option>
 							</select>
@@ -714,7 +714,7 @@
 						<th align="left">Part C.</th>
 					</tr>
 					<tr id="header">
-						<td>What are the faculty's strong points? Areas for improvement  <br/>
+						<td>What are the faculty's strong points? Areas for improvement?<br/>
 						<textarea cols="50" rows="4" name="part3c"></textarea>
 						</td>
 					</tr>

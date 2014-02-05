@@ -164,4 +164,37 @@ class Upset extends CI_Controller
 		redirect('admin/setinstrumentmanagement', 'refresh');
 	}
 	
+	public function generateReportPerClass()
+	{
+		$data = $this->session->userdata('logged_in');
+				
+		$this->load->helper(array('dompdf', 'file'));
+		$this->load->helper('file');
+		
+		$classes = $this->upset_model->getClassesWithThisSET($data['user_college_code']);
+		
+		for ($i = 0; $i < count($classes['id']); $i++)
+		{
+			$data = $this->upset_model->getReportPerClassData($classes['id'][$i]);
+			$data['instructor'] = $classes['instructor'][$i];
+			$data['subject'] = $classes['subject'][$i].'-'.$classes['section'][$i];
+			$data['no_of_respondents'] = $classes['no_of_respondents'][$i];	
+			$sem = substr($classes['class_id'][$i], 0, 4);
+			$sem2 = $sem+1;
+			$data['sem_ay'] = substr($classes['class_id'][$i], 4, 1).' / '.$sem.'-'.$sem2;		
+			
+			$html = $this->load->view('set/upset_detailedreport_view', $data, TRUE);
+			$pdf_data = pdf_create($html, '' , FALSE);  
+			$filename = './pdf/report_per_class/'.$classes['instructor'][$i].'-'.$classes['class_id'][$i].'.pdf';
+			write_file($filename, $pdf_data);
+			
+			$data = array('course' =>	$classes['subject'][$i].'-'.$classes['section'][$i],
+						  'sem_ay' => substr($classes['class_id'][$i], 0, 5), 
+						  'instructor' => $classes['instructor'][$i], 
+						  'pdf' => $filename);
+		
+			$this->upset_model->saveReportPerClass($data);
+		}
+	}
+	
 }

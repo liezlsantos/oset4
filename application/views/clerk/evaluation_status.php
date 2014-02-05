@@ -74,7 +74,7 @@
 			}
 			else
 			{
-				echo "No record found.";
+				echo "There are no class selected to undergo evaluation for the current semester.";
 			}
 			
 			if(isset($search['subject']))

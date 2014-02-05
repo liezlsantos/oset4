@@ -39,6 +39,7 @@
 */
 
 $route['default_controller'] = "login";
+$route['clerk/set/(:any)'] = "set/$1";
 $route['admin/set/(:any)'] = "set/$1";
 $route['student/set/(:any)'] = "set/$1/$1";
 $route['set/(:any)'] = "";

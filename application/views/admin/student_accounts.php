@@ -41,7 +41,7 @@
 				  {
 						echo "Students' accounts have already been generated.";
 				  
-				 }
+				  }
 			?>
 		</div>
 

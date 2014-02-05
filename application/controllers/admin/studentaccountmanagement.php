@@ -18,9 +18,46 @@ class StudentAccountManagement extends CI_Controller
 	
 	public function download()
 	{
-		//$this->student->importClasslist();	
-		//$this->student->importStudents();
+		$this->student->importClasslist();	
+		$this->student->importStudents();
 		redirect('admin/studentaccountmanagement/generatePassword');
+	}
+	
+	public function changePassword()
+	{
+		 $data = $this->session->userdata('logged_in');
+		 $data['SET']=$this->SET_model->getRecords();
+		 $this->load->view('admin/student_change_password', $data);	
+	}
+	
+	public function changePasswordSubmit()
+	{
+		$data = $this->session->userdata('logged_in');
+		$data['SET']=$this->SET_model->getRecords();
+		
+		if($this->input->post('password1')!= $this->input->post('password2'))
+		{
+			$data['student_number'] = $this->input->post('student_number');
+			$data['msg'] = "Passwords do not match.";
+		}
+		else
+		{
+			$student_number = str_replace("-", "", $this->input->post('student_number'));
+				
+			if(!($row = $this->student->getInfo($student_number)))
+			{
+				$data['student_number'] = $this->input->post('student_number');
+				$data['msg'] = "Invalid student number.";
+			}
+			else
+			{
+				$salt = $row->salt;
+				$data2 = array('password' => MD5($this->input->post('password1').$salt));	
+				$this->student->update($data2, $student_number);
+				$data['msg'] = "Password changed.";
+			}				
+		}
+		$this->load->view('admin/student_change_password', $data);
 	}
 	
 	public function generatePassword()

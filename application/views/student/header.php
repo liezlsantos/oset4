@@ -10,7 +10,7 @@
 	
 	<div class="header">
 		<img alt="OSET header" class="banner" src="<?php echo base_url('css/images/oset.jpg');?>">
-		<div class="loginbar">Welcome <?php echo substr($name, strpos($name, ",")+2) ?>. <a href="<?php echo base_url('/index.php/login/logout');?>">Logout</a></div>
+		<div class="loginbar">Welcome <?php echo substr(ucwords(strtolower($name)), strpos($name, ",")+2) ?>. <a href="<?php echo base_url('/index.php/login/logout');?>">Logout</a></div>
 	</div>
 		
 	<div class="left">
