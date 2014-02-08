@@ -6,19 +6,32 @@ class Reportmanagement extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('SET_model');
+		$this->load->model('classes');
+		$this->load->model('college');
 	}
 	
-	public function index()
+	public function searchreportperclass()
 	{
-	 	$this->load->view('set/upset_detailedreport_view');
+		$data = $this->session->userdata('logged_in');
+		
+		$data['records'] = $this->classes->getClassesForReport($data['user_college_code'], $this->input->post('subject'), $this->input->post('department'));
+		$data['search'] = $this->input->post();
+		$_SESSION['subject_keyword_report'] = $this->input->post('subject');
+		$_SESSION['department_keyword_report'] = $this->input->post('department');
+		
+		$data['departments'] = $this->college->getDepartments($data['user_college_code']);
+		$data['SET']=$this->SET_model->getRecords();
+		$this->load->view('clerk/report_per_class', $data);	
 	}
 	
 	public function reportperclass()
 	{
-		$this->load->model('set_instrument');
 		$data = $this->session->userdata('logged_in');
+		$data['records'] = $this->classes->getClassesForReport($data['user_college_code'], '', '');
+		$data['departments'] = $this->college->getDepartments($data['user_college_code']);
 		$data['SET']=$this->SET_model->getRecords();
-		$data['set_instrument'] = $this->set_instrument->getRecords();
+		unset($_SESSION['subject_keyword_report']);
+		unset($_SESSION['department_keyword_report']);
 		$this->load->view('clerk/report_per_class', $data);	
 	}
 	
@@ -28,16 +41,5 @@ class Reportmanagement extends CI_Controller
 		$data['SET']=$this->SET_model->getRecords();
 		$this->load->view('clerk/report_per_faculty', $data);	
 	}
-	
-	public function generate()
-	{
-		$this->load->helper(array('dompdf', 'file'));
-		$this->load->helper('file');
-		
-		$html = $this->load->view('set/upset_detailedreport_view', '', TRUE);
-		echo $html;
-		
-		$pdf_data = pdf_create($html, '' , FALSE);  
-		write_file('./pdf/detailedreport.pdf', $pdf_data);
-	}
+
 }

@@ -93,7 +93,7 @@
 			}
 			else
 			{
-				echo "No record found.";
+				echo "No unopened class found.";
 			}
 			
 			if(isset($search['subject']))

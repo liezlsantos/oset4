@@ -29,6 +29,7 @@ body {
 img.banner {
     display: block;
     margin: 0 auto;
+    width: 100%;
 } 
 
 div.loginbar{
@@ -156,7 +157,7 @@ table.records{
 }
 
 .records tr:hover{
-	background-color: #CCCCFF;
+	background-color: #EFEFFF;
 } 
 
 a{
@@ -165,6 +166,7 @@ a{
 
 h2{
 	font-family: Georgia;
+	font-weight: normal;	
 }
 
 table.records td, table.records th{
@@ -174,7 +176,7 @@ table.records td, table.records th{
 }
 
 table.records th{
-	background-color: #113311;
+	background: url('images/add.png');
 	color: #fff;
 }
 
@@ -191,62 +193,36 @@ a{
 	color: red;
 }
 
-/*tabs*/
-.ui-tabs {
-	position: relative;/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
-	padding: .2em;
-}
-.ui-tabs .ui-tabs-nav {
-	margin: 0;
-	padding: .2em .2em 0;
-}
-.ui-tabs .ui-tabs-nav li {
-	list-style: none;
-	float: left;
-	position: relative;
-	top: 0;
-	margin: 1px .2em 0 0;
-	border-bottom-width: 0;
-	padding: 0;
-	white-space: nowrap;
-}
-.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
-	float: left;
-	padding: .5em 1em;
-	text-decoration: none;
-}
-.ui-tabs .ui-tabs-nav li.ui-tabs-active {
-	margin-bottom: -1px;
-	padding-bottom: 1px;
-}
-.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor,
-.ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor,
-.ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
-	cursor: text;
-}
-.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
-	cursor: pointer;
-}
-.ui-tabs .ui-tabs-panel {
-	display: block;
-	border-width: 0;
-	padding: 1em 1.4em;
-	background: none;
-}
-
-#tabs ul li{
-	background-color: #fff;
+div.tabH{
+	background-color: #EEEEED;
+	padding: 7px 10px;
+	margin: 0 -1px;
+	margin-bottom: -3px;
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
+	border-bottom: 1px solid #BBB;
+	color: #555;
+	font: 14px "proxima-nova", Helvetica, Arial, sans-serif;
 }
 
-#tabs ul li a{
+div.selectedtabH, div.tabH:hover{
+	background-color: #FFF;
+	padding: 7px 10px;
+	margin: 0 -1px;
+	margin-bottom: -3px;
+	border-bottom: 1px solid #FFF;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
 	color: #000;
+	font: 14px "proxima-nova", Helvetica, Arial, sans-serif;
 }
 
-#tabs .tabshead{
-	background-color: #ccc;
+div.tabs{
+	background-color: #BBB;
+	width: 100%;
 	border-radius: 5px;
+	padding-top: 1px;
+	padding-left: 1px;
 }
 
 

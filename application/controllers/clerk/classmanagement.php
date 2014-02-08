@@ -25,7 +25,7 @@ class classmanagement extends CI_Controller
 	{	
 		$data = $this->session->userdata('logged_in'); 
 		
-		if($this->input->post('subject'))
+		if(!empty($_POST))
 		{
 			$data['records'] = $this->classes->getDistinctClass($data['user_college_code'], $this->input->post('subject'), $this->input->post('department'));
 			$_SESSION['subject_keyword'] = $this->input->post('subject');

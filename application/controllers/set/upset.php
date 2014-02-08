@@ -46,8 +46,14 @@ class Upset extends CI_Controller
 		$data['part1_4'] = $this->input->post('part1_4');
 		$data['part1_5'] = $this->input->post('part1_5');
 		$data['part1_6'] = $this->input->post('part1_6');
-		$data['part1_7'] = $this->input->post('part1_7');
-		$data['part1_8'] = $this->input->post('part1_8');
+		if($this->input->post('part1_7'))
+			$data['part1_7'] = $this->input->post('part1_7');
+		else 
+			$data['part1_7'] = 'NR';
+		if($this->input->post('part1_8'))
+			$data['part1_8'] = $this->input->post('part1_8');
+		else 
+			$data['part1_8'] = 'NR';
 		$data['part1_9'] = $this->input->post('part1_9');
 		
 		//part 2-A
@@ -117,9 +123,9 @@ class Upset extends CI_Controller
 		if($this->input->post('quizzes'))
 			$data['part3b_4'] .= "quizzes;";
 		if($this->input->post('midterms'))
-			$data['part3b_4'] .= "midterm exams;";
+			$data['part3b_4'] .= "midterms;";
 		if($this->input->post('finals'))
-			$data['part3b_4'] .= "final exam;";
+			$data['part3b_4'] .= "finals;";
 		if($this->input->post('reports'))
 			$data['part3b_4'] .= "reports;";
 		if($this->input->post('papers'))
@@ -140,11 +146,14 @@ class Upset extends CI_Controller
 		
 		//compute score
 		$score = 0;
+		$countNA = 0;
 		for ($i = 1; $i <= 26; $i++)
 		{
+			if($data['part3a_'.$i] == 0) 
+				$countNA++; 
 			$score += $data['part3a_'.$i]; 
 		}
-		$score /= 26;
+		$score /= (26 - $countNA);
 		
 		$data2['student_id'] = $user_data['student_id'];
 		$data2['score'] = $score;
@@ -164,37 +173,40 @@ class Upset extends CI_Controller
 		redirect('admin/setinstrumentmanagement', 'refresh');
 	}
 	
-	public function generateReportPerClass()
+	public function generateReportPerClass($oset_class_id)
 	{
-		$data = $this->session->userdata('logged_in');
-				
-		$this->load->helper(array('dompdf', 'file'));
 		$this->load->helper('file');
 		
-		$classes = $this->upset_model->getClassesWithThisSET($data['user_college_code']);
+		$class = $this->classes->getInformation($oset_class_id);
+		$filename = './pdf/report_per_class/'.$class['instructor_code'].'-'.$class['class_id'].'.pdf';
 		
-		for ($i = 0; $i < count($classes['id']); $i++)
+		if(!file_exists($filename))
 		{
-			$data = $this->upset_model->getReportPerClassData($classes['id'][$i]);
-			$data['instructor'] = $classes['instructor'][$i];
-			$data['subject'] = $classes['subject'][$i].'-'.$classes['section'][$i];
-			$data['no_of_respondents'] = $classes['no_of_respondents'][$i];	
-			$sem = substr($classes['class_id'][$i], 0, 4);
+			//pdf		
+			$this->load->helper(array('dompdf', 'file'));
+			//pdf header
+			$data = $this->upset_model->getReportPerClassData($class['oset_class_id']);
+			$data['instructor'] = $class['instructor'];
+			$data['subject'] = $class['subject'].'-'.$class['section'];
+			$data['no_of_respondents'] = $class['no_of_respondents'];	
+			$sem = substr($class['class_id'], 0, 4);
 			$sem2 = $sem+1;
-			$data['sem_ay'] = substr($classes['class_id'][$i], 4, 1).' / '.$sem.'-'.$sem2;		
-			
+			$data['sem_ay'] = substr($class['class_id'], 4, 1).' / '.$sem.'-'.$sem2;		
+				
+			//archive report
 			$html = $this->load->view('set/upset_detailedreport_view', $data, TRUE);
 			$pdf_data = pdf_create($html, '' , FALSE);  
-			$filename = './pdf/report_per_class/'.$classes['instructor'][$i].'-'.$classes['class_id'][$i].'.pdf';
 			write_file($filename, $pdf_data);
 			
-			$data = array('course' =>	$classes['subject'][$i].'-'.$classes['section'][$i],
-						  'sem_ay' => substr($classes['class_id'][$i], 0, 5), 
-						  'instructor' => $classes['instructor'][$i], 
+			//save to db	
+			$data = array('course' =>	$class['subject'].'-'.$class['section'],
+						  'sem_ay' => substr($class['class_id'], 0, 5), 
+						  'instructor' => $class['instructor_code'], 
 						  'pdf' => $filename);
-		
+			
 			$this->upset_model->saveReportPerClass($data);
 		}
+		redirect(base_url($filename), 'refresh');
 	}
 	
 }

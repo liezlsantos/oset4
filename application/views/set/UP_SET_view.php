@@ -164,6 +164,7 @@
 						<td>9.</td>
 						<td colspan="6">What final grade will you give yourself in this course? <font color="red">*</font>
 						<select name="part1_9">
+							<option value="NR"></option>
 							<option>1.0</option>
 							<option>1.25</option>
 							<option>1.5</option>
@@ -303,11 +304,12 @@
 							<td style="border: 0">
 							<td style="border: 0">	
 							<select name="part2b_2" onChange="showOther(this.value, 'part2_Other');">
-								<option>Too Fast</option>
+								<option value="NR"></option>
+								<option>Too fast</option>
 								<option>Fast</option>
-								<option>Just Right</option>
+								<option>Just right</option>
 								<option>Slow</option>
-								<option>Too Slow</option>
+								<option>Too slow</option>
 								<option>Others</option>
 							</select>
 							</td>
@@ -322,10 +324,11 @@
 					<tr>
 						<td>3. How much have you learned from this course?
 							<select name="part2b_3">
-								<option>Very Much</option>
+								<option value="NR"></option>
+								<option>Very much</option>
 								<option>Much</option>
 								<option>Some</option>
-								<option>Very Little</option>
+								<option>Very little</option>
 								<option>Nothing</option>
 							</select>
 						</td>
@@ -334,7 +337,8 @@
 					<tr>
 						<td>4. To what extent, would you say, have the objectives of this course been attained?
 							<select name="part2b_4">
-								<option>Very Much</option>
+								<option value="NR"></option>
+								<option>Very much</option>
 								<option>Much</option>
 								<option>Moderately</option>
 								<option>Slightly</option>
@@ -626,6 +630,7 @@
 					<tr>
 						<td>1. How many times has the teacher been late?
 							<select name="part3b_1">
+								<option value="NR"></option>
 								<option>0</option>
 								<option>1</option>
 								<option>2-3</option>
@@ -637,6 +642,7 @@
 					<tr>
 						<td>2. How many class meetings has the teacher missed?
 							<select name="part3b_2">
+								<option value="NR"></option>
 								<option>0</option>
 								<option>1</option>
 								<option>2-3</option>
@@ -648,8 +654,9 @@
 					<tr>
 						<td>3. The teacher generally dismisses the class 
 							<select name="part3b_3">
+								<option value="NR"></option>
 								<option>Too early</option>
-								<option>On Time</option>
+								<option>On time</option>
 								<option>Late</option>
 								<option>Very late</option>
 							</select>	
@@ -673,6 +680,7 @@
 					<tr>	
 						<td>5. How soon does the teacher post results or return corrected assignments, quizzes, exams, papers, etc.? 
 							<select name="part3b_5">
+								<option value="NR"></option>
 								<option>One week</option>
 								<option>Two weeks</option>
 								<option>One month</option>
@@ -684,6 +692,7 @@
 					<tr>	
 						<td>6. Is the teacher fair in giving grades? 
 							<select name="part3b_6_1">
+								<option value="NR"></option>
 								<option>Always</option>
 								<option>Usually</option>
 								<option>Sometimes</option>
@@ -698,6 +707,7 @@
 					<tr>	
 						<td>7. Among the teachers you have had, how would you rate this teacher?
 							<select name="part3b_7">
+								<option value="NR"></option>
 								<option>The best</option>
 								<option>Among the best</option>
 								<option>Average</option>

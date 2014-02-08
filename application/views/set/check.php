@@ -5,6 +5,6 @@
 		header('location:'.base_url('index.php/home'));
 	elseif(strpos($_SERVER["PHP_SELF"],"index.php/infoanalyst") && !isset($isAnalyst))
 		header('location:'.base_url('index.php/home'));
-	elseif(strpos($_SERVER["PHP_SELF"],"index.php/student"))
+	elseif(strpos($_SERVER["PHP_SELF"],"index.php/student") && !isset($student_id))
 		header('location:'.base_url('index.php/home'));
 ?>

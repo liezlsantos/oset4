@@ -187,10 +187,18 @@ class Student extends CI_Model
 	public function updateFlagsAfterGeneratingPasswords()
 	{
 		$val['value'] = 1;
-		$this->db->where('flag_id', '1');
+		$this->db->where('flag_id', '2');
 		$this->db->update('flags', $val); 
 	}
 
+	public function accountGenerated()
+	{
+		$sql = $this->db->query("SELECT value FROM flags WHERE flag_id = '2'");
+		if($sql->row()->value == 1)
+			return true;
+		else
+			return false;
+	}
 }
 ?>
 

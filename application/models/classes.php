@@ -21,11 +21,33 @@ class Classes extends CI_Model
 		return $results;
 	}
 	
+	//get records with controllers
+	public function getClassesForReport($college_code, $subject, $department)
+	{
+		$sql = $this->db->query("SELECT oset_class_id, subject, instructor, section, controller_name 
+		FROM class, set_instrument WHERE college_code = '$college_code' AND open='2' AND 
+		class.set_instrument_id = set_instrument.set_instrument_id AND subject LIKE '%$subject%' AND department_code LIKE '%$department%'
+		ORDER BY subject, section, instructor");
+		
+		if ($sql->num_rows() == 0){
+			return null;
+		}
+		
+		foreach ($sql->result() as $row){
+			$results['oset_class_id'][] = $row->oset_class_id;
+			$results['controller_name'][] = $row->controller_name;
+			$results['subject'][] = $row->subject;
+			$results['instructor'][] = $row->instructor;
+			$results['section'][] = $row->section;
+		}
+		return $results;
+	}
+	
 	//get Info per individual oset_class id_____________________
 	public function getInformation($oset_class_id)
 	{
 		$sql = $this->db->query("SELECT faculty.name,
-		subject, section, set_instrument_id FROM 
+		subject, section, set_instrument_id, no_of_respondents, instructor, class_id FROM 
 		class, faculty WHERE oset_class_id = '$oset_class_id' 
 		AND instructor = instructor_code ORDER BY instructor ASC");
 		
@@ -37,8 +59,11 @@ class Classes extends CI_Model
 			$results['oset_class_id'] = $oset_class_id;
 			$results['subject'] = $row->subject;
 			$results['section'] = $row->section;
+			$results['no_of_respondents'] = $row->no_of_respondents;
+			$results['class_id'] = $row->class_id;
 			$results['set_instrument_id'] = $row->set_instrument_id;
 			$results['instructor'] = $row->name;
+			$results['instructor_code'] = $row->instructor;
 		}
 		return $results;
 	}

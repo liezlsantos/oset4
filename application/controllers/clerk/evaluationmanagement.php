@@ -91,7 +91,7 @@ class Evaluationmanagement extends CI_Controller
 	{	
 		$data = $this->session->userdata('logged_in'); 
 		
-		if($this->input->post('subject'))
+		if(!empty($_POST))
 		{
 			$data['records'] = $this->classes->getClassesByStatus(0, $data['user_college_code'], $this->input->post('subject'), $this->input->post('department'));
 			$_SESSION['subject_keyword_open'] = $this->input->post('subject');
@@ -114,7 +114,7 @@ class Evaluationmanagement extends CI_Controller
 	{	
 		$data = $this->session->userdata('logged_in'); 
 		
-		if($this->input->post('subject'))
+		if(!empty($_POST))
 		{
 			$data['records'] = $this->classes->getClassesByStatus(1, $data['user_college_code'], $this->input->post('subject'), $this->input->post('department'));
 			$_SESSION['subject_keyword_close'] = $this->input->post('subject');

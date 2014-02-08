@@ -1,5 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
 class Login extends CI_Controller 
 {
 	public function __construct()
@@ -86,8 +85,11 @@ class Login extends CI_Controller
 	public function logout()
 	{
 		$this->session->unset_userdata('logged_in');
-		unset($_SESSION);
-		session_destroy();
+		if(!isset($_SESSION))
+		{
+			unset($_SESSION);
+			session_destroy();
+		}
 		redirect('login', 'refresh');
 	}
 }

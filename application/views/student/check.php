@@ -1,10 +1,10 @@
 <?php
-	if(strpos($_SERVER["PHP_SELF"],"index.php/admin") && !isset($isAdmin))
-		header('location:'.base_url('index.php/student/home'));
-	if(strpos($_SERVER["PHP_SELF"],"index.php/clerk") && !isset($isClerk))
-		header('location:'.base_url('index.php/student/home'));
-	if(strpos($_SERVER["PHP_SELF"],"index.php/infoanalyst") && !isset($isAnalyst))
-		header('location:'.base_url('index.php/student/home'));
-	if(strpos($_SERVER["PHP_SELF"],"index.php/student") && !isset($student_id))
+	if(strpos($_SERVER["PHP_SELF"],"index.php/admin"))
+		header('location:'.base_url('index.php/home'));
+	elseif(strpos($_SERVER["PHP_SELF"],"index.php/clerk"))
+		header('location:'.base_url('index.php/home'));
+	elseif(strpos($_SERVER["PHP_SELF"],"index.php/infoanalyst"))
+		header('location:'.base_url('index.php/home'));
+	elseif(strpos($_SERVER["PHP_SELF"],"index.php/student") && !isset($student_id))
 		header('location:'.base_url('index.php/home'));
 ?>

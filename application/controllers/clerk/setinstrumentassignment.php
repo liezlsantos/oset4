@@ -18,25 +18,10 @@ class Setinstrumentassignment extends CI_Controller
 		$data['SET']=$this->SET_model->getRecords();
 		$data['departments'] = $this->college->getDepartments($data['user_college_code']);
 		$data['instruments'] = $this->set_instrument->getRecords();
+		unset($_SESSION['subject_keyword_setassign']);
+		unset($_SESSION['department_keyword_setassign']);
 		$this->load->view('clerk/set_instrument_assignment', $data);	
 	}
-	
-	/*public function edit($oset_class_id)
-	{
-		$data = $this->session->userdata('logged_in');
-		$data['class'] = $this->classes->getInformation($oset_class_id);
-		$this->load->model('set_instrument');
-		$data['set'] = $this->set_instrument->getRecords();
-		$data['SET']=$this->SET_model->getRecords();
-		$this->load->view('clerk/edit_set_instrument', $data);		
-	}
-	
-	public function update($oset_class_id)
-	{
-		$data['set_instrument_id'] = $this->input->post('set_instrument');
-		$this->classes->update($oset_class_id, $data);
-		redirect('clerk/setinstrumentassignment', 'refresh');		
-	}*/
 	
 	public function submit()
 	{
@@ -52,16 +37,29 @@ class Setinstrumentassignment extends CI_Controller
 		}
 		
 		$_SESSION['msg'] = "SET instrument assignment saved.";
-		redirect('clerk/setinstrumentassignment', 'refresh');
+		redirect('clerk/setinstrumentassignment/search', 'refresh');
 	}
 	
 	public function search()
 	{	
 		$data = $this->session->userdata('logged_in'); 
-		$data['records'] = $this->classes->getActivatedClasses($data['user_college_code'], $this->input->post('subject'), $this->input->post('department'));
+		
+		if(!empty($_POST))
+		{
+			$data['records'] = $this->classes->getActivatedClasses($data['user_college_code'], $this->input->post('subject'), $this->input->post('department'));
+			$data['search'] = $this->input->post();
+			$_SESSION['subject_keyword_setassign'] = $this->input->post('subject');
+			$_SESSION['department_keyword_setassign'] = $this->input->post('department');
+		}
+		else
+		{
+			$data['records'] = $this->classes->getActivatedClasses($data['user_college_code'], $_SESSION['subject_keyword_setassign'], $_SESSION['department_keyword_setassign']);
+			$data['search']['subject'] = $_SESSION['subject_keyword_setassign']; 
+			$data['search']['department'] = $_SESSION['department_keyword_setassign'];
+		}
+		
 		$data['SET']=$this->SET_model->getRecords();
 		$data['departments'] = $this->college->getDepartments($data['user_college_code']);
-		$data['search'] = $this->input->post();
 		$data['instruments'] = $this->set_instrument->getRecords();
 		$this->load->view('clerk/set_instrument_assignment', $data);	
 	}

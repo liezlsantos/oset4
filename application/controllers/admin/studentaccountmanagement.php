@@ -18,9 +18,14 @@ class StudentAccountManagement extends CI_Controller
 	
 	public function download()
 	{
-		$this->student->importClasslist();	
-		$this->student->importStudents();
-		redirect('admin/studentaccountmanagement/generatePassword');
+		if($this->student->accountGenerated() == FALSE)
+		{
+			$this->student->importClasslist();	
+			$this->student->importStudents();
+			redirect('admin/studentaccountmanagement/generatePassword');
+		}
+		else
+			redirect('admin/studentaccountmanagement', 'refresh');
 	}
 	
 	public function changePassword()
