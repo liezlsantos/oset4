@@ -109,6 +109,7 @@ class Cas_set extends CI_Controller
 				
 			//archive report
 			$html = $this->load->view('set/casset_detailedreport_view', $data, TRUE);
+			//echo $html;
 			$pdf_data = pdf_create($html, '' , FALSE);  
 			write_file($filename, $pdf_data);
 			

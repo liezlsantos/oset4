@@ -154,7 +154,7 @@ class Lab_set extends CI_Controller
 		$class = $this->classes->getInformation($oset_class_id);
 		$filename = './pdf/report_per_class/'.$class['instructor_code'].'-'.$class['class_id'].'.pdf';
 		
-		//if(!file_exists($filename))
+		if(!file_exists($filename))
 		{
 			//pdf		
 			$this->load->helper(array('dompdf', 'file'));
@@ -178,7 +178,7 @@ class Lab_set extends CI_Controller
 						  'instructor' => $class['instructor_code'], 
 						  'pdf' => $filename);
 			
-			//$this->lab_set_model->saveReportPerClass($data);
+			$this->lab_set_model->saveReportPerClass($data);
 		}
 		redirect(base_url($filename), 'refresh');
 	}

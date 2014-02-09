@@ -179,7 +179,7 @@
 		</tr>		
 	</table>
 	<br/>
-	<div align="right">Weighted Average (Part I): <?php echo round(array_sum($ave1)/count($ave1), 4); ?></div> 
+	<div align="right">Weighted Average (Part I): <?php if(isset($ave1)){if($sum = array_sum($ave1)) echo round($sum/count($ave1), 4); else echo 0;} else echo 0; ?></div> 
 	<br/><br/>
 
 	<b>PART II-A. THE COURSE</b>
@@ -282,7 +282,7 @@
 	</table>
 	
 	<br/>
-	<div align="right">Weighted Average (Part II-A):  <?php echo round(array_sum($ave2)/count($ave2), 4); ?> </div> 
+	<div align="right">Weighted Average (Part II-A):  <?php if(isset($ave2)){if($sum = array_sum($ave2)) echo round($sum/count($ave2), 4); else echo 0;} else echo 0; ?></div> 
 	<br/><br/>
 	
 	<b>PART II-B. </b>
@@ -678,7 +678,7 @@
 		</tr>
 	</table>
 	<br/>
-	<div align="right">Weighted Average (Part III-A): <?php echo round(array_sum($ave)/count($ave),4); ?> </div> 
+	<div align="right">Weighted Average (Part III-A): <?php if(isset($ave)){if($sum = array_sum($ave)) echo round($sum/count($ave), 4); else echo 0;} else echo 0; ?></div> 
 	<br/><br/>
 	
 	<b>PART III-B</b>
