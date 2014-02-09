@@ -37,7 +37,10 @@ class Setinstrumentassignment extends CI_Controller
 		}
 		
 		$_SESSION['msg'] = "SET instrument assignment saved.";
-		redirect('clerk/setinstrumentassignment/search', 'refresh');
+		if(isset($_SESSION['subject_keyword_setassign']))
+			redirect('clerk/setinstrumentassignment/search', 'refresh');
+		else
+			redirect('clerk/setinstrumentassignment/', 'refresh');
 	}
 	
 	public function search()

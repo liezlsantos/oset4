@@ -81,7 +81,7 @@
 					</tr>
 					<tr>
 						<td>1.</td>
-						<td>How actively did you participate in class discussions and activities? <font color="red">*</font></td>
+						<td>How actively did you participate in class discussions and activities? </td>
 						<td align="center"><input type="radio" name="part1_1" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_1" value="2"></input></td>
 						<td align="center"><input type="radio" name="part1_1" value="3"></input></td>
@@ -90,7 +90,7 @@
 					</tr>
 					<tr>
 						<td>2.</td>
-						<td>Did you learn new ideas from your interactions with your teacher and classmates? <font color="red">*</font></td>
+						<td>Did you learn new ideas from your interactions with your teacher and classmates? </td>
 						<td align="center"><input type="radio" name="part1_2" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_2" value="2"></input></td>
 						<td align="center"><input type="radio" name="part1_2" value="3"></input></td>
@@ -99,7 +99,7 @@
 					</tr>
 					<tr>
 						<td>3.</td>
-						<td>How receptive were you to new ideas presented by your teacher and classmates? <font color="red">*</font></td>
+						<td>How receptive were you to new ideas presented by your teacher and classmates? </td>
 						<td align="center"><input type="radio" name="part1_3" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_3" value="2"></input></td>
 						<td align="center"><input type="radio" name="part1_3" value="3"></input></td>
@@ -108,7 +108,7 @@
 					</tr>
 					<tr>
 						<td>4.</td>
-						<td>How much effort did you give to meeting the requirements in this course? (eg. term papers, reports, assigned readings) <font color="red">*</font></td>
+						<td>How much effort did you give to meeting the requirements in this course? (eg. term papers, reports, assigned readings) </td>
 						<td align="center"><input type="radio" name="part1_4" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_4" value="2"></input></td>
 						<td align="center"><input type="radio" name="part1_4" value="3"></input></td>
@@ -117,7 +117,7 @@
 					</tr>
 					<tr>
 						<td>5.</td>
-						<td>Do you feel that you have performed well in this course? <font color="red">*</font></td>
+						<td>Do you feel that you have performed well in this course? </td>
 						<td align="center"><input type="radio" name="part1_5" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_5" value="2"></input></td>
 						<td align="center"><input type="radio" name="part1_5" value="3"></input></td>
@@ -126,7 +126,7 @@
 					</tr>
 					<tr>
 						<td>6.</td>
-						<td>Have your expectations of this course been met? <font color="red">*</font></td>
+						<td>Have your expectations of this course been met? </td>
 						<td align="center"><input type="radio" name="part1_6" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_6" value="2"></input></td>
 						<td align="center"><input type="radio" name="part1_6" value="3"></input></td>
@@ -144,7 +144,7 @@
 					</tr>
 					<tr>
 						<td>7.</td>
-						<td>How many times have you been late*? <font color="red">*</font></td>
+						<td>How many times have you been late*? </td>
 						<td align="center"><input type="radio" name="part1_7" value="0"></input></td>
 						<td align="center"><input type="radio" name="part1_7" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_7" value="2-3"></input></td>
@@ -153,7 +153,7 @@
 					</tr>
 					<tr>
 						<td>8.</td>
-						<td>How many class meetings have you missed? <font color="red">*</font></td>
+						<td>How many class meetings have you missed? </td>
 						<td align="center"><input type="radio" name="part1_8" value="0"></input></td>
 						<td align="center"><input type="radio" name="part1_8" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_8" value="2-3"></input></td>
@@ -162,8 +162,9 @@
 					</tr>
 					<tr>
 						<td>9.</td>
-						<td colspan="6">What final grade will you give yourself in this course? <font color="red">*</font>
+						<td colspan="6">What final grade will you give yourself in this course? 
 						<select name="part1_9">
+							<option value="NR"></option>
 							<option>1.0</option>
 							<option>1.25</option>
 							<option>1.5</option>
@@ -203,7 +204,7 @@
 					</tr>
 					<tr>
 						<td>1.</td>
-						<td>This course stimulates me to study beyond the lessons assigned. <font color="red">*</font></td>
+						<td>This course stimulates me to study beyond the lessons assigned. </td>
 						<td align="center"><input type="radio" name="part2a_1" value="1"></input></td>
 						<td align="center"><input type="radio" name="part2a_1" value="2"></input></td>
 						<td align="center"><input type="radio" name="part2a_1" value="3"></input></td>
@@ -213,7 +214,7 @@
 						<td>2.</td>
 						<td>This course has developed in me a greater sense of responsibility 
 							(i.e. self-reliance, self discipline, independent 
-							<br/> study) <font color="red">*</font></td>
+							<br/> study) </td>
 						<td align="center"><input type="radio" name="part2a_2" value="1"></input></td>
 						<td align="center"><input type="radio" name="part2a_2" value="2"></input></td>
 						<td align="center"><input type="radio" name="part2a_2" value="3"></input></td>
@@ -221,7 +222,7 @@
 					</tr>
 					<tr>
 						<td>3.</td>
-						<td>I have worked more conscientiously in this course more than in most other courses. <font color="red">*</font></td>
+						<td>I have worked more conscientiously in this course more than in most other courses. </td>
 						<td align="center"><input type="radio" name="part2a_3" value="1"></input></td>
 						<td align="center"><input type="radio" name="part2a_3" value="2"></input></td>
 						<td align="center"><input type="radio" name="part2a_3" value="3"></input></td>
@@ -229,7 +230,7 @@
 					</tr>
 					<tr>
 						<td>4.</td>
-						<td>Even if this course were not required, it would still be worthwhile taking it. <font color="red">*</font></td>
+						<td>Even if this course were not required, it would still be worthwhile taking it. </td>
 						<td align="center"><input type="radio" name="part2a_4" value="1"></input></td>
 						<td align="center"><input type="radio" name="part2a_4" value="2"></input></td>
 						<td align="center"><input type="radio" name="part2a_4" value="3"></input></td>
@@ -237,7 +238,7 @@
 					</tr>
 					<tr>
 						<td>5.</td>
-						<td>I am fully satisfied with the way this course was handled/conducted. <font color="red">*</font></td>
+						<td>I am fully satisfied with the way this course was handled/conducted. </td>
 						<td align="center"><input type="radio" name="part2a_5" value="1"></input></td>
 						<td align="center"><input type="radio" name="part2a_5" value="2"></input></td>
 						<td align="center"><input type="radio" name="part2a_5" value="3"></input></td>
@@ -287,10 +288,11 @@
 							<td style="border: 0">
 							<td style="border: 0">	
 							<select name="part2b_2" onChange="showOther(this.value, 'part2_Other');">
-								<option>Too Fast</option>
+								<option value="NR"></option>
+								<option>Too fast</option>
 								<option>Fast</option>
-								<option>Just Right</option>
-								<option>Too Slow</option>
+								<option>Just right</option>
+								<option>Too slow</option>
 								<option>Slow</option>
 								<option>Others</option>
 							</select>
@@ -306,10 +308,11 @@
 					<tr>
 						<td>3. How much have you learned from this course?
 							<select name="part2b_3">
-								<option>Very Much</option>
+								<option value="NR"></option>
+								<option>Very much</option>
 								<option>Much</option>
 								<option>Some</option>
-								<option>Very Little</option>
+								<option>Very little</option>
 								<option>Nothing</option>
 							</select>
 						</td>
@@ -318,11 +321,12 @@
 					<tr>
 						<td>4. To what extent, would you say, have the objectives of this course been attained?
 							<select name="part2b_4">
-								<option>Very Much</option>
+								<option value="NR"></option>
+								<option>Very much</option>
 								<option>Much</option>
-								<option>Some</option>
-								<option>Very Little</option>
-								<option>Nothing</option>
+								<option>Moderately</option>
+								<option>Slightly</option>
+								<option>Not at all</option>
 							</select>
 						</td>
 					</tr>
@@ -368,7 +372,7 @@
 					</tr>
 					<tr>
 						<td>1.</td>
-						<td>Explains the course objectives, grading system and policies <font color="red">*</font></td>
+						<td>Explains the course objectives, grading system and policies </td>
 						<td align="center"><input type="radio" name="part3a_1" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_1" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_1" value="3"></input></td>
@@ -377,7 +381,7 @@
 					</tr>
 					<tr>
 						<td>2.</td>
-						<td>Gives preliminary instructions and precautions when necessary <font color="red">*</font></td>
+						<td>Gives preliminary instructions and precautions when necessary </td>
 						<td align="center"><input type="radio" name="part3a_2" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_2" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_2" value="3"></input></td>
@@ -386,7 +390,7 @@
 					</tr>
 					<tr>
 						<td>3.</td>
-						<td>Checks student preparation for the laboratory activity <font color="red">*</font></td>
+						<td>Checks student preparation for the laboratory activity </td>
 						<td align="center"><input type="radio" name="part3a_3" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_3" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_3" value="3"></input></td>
@@ -395,7 +399,7 @@
 					</tr>
 					<tr>
 						<td>4.</td>
-						<td>Explains the proper use of the apparatus to students <font color="red">*</font></td>
+						<td>Explains the proper use of the apparatus to students </td>
 						<td align="center"><input type="radio" name="part3a_4" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_4" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_4" value="3"></input></td>
@@ -404,7 +408,7 @@
 					</tr>
 					<tr>
 						<td>5.</td>
-						<td>Supervises students' activities <font color="red">*</font></td>
+						<td>Supervises students' activities </td>
 						<td align="center"><input type="radio" name="part3a_5" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_5" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_5" value="3"></input></td>
@@ -413,7 +417,7 @@
 					</tr>
 					<tr>
 						<td>6.</td>
-						<td>Utilizes laboratory time for the maximum <font color="red">*</font></td>
+						<td>Utilizes laboratory time for the maximum </td>
 						<td align="center"><input type="radio" name="part3a_6" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_6" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_6" value="3"></input></td>
@@ -422,7 +426,7 @@
 					</tr>
 					<tr>
 						<td>7.</td>
-						<td>Devotes enough time to each experiment <font color="red">*</font></td>
+						<td>Devotes enough time to each experiment </td>
 						<td align="center"><input type="radio" name="part3a_7" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_7" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_7" value="3"></input></td>
@@ -431,7 +435,7 @@
 					</tr>
 					<tr>
 						<td>8.</td>
-						<td>Sees to it that students leave their areas in good order<font color="red">*</font></td>
+						<td>Sees to it that students leave their areas in good order</td>
 						<td align="center"><input type="radio" name="part3a_8" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_8" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_8" value="3"></input></td>
@@ -440,7 +444,7 @@
 					</tr>
 					<tr>
 						<td>9.</td>
-						<td>Clarifies and reinforces discussions during oral reports<font color="red">*</font></td>
+						<td>Clarifies and reinforces discussions during oral reports</td>
 						<td align="center"><input type="radio" name="part3a_9" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_9" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_9" value="3"></input></td>
@@ -449,7 +453,7 @@
 					</tr>
 					<tr>
 						<td>10.</td>
-						<td>Asks relevant questions during examination<font color="red">*</font></td>
+						<td>Asks relevant questions during examination</td>
 						<td align="center"><input type="radio" name="part3a_10" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_10" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_10" value="3"></input></td>
@@ -458,7 +462,7 @@
 					</tr>
 					<tr>
 						<td>11.</td>
-						<td>Treats students tactfully, does not embarrass them <font color="red">*</font></td>
+						<td>Treats students tactfully, does not embarrass them </td>
 						<td align="center"><input type="radio" name="part3a_11" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_11" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_11" value="3"></input></td>
@@ -467,7 +471,7 @@
 					</tr>
 					<tr>
 						<td>12.</td>
-						<td>Invites respect thought behavior and general appearance <font color="red">*</font></td>
+						<td>Invites respect thought behavior and general appearance </td>
 						<td align="center"><input type="radio" name="part3a_12" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_12" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_12" value="3"></input></td>
@@ -476,7 +480,7 @@
 					</tr>
 					<tr>
 						<td>13.</td>
-						<td>Maintains an orderly atmosphere in the laboratory <font color="red">*</font></td>
+						<td>Maintains an orderly atmosphere in the laboratory </td>
 						<td align="center"><input type="radio" name="part3a_13" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_13" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_13" value="3"></input></td>
@@ -485,7 +489,7 @@
 					</tr>
 					<tr>
 						<td>14.</td>
-						<td>Is firm and consistent; strict but reasonable in disciplining students <font color="red">*</font></td>
+						<td>Is firm and consistent; strict but reasonable in disciplining students </td>
 						<td align="center"><input type="radio" name="part3a_14" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_14" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_14" value="3"></input></td>
@@ -494,7 +498,7 @@
 					</tr>
 					<tr>
 						<td>15.</td>
-						<td>Motivates the student to think critically <font color="red">*</font></td>
+						<td>Motivates the student to think critically </td>
 						<td align="center"><input type="radio" name="part3a_15" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_15" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_15" value="3"></input></td>
@@ -503,7 +507,7 @@
 					</tr>
 					<tr>
 						<td>16.</td>
-						<td>Is able to communicate effectively <font color="red">*</font></td>
+						<td>Is able to communicate effectively </td>
 						<td align="center"><input type="radio" name="part3a_16" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_16" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_16" value="3"></input></td>
@@ -520,6 +524,7 @@
 					<tr>
 						<td>1. How many times has the teacher been late?
 							<select name="part3b_1">
+								<option value="NR"></option>
 								<option>0</option>
 								<option>1</option>
 								<option>2-3</option>
@@ -531,6 +536,7 @@
 					<tr>
 						<td>2. How many class meetings has the teacher missed?
 							<select name="part3b_2">
+								<option value="NR"></option>
 								<option>0</option>
 								<option>1</option>
 								<option>2-3</option>
@@ -542,7 +548,8 @@
 					<tr>
 						<td>3. The teacher generally dismisses the class 
 							<select name="part3b_3">
-								<option>On Time</option>
+								<option value="NR"></option>
+								<option>On time</option>
 								<option>Early</option>
 								<option>Late</option>
 							</select>	
@@ -551,6 +558,7 @@
 					<tr>	
 						<td>4. How soon does the teacher post results or return corrected laboratory reports, quizzes, exam papers, etc.? 
 							<select name="part3b_4">
+								<option value="NR"></option>
 								<option>One week</option>
 								<option>Two weeks</option>
 								<option>One month</option>
@@ -562,6 +570,7 @@
 					<tr>	
 						<td>5. Is the teacher fair in giving grades? 
 							<select name="part3b_5_1">
+								<option value="NR"></option>
 								<option>Always</option>
 								<option>Usually</option>
 								<option>Sometimes</option>
@@ -576,6 +585,7 @@
 					<tr>	
 						<td>6. Among the teachers you have had, how would you rate this teacher?
 							<select name="part3b_6">
+								<option value="NR"></option>
 								<option>The best</option>
 								<option>Among the best</option>
 								<option>Average</option>

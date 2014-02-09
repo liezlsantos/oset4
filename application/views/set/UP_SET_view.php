@@ -81,7 +81,7 @@
 					</tr>
 					<tr>
 						<td>1.</td>
-						<td>How actively did you participate in class discussions and activities? <font color="red">*</font></td>
+						<td>How actively did you participate in class discussions and activities? </td>
 						<td align="center"><input type="radio" name="part1_1" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_1" value="2"></input></td>
 						<td align="center"><input type="radio" name="part1_1" value="3"></input></td>
@@ -90,7 +90,7 @@
 					</tr>
 					<tr>
 						<td>2.</td>
-						<td>Did you learn new ideas from your interactions with your teacher and classmates? <font color="red">*</font></td>
+						<td>Did you learn new ideas from your interactions with your teacher and classmates? </td>
 						<td align="center"><input type="radio" name="part1_2" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_2" value="2"></input></td>
 						<td align="center"><input type="radio" name="part1_2" value="3"></input></td>
@@ -99,7 +99,7 @@
 					</tr>
 					<tr>
 						<td>3.</td>
-						<td>How receptive were you to new ideas presented by your teacher and classmates? <font color="red">*</font></td>
+						<td>How receptive were you to new ideas presented by your teacher and classmates? </td>
 						<td align="center"><input type="radio" name="part1_3" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_3" value="2"></input></td>
 						<td align="center"><input type="radio" name="part1_3" value="3"></input></td>
@@ -108,7 +108,7 @@
 					</tr>
 					<tr>
 						<td>4.</td>
-						<td>How much effort did you give to meeting the requirements in this course? (eg. term papers, reports, assigned readings) <font color="red">*</font></td>
+						<td>How much effort did you give to meeting the requirements in this course? (eg. term papers, reports, assigned readings) </td>
 						<td align="center"><input type="radio" name="part1_4" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_4" value="2"></input></td>
 						<td align="center"><input type="radio" name="part1_4" value="3"></input></td>
@@ -117,7 +117,7 @@
 					</tr>
 					<tr>
 						<td>5.</td>
-						<td>Do you feel that you have performed well in this course? <font color="red">*</font></td>
+						<td>Do you feel that you have performed well in this course? </td>
 						<td align="center"><input type="radio" name="part1_5" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_5" value="2"></input></td>
 						<td align="center"><input type="radio" name="part1_5" value="3"></input></td>
@@ -126,7 +126,7 @@
 					</tr>
 					<tr>
 						<td>6.</td>
-						<td>Have your expectations of this course been met? <font color="red">*</font></td>
+						<td>Have your expectations of this course been met? </td>
 						<td align="center"><input type="radio" name="part1_6" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_6" value="2"></input></td>
 						<td align="center"><input type="radio" name="part1_6" value="3"></input></td>
@@ -144,7 +144,7 @@
 					</tr>
 					<tr>
 						<td>7.</td>
-						<td>How many times have you been late*? <font color="red">*</font></td>
+						<td>How many times have you been late*? </td>
 						<td align="center"><input type="radio" name="part1_7" value="0"></input></td>
 						<td align="center"><input type="radio" name="part1_7" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_7" value="2-3"></input></td>
@@ -153,7 +153,7 @@
 					</tr>
 					<tr>
 						<td>8.</td>
-						<td>How many class meetings have you missed? <font color="red">*</font></td>
+						<td>How many class meetings have you missed? </td>
 						<td align="center"><input type="radio" name="part1_8" value="0"></input></td>
 						<td align="center"><input type="radio" name="part1_8" value="1"></input></td>
 						<td align="center"><input type="radio" name="part1_8" value="2-3"></input></td>
@@ -162,7 +162,7 @@
 					</tr>
 					<tr>
 						<td>9.</td>
-						<td colspan="6">What final grade will you give yourself in this course? <font color="red">*</font>
+						<td colspan="6">What final grade will you give yourself in this course? 
 						<select name="part1_9">
 							<option value="NR"></option>
 							<option>1.0</option>
@@ -204,7 +204,7 @@
 					</tr>
 					<tr>
 						<td>1.</td>
-						<td>This course stimulates me to study beyond the lessons assigned. <font color="red">*</font></td>
+						<td>This course stimulates me to study beyond the lessons assigned. </td>
 						<td align="center"><input type="radio" name="part2a_1" value="1"></input></td>
 						<td align="center"><input type="radio" name="part2a_1" value="2"></input></td>
 						<td align="center"><input type="radio" name="part2a_1" value="3"></input></td>
@@ -214,7 +214,7 @@
 						<td>2.</td>
 						<td>This course has developed in me a greater sense of responsibility 
 							(i.e. self-reliance, self discipline, independent 
-							<br/> study) <font color="red">*</font></td>
+							<br/> study) </td>
 						<td align="center"><input type="radio" name="part2a_2" value="1"></input></td>
 						<td align="center"><input type="radio" name="part2a_2" value="2"></input></td>
 						<td align="center"><input type="radio" name="part2a_2" value="3"></input></td>
@@ -222,7 +222,7 @@
 					</tr>
 					<tr>
 						<td>3.</td>
-						<td>I have worked more conscientiously in this course more than in most other courses. <font color="red">*</font></td>
+						<td>I have worked more conscientiously in this course more than in most other courses. </td>
 						<td align="center"><input type="radio" name="part2a_3" value="1"></input></td>
 						<td align="center"><input type="radio" name="part2a_3" value="2"></input></td>
 						<td align="center"><input type="radio" name="part2a_3" value="3"></input></td>
@@ -230,7 +230,7 @@
 					</tr>
 					<tr>
 						<td>4.</td>
-						<td>Even if this course were not required, it would still be worthwhile taking it. <font color="red">*</font></td>
+						<td>Even if this course were not required, it would still be worthwhile taking it. </td>
 						<td align="center"><input type="radio" name="part2a_4" value="1"></input></td>
 						<td align="center"><input type="radio" name="part2a_4" value="2"></input></td>
 						<td align="center"><input type="radio" name="part2a_4" value="3"></input></td>
@@ -238,7 +238,7 @@
 					</tr>
 					<tr>
 						<td>5.</td>
-						<td>I am fully satisfied with the way this course was handled/conducted. <font color="red">*</font></td>
+						<td>I am fully satisfied with the way this course was handled/conducted. </td>
 						<td align="center"><input type="radio" name="part2a_5" value="1"></input></td>
 						<td align="center"><input type="radio" name="part2a_5" value="2"></input></td>
 						<td align="center"><input type="radio" name="part2a_5" value="3"></input></td>
@@ -246,7 +246,7 @@
 					</tr>
 					<tr>
 						<td>6.</td>
-						<td>This course stimulates me to think creatively. <font color="red">*</font></td>
+						<td>This course stimulates me to think creatively. </td>
 						<td align="center"><input type="radio" name="part2a_6" value="1"></input></td>
 						<td align="center"><input type="radio" name="part2a_6" value="2"></input></td>
 						<td align="center"><input type="radio" name="part2a_6" value="3"></input></td>
@@ -254,7 +254,7 @@
 					</tr>
 					<tr>
 						<td>7.</td>
-						<td>This course develops critical thinking. <font color="red">*</font></td>
+						<td>This course develops critical thinking. </td>
 						<td align="center"><input type="radio" name="part2a_7" value="1"></input></td>
 						<td align="center"><input type="radio" name="part2a_7" value="2"></input></td>
 						<td align="center"><input type="radio" name="part2a_7" value="3"></input></td>
@@ -388,7 +388,7 @@
 					</tr>
 					<tr>
 						<td>1.</td>
-						<td>Explains the course objectives, expectations and requirements of the course <font color="red">*</font></td>
+						<td>Explains the course objectives, expectations and requirements of the course </td>
 						<td align="center"><input type="radio" name="part3a_1" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_1" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_1" value="3"></input></td>
@@ -397,7 +397,7 @@
 					</tr>
 					<tr>
 						<td>2.</td>
-						<td>Comes to class unprepared for the lesson. <font color="red">*</font></td>
+						<td>Comes to class unprepared for the lesson. </td>
 						<td align="center"><input type="radio" name="part3a_2" value="4"></input></td>
 						<td align="center"><input type="radio" name="part3a_2" value="3"></input></td>
 						<td align="center"><input type="radio" name="part3a_2" value="2"></input></td>
@@ -406,7 +406,7 @@
 					</tr>
 					<tr>
 						<td>3.</td>
-						<td>Presents the subject matter clearly and systematically. <font color="red">*</font></td>
+						<td>Presents the subject matter clearly and systematically. </td>
 						<td align="center"><input type="radio" name="part3a_3" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_3" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_3" value="3"></input></td>
@@ -415,7 +415,7 @@
 					</tr>
 					<tr>
 						<td>4.</td>
-						<td>Relates the course to other fields and current issues/concerns. <font color="red">*</font></td>
+						<td>Relates the course to other fields and current issues/concerns. </td>
 						<td align="center"><input type="radio" name="part3a_4" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_4" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_4" value="3"></input></td>
@@ -424,7 +424,7 @@
 					</tr>
 					<tr>
 						<td>5.</td>
-						<td>Fosters a stimulating atmosphere which encourages students to participate in class discussions/activities. <font color="red">*</font></td>
+						<td>Fosters a stimulating atmosphere which encourages students to participate in class discussions/activities. </td>
 						<td align="center"><input type="radio" name="part3a_5" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_5" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_5" value="3"></input></td>
@@ -433,7 +433,7 @@
 					</tr>
 					<tr>
 						<td>6.</td>
-						<td>Stimulates the students to study more about the subject. <font color="red">*</font></td>
+						<td>Stimulates the students to study more about the subject. </td>
 						<td align="center"><input type="radio" name="part3a_6" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_6" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_6" value="3"></input></td>
@@ -442,7 +442,7 @@
 					</tr>
 					<tr>
 						<td>7.</td>
-						<td>Does not encourage studetns to do their best. <font color="red">*</font></td>
+						<td>Does not encourage studetns to do their best. </td>
 						<td align="center"><input type="radio" name="part3a_7" value="4"></input></td>
 						<td align="center"><input type="radio" name="part3a_7" value="3"></input></td>
 						<td align="center"><input type="radio" name="part3a_7" value="2"></input></td>
@@ -451,7 +451,7 @@
 					</tr>
 					<tr>
 						<td>8.</td>
-						<td>Speaks clearly and audibly. <font color="red">*</font></td>
+						<td>Speaks clearly and audibly. </td>
 						<td align="center"><input type="radio" name="part3a_8" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_8" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_8" value="3"></input></td>
@@ -460,7 +460,7 @@
 					</tr>
 					<tr>
 						<td>9.</td>
-						<td>Uses appropriate teaching techniques and instructional materials. <font color="red">*</font></td>
+						<td>Uses appropriate teaching techniques and instructional materials. </td>
 						<td align="center"><input type="radio" name="part3a_9" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_9" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_9" value="3"></input></td>
@@ -469,7 +469,7 @@
 					</tr>
 					<tr>
 						<td>10.</td>
-						<td>Does not respect students' ideas and viewpoints. <font color="red">*</font></td>
+						<td>Does not respect students' ideas and viewpoints. </td>
 						<td align="center"><input type="radio" name="part3a_10" value="4"></input></td>
 						<td align="center"><input type="radio" name="part3a_10" value="3"></input></td>
 						<td align="center"><input type="radio" name="part3a_10" value="2"></input></td>
@@ -478,7 +478,7 @@
 					</tr>
 					<tr>
 						<td>11.</td>
-						<td>Explains concepts again when he/she notes that the concept is not well understood. <font color="red">*</font></td>
+						<td>Explains concepts again when he/she notes that the concept is not well understood. </td>
 						<td align="center"><input type="radio" name="part3a_11" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_11" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_11" value="3"></input></td>
@@ -487,7 +487,7 @@
 					</tr>
 					<tr>
 						<td>12.</td>
-						<td>Identifies and stresses important points. <font color="red">*</font></td>
+						<td>Identifies and stresses important points. </td>
 						<td align="center"><input type="radio" name="part3a_12" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_12" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_12" value="3"></input></td>
@@ -496,7 +496,7 @@
 					</tr>
 					<tr>
 						<td>13.</td>
-						<td>Demonstrates thorough and broad knowledge of the subject of the course. <font color="red">*</font></td>
+						<td>Demonstrates thorough and broad knowledge of the subject of the course. </td>
 						<td align="center"><input type="radio" name="part3a_13" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_13" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_13" value="3"></input></td>
@@ -505,7 +505,7 @@
 					</tr>
 					<tr>
 						<td>14.</td>
-						<td>Uses evaluation measures and tests which adequately sample what was covered in the course. <font color="red">*</font></td>
+						<td>Uses evaluation measures and tests which adequately sample what was covered in the course. </td>
 						<td align="center"><input type="radio" name="part3a_14" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_14" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_14" value="3"></input></td>
@@ -514,7 +514,7 @@
 					</tr>
 					<tr>
 						<td>15.</td>
-						<td>Gives constructive criticism of students' works. <font color="red">*</font></td>
+						<td>Gives constructive criticism of students' works. </td>
 						<td align="center"><input type="radio" name="part3a_15" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_15" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_15" value="3"></input></td>
@@ -523,7 +523,7 @@
 					</tr>
 					<tr>
 						<td>16.</td>
-						<td>Is firm and consistent; strict but reasonable in disciplining students. <font color="red">*</font></td>
+						<td>Is firm and consistent; strict but reasonable in disciplining students. </td>
 						<td align="center"><input type="radio" name="part3a_16" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_16" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_16" value="3"></input></td>
@@ -532,7 +532,7 @@
 					</tr>
 					<tr>
 						<td>17.</td>
-						<td>Does not invite questions from students. <font color="red">*</font></td>
+						<td>Does not invite questions from students. </td>
 						<td align="center"><input type="radio" name="part3a_17" value="4"></input></td>
 						<td align="center"><input type="radio" name="part3a_17" value="3"></input></td>
 						<td align="center"><input type="radio" name="part3a_17" value="2"></input></td>
@@ -541,7 +541,7 @@
 					</tr>
 					<tr>
 						<td>18.</td>
-						<td>Explains the grading procedure ans standards clearly and applies them. <font color="red">*</font></td>
+						<td>Explains the grading procedure ans standards clearly and applies them. </td>
 						<td align="center"><input type="radio" name="part3a_18" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_18" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_18" value="3"></input></td>
@@ -550,7 +550,7 @@
 					</tr>
 					<tr>
 						<td>19.</td>
-						<td>Does not invite through behaviour and general appearance. <font color="red">*</font></td>
+						<td>Does not invite through behaviour and general appearance. </td>
 						<td align="center"><input type="radio" name="part3a_19" value="4"></input></td>
 						<td align="center"><input type="radio" name="part3a_19" value="3"></input></td>
 						<td align="center"><input type="radio" name="part3a_19" value="2"></input></td>
@@ -559,7 +559,7 @@
 					</tr>
 					<tr>
 						<td>20.</td>
-						<td>Explains the grading procedure ans standards clearly and applies them. <font color="red">*</font></td>
+						<td>Explains the grading procedure ans standards clearly and applies them. </td>
 						<td align="center"><input type="radio" name="part3a_20" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_20" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_20" value="3"></input></td>
@@ -568,7 +568,7 @@
 					</tr>
 					<tr>
 						<td>21.</td>
-						<td>Admits errors in the presentation of subject matter, and in evaluation. <font color="red">*</font></td>
+						<td>Admits errors in the presentation of subject matter, and in evaluation. </td>
 						<td align="center"><input type="radio" name="part3a_21" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_21" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_21" value="3"></input></td>
@@ -577,7 +577,7 @@
 					</tr>
 					<tr>
 						<td>22.</td>
-						<td>Answers students' questions adequately. <font color="red">*</font></td>
+						<td>Answers students' questions adequately. </td>
 						<td align="center"><input type="radio" name="part3a_22" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_22" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_22" value="3"></input></td>
@@ -586,7 +586,7 @@
 					</tr>
 					<tr>
 						<td>23.</td>
-						<td>Is not available for consultation. <font color="red">*</font></td>
+						<td>Is not available for consultation. </td>
 						<td align="center"><input type="radio" name="part3a_23" value="4"></input></td>
 						<td align="center"><input type="radio" name="part3a_23" value="3"></input></td>
 						<td align="center"><input type="radio" name="part3a_23" value="2"></input></td>
@@ -595,7 +595,7 @@
 					</tr>
 					<tr>
 						<td>24.</td>
-						<td>Is able to make students comprehend and appreciate complex ideas. <font color="red">*</font></td>
+						<td>Is able to make students comprehend and appreciate complex ideas. </td>
 						<td align="center"><input type="radio" name="part3a_24" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_24" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_24" value="3"></input></td>
@@ -604,7 +604,7 @@
 					</tr>
 					<tr>
 						<td>25.</td>
-						<td>Gives unreasonable course requirements and assignments. <font color="red">*</font></td>
+						<td>Gives unreasonable course requirements and assignments. </td>
 						<td align="center"><input type="radio" name="part3a_25" value="4"></input></td>
 						<td align="center"><input type="radio" name="part3a_25" value="3"></input></td>
 						<td align="center"><input type="radio" name="part3a_25" value="2"></input></td>
@@ -613,7 +613,7 @@
 					</tr>
 					<tr>
 						<td>26.</td>
-						<td>Uses comprehensive, up-to-date and relevant reading list. <font color="red">*</font></td>
+						<td>Uses comprehensive, up-to-date and relevant reading list. </td>
 						<td align="center"><input type="radio" name="part3a_26" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_26" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_26" value="3"></input></td>

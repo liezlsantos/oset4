@@ -98,141 +98,75 @@ class UPSET_model extends CI_Model
 		$this->db->update('class', $value);
 	}
 	
+	public function checkIfEvaluated($oset_class_id, $student_id)
+	{
+		$sql = $this->db->query("SELECT evaluated FROM classlist WHERE oset_class_id = '$oset_class_id' AND student_id='$student_id'");
+		return $sql->row()->evaluated;
+	}
+	
 	//for reports
 	public function getReportPerClassData($oset_class_id)
 	{
 		for($i = 1; $i <= 6; $i++)
-			$data['part1_'.$i] = array('NR'=> 0, 1=>0, 2=>0, 3=>0, 4=>0, 5=>0);	
+			$data['part1_'.$i] = array(0=> 0, 1=>0, 2=>0, 3=>0, 4=>0, 5=>0);	
 	
 		$data['part1_7'] = array('NR'=> 0, 0=>0, 1=>0, '2-3'=>0, '4-5'=>0, 6=>0);	
 		$data['part1_8'] = array('NR'=> 0, 0=>0, 1=>0, '2-3'=>0, '4-5'=>0, 6=>0);	
 		$data['part1_9'] = array('NR'=> 0, '1.0'=>0, '1.25'=>0, '1.5'=>0, '1.75'=>0, '2.0'=>0, '2.25'=>0, '2.5'=>0, '2.75'=>0, '3.0'=>0, 'INC'=>0);	
 		
 		for($i = 1; $i <= 7; $i++)
-			$data['part2a_'.$i] = array('NR'=> 0, 1=>0, 2=>0, 3=>0, 4=>0);	
+			$data['part2a_'.$i] = array(0=> 0, 1=>0, 2=>0, 3=>0, 4=>0);	
 		
 		$data['part2b_1'] = array('yes'=>0, 'no'=>0);
 		$data['part2b_1_1'] = array('yes'=>0, 'no'=>0);
 		$data['part2b_1_1_2'] = array('yes'=>0, 'no'=>0);
-		$data['part2b_2'] = array('Too fast'=>0, 'Fast'=>0, 'Just right'=>0, 'Slow'=>0, 'Too slow'=>0, 'Others'=>0);
-		$data['part2b_3'] = array('Very much'=>0, 'Much'=>0, 'Some'=>0, 'Very little'=>0, 'Nothing'=>0);
-		$data['part2b_4'] = array('Very much'=>0, 'Much'=>0, 'Moderately'=>0, 'Slightly'=>0, 'Not at all'=>0);
+		$data['part2b_2'] = array('NR'=>0, 'Too fast'=>0, 'Fast'=>0, 'Just right'=>0, 'Slow'=>0, 'Too slow'=>0, 'Others'=>0);
+		$data['part2b_3'] = array('NR'=>0, 'Very much'=>0, 'Much'=>0, 'Some'=>0, 'Very little'=>0, 'Nothing'=>0);
+		$data['part2b_4'] = array('NR'=>0, 'Very much'=>0, 'Much'=>0, 'Moderately'=>0, 'Slightly'=>0, 'Not at all'=>0);
 		$data['part2b_5'] = "<br/>";
 		$data['part2b_6'] = "<br/>";
 
 		for($i = 1; $i <= 26; $i++)
-			$data['part3a_'.$i] = array('NR'=> 0, 1=>0, 2=>0, 3=>0, 4=>0);	
+			$data['part3a_'.$i] = array(0=> 0, 1=>0, 2=>0, 3=>0, 4=>0);	
 	
-		$data['part3b_1'] = array(0=>0, 1=>0, '2-3'=>0, '4-5'=>0, 6=>0);	
-		$data['part3b_2'] = array(0=>0, 1=>0, '2-3'=>0, '4-5'=>0, 6=>0);
-		$data['part3b_3'] = array('Too early'=>0, 'Early'=>0, 'On time'=>0, 'Late'=>0, 'Very late'=>0);
+		$data['part3b_1'] = array('NR'=>0, 0=>0, 1=>0, '2-3'=>0, '4-5'=>0, 6=>0);	
+		$data['part3b_2'] = array('NR'=>0, 0=>0, 1=>0, '2-3'=>0, '4-5'=>0, 6=>0);
+		$data['part3b_3'] = array('NR'=>0, 'Too early'=>0, 'Early'=>0, 'On time'=>0, 'Late'=>0, 'Very late'=>0);
 		$data['part3b_4'] = array('recitation'=>0, 'quizzes'=>0, 'midterms'=>0, 'finals'=>0, 'reports'=>0, 'papers'=>0, 'others'=>0);
-		$data['part3b_5'] = array('One week'=>0, 'Two weeks'=>0, 'One month'=>0, 'More than one month'=>0, 'Never'=>0);
-		$data['part3b_6_1'] = array('Always'=>0, 'Usually'=>0, 'Sometimes'=>0, 'Rarely'=>0, 'Never'=>0);	
-		$data['part3b_7'] =  array('The best'=>0, 'Among the best'=>0, 'Average'=>0, 'Among the worst'=>0, 'The worst'=>0);	
+		$data['part3b_5'] = array('NR'=>0, 'One week'=>0, 'Two weeks'=>0, 'One month'=>0, 'More than one month'=>0, 'Never'=>0);
+		$data['part3b_6_1'] = array('NR'=>0, 'Always'=>0, 'Usually'=>0, 'Sometimes'=>0, 'Rarely'=>0, 'Never'=>0);	
+		$data['part3b_7'] =  array('NR'=>0, 'The best'=>0, 'Among the best'=>0, 'Average'=>0, 'Among the worst'=>0, 'The worst'=>0);	
 		$data['part3c'] = "<br/>";
 		
 		$sql = $this->db->query("SELECT * FROM up_set WHERE oset_class_id ='$oset_class_id'");
 		
 		foreach ($sql->result() as $row)
 		{
-			for($i = 1; $i <= 6; $i++)
+			for($i = 1; $i <= 9; $i++)
 			{
 				$part="part1_".$i;
-				switch($row->$part){
-					case '0': $data['part1_'.$i]['NR']++; break;
-					case '1': $data['part1_'.$i][1]++; break;
-					case '2': $data['part1_'.$i][2]++; break;
-					case '3': $data['part1_'.$i][3]++; break;
-					case '4': $data['part1_'.$i][4]++; break;
-					case '5': $data['part1_'.$i][5]++; break;
-				}
+				$data[$part][$row->$part]++; 
 			}
 			
-			switch($row->part1_7){
-				case 'NR': $data['part1_7']['NR']++; break;
-				case '0': $data['part1_7'][0]++; break;
-				case '1': $data['part1_7'][1]++; break;
-				case '2-3': $data['part1_7']['2-3']++; break;
-				case '4-5': $data['part1_7']['4-5']++; break;
-				case '6': $data['part1_7'][6]++; break;
-			}
-			
-			switch($row->part1_8){
-				case 'NR': $data['part1_8']['NR']++; break;
-				case '0': $data['part1_8'][0]++; break;
-				case '1': $data['part1_8'][1]++; break;
-				case '2-3': $data['part1_8']['2-3']++; break;
-				case '4-5': $data['part1_8']['4-5']++; break;
-				case '6': $data['part1_8'][6]++; break;
-			}
-			
-			switch($row->part1_9){
-				case 'NR': $data['part1_8']['NR']++; break;
-				case '1.0': $data['part1_9']['1.0']++; break;
-				case '1.25': $data['part1_9']['1.25']++; break;
-				case '1.5': $data['part1_9']['1.5']++; break;
-				case '1.75': $data['part1_9']['1.75']++; break;
-				case '2.0': $data['part1_9']['2.0']++; break;
-				case '2.25': $data['part1_9']['2.25']++; break;
-				case '2.5': $data['part1_9']['2.5']++; break;
-				case '2.75': $data['part1_9']['2.75']++; break;
-				case '3.0': $data['part1_9']['3.0']++; break;
-				case 'INC': $data['part1_9']['INC']++; break;
-			}
-
 			for($i = 1; $i <= 7; $i++)
 			{
 				$part="part2a_".$i;
-				switch($row->$part){
-					case '0': $data['part2a_'.$i]['NR']++; break;
-					case '1': $data['part2a_'.$i][1]++; break;
-					case '2': $data['part2a_'.$i][2]++; break;
-					case '3': $data['part2a_'.$i][3]++; break;
-					case '4': $data['part2a_'.$i][4]++; break;
-				}
+				$data[$part][$row->$part]++; 
 			}
 			
-			switch($row->part2b_1){
-				case 'yes': $data['part2b_1']['yes']++; break;
-				case 'no': $data['part2b_1']['no']++; break;
+			for($i = 2; $i <= 4; $i++)
+			{
+				$part="part2b_".$i;
+				$data[$part][$row->$part]++; 
 			}
 			
-			switch($row->part2b_1_1){
-				case 'yes': $data['part2b_1_1']['yes']++; break;
-				case 'no': $data['part2b_1_1']['no']++; break;
-			}
+			if($row->part2b_1)
+				$data['part2b_1'][$row->part2b_1]++; 
+			if($row->part2b_1_1)
+				$data['part2b_1_1'][$row->part2b_1_1]++; 
+			if($row->part2b_1_1_2)
+				$data['part2b_1_1_2'][$row->part2b_1_1_2]++; 
 			
-			switch($row->part2b_1_1_2){
-				case 'yes': $data['part2b_1_1_2']['yes']++; break;
-				case 'no': $data['part2b_1_1_2']['no']++; break;
-			}
-
-			switch($row->part2b_2){
-				case 'Too fast': $data['part2b_2']['Too fast']++; break;
-				case 'Fast': $data['part2b_2']['Fast']++; break;
-				case 'Just right': $data['part2b_2']['Just right']++; break;
-				case 'Slow': $data['part2b_2']['Slow']++; break;
-				case 'Too slow': $data['part2b_2']['Too slow']++; break;
-				default: $data['part2b_2']['Others']++; break;
-			}
-			
-			switch($row->part2b_3){
-				case 'Very much': $data['part2b_3']['Very much']++; break;
-				case 'Much': $data['part2b_3']['Much']++; break;
-				case 'Some': $data['part2b_3']['Some']++; break;
-				case 'Very little': $data['part2b_3']['Very little']++; break;
-				case 'Nothing': $data['part2b_3']['Nothing']++; break;
-			}
-
-			switch($row->part2b_4){
-				case 'Very much': $data['part2b_4']['Very much']++; break;
-				case 'Much': $data['part2b_4']['Much']++; break;
-				case 'Moderately': $data['part2b_4']['Moderately']++; break;
-				case 'Slightly': $data['part2b_4']['Slightly']++; break;
-				case 'Not at all': $data['part2b_4']['Not at all']++; break;
-			}
-
 			if($row->part2b_5)
 				$data['part2b_5'] .= $row->part2b_5.'<br/>';
 			if($row->part2b_6)
@@ -241,38 +175,20 @@ class UPSET_model extends CI_Model
 			for($i = 1; $i <= 26; $i++)
 			{
 				$part="part3a_".$i;
-				switch($row->$part){
-					case '0': $data['part3a_'.$i]['NR']++; break;
-					case '1': $data['part3a_'.$i][1]++; break;
-					case '2': $data['part3a_'.$i][2]++; break;
-					case '3': $data['part3a_'.$i][3]++; break;
-					case '4': $data['part3a_'.$i][4]++; break;
+				$data[$part][$row->$part]++; 
+			}
+			
+			for($i = 1; $i <= 7; $i++)
+			{
+				if($i!=4)
+				{
+					$part="part3b_".$i;
+					if($i == 6)
+						$part="part3b_6_1";
+					$data[$part][$row->$part]++; 
 				}
 			}
 			
-			switch($row->part3b_1){
-				case '0': $data['part3b_1'][0]++; break;
-				case '1': $data['part3b_1'][1]++; break;
-				case '2-3': $data['part3b_1']['2-3']++; break;
-				case '4-5': $data['part3b_1']['4-5']++; break;
-				case '6': $data['part3b_1'][6]++; break;
-			}
-			
-			switch($row->part3b_2){
-				case '0': $data['part3b_2'][0]++; break;
-				case '1': $data['part3b_2'][1]++; break;
-				case '2-3': $data['part3b_2']['2-3']++; break;
-				case '4-5': $data['part3b_2']['4-5']++; break;
-				case '6': $data['part3b_2'][6]++; break;
-			}
-			
-			switch($row->part3b_3){
-				case 'Too early': $data['part3b_3']['Too early']++; break;
-				case 'On time': $data['part3b_3']['On time']++; break;
-				case 'Late': $data['part3b_3']['Late']++; break;
-				case 'Very late': $data['part3b_3']['Very late']++; break;
-			}
-
 			$other = $row->part3b_4;
 			if(strpos($row->part3b_4, 'recitation') !== FALSE) 
 			{
@@ -307,33 +223,8 @@ class UPSET_model extends CI_Model
 			if($other = trim(str_replace(";", "", $other)))
 				$data['part3b_4']['others']++;
 			
-			switch($row->part3b_5){
-				case 'One week': $data['part3b_5']['One week']++; break;
-				case 'Two weeks': $data['part3b_5']['Two weeks']++; break;
-				case 'One month': $data['part3b_5']['One month']++; break;
-				case 'More than one month': $data['part3b_5']['More than one month']++; break;
-				case 'Never': $data['part3b_5']['Never']++; break;
-			}
-			
-			switch($row->part3b_6_1){
-				case 'Always': $data['part3b_6_1']['Always']++; break;
-				case 'Usually': $data['part3b_6_1']['Usually']++; break;
-				case 'Sometimes': $data['part3b_6_1']['Sometimes']++; break;
-				case 'Rarely': $data['part3b_6_1']['Rarely']++; break;
-				case 'Never': $data['part3b_6_1']['Never']++; break;
-			}
-			
-			switch($row->part3b_7){
-				case 'The best': $data['part3b_7']['The best']++; break;
-				case 'Among the best': $data['part3b_7']['Among the best']++; break;
-				case 'Average': $data['part3b_7']['Average']++; break;
-				case 'Among the worst': $data['part3b_7']['Among the worst']++; break;
-				case 'The worst': $data['part3b_7']['The Worst']++; break;
-			}
-				
 			if($row->part3c)
 				$data['part3c'] .= $row->part3c.'<br/>';
-			
 		}
 		return $data;
 	}

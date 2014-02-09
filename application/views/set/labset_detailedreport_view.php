@@ -234,8 +234,7 @@
 			<td><?php echo $part2a_3['3']; $sum+= $part2a_3['3']*3; $count+=$part2a_3['3'];?></td>
 			<td><?php echo $part2a_3['4']; $sum+= $part2a_3['4']*4; $count+=$part2a_3['4'];?></td>
 			<td><?php  if($count != 0) echo round($ave2[3] = $sum/$count, 4); else echo 0;?></td>
-		</tr>	
-			
+		</tr>		
 		<tr>
 			<td>4.</td>
 			<td>Even if this course were not required, it would still be worthwhile taking it.</td>
@@ -256,28 +255,6 @@
 			<td><?php echo $part2a_5['3']; $sum+= $part2a_5['3']*3; $count+=$part2a_5['3'];?></td>
 			<td><?php echo $part2a_5['4']; $sum+= $part2a_5['4']*4; $count+=$part2a_5['4'];?></td>
 			<td><?php  if($count != 0) echo round($ave2[5] = $sum/$count, 4); else echo 0;?></td>
-		</tr>
-		
-		<tr>
-			<td>6.</td>
-			<td>This course stimulates me to think creatively.</td>
-			<td><?php echo $part2a_6[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part2a_6['1']; $sum+= $part2a_6['1']; $count+=$part2a_6['1']; ?></td>
-			<td><?php echo $part2a_6['2']; $sum+= $part2a_6['2']*2; $count+=$part2a_6['2'];?></td>
-			<td><?php echo $part2a_6['3']; $sum+= $part2a_6['3']*3; $count+=$part2a_6['3'];?></td>
-			<td><?php echo $part2a_6['4']; $sum+= $part2a_6['4']*4; $count+=$part2a_6['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave2[6] = $sum/$count, 4); else echo 0;?></td>
-		</tr>
-		
-		<tr>
-			<td>7.</td>
-			<td>This course develops critical thinking.</td>
-			<td><?php echo $part2a_7[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part2a_7['1']; $sum+= $part2a_7['1']; $count+=$part2a_7['1']; ?></td>
-			<td><?php echo $part2a_7['2']; $sum+= $part2a_7['2']*2; $count+=$part2a_7['2'];?></td>
-			<td><?php echo $part2a_7['3']; $sum+= $part2a_7['3']*3; $count+=$part2a_7['3'];?></td>
-			<td><?php echo $part2a_7['4']; $sum+= $part2a_7['4']*4; $count+=$part2a_7['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave2[7] = $sum/$count, 4); else echo 0;?></td>
 		</tr>
 	</table>
 	
@@ -401,7 +378,7 @@
 		<td colspan="8"><br/>
 		&nbsp; &nbsp; 0 - [NA/No Response] &nbsp; &nbsp; 1 - [Strongly Agree] &nbsp;&nbsp; 2 - [Agree] &nbsp;&nbsp; 3 - [Disagree] &nbsp;&nbsp; 4 - [Strongly Disagree]
 		<br/><br/>
-		&nbsp; &nbsp;<span style="font-size: 12px">Reverse encoding for negatively oriented questions</span>
+		&nbsp; &nbsp; <span style="font-size: 12px">Reverse encoding for negatively oriented questions</span>
 		<br/><br/>
 		</td>
 		</tr>
@@ -416,17 +393,17 @@
 		</tr>
 		<tr>
 			<td width="2%">1.</td>
-			<td>Explains the course objectives, expectations and requirements of the course</td>
-			<td width="5%"><?php echo $part3a_1[0]; ?></td>
-			<td width="5%"><?php $sum = 0; $count = 0; echo $part3a_1['1']; $sum+= $part3a_1['1']; $count+=$part3a_1['1']; ?></td>
-			<td width="5%"><?php echo $part3a_1['2']; $sum+= $part3a_1['2']*2; $count+=$part3a_1['2'];?></td>
-			<td width="5%"><?php echo $part3a_1['3']; $sum+= $part3a_1['3']*3; $count+=$part3a_1['3'];?></td>
-			<td width="5%"><?php echo $part3a_1['4']; $sum+= $part3a_1['4']*4; $count+=$part3a_1['4'];?></td>
+			<td>Explains the course objectives, grading system and policies</td>
+			<td width="6%"><?php echo $part3a_1[0]; ?></td>
+			<td width="6%"><?php $sum = 0; $count = 0; echo $part3a_1['1']; $sum+= $part3a_1['1']; $count+=$part3a_1['1']; ?></td>
+			<td width="6%"><?php echo $part3a_1['2']; $sum+= $part3a_1['2']*2; $count+=$part3a_1['2'];?></td>
+			<td width="6%"><?php echo $part3a_1['3']; $sum+= $part3a_1['3']*3; $count+=$part3a_1['3'];?></td>
+			<td width="6%"><?php echo $part3a_1['4']; $sum+= $part3a_1['4']*4; $count+=$part3a_1['4'];?></td>
 			<td width="10%"><?php  if($count != 0) echo round($ave[1] = $sum/$count, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>2.</td>
-			<td>Comes to class unprepared for the lesson.</td>
+			<td>Gives preliminary instructions and precautions when necessary</td>
 			<td><?php echo $part3a_2[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_2['1']; $sum+= $part3a_2['1']; $count+=$part3a_2['1']; ?></td>
 			<td><?php echo $part3a_2['2']; $sum+= $part3a_2['2']*2; $count+=$part3a_2['2'];?></td>
@@ -437,7 +414,7 @@
 		</tr>
 		<tr>
 			<td>3.</td>
-			<td>Presents the subject matter clearly and systematically.</td>
+			<td>Checks student preparation for the laboratory activity</td>
 			<td><?php echo $part3a_3[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_3['1']; $sum+= $part3a_3['1']; $count+=$part3a_3['1']; ?></td>
 			<td><?php echo $part3a_3['2']; $sum+= $part3a_3['2']*2; $count+=$part3a_3['2'];?></td>
@@ -447,7 +424,7 @@
 		</tr>
 		<tr>
 			<td>4.</td>
-			<td>Relates the course to other fields and current issues/concerns.</td>
+			<td>Explains the proper use of the apparatus to students</td>
 			<td><?php echo $part3a_4[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_4['1']; $sum+= $part3a_4['1']; $count+=$part3a_4['1']; ?></td>
 			<td><?php echo $part3a_4['2']; $sum+= $part3a_4['2']*2; $count+=$part3a_4['2'];?></td>
@@ -457,7 +434,7 @@
 		</tr>
 		<tr>
 			<td>5.</td>
-			<td>Fosters a stimulating atmosphere which encourages students to participate in class discussions/activities.</td>
+			<td>Supervises students' activities</td>
 			<td><?php echo $part3a_5[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_5['1']; $sum+= $part3a_5['1']; $count+=$part3a_5['1']; ?></td>
 			<td><?php echo $part3a_5['2']; $sum+= $part3a_5['2']*2; $count+=$part3a_5['2'];?></td>
@@ -467,7 +444,7 @@
 		</tr>
 		<tr>
 			<td>6.</td>
-			<td>Stimulates the students to study more about the subject.</td>
+			<td>Utilizes laboratory time for the maximum</td>
 			<td><?php echo $part3a_6[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_6['1']; $sum+= $part3a_6['1']; $count+=$part3a_6['1']; ?></td>
 			<td><?php echo $part3a_6['2']; $sum+= $part3a_6['2']*2; $count+=$part3a_6['2'];?></td>
@@ -478,7 +455,7 @@
 		</tr>
 		<tr>
 			<td>7.</td>
-			<td>Does not encourage studetns to do their best.</td>
+			<td>Devotes enough time to each experiment</td>
 			<td><?php echo $part3a_7[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_7['1']; $sum+= $part3a_7['1']; $count+=$part3a_7['1']; ?></td>
 			<td><?php echo $part3a_7['2']; $sum+= $part3a_7['2']*2; $count+=$part3a_7['2'];?></td>
@@ -488,7 +465,7 @@
 		</tr>
 		<tr>
 			<td>8.</td>
-			<td>Speaks clearly and audibly.</td>
+			<td>Sees to it that students leave their areas in good order</td>
 			<td><?php echo $part3a_8[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_8['1']; $sum+= $part3a_8['1']; $count+=$part3a_8['1']; ?></td>
 			<td><?php echo $part3a_8['2']; $sum+= $part3a_8['2']*2; $count+=$part3a_8['2'];?></td>
@@ -498,7 +475,7 @@
 		</tr>
 		<tr>
 			<td>9.</td>
-			<td>Uses appropriate teaching techniques and instructional materials.</td>
+			<td>Clarifies and reinforces discussions during oral reports</td>
 			<td><?php echo $part3a_9[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_9['1']; $sum+= $part3a_9['1']; $count+=$part3a_9['1']; ?></td>
 			<td><?php echo $part3a_9['2']; $sum+= $part3a_9['2']*2; $count+=$part3a_9['2'];?></td>
@@ -508,7 +485,7 @@
 		</tr>
 		<tr>
 			<td>10.</td>
-			<td>Does not respect students' ideas and viewpoints.</td>
+			<td>Asks relevant questions during examination</td>
 			<td><?php echo $part3a_10[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_10['1']; $sum+= $part3a_10['1']; $count+=$part3a_10['1']; ?></td>
 			<td><?php echo $part3a_10['2']; $sum+= $part3a_10['2']*2; $count+=$part3a_10['2'];?></td>
@@ -518,7 +495,7 @@
 		</tr>
 		<tr>
 			<td>11.</td>
-			<td>Explains concepts again when he/she notes that the concept is not well understood.</td>
+			<td>Treats students tactfully, does not embarrass them</td>
 			<td><?php echo $part3a_11[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_11['1']; $sum+= $part3a_11['1']; $count+=$part3a_11['1']; ?></td>
 			<td><?php echo $part3a_11['2']; $sum+= $part3a_11['2']*2; $count+=$part3a_11['2'];?></td>
@@ -528,7 +505,7 @@
 		</tr>
 		<tr>
 			<td>12.</td>
-			<td>Identifies and stresses important points.</td>
+			<td>Invites respect thought behavior and general appearance</td>
 			<td><?php echo $part3a_12[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_12['1']; $sum+= $part3a_12['1']; $count+=$part3a_12['1']; ?></td>
 			<td><?php echo $part3a_12['2']; $sum+= $part3a_12['2']*2; $count+=$part3a_12['2'];?></td>
@@ -538,7 +515,7 @@
 		</tr>
 		<tr>
 			<td>13.</td>
-			<td>Demonstrates thorough and broad knowledge of the subject of the course.</td>
+			<td>Maintains an orderly atmosphere in the laboratory</td>
 			<td><?php echo $part3a_13[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_13['1']; $sum+= $part3a_13['1']; $count+=$part3a_13['1']; ?></td>
 			<td><?php echo $part3a_13['2']; $sum+= $part3a_13['2']*2; $count+=$part3a_13['2'];?></td>
@@ -548,7 +525,7 @@
 		</tr>
 		<tr>
 			<td>14.</td>
-			<td>Uses evaluation measures and tests which adequately sample what was covered in the course.</td>
+			<td>Is firm and consistent; strict but reasonable in disciplining students</td>
 			<td><?php echo $part3a_14[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_14['1']; $sum+= $part3a_14['1']; $count+=$part3a_14['1']; ?></td>
 			<td><?php echo $part3a_14['2']; $sum+= $part3a_14['2']*2; $count+=$part3a_14['2'];?></td>
@@ -558,7 +535,7 @@
 		</tr>
 		<tr>
 			<td>15.</td>
-			<td>Gives constructive criticism of students' works.</td>
+			<td>Motivates the student to think critically</td>
 			<td><?php echo $part3a_15[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_15['1']; $sum+= $part3a_15['1']; $count+=$part3a_15['1']; ?></td>
 			<td><?php echo $part3a_15['2']; $sum+= $part3a_15['2']*2; $count+=$part3a_15['2'];?></td>
@@ -568,7 +545,7 @@
 		</tr>
 		<tr>
 			<td width="2%">16.</td>
-			<td width="62%">Is firm and consistent; strict but reasonable in disciplining students.</td>
+			<td width="62%">Is able to communicate effectively</td>
 			<td><?php echo $part3a_16[0]; ?></td>
 			<td><?php $sum = 0; $count = 0; echo $part3a_16['1']; $sum+= $part3a_16['1']; $count+=$part3a_16['1']; ?></td>
 			<td><?php echo $part3a_16['2']; $sum+= $part3a_16['2']*2; $count+=$part3a_16['2'];?></td>
@@ -576,106 +553,7 @@
 			<td><?php echo $part3a_16['4']; $sum+= $part3a_16['4']*4; $count+=$part3a_16['4'];?></td>
 			<td><?php  if($count != 0) echo round($ave[16] = $sum/$count, 4); else echo 0;?></td>
 		</tr>
-		<tr>
-			<td width="2%">17.</td>
-			<td width="62%">Does not invite questions from students.</td>
-			<td><?php echo $part3a_17[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_17['1']; $sum+= $part3a_17['1']; $count+=$part3a_17['1']; ?></td>
-			<td><?php echo $part3a_17['2']; $sum+= $part3a_17['2']*2; $count+=$part3a_17['2'];?></td>
-			<td><?php echo $part3a_17['3']; $sum+= $part3a_17['3']*3; $count+=$part3a_17['3'];?></td>
-			<td><?php echo $part3a_17['4']; $sum+= $part3a_17['4']*4; $count+=$part3a_17['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[17] = $sum/$count, 4); else echo 0;?></td>
-		</tr>
-		<tr>
-			<td width="2%">18.</td>
-			<td width="62%">Explains the grading procedure ans standards clearly and applies them.</td>
-			<td><?php echo $part3a_18[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_18['1']; $sum+= $part3a_18['1']; $count+=$part3a_18['1']; ?></td>
-			<td><?php echo $part3a_18['2']; $sum+= $part3a_18['2']*2; $count+=$part3a_18['2'];?></td>
-			<td><?php echo $part3a_18['3']; $sum+= $part3a_18['3']*3; $count+=$part3a_18['3'];?></td>
-			<td><?php echo $part3a_18['4']; $sum+= $part3a_18['4']*4; $count+=$part3a_18['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[18] = $sum/$count, 4); else echo 0;?></td>
-		</tr>
-		<tr>
-			<td width="2%">19.</td>
-			<td width="62%">Does not invite through behaviour and general appearance.</td>
-			<td><?php echo $part3a_19[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_19['1']; $sum+= $part3a_19['1']; $count+=$part3a_19['1']; ?></td>
-			<td><?php echo $part3a_19['2']; $sum+= $part3a_19['2']*2; $count+=$part3a_19['2'];?></td>
-			<td><?php echo $part3a_19['3']; $sum+= $part3a_19['3']*3; $count+=$part3a_19['3'];?></td>
-			<td><?php echo $part3a_19['4']; $sum+= $part3a_19['4']*4; $count+=$part3a_19['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[19] = $sum/$count, 4); else echo 0;?></td>
-		</tr>
-		<tr>
-			<td width="2%">20.</td>
-			<td width="62%">Explains the grading procedure ans standards clearly and applies them.</td>
-			<td><?php echo $part3a_20[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_20['1']; $sum+= $part3a_20['1']; $count+=$part3a_20['1']; ?></td>
-			<td><?php echo $part3a_20['2']; $sum+= $part3a_20['2']*2; $count+=$part3a_20['2'];?></td>
-			<td><?php echo $part3a_20['3']; $sum+= $part3a_20['3']*3; $count+=$part3a_20['3'];?></td>
-			<td><?php echo $part3a_20['4']; $sum+= $part3a_20['4']*4; $count+=$part3a_20['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[20] = $sum/$count, 4); else echo 0;?></td>
-		</tr>
-		<tr>
-			<td width="2%">21.</td>
-			<td width="62%">Admits errors in the presentation of subject matter, and in evaluation.</td>
-			<td><?php echo $part3a_21[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_21['1']; $sum+= $part3a_21['1']; $count+=$part3a_21['1']; ?></td>
-			<td><?php echo $part3a_21['2']; $sum+= $part3a_21['2']*2; $count+=$part3a_21['2'];?></td>
-			<td><?php echo $part3a_21['3']; $sum+= $part3a_21['3']*3; $count+=$part3a_21['3'];?></td>
-			<td><?php echo $part3a_21['4']; $sum+= $part3a_21['4']*4; $count+=$part3a_21['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[21] = $sum/$count, 4); else echo 0;?></td>
-		</tr>
-		<tr>
-			<td width="2%">22.</td>
-			<td width="62%">Answers students' questions adequately.</td>
-			<td><?php echo $part3a_22[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_22['1']; $sum+= $part3a_22['1']; $count+=$part3a_22['1']; ?></td>
-			<td><?php echo $part3a_22['2']; $sum+= $part3a_22['2']*2; $count+=$part3a_22['2'];?></td>
-			<td><?php echo $part3a_22['3']; $sum+= $part3a_22['3']*3; $count+=$part3a_22['3'];?></td>
-			<td><?php echo $part3a_22['4']; $sum+= $part3a_22['4']*4; $count+=$part3a_22['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[22] = $sum/$count, 4); else echo 0;?></td>
-		</tr>
-		<tr>
-			<td width="2%">23.</td>
-			<td width="62%">Is not available for consultation.</td>
-			<td><?php echo $part3a_23[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_23['1']; $sum+= $part3a_23['1']; $count+=$part3a_23['1']; ?></td>
-			<td><?php echo $part3a_23['2']; $sum+= $part3a_23['2']*2; $count+=$part3a_23['2'];?></td>
-			<td><?php echo $part3a_23['3']; $sum+= $part3a_23['3']*3; $count+=$part3a_23['3'];?></td>
-			<td><?php echo $part3a_23['4']; $sum+= $part3a_23['4']*4; $count+=$part3a_23['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[23] = $sum/$count, 4); else echo 0;?></td>
-		</tr>
-		<tr>
-			<td width="2%">24.</td>
-			<td width="62%">Is able to make students comprehend and appreciate complex ideas.</td>
-			<td><?php echo $part3a_24[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_24['1']; $sum+= $part3a_24['1']; $count+=$part3a_24['1']; ?></td>
-			<td><?php echo $part3a_24['2']; $sum+= $part3a_24['2']*2; $count+=$part3a_24['2'];?></td>
-			<td><?php echo $part3a_24['3']; $sum+= $part3a_24['3']*3; $count+=$part3a_24['3'];?></td>
-			<td><?php echo $part3a_24['4']; $sum+= $part3a_24['4']*4; $count+=$part3a_24['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[24] = $sum/$count, 4); else echo 0;?></td>
-		</tr>
-		<tr>
-			<td width="2%">25.</td>
-			<td width="62%">Gives unreasonable course requirements and assignments.</td>
-			<td><?php echo $part3a_25[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_25['1']; $sum+= $part3a_25['1']; $count+=$part3a_25['1']; ?></td>
-			<td><?php echo $part3a_25['2']; $sum+= $part3a_25['2']*2; $count+=$part3a_25['2'];?></td>
-			<td><?php echo $part3a_25['3']; $sum+= $part3a_25['3']*3; $count+=$part3a_25['3'];?></td>
-			<td><?php echo $part3a_25['4']; $sum+= $part3a_25['4']*4; $count+=$part3a_25['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[25] = $sum/$count, 4); else echo 0;?></td>
-		</tr>
-		<tr>
-			<td width="2%">26.</td>
-			<td>Uses comprehensive, up-to-date and relevant reading list.</td>
-			<td><?php echo $part3a_26[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_26['1']; $sum+= $part3a_26['1']; $count+=$part3a_26['1']; ?></td>
-			<td><?php echo $part3a_26['2']; $sum+= $part3a_26['2']*2; $count+=$part3a_26['2'];?></td>
-			<td><?php echo $part3a_26['3']; $sum+= $part3a_26['3']*3; $count+=$part3a_26['3'];?></td>
-			<td><?php echo $part3a_26['4']; $sum+= $part3a_26['4']*4; $count+=$part3a_26['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[26] = $sum/$count, 4); else echo 0;?></td>
-		</tr>
+
 	</table>
 	<br/>
 	<div align="right">Weighted Average (Part III-A): <?php echo round(array_sum($ave)/count($ave),4); ?> </div> 
@@ -717,55 +595,20 @@
 	<table class="records">
 		<tr>
 			<td colspan="2"></td>
-			<td>Too early</td>
 			<td>On time</td>
+			<td>Early</td>
 			<td>Late</td>
-			<td>Very Late</td>
 		</tr>
 		<tr>
 			<td width="2%">3.</td>
 			<td>The teacher generally dismissed the class</td>
-			<td width="8%"><?php echo $part3b_3['Too early']; ?></td>
 			<td width="8%"><?php echo $part3b_3['On time']; ?></td>
+			<td width="8%"><?php echo $part3b_3['Early']; ?></td>
 			<td width="8%"><?php echo $part3b_3['Late']; ?></td>
-			<td width="8%"><?php echo $part3b_3['Very late']; ?></td>
 		</tr>
 	</table>
 	
 	<br/>
-	<table class="records">
-		<tr>
-			<td rowspan="7" valign="top">4. What are the bases used by teacher for grading?</td>
-			<td>Recitation</td>
-			<td width="10%"><?php echo $part3b_4['recitation']; ?></td>
-		</tr>
-		<tr>
-			<td>Quizzes</td>
-			<td><?php echo $part3b_4['quizzes']; ?></td>
-		</tr>
-		<tr>
-			<td>Midterm exams</td>
-			<td><?php echo $part3b_4['midterms']; ?></td>
-		</tr>
-		<tr>
-			<td>Final exams</td>
-			<td><?php echo $part3b_4['finals']; ?></td>
-		</tr>
-		<tr>
-			<td>Reports</td>
-			<td><?php echo $part3b_4['reports']; ?></td>
-		</tr>
-		<tr>
-			<td>Papers</td>
-			<td><?php echo $part3b_4['papers']; ?></td>
-		</tr>
-		<tr>
-			<td>Others</td>
-			<td><?php echo $part3b_4['others']; ?></td>
-		</tr>
-	</table>
-	
-	<br/><br/>
 	<table class="records">
 		<tr>
 			<td colspan="2"></td>
@@ -776,13 +619,13 @@
 			<td width="10%">Never</td>
 		</tr>
 		<tr>
-			<td width="2%">5.</td>
+			<td width="2%">4.</td>
 			<td>How soon does the teacher post results or return corrected assignments, quizzes, exams, papers, etc.?</td>
-			<td><?php echo $part3b_5['One week']; ?></td>
-			<td><?php echo $part3b_5['Two weeks']; ?></td>
-			<td><?php echo $part3b_5['One month']; ?></td>
-			<td><?php echo $part3b_5['More than one month']; ?></td>
-			<td><?php echo $part3b_5['Never']; ?></td>
+			<td><?php echo $part3b_4['One week']; ?></td>
+			<td><?php echo $part3b_4['Two weeks']; ?></td>
+			<td><?php echo $part3b_4['One month']; ?></td>
+			<td><?php echo $part3b_4['More than one month']; ?></td>
+			<td><?php echo $part3b_4['Never']; ?></td>
 		</tr>
 	</table>
 	
@@ -797,13 +640,13 @@
 			<td width="10%">Never</td>
 		</tr>
 		<tr>
-			<td width="2%">6.</td>
+			<td width="2%">5.</td>
 			<td>Is the teacher fair in giving grades?</td>
-			<td><?php echo $part3b_6_1['Always']; ?></td>
-			<td><?php echo $part3b_6_1['Usually']; ?></td>
-			<td><?php echo $part3b_6_1['Sometimes']; ?></td>
-			<td><?php echo $part3b_6_1['Rarely']; ?></td>
-			<td><?php echo $part3b_6_1['Never']; ?></td>
+			<td><?php echo $part3b_5_1['Always']; ?></td>
+			<td><?php echo $part3b_5_1['Usually']; ?></td>
+			<td><?php echo $part3b_5_1['Sometimes']; ?></td>
+			<td><?php echo $part3b_5_1['Rarely']; ?></td>
+			<td><?php echo $part3b_5_1['Never']; ?></td>
 		</tr>
 	</table>
 	
@@ -818,13 +661,13 @@
 			<td width="10%">Worst</td>
 		</tr>
 		<tr>
-			<td width="2%">7.</td>
+			<td width="2%">6.</td>
 			<td>Among the teachers you have had, how would you rate this teacher?</td>
-			<td><?php echo $part3b_7['The best']; ?></td>
-			<td><?php echo $part3b_7['Among the best']; ?></td>
-			<td><?php echo $part3b_7['Average']; ?></td>
-			<td><?php echo $part3b_7['Among the worst']; ?></td>
-			<td><?php echo $part3b_7['The worst']; ?></td>
+			<td><?php echo $part3b_6['The best']; ?></td>
+			<td><?php echo $part3b_6['Among the best']; ?></td>
+			<td><?php echo $part3b_6['Average']; ?></td>
+			<td><?php echo $part3b_6['Among the worst']; ?></td>
+			<td><?php echo $part3b_6['The worst']; ?></td>
 		</tr>
 	</table>
 	<br/><br/>
