@@ -5,6 +5,7 @@ class Cas_set extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('report_per_class');
 		$this->load->model('classes');	
 		$this->load->model('set/cas_set_model');	
 	}
@@ -60,14 +61,25 @@ class Cas_set extends CI_Controller
 			
 			//compute score
 			$score = 0;
-			$countNR = 0;
-			for ($i = 1; $i <= 39; $i++)
+			
+			$dom1 = 0; $dom2 = 0; $dom3 = 0; $dom4 = 0; $dom5 = 0; $dom6 = 0; 
+			for($i = 1; $i <= 39; $i++)
 			{
-				if($data['part3_'.$i] == 0) 
-					$countNR++; 
-				$score += $data['part3_'.$i]; 
+				if($i <= 6)
+					$dom1 += $data['part3_'.$i]*6;
+				elseif($i <= 14)
+					$dom2 += $data['part3_'.$i]*3;
+				elseif($i <= 21)
+					$dom3 += $data['part3_'.$i]*4;
+				elseif($i <= 27)
+					$dom4 += $data['part3_'.$i];
+				elseif($i <= 33)
+					$dom5 += $data['part3_'.$i]*2;
+				else
+					$dom6 += $data['part3_'.$i]*5;
 			}
-			$score /= (39 - $countNR);
+			$score = 0;
+			$score = ($dom1 + $dom2 + $dom3 + $dom4 + $dom5 + $dom6)/136; 
 			
 			//save score
 			$data2['student_id'] = $user_data['student_id'];
@@ -94,7 +106,7 @@ class Cas_set extends CI_Controller
 		$class = $this->classes->getInformation($oset_class_id);
 		$filename = './pdf/report_per_class/'.$class['instructor_code'].'-'.$class['class_id'].'.pdf';
 		
-		//if(!file_exists($filename))
+		if(!file_exists($filename))
 		{
 			//pdf		
 			$this->load->helper(array('dompdf', 'file'));
@@ -109,19 +121,20 @@ class Cas_set extends CI_Controller
 				
 			//archive report
 			$html = $this->load->view('set/casset_detailedreport_view', $data, TRUE);
-			//echo $html;
 			$pdf_data = pdf_create($html, '' , FALSE);  
 			write_file($filename, $pdf_data);
 			
-			//save to db	
+			//save link to db	
 			$data = array('course' =>	$class['subject'].'-'.$class['section'],
 						  'sem_ay' => substr($class['class_id'], 0, 5), 
 						  'instructor' => $class['instructor_code'], 
-						  'pdf' => $filename);
+						  'pdf' => $filename,
+						  'college' => $class['college_code'],
+						  'department' => $class['department_code']);
 			
-			//$this->cas_set_model->saveReportPerClass($data);
+			$this->report_per_class->saveToDatabase($data);
 		}
-		//redirect(base_url($filename), 'refresh');
+		redirect(base_url($filename), 'refresh');
 	}
 	
 }

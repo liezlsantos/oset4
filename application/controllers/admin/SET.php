@@ -29,7 +29,8 @@ class SET extends CI_Controller
 		$this->faculty->deleteAll();
 		$this->college->resetDownloadStatus();
 		$this->student->deleteAll();
-	
+		$this->SET_model->resetSET();
+		
 		redirect('admin/SET', 'refresh');
 	}	
 }

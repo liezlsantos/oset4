@@ -307,7 +307,7 @@
 							'<tr>
 								<td>'.$i.'.</td>
 								<td>'.$question.'</td>';
-							if($i != 9 && $i != 18 && $i!=22 && $i!=27 && $i!=32)
+							if($i != 9 && $i != 18 && $i!=22 && $i!=21 && $i!=20 && $i!=27 && $i!=32)
 							{
 								echo'
 								<td align="center"><input type="radio" name="part3_'.$i.'" value="1"></input></td>

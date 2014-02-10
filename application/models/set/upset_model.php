@@ -227,13 +227,7 @@ class UPSET_model extends CI_Model
 				$data['part3c'] .= $row->part3c.'<br/>';
 		}
 		return $data;
-	}
-
-	public function saveReportPerClass($data)
-	{
-		$this->db->insert('report_per_class', $data);
-	}
-	
+	}	
 }
 ?>
 

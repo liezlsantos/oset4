@@ -85,7 +85,7 @@ class Login extends CI_Controller
 	public function logout()
 	{
 		$this->session->unset_userdata('logged_in');
-		if(!isset($_SESSION))
+		if(isset($_SESSION))
 		{
 			unset($_SESSION);
 			session_destroy();

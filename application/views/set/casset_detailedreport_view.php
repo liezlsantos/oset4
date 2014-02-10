@@ -256,10 +256,9 @@
 	<br/><br/>
 	<table class="records">
 		<tr>
-		<td colspan="10"><br/>
+		<td colspan="9"><br/>
 			<table>
 				<tr>
-					<td> 0 - [No Response] </td>
 					<td> 1 - [Strongly Agree] </td>
 					<td> 2 - [Moderately Agree] </td>
 					<td> 3 - [Somewhat Agree] </td>
@@ -274,7 +273,6 @@
 		</tr>
 		<tr>
 			<td colspan="2"></td>
-			<td width="4%">0</td>
 			<td width="4%">1</td>
 			<td width="4%">2</td>
 			<td width="4%">3</td>
@@ -328,10 +326,9 @@
 						 );
 						
 			$i = 1;
+			$ave = array();
 			foreach ($questions as $question)
 			{
-				$ave = array();
-				
 				$str = "part3_".$i;
 				$part = $$str;
 				
@@ -354,8 +351,18 @@
 				if($count != 0) 
 				{
 					$average = $sum/$count; 
-					if($average)
-						$ave[] = $average; 
+					if($i <= 6)
+						$ave[] = $average*6;
+					elseif($i <= 14)
+						$ave[] = $average*3;
+					elseif($i <= 21)
+						$ave[] = $average*4;
+					elseif($i <= 27)
+						$ave[] = $average;
+					elseif($i <= 33)
+						$ave[] = $average*2;
+					else
+						$ave[] = $average*5;
 				}
 				else
 				{
@@ -365,8 +372,7 @@
 				echo
 				'<tr>
 					 <td>'.$i.'.</td>
-					 <td width="42%">'.$question.'</td>
-					 <td>'.$part[0].'</td>
+					 <td width="51%">'.$question.'</td>
 					 <td>'.$part[1].'</td>
 					 <td>'.$part[2].'</td>
 					 <td>'.$part[3].'</td>
@@ -380,7 +386,10 @@
 		?>		
 	</table>
 		<br/>
-		<div align="right">Weighted Average (Part III): <?php if(isset($ave)){if($sum = array_sum($ave)) echo round($sum/count($ave), 4); else echo 0;} else echo 0; ?></div> 
+		<?php
+			$wa = array_sum($ave)/136; 
+		?>
+		<div align="right">Weighted Average (Part III): <?php echo round($wa, 4) ?></div> 
 		<br/><br/>
 	
 	<table class="records">

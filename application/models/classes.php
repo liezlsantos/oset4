@@ -47,7 +47,7 @@ class Classes extends CI_Model
 	public function getInformation($oset_class_id)
 	{
 		$sql = $this->db->query("SELECT faculty.name,
-		subject, section, set_instrument_id, no_of_respondents, instructor, class_id FROM 
+		subject, section, set_instrument_id, no_of_respondents, instructor, class_id, department_code, college_code FROM 
 		class, faculty WHERE oset_class_id = '$oset_class_id' 
 		AND instructor = instructor_code ORDER BY instructor ASC");
 		
@@ -63,6 +63,8 @@ class Classes extends CI_Model
 			$results['class_id'] = $row->class_id;
 			$results['set_instrument_id'] = $row->set_instrument_id;
 			$results['instructor'] = $row->name;
+			$results['department_code'] = $row->department_code;
+			$results['college_code'] = $row->college_code;
 			$results['instructor_code'] = $row->instructor;
 		}
 		return $results;
@@ -168,16 +170,10 @@ class Classes extends CI_Model
 	//score
 	public function getScore($oset_class_id)
 	{
-		$sql = $this->db->query("SELECT score FROM score_per_respondent WHERE oset_class_id = '$oset_class_id'");
-		if ($sql->num_rows() == 0){
-			return null;
-		}
-		
 		$score = 0;
-		foreach ($sql->result() as $row){
-			$score += $row->score;	
-		}
-		$score /= $sql->num_rows();
+		$sql = $this->db->query("SELECT AVG(score) average FROM `score_per_respondent` WHERE oset_class_id = '$oset_class_id' AND score > '0'");
+		if($sql->num_rows())
+			$score = $sql->row()->average;
 		return $score;
 	}
 	

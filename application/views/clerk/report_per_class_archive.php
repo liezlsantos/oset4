@@ -5,7 +5,21 @@
 
 	<body class="wrapper">
 		
-		<?php include('header.php'); ?>
+		<?php include('header.php'); 
+			function convertToString($sem_ay)
+			{ 
+				$sem = substr($sem_ay, 4, 1);
+				if($sem == 1)
+					$sem = "1st,";
+				else {
+					$sem = "2nd,";
+				}
+				$year = substr($sem_ay, 0, 4);
+				$year2 = $year+1;
+				
+				return ' '.$sem.' '.$year.'-'.$year2;
+			}
+		?>
 		
 		<div class = "right">
 		<h2>Class Detailed Report <?php echo "(".$user_college_name.")"; ?></h2>
@@ -13,28 +27,38 @@
 		<div class="tabs">
 		<table cellpadding="3">
 			<tr>
-			<td align = "center"><a href = "#"><div class = "selectedtabH">View Report</div></a>
-			<td align = "center"><a href = "<?php echo base_url('index.php/clerk/reportmanagement/reportperclassarchive');?>"><div class = "tabH">Search Report Archive</div></a>
+			<td align = "center"><a href = "<?php echo base_url('index.php/clerk/reportmanagement/reportperclass');?>"><div class = "tabH">View Report</div></a>
+			<td align = "center"><a href = "#"><div class = "selectedtabH">Search Report Archive</div></a>
 			</tr>
 		</table>
 		</div>
-		<?php 
-			$sem = substr($SET['semester'], 4, 1);
-			if($sem == 1)
-				$sem = "1st,";
-			else 
-				$sem = "2nd,";
-			$year = substr($SET['semester'], 0, 4);
-			$year2 = $year+1;
-		?>
 		<br/><br/>
-		<?php echo form_open('clerk/reportmanagement/searchreportperclass', array('onSubmit'=>true)); ?>
+		<?php echo form_open('clerk/reportmanagement/searchreportperclassarchive', array('onSubmit'=>true)); ?>
 		<table>
 			<tr>
 				<td>A.Y. Sem: </td>
-				<td><input type="text" size="15" value='<?php echo ' '.$sem.' '.$year.'-'.$year2; ?>' readOnly></td>
-				<td>&nbsp; Department: </td>
 				<td>
+					<select name="sem_ay">
+						<?php
+							if(!isset($search['sem_ay']))
+								$search['sem_ay'] = "";
+							if(isset($sem_ay))
+							{
+								foreach ($sem_ay as $s)
+								{
+									echo '<option value="'.$s.'"';
+									if($search['sem_ay'] == $s) 
+										echo " selected";
+									echo '>'.convertToString($s).'</option>';
+								}
+							}
+							else
+								echo '<option value ='.$SET['semester'].'>'.convertToString($SET['semester']).'</option>'
+						?>
+					</select>&nbsp; &nbsp;
+				</td>
+				<td>Department: </td>
+				<td width="220">
 					<select name="department">
 						<option value = "">All departments</option>
 						<?php
@@ -64,21 +88,21 @@
 			    echo '
 			    <table class="records">
 			    	<tr>
-			    	<th>Subject</th>
-			    	<th>Section</th>
+			    	<th>Course</th>
 			    	<th>Instructor</th>
+			    	<th>Department</th>
 			    	<th></th>
 			    	</tr>';
 				    	 
 			    	$i = 0;
-			    	foreach ($records['oset_class_id'] as $id)
+			    	foreach ($records['pdf'] as $link)
 					{
 						echo 
 							"<tr>
-								<td>".$records['subject'][$i]."</td>
-								<td>".$records['section'][$i]."</td>
+								<td>".$records['course'][$i]."</td>
 								<td>".$records['instructor'][$i]."</td>
-								<td><a target='_blank' href='".base_url('index.php/clerk/set/'.$records['controller_name'][$i].'/generateReportPerClass/'.$id)."'>View report</a></td>
+								<td>".$records['department'][$i]."</td>
+								<td><a target='_blank' href='".base_url($link)."'>View report</a></td>
 		  					 </tr>";
 							$i++;
 					}
@@ -86,7 +110,7 @@
 			}
 			else 
 			{
-				echo 'There is no class which evaluation process is already closed.';
+				echo 'No report found.';
 			}	
 		   ?>
 		</div>

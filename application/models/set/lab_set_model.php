@@ -177,11 +177,6 @@ class LAB_SET_model extends CI_Model
 		}
 		return $data;
 	}
-	
-	public function saveReportPerClass($data)
-	{
-		$this->db->insert('report_per_class', $data);
-	}
 }
 ?>
 

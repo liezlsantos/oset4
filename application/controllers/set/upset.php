@@ -7,6 +7,7 @@ class Upset extends CI_Controller
 		parent::__construct();
 		$this->load->model('classes');	
 		$this->load->model('set/upset_model');	
+		$this->load->model('report_per_class');
 	}
 
 	public function index() 
@@ -182,7 +183,7 @@ class Upset extends CI_Controller
 		$class = $this->classes->getInformation($oset_class_id);
 		$filename = './pdf/report_per_class/'.$class['instructor_code'].'-'.$class['class_id'].'.pdf';
 		
-		//if(!file_exists($filename))
+		if(!file_exists($filename))
 		{
 			//pdf		
 			$this->load->helper(array('dompdf', 'file'));
@@ -200,13 +201,15 @@ class Upset extends CI_Controller
 			$pdf_data = pdf_create($html, '' , FALSE);  
 			write_file($filename, $pdf_data);
 			
-			//save to db	
+			//save link to db	
 			$data = array('course' =>	$class['subject'].'-'.$class['section'],
 						  'sem_ay' => substr($class['class_id'], 0, 5), 
 						  'instructor' => $class['instructor_code'], 
-						  'pdf' => $filename);
+						  'pdf' => $filename,
+						  'college' => $class['college_code'],
+						  'department' => $class['department_code']);
 			
-			$this->upset_model->saveReportPerClass($data);
+			$this->report_per_class->saveToDatabase($data);
 		}
 		redirect(base_url($filename), 'refresh');
 	}

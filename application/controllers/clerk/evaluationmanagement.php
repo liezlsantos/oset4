@@ -56,9 +56,7 @@ class Evaluationmanagement extends CI_Controller
 	
 	public function closesubmit($college_code)
 	{
-		//compute score TO DO
-		$classes = $this->classes->getClassesByStatus(1, $college_code, "", "");
-		
+		$classes = $this->classes->getClassesByStatus(1, $college_code, "", "");	
 		$i = 0;
 		foreach ($classes['oset_class_id'] as $oset_class_id)
 		{
@@ -148,7 +146,7 @@ class Evaluationmanagement extends CI_Controller
 		$data = $this->session->userdata('logged_in'); 
 		$data['SET']=$this->SET_model->getRecords();
 
-		if(!file_exists('./pdf/students_with_unevaluated_classes.pdf'))
+		if(!file_exists('./pdf/students_with_unevaluated_classes_'.$data['user_college_code'].'.pdf'))
 			$this->updatePDFStudentStatus();
 			
 		$this->load->view('clerk/student_status', $data);
@@ -191,7 +189,7 @@ class Evaluationmanagement extends CI_Controller
 		$this->load->helper('file');
 		
 		$pdf_data = create_pdf($rows, '', false);  
-		write_file('./pdf/students_with_unevaluated_classes.pdf', $pdf_data);
+		write_file('./pdf/students_with_unevaluated_classes_'.$data['user_college_code'].'.pdf', $pdf_data);
 		
 		redirect('clerk/evaluationmanagement/studentstatus', 'refresh');
 	}

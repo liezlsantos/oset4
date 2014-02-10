@@ -28,4 +28,15 @@ class SET_model extends CI_Model
 		}
 		return $results;
 	}	
+	
+	public function resetSET()
+	{
+		$this->db->query('TRUNCATE score_per_respondent');
+		$sql = $this->db->query('SELECT table_name FROM set_instrument');
+		if($sql->num_rows() > 0)
+		{
+			foreach ($sql->result() as $row)
+				$this->db->query('TRUNCATE '.$row->table_name);
+		}
+	}
 }

@@ -5,7 +5,8 @@ class Lab_set extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('classes');	
+		$this->load->model('classes');
+		$this->load->model('report_per_class');	
 		$this->load->model('set/lab_set_model');	
 	}
 
@@ -172,13 +173,15 @@ class Lab_set extends CI_Controller
 			$pdf_data = pdf_create($html, '' , FALSE);  
 			write_file($filename, $pdf_data);
 			
-			//save to db	
+			//save link to db	
 			$data = array('course' =>	$class['subject'].'-'.$class['section'],
 						  'sem_ay' => substr($class['class_id'], 0, 5), 
 						  'instructor' => $class['instructor_code'], 
-						  'pdf' => $filename);
+						  'pdf' => $filename,
+						  'college' => $class['college_code'],
+						  'department' => $class['department_code']);
 			
-			$this->lab_set_model->saveReportPerClass($data);
+			$this->report_per_class->saveToDatabase($data);
 		}
 		redirect(base_url($filename), 'refresh');
 	}
