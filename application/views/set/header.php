@@ -14,9 +14,9 @@
 		<div class="loginbar">
 		<?php
 			if($preview)
-				echo "Welcome $first_name;";
+				echo "Welcome ".$first_name;
 			else
-				echo "Welcome".substr($name, strpos($name, ",")+2);
+				echo "Welcome ".ucwords(strtolower(substr($name, strpos($name, ",")+2)));
 		?>
 		<a href="<?php echo base_url('/index.php/login/logout');?>">Logout</a></div>
 	</div>

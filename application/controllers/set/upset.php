@@ -181,7 +181,7 @@ class Upset extends CI_Controller
 		$this->load->helper('file');
 		
 		$class = $this->classes->getInformation($oset_class_id);
-		$filename = './pdf/report_per_class/'.$class['instructor_code'].'-'.$class['class_id'].'.pdf';
+		$filename = './reports/report_per_class/'.$class['instructor_code'].'-'.$class['class_id'].'.pdf';
 		
 		if(!file_exists($filename))
 		{

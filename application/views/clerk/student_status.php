@@ -16,7 +16,7 @@
 			Update list
 		</a><br/><br/>
 		
-		<iframe src='<?php echo base_url('/pdf/students_with_unevaluated_classes_'.$user_college_code.'.pdf');?>' width="100%" height="1000px;"  />
+		<iframe src='<?php echo base_url('/reports/students_with_unevaluated_classes_'.$user_college_code.'.pdf');?>' width="100%" height="1000px;"  />
 		</div>
 
 	</body>

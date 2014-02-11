@@ -1,0 +1,300 @@
+	
+<html>
+<header>
+	
+</header>
+<style>
+	table {font-size: 12px; border-collapse: collapse;}
+	td {white-space: nowrap;
+		padding: 0 3px;}
+	body{font: 14px "proxima-nova", Helvetica, Arial, sans-serif;}
+</style>
+
+<body>
+	<b>
+		UNIVERSITY OF THE PHILIPPINES MANILA <br/>
+		STUDENT EVALUATION OF TEACHERS
+	</b>
+	
+	<br/><br/>
+	<table width="100%">
+		<tr>
+			<td>College: CAS</td>
+			<td>Date: February 11, 2014, 4:30 pm</td>
+		</tr>
+		<tr>
+			<td>Sem/AY: 1 / 2013-2014</td>
+		</tr>
+	</table>
+	<hr>
+	<br/>
+	
+	<table border='1'>
+		
+					<tr>
+						<th>Name</th>
+						<th width="20%">Subject</td>
+						<th width="8%">Units</td>
+						<th width="11%">No. of Students</td>
+						<th width="11%">No. of Students Evaluated</td>
+						<th width="9%">Score</td>
+						<th>Total</td>
+						<th>Rating</td>
+					</tr>
+				
+						<tr>
+							<th align="center" valign="middle" rowspan=8>AVEGAIL CARPIO</th>
+							<td>CMSC 10 / HCD1</td>
+							<td align="center">1</td>
+							<td align="center">14</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						<tr>
+							<td>CMSC 110 LAB / TGI</td>
+							<td align="center">1</td>
+							<td align="center">15</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 110 LEC / TJKX</td>
+							<td align="center">2</td>
+							<td align="center">15</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 198 (SP) / MJK</td>
+							<td align="center">3</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MAB</td>
+							<td align="center">3</td>
+							<td align="center">11</td>
+							<td align="center">2</td>
+							<td align="right">1.1728</td>
+							<td align="right">3.5184</td>
+							<td align="center">Outstanding</td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MCD</td>
+							<td align="center">3</td>
+							<td align="center">10</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MEYIX</td>
+							<td align="center">3</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td><b>TOTAL</b></td>
+							<td align="center"><b>3</b></td>
+							<td colspan = 3></td>
+							<td align="right"><b>1.1728</b></td>
+							<td align="center"><b>Outstanding</b></td>
+						</tr>
+					
+						<tr>
+							<th align="center" valign="middle" rowspan=6>CHRISTOPHER GEORGE DUMANON</th>
+							<td>CMSC 11 LEC / SAZB</td>
+							<td align="center">2</td>
+							<td align="center">45</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						<tr>
+							<td>CMSC 11 LEC / SCDX</td>
+							<td align="center">2</td>
+							<td align="center">41</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 161 LAB / SIYKX</td>
+							<td align="center">1</td>
+							<td align="center">9</td>
+							<td align="center">2</td>
+							<td align="right">1.6563</td>
+							<td align="right">1.6563</td>
+							<td align="center">Very satisfactory</td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 161 LEC / SEZG</td>
+							<td align="center">2</td>
+							<td align="center">9</td>
+							<td align="center">1</td>
+							<td align="right">2.0000</td>
+							<td align="right">4.0000</td>
+							<td align="center">Satisfactory</td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 22 LEC / SGYZ</td>
+							<td align="center">1</td>
+							<td align="center">33</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td><b>TOTAL</b></td>
+							<td align="center"><b>3</b></td>
+							<td colspan = 3></td>
+							<td align="right"><b>1.8854</b></td>
+							<td align="center"><b>Satisfactory</b></td>
+						</tr>
+					
+						<tr>
+							<th align="center" valign="middle" rowspan=12>GEOFFREY SOLANO</th>
+							<td>CMSC 110 LEC / TGIX</td>
+							<td align="center">2</td>
+							<td align="center">39</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						<tr>
+							<td>CMSC 124 LEC / HCDX</td>
+							<td align="center">2</td>
+							<td align="center">23</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 131 LAB / FCD</td>
+							<td align="center">1</td>
+							<td align="center">18</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 131 LAB / TCD</td>
+							<td align="center">1</td>
+							<td align="center">18</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 131 LEC / HEZG</td>
+							<td align="center">2</td>
+							<td align="center">36</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 171 / TEYZ</td>
+							<td align="center">1</td>
+							<td align="center">33</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 191 (GA) / FEYIX</td>
+							<td align="center">3</td>
+							<td align="center">19</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 198 (SP) / MJK</td>
+							<td align="center">3</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MAB</td>
+							<td align="center">3</td>
+							<td align="center">11</td>
+							<td align="center">2</td>
+							<td align="right">2.0769</td>
+							<td align="right">6.2308</td>
+							<td align="center">Satisfactory</td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MCD</td>
+							<td align="center">3</td>
+							<td align="center">10</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MEYIX</td>
+							<td align="center">3</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td><b>TOTAL</b></td>
+							<td align="center"><b>3</b></td>
+							<td colspan = 3></td>
+							<td align="right"><b>2.0769</b></td>
+							<td align="center"><b>Satisfactory</b></td>
+						</tr>
+						</table>	
+</body>
+</html>

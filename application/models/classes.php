@@ -42,6 +42,67 @@ class Classes extends CI_Model
 		}
 		return $results;
 	}
+
+	//faculty summarized report
+	public function getFacultyWithAllClassesClosed($college)
+	{
+		$sql = $this->db->query("SELECT DISTINCT instructor, name FROM class, faculty WHERE 
+		instructor = instructor_code AND college_code = '$college' AND instructor NOT IN 
+		(SELECT DISTINCT instructor FROM class WHERE open < '2' AND activated = '1') AND activated='1'
+		ORDER BY name");
+		
+		if ($sql->num_rows() == 0){
+			return null;
+		}
+		
+		foreach ($sql->result() as $row)
+		{
+			$ins['instructor'][] = $row->instructor;
+			$ins['name'][] = $row->name;
+		}
+		return $ins;
+	}
+	
+	public function getRating($score)
+	{
+		$rating = "";
+		if($score >= 1)
+		{
+			if ($score <= 1.24)
+				$rating = "Outstanding";
+			elseif ($score <= 1.75)
+				$rating = "Very satisfactory";
+			elseif ($score <= 2.25)
+				$rating = "Satisfactory";
+			elseif ($score <= 2.75)
+				$rating = "Fair";
+			else 
+				$rating = "Needs improvement";
+		}
+		return $rating;
+	}
+	
+	public function getClassesByInstructor($college, $instructor)
+	{
+		$sql = $this->db->query("SELECT subject, section, credits, no_of_students, no_of_respondents, score, score*credits total 
+		FROM class WHERE college_code = '$college' AND instructor='$instructor' AND open='2' ORDER by subject, section");
+		
+		if ($sql->num_rows() == 0){
+			return null;
+		}
+		
+		foreach ($sql->result() as $row)
+		{
+			$classes['subject'][] = $row->subject.' / '.$row->section;
+			$classes['units'][] = $row->credits;
+			$classes['score'][] = $row->score;
+			$classes['total'][] = $row->total;
+			$classes['no_of_students'][] = $row->no_of_students;
+			$classes['no_of_respondents'][] = $row->no_of_respondents;
+			$classes['rating'][] = $this->getRating($row->score);
+		}
+		return $classes;
+	}
 	
 	//get Info per individual oset_class id_____________________
 	public function getInformation($oset_class_id)

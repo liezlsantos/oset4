@@ -146,7 +146,7 @@ class Evaluationmanagement extends CI_Controller
 		$data = $this->session->userdata('logged_in'); 
 		$data['SET']=$this->SET_model->getRecords();
 
-		if(!file_exists('./pdf/students_with_unevaluated_classes_'.$data['user_college_code'].'.pdf'))
+		if(!file_exists('./reports/students_with_unevaluated_classes_'.$data['user_college_code'].'.pdf'))
 			$this->updatePDFStudentStatus();
 			
 		$this->load->view('clerk/student_status', $data);
@@ -189,7 +189,7 @@ class Evaluationmanagement extends CI_Controller
 		$this->load->helper('file');
 		
 		$pdf_data = create_pdf($rows, '', false);  
-		write_file('./pdf/students_with_unevaluated_classes_'.$data['user_college_code'].'.pdf', $pdf_data);
+		write_file('./reports/students_with_unevaluated_classes_'.$data['user_college_code'].'.pdf', $pdf_data);
 		
 		redirect('clerk/evaluationmanagement/studentstatus', 'refresh');
 	}

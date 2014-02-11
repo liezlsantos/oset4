@@ -88,7 +88,7 @@
 					<div class="module-div">
 						<h1>Report Management </h1>
 						<a href="'.base_url('/index.php/clerk/reportmanagement/reportperclass').'"'; if(strpos($_SERVER["PHP_SELF"],"reportperclass")) echo 'class="current"'; echo'">Class Detailed Report</a>
-						<a href="'.base_url('/index.php/admin/reportmanagement/reportperfaculty').'"'; if(strpos($_SERVER["PHP_SELF"],"reportperfaculty")) echo 'class="current"'; echo'">Faculty Summarized Report</a>
+						<a href="'.base_url('/index.php/clerk/reportmanagement/facultysummarizedreport').'"'; if(strpos($_SERVER["PHP_SELF"],"faculty")) echo 'class="current"'; echo'">Faculty Summarized Report</a>
 					</div>
 				';
 				}
