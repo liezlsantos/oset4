@@ -1,3 +1,5 @@
+<?php include('check.php'); ?>
+		
 	<header>
 		<title>OSET 4.0</title>
 		<link href='<?=base_url('css/style.css')?>' rel='stylesheet' type='text/css'>
@@ -31,7 +33,7 @@
 					</tr>
 					
 					<tr>
-						<td><td><br/><input type="submit" value="Save"><a href="home"><input type="button" value="Cancel"></input></a>
+						<td><td><br/><input type="submit" value="Save"><a href="<?php echo base_url('index.php/home'); ?>"><input type="button" value="Cancel"></input></a>
 					</tr>
 				</table>
 				<?php form_close();?>

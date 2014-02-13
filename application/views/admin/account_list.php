@@ -55,7 +55,7 @@
 								<td>".$records['username'][$i]."</td>
 								<td>".$records['user_type'][$i]."</td>
 								<td>".$records['college_code'][$i]."</td>
-								<td><a href='".base_url('index.php/admin/account/edit/'.$records['username'][$i])."'>  Edit  &nbsp;</a>";
+								<td><a href='".str_replace('http', 'https', base_url('index.php/admin/account/edit/'.$records['username'][$i]))."'>  Edit  &nbsp;</a>";
 								if($username != $records['username'][$i])
 									echo "<a href='".base_url('index.php/admin/account/delete/'.$records['username'][$i])."' onclick='return warning();'> Delete  </a>";
 								echo "	

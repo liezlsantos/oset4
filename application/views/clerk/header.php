@@ -66,12 +66,8 @@
 						if(strpos($_SERVER["PHP_SELF"],"clerk/classmanagement") 
 						&& !strpos($_SERVER["PHP_SELF"],"clerk/classmanagement/view")) 
 							echo 'class="current"'; echo '">Classes-Faculty Selection</a>
-						<a href="'.base_url('/index.php/clerk/studentaccount').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/studentaccount")) echo 'class="current"'; echo'">List of Students</a>';
-				
-						if($SET['accounts_generated'])
-						{
-							echo '<a href="'.base_url('/index.php/clerk/setinstrumentassignment').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/setinstrumentassignment") && strpos($_SERVER["PHP_SELF"],"set")) echo 'class="current"'; 
-							echo '">Assignment of SET Instrument</a>';
+						<a href="'.base_url('/index.php/clerk/studentaccount').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/studentaccount")) echo 'class="current"'; echo'">List of Students</a>
+						<a href="'.base_url('/index.php/clerk/setinstrumentassignment').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/setinstrumentassignment") && strpos($_SERVER["PHP_SELF"],"set")) echo 'class="current"'; echo '">Assignment of SET Instrument</a>';
 						}
 		 			echo '</div>';
 				
@@ -80,19 +76,19 @@
 				echo '
 					<div class="module-div">
 						<h1>Evaluation Management</h1>			
-						<a href="'.base_url('/index.php/clerk/evaluationmanagement/open').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/evaluationmanagement/open")) echo 'class="current"'; echo'">Open Evaluation</a>
-						<a href="'.base_url('/index.php/clerk/evaluationmanagement/close').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/evaluationmanagement/close")) echo 'class="current"'; echo'">Close Evaluation</a>
-						<a href="'.base_url('/index.php/clerk/evaluationmanagement/status').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/evaluationmanagement/status")) echo 'class="current"'; echo'">Evaluation Status</a>
-						<a href="'.base_url('/index.php/clerk/evaluationmanagement/studentstatus').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/evaluationmanagement/studentstatus")) echo 'class="current"'; echo'">Student Evaluation Status</a>
-					</div>
+						<a href="'.base_url('/index.php/clerk/evaluationmanagement/open').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/evaluationmanagement/open") || strpos($_SERVER["PHP_SELF"],"clerk/evaluationmanagement/close")) echo 'class="current"'; echo'">Evaluation Mode</a>
+						<a href="'.base_url('/index.php/clerk/evaluationmanagement/status').'"'; if(strpos($_SERVER["PHP_SELF"],"status")) echo 'class="current"'; echo'">Evaluation Status</a>
+					</div>					
+				';
+				}
+				echo '
 					<div class="module-div">
 						<h1>Report Management </h1>
 						<a href="'.base_url('/index.php/clerk/reportmanagement/reportperclass').'"'; if(strpos($_SERVER["PHP_SELF"],"reportperclass")) echo 'class="current"'; echo'">Class Detailed Report</a>
 						<a href="'.base_url('/index.php/clerk/reportmanagement/facultysummarizedreport').'"'; if(strpos($_SERVER["PHP_SELF"],"faculty")) echo 'class="current"'; echo'">Faculty Summarized Report</a>
 					</div>
-				';
-				}
-				echo '</div>';
+				
+				</div>';
 			}	
 			if(isset($isAnalyst))
 			{
