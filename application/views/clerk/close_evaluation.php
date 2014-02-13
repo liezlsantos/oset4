@@ -11,7 +11,14 @@
 		<div class = "right">
 		
 		<h2>Close Evaluation <?php echo "(".$user_college_name.")"; ?></h2>
-		
+		<div class="tabs">
+		<table cellpadding="3">
+			<tr>
+			<td align = "center"><a href = "<?php echo base_url('index.php/clerk/evaluationmanagement/open');?>"><div class = "tabH">Open Evaluation</div></a>
+			<td align = "center"><a href = "#"><div class = "selectedtabH">Close Evaluation</div></a>
+			</tr>
+		</table>
+		</div><br/>
 		<?php echo form_open('clerk/evaluationmanagement/searchclose', array('onSubmit'=>true)); ?>
 		
 		<table>
@@ -43,10 +50,10 @@
 		
 		<table width="100%">
 		<tr>
-			<td align="center"><font color="green"><?php if(isset($_SESSION['msg'])) {echo $_SESSION['msg']; unset($_SESSION['msg']);}?></font></td>
+			<td align="center"><font color="green"><?php if(isset($_SESSION['msg'])) {echo $_SESSION['msg'].'<br/><br/>'; unset($_SESSION['msg']);}?></font></td>
 		</tr>
 		</table>
-		<br/>
+		
 		<?php
 			if(isset($records))
 			{

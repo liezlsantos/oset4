@@ -21,6 +21,7 @@ class setinstrumentmanagement extends CI_Controller
 	{
 		$data = $this->session->userdata('logged_in');
 		$data['SET']=$this->SET_model->getRecords();
+		$data['set_id']=$this->set_instrument->getNextSetID();
 		$this->load->view('admin/add_set_instrument', $data);	
 	}	
 	
@@ -68,6 +69,7 @@ class setinstrumentmanagement extends CI_Controller
 		if($this->set_instrument->isEmpty())
 			$data['set_as_default'] = 1;
 		$data['name'] = $this->input->post("name");
+		$data['table_name'] = $this->input->post("table_name");
 		$this->set_instrument->saveToDatabase($data);
 
 		redirect('admin/set/'.$data['controller_name'].'/createTable', 'refresh');

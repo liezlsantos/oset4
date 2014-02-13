@@ -24,6 +24,12 @@ class SET_instrument extends CI_Model
 		return $sql->row();
 	}
 	
+	public function getNextSetID()
+	{
+		$sql = $this->db->query("SELECT COUNT(*) count FROM set_instrument");
+		return $sql->row()->count+1;
+	}
+	
 	public function getDefaultSET()
 	{
 		$sql = $this->db->query("SELECT * FROM set_instrument WHERE set_as_default = '1'");

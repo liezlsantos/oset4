@@ -32,7 +32,7 @@
 			</tr>
 		</table>
 		</div>
-		<br/><br/>
+		<br/>
 		<?php echo form_open('clerk/reportmanagement/searchfacultysummarizedreportarchive', array('onSubmit'=>true)); ?>
 		<table>
 			<tr>
@@ -62,7 +62,6 @@
 			</tr>
 		</table>
 		<?php echo form_close(); ?>
-		<br/>
 		
 		<?php 
 		   	if($records)
@@ -84,12 +83,9 @@
 								<td>".convertToString($records['sem_ay'][$i])."</td>
 								<td align='center'>".$records['college_name'][$i]."</td>
 								<td align='center'>".$records['college_code'][$i]."</td>
-								<td align='center'><a target='_blank' href='".base_url($link).".pdf'>
-									<img src='".base_url('css/images/pdf_download_logo.png')."' 
-										height='30px;'></img></a> &nbsp; 
+								<td align='center'>
 								<a href='".base_url($link).".doc'>
-									<img src='".base_url('css/images/doc_download_logo.png')."' 
-										height='30px;'></img></a></td>
+									Download</a></td>
 		  					 </tr>";
 							$i++;
 					}

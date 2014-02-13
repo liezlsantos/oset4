@@ -43,7 +43,7 @@ $route['clerk/set/(:any)'] = "set/$1";
 $route['admin/set/(:any)'] = "set/$1";
 $route['student/set/(:any)'] = "set/$1/$1";
 $route['set/(:any)'] = "";
-$route['404_override'] = '';
+$route['404_override'] = 'home';
 
 
 /* End of file routes.php */

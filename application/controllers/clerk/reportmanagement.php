@@ -69,6 +69,32 @@ class Reportmanagement extends CI_Controller
 			$this->updateFacultyReport();
 		}	
 		$data['path'] = $path;
+		
+		$instructors = $this->classes->getFacultyWithAllClassesClosed($data['user_college_code']);
+		$data['instructors'] = $instructors;	
+		if($instructors)
+		{
+			foreach ($instructors['instructor'] as $instructor)
+			{
+				$classes = $this->classes->getClassesByInstructor($data['user_college_code'], $instructor);
+				$data['count'][] = count($classes['subject']);
+				
+				for ($i = 0; $i < count($classes['subject']); $i++)
+				{
+					$data['classes']['subject'][] = $classes['subject'][$i];
+					$data['classes']['units'][] = $classes['units'][$i];
+					$data['classes']['score'][] = $classes['score'][$i];
+					$data['classes']['total'][] = $classes['total'][$i];
+					$data['classes']['rating'][] = $classes['rating'][$i];
+					$data['classes']['no_of_students'][] = $classes['no_of_students'][$i];
+					$data['classes']['no_of_respondents'][] = $classes['no_of_respondents'][$i];
+				}
+			}	
+		}
+	 	$sem = substr($data['SET']['semester'], 0, 4);
+		$sem2 = $sem+1;
+		$data['sem_ay'] = substr($data['SET']['semester'], 4, 1).' / '.$sem.'-'.$sem2;	
+		
 		$this->load->view('clerk/faculty_report', $data);	
 	}
 
@@ -109,12 +135,18 @@ class Reportmanagement extends CI_Controller
 		$this->load->helper('file');
 		//doc file
 		write_file($path.'.doc', $html);
-		//pdf file
-		$this->load->helper(array('dompdf', 'file'));
-		$pdf_data = pdf_create($html, '' , FALSE);  
-		write_file($path.'.pdf', $pdf_data);
+	}
+	
+	public function facultysummarizedreportdownload($college)
+	{
+		$SET = $this->SET_model->getRecords();
+		$path = './reports/faculty_summarized_report/'.$college.'-'.$SET['semester'].'.doc';
 		
-		redirect("clerk/reportmanagement/facultysummarizedreport/", "refresh");
+		$this->updateFacultyReport();
+		$this->load->helper('download');
+		$data = file_get_contents($path); // Read the file's contents
+		$name = str_replace('./reports/faculty_summarized_report/', "", $path);
+		force_download($name, $data);
 	}
 
 	public function facultysummarizedreportarchive()

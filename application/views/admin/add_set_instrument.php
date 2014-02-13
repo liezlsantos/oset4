@@ -18,8 +18,18 @@
 				<?php echo form_open_multipart('admin/setinstrumentmanagement/submit', array('onSubmit'=>true)); ?> 
 				<table>
 					<tr>
+					<td width="200px">SET Instrument ID : <font color="red">*</font></td>
+					<td class="element"><input type="text" value="<?php echo $set_id; ?>" readonly=""></td>
+					</tr>
+					
+					<tr>
 					<td>SET Name : <font color="red">*</font></td>
 					<td class="element"><input type="text" name="name" value="" required></td>
+					</tr>
+					
+					<tr>
+					<td>Table Name : <font color="red">*</font></td>
+					<td class="element"><input type="text" name="table_name" value="" required></td>
 					</tr>
 										
 					<tr>

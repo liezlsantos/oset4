@@ -10,8 +10,15 @@
 		<?php include('header.php'); ?>
 		<div class = "right">
 		
-		<h2>Evaluation Status <?php echo "(".$user_college_name.")"; ?></h2>
-		
+		<h2>Class Evaluation Status <?php echo "(".$user_college_name.")"; ?></h2>
+		<div class="tabs">
+		<table cellpadding="3">
+			<tr>
+			<td align = "center"><a href = "#"><div class = "selectedtabH">Class Evaluation Status</div></a>
+			<td align = "center"><a href = "<?php echo base_url('index.php/clerk/evaluationmanagement/studentstatus');?>"><div class = "tabH">Student Evaluation Status</div></a>
+			</tr>
+		</table>
+		</div><br/>
 		<?php echo form_open('clerk/evaluationmanagement/searchstatus', array('onSubmit'=>true)); ?>
 		
 		<table>
@@ -41,7 +48,6 @@
 		</table>
 		<?php echo form_close(); ?>
 		
-		<br/>
 		<?php
 			if(isset($records))
 			{

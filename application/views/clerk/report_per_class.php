@@ -29,7 +29,7 @@
 			$year = substr($SET['semester'], 0, 4);
 			$year2 = $year+1;
 		?>
-		<br/><br/>
+		<br/>
 		<?php echo form_open('clerk/reportmanagement/searchreportperclass', array('onSubmit'=>true)); ?>
 		<table>
 			<tr>
@@ -58,7 +58,6 @@
 			</tr>
 		</table>
 		<?php echo form_close(); ?>
-		<br/>
 		
 		<?php 
 		   	if($records)

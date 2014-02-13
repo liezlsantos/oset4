@@ -32,7 +32,7 @@
 			</tr>
 		</table>
 		</div>
-		<br/><br/>
+		<br/>
 		<?php echo form_open('clerk/reportmanagement/searchreportperclassarchive', array('onSubmit'=>true)); ?>
 		<table>
 			<tr>
@@ -80,7 +80,6 @@
 			</tr>
 		</table>
 		<?php echo form_close(); ?>
-		<br/>
 		
 		<?php 
 		   	if($records)

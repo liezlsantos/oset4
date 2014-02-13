@@ -79,6 +79,7 @@ div.left {
 	float: left;
 	width: 18%;
 	margin-left: -10px;
+	margin-top: -5px;
 }
 	.module-div {
 		margin: 0 1%;
@@ -145,6 +146,7 @@ div.right {
 	margin-left: 3%;
 	width: 78%;
 	padding-bottom: 100px;
+	margin-top: -10px;
 }
 
 table{
