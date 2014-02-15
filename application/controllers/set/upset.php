@@ -7,7 +7,6 @@ class Upset extends CI_Controller
 		parent::__construct();
 		$this->load->model('classes');	
 		$this->load->model('set/upset_model');	
-		$this->load->model('report_per_class');
 	}
 
 	public function index() 
@@ -175,8 +174,17 @@ class Upset extends CI_Controller
 		$this->upset_model->createTable();
 		redirect('admin/setinstrumentmanagement', 'refresh');
 	}
-	
+
 	public function generateReportPerClass($oset_class_id)
+	{
+		$class = $this->classes->getInformation($oset_class_id);
+		$filename = './reports/report_per_class/'.$class['instructor_code'].'-'.$class['class_id'].'.pdf';
+		if(!file_exists($filename))
+			$this->upset_model->generateReportPerClass($oset_class_id);
+		redirect(base_url($filename), 'refresh');
+	}
+	
+	/*public function generateReportPerClass($oset_class_id)
 	{
 		$this->load->helper('file');
 		
@@ -212,6 +220,6 @@ class Upset extends CI_Controller
 			$this->report_per_class->saveToDatabase($data);
 		}
 		redirect(base_url($filename), 'refresh');
-	}
+	}*/
 	
 }

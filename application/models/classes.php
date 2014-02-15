@@ -43,6 +43,25 @@ class Classes extends CI_Model
 		return $results;
 	}
 
+	public function getAllClassesForReport()
+	{
+		$sql = $this->db->query("SELECT oset_class_id, instructor, 
+		model_name, class_id FROM class, set_instrument WHERE open='2' AND 
+		class.set_instrument_id = set_instrument.set_instrument_id ORDER BY oset_class_id");
+		
+		if ($sql->num_rows() == 0){
+			return null;
+		}
+		
+		foreach ($sql->result() as $row){
+			$results['class_id'][] = $row->class_id;		
+			$results['oset_class_id'][] = $row->oset_class_id;
+			$results['model_name'][] = $row->model_name;
+			$results['instructor_code'][] = $row->instructor;
+		}
+		return $results;
+	}
+
 	//faculty summarized report
 	public function getFacultyWithAllClassesClosed($college)
 	{
@@ -366,16 +385,9 @@ class Classes extends CI_Model
 	{
 		$this->deleteByCollegeCode($college_code);
 		
-		$sql = $this->db->query("SELECT * FROM flags");
-		if ($sql->num_rows() == 0){
-			return null;
-		}
-		
-		foreach ($sql->result() as $row){
-			$results[$row->flag_name] = $row->value;
-			if($row->flag_name == "semester")
-				$sem = $row->extended_value;
-		}
+		$this->load->model('SET_model');
+		$setdata = $this->SET_model->getRecords();
+		$sem = $setdata['semester'];
 		
 		$sql = $this->db->query("SELECT * FROM department WHERE college_code = '$college_code'");
 		if ($sql->num_rows() == 0){
@@ -392,7 +404,7 @@ class Classes extends CI_Model
 		$sem1 = (int)$sem1 * 100000;
 		
 		$query = "SELECT classid, extracode, section, subject, instructors, unit, actualcredits, enlisted from osetuser_classes_view 
-		            WHERE classid>'$sem' AND classid<'$sem1' 
+		            WHERE classid>'$sem' AND classid <'$sem1' 
 		            AND subject NOT LIKE '%RESIDEN%' AND class NOT LIKE '%cancelled%' AND enlisted > '0' AND (";
 		
 		$dcounter=0;

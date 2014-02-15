@@ -2,35 +2,25 @@
 
 class SET_model extends CI_Model
 {
-	public function updateRecord($data)
+	public function updateSETstatus($data)
 	{
-		$data['value'] = 1;
-		$this->db->where('flag_id', '1');
-		$this->db->update('flags', $data); 	
-		
-		$val['value'] = 0;
-		$this->db->where('flag_id', '2');
-		$this->db->update('flags', $val);	
+		$this->db->update('set_status', $data);	
 	}
 	
 	public function getRecords()
 	{
-		$sql = $this->db->query("SELECT * FROM flags");
+		$sql = $this->db->query("SELECT * FROM set_status");
 		if ($sql->num_rows() == 0){
 			return null;
 		}
-		
-		foreach ($sql->result() as $row){
-			$results[$row->flag_name] = $row->value;
-			if($row->flag_name == "semester")
-				if($row->value)
-					$results['semester'] = $row->extended_value;
-		}
+		$results['accounts_generated'] = $sql->row()->accounts_generated;
+		$results['semester'] = $sql->row()->sem_ay;
 		return $results;
 	}	
 	
 	public function resetSET()
 	{
+		$this->db->update('set_status', array('accounts_generated' => '0'));	
 		$this->db->query('TRUNCATE score_per_respondent');
 		$sql = $this->db->query('SELECT table_name FROM set_instrument');
 		if($sql->num_rows() > 0)

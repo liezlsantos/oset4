@@ -2,7 +2,7 @@
 
 	<header>
 		<title>OSET 4.0</title>
-		<link href='<?=base_url('css/style.css')?>' rel='stylesheet' type='text/css'>
+		<link href='<?=str_replace('http', 'https', base_url('css/style.css'))?>' rel='stylesheet' type='text/css'>
 		<script>
 			function show(div, id)
 			{

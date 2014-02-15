@@ -7,9 +7,8 @@ body {
     min-height: 200px;
     position: relative;
     background: none repeat scroll 0% 0% rgb(255, 255, 255);
-    border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 4px 4px 4px 4px;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
     text-shadow: 0px 1px rgba(255, 255, 255, 0.6);
 	padding: 20px 20px;
 }
@@ -29,7 +28,7 @@ body {
 img.banner {
     display: block;
     margin: 0 auto;
-    width: 100%;
+  	height: 109px;
 } 
 
 div.loginbar{
@@ -40,8 +39,9 @@ div.loginbar{
 	color:  #000;
 	font-size: 13px;
 	width: 100%;
-	background-color: #FFF8DC;
-	border: 1px solid rgba(0, 0, 0, 0.5);
+	background: url('images/background.png');
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -54,21 +54,33 @@ div.loginbar{
 }
 
 .loginbox{
-	margin: 200px auto;
-    width: 280px;
+	margin: 12% auto;
+    width: 480px;
+    height: 320px;
 }
 
 .loginbox input{
-	font: 18px "Candara";
+	font: 15px "Helvetica";
+	text-indent: 2px;
+	height: 27px;
+	color: #333;
+}
+
+.loginbox table{
+	color: #555555;
+	font: 13px "Arial";
+	margin: -10px auto;
 }
 
 input.button{
-	border: 1px solid rgba(0, 0, 0, 0.5);
+	border: 1px solid rgba(0, 0, 0, 0.0);
     border-radius: 4px 4px 4px 4px;
-	font-size: 14px;
-	padding: 6px 12px;
+	font: 13px Helvetica;
+	padding: 0px 20px;
 	background-color: maroon;
-	color: white;
+	height: 29px;
+	color: #FFF8DC;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
 }
 
 input.button:hover{
@@ -225,6 +237,10 @@ div.tabs{
 	border-radius: 5px;
 	padding-top: 1px;
 	padding-left: 1px;
+}
+
+a.no-style:hover{
+	text-decoration: none;
 }
 
 

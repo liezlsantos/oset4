@@ -6,7 +6,6 @@ class Lab_set extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('classes');
-		$this->load->model('report_per_class');	
 		$this->load->model('set/lab_set_model');	
 	}
 
@@ -148,7 +147,7 @@ class Lab_set extends CI_Controller
 		redirect('admin/setinstrumentmanagement', 'refresh');
 	}
 	
-	public function generateReportPerClass($oset_class_id)
+	/*public function generateReportPerClass($oset_class_id)
 	{
 		$this->load->helper('file');
 		
@@ -183,6 +182,16 @@ class Lab_set extends CI_Controller
 			
 			$this->report_per_class->saveToDatabase($data);
 		}
+		redirect(base_url($filename), 'refresh');
+	}*/
+	
+	public function generateReportPerClass($oset_class_id)
+	{
+		$class = $this->classes->getInformation($oset_class_id);
+		$filename = './reports/report_per_class/'.$class['instructor_code'].'-'.$class['class_id'].'.pdf';
+	
+		if(!file_exists($filename))
+			$this->lab_set_model->generateReportPerClass($oset_class_id);
 		redirect(base_url($filename), 'refresh');
 	}
 	

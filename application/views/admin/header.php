@@ -1,7 +1,8 @@
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 		
-	<script src="<?php echo base_url('javascript/jquery-1.9.1.js');?>"></script>
-	<script src="<?php echo base_url('javascript/jquery-ui.js');?>"></script>
+	<script src="<?php echo str_replace('http', 'https', base_url('javascript/jquery-1.9.1.js'));?>"></script>
+	<script src="<?php echo str_replace('http', 'https', base_url('javascript/jquery-ui.js'));?>"></script>
+	
 	<script>
 		$(document).ready(function() {
 			$("#accordion").accordion({active:0});

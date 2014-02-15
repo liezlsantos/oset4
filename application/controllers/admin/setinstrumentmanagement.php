@@ -55,7 +55,10 @@ class setinstrumentmanagement extends CI_Controller
 			 if(strpos($file, "view"))	
 			 	rename($file, './application/views/set/'.$filename);
 			 elseif(strpos($file, "model"))
+			 {
+			 	$data['model_name'] = str_replace(".php", "", $filename);
 			 	rename($file, './application/models/set/'.$filename);
+			 }
 			 else
 			 {
 			 	$data['controller_name'] = str_replace(".php", "", $filename);

@@ -9,7 +9,7 @@ class Reportmanagement extends CI_Controller
 		$this->load->model('classes');
 		$this->load->model('college');
 		$this->load->model('report_per_class');
-		$this->load->model('report_faculty');
+		$this->load->model('faculty_summarized_report');
 	}
 	
 	public function reportperclass()
@@ -65,7 +65,7 @@ class Reportmanagement extends CI_Controller
 			$data2 = array ('sem_ay' => $data['SET']['semester'],
 							'college' => $data['user_college_code'],
 							'path' => $path);
-			$this->report_faculty->saveToDatabase($data2);
+			$this->faculty_summarized_report->saveToDatabase($data2);
 			$this->updateFacultyReport();
 		}	
 		$data['path'] = $path;
@@ -153,7 +153,7 @@ class Reportmanagement extends CI_Controller
 	{
 		$data = $this->session->userdata('logged_in');
 		$data['SET']=$this->SET_model->getRecords();
-		$data['records'] = $this->report_faculty->getRecords($data['user_college_code'], '');
+		$data['records'] = $this->faculty_summarized_report->getRecords($data['user_college_code'], '');
 		$data['search']['sem_ay'] = $data['SET']['semester']; 
 		$this->load->view('clerk/faculty_report_archive', $data);	
 	}
@@ -162,8 +162,8 @@ class Reportmanagement extends CI_Controller
 	{
 		$data = $this->session->userdata('logged_in');	
 		$data['SET']=$this->SET_model->getRecords();
-		$data['records'] = $this->report_faculty->getRecords($data['user_college_code'], $this->input->post('sem_ay'));
-		$data['sem_ay'] = $this->report_faculty->getDistinctSemAY($data['user_college_code']);
+		$data['records'] = $this->faculty_summarized_report->getRecords($data['user_college_code'], $this->input->post('sem_ay'));
+		$data['sem_ay'] = $this->faculty_summarized_report->getDistinctSemAY($data['user_college_code']);
 		$data['search'] = $this->input->post();
 		$this->load->view('clerk/faculty_report_archive', $data);	
 	}

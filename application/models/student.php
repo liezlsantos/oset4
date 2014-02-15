@@ -97,16 +97,9 @@ class Student extends CI_Model
 	
 	public function importClasslist()
 	{
-		$sql = $this->db->query("SELECT * FROM flags");
-		if ($sql->num_rows() == 0){
-			return null;
-		}
-		
-		foreach ($sql->result() as $row){
-			$results[$row->flag_name] = $row->value;
-			if($row->flag_name == "semester")
-				$sem = $row->extended_value;
-		}
+		$this->load->model('SET_model');
+		$setdata = $this->SET_model->getRecords();
+		$sem = $setdata['semester'];
 		
 		$this->db_crs = $this->load->database('crs', TRUE);
 		
@@ -184,17 +177,10 @@ class Student extends CI_Model
 		}
 	}	
 
-	public function updateFlagsAfterGeneratingPasswords()
-	{
-		$val['value'] = 1;
-		$this->db->where('flag_id', '2');
-		$this->db->update('flags', $val); 
-	}
-
 	public function accountGenerated()
 	{
-		$sql = $this->db->query("SELECT value FROM flags WHERE flag_id = '2'");
-		if($sql->row()->value == 1)
+		$sql = $this->db->query("SELECT accounts_generated FROM set_status");
+		if($sql->row()->accounts_generated == 1)
 			return true;
 		else
 			return false;

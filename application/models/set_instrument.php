@@ -13,6 +13,7 @@ class SET_instrument extends CI_Model
 			$results['set_instrument_id'][] = $row->set_instrument_id;
 			$results['name'][] = $row->name;
 			$results['controller_name'][] = $row->controller_name;
+			$results['model_name'][] = $row->model_name;
 			$results['set_as_default'][] = $row->set_as_default;
 		}
 		return $results;

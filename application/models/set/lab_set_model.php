@@ -94,6 +94,22 @@ class LAB_SET_model extends CI_Model
 	//for reports
 	public function getReportPerClassData($oset_class_id)
 	{
+		$sql = $this->db->query("SELECT subject, section, instructor, college_code, department_code,
+		 class_id, no_of_respondents
+		 FROM class WHERE oset_class_id = '$oset_class_id'");
+		
+		$data['section'] = $sql->row()->section;
+		$data['department_code'] = $sql->row()->department_code;
+		$data['college_code'] = $sql->row()->college_code;
+		$data['instructor'] = $sql->row()->instructor;
+		$data['subject'] = $sql->row()->subject.'-'.$sql->row()->section;
+		$data['no_of_respondents'] = $sql->row()->no_of_respondents;	
+		$data['class_id'] = $sql->row()->class_id;
+		$sem = substr($sql->row()->class_id, 0, 4);
+		$sem2 = $sem+1;
+		$data['sem_ay'] = substr($sql->row()->class_id, 4, 1).' / '.$sem.'-'.$sem2;		
+		$data['filename'] = $filename = './reports/report_per_class/'.$sql->row()->instructor.'-'.$sql->row()->class_id.'.pdf';		
+		
 		for($i = 1; $i <= 6; $i++)
 			$data['part1_'.$i] = array(0=> 0, 1=>0, 2=>0, 3=>0, 4=>0, 5=>0);	
 	
@@ -176,6 +192,28 @@ class LAB_SET_model extends CI_Model
 				$data['part3c'] .= $row->part3c.'<br/>';
 		}
 		return $data;
+	}
+
+	public function generateReportPerClass($oset_class_id)
+	{
+		$this->load->helper('file');
+		$this->load->model('report_per_class');
+		//pdf		
+		$this->load->helper(array('dompdf', 'file'));
+		$data = $this->getReportPerClassData($oset_class_id);
+		//archive report
+		$html = $this->load->view('set/labset_detailedreport_view', $data, TRUE);
+		$pdf_data = pdf_create($html, '' , FALSE);  
+		write_file($data['filename'], $pdf_data);
+		//save link to db	
+		$data = array('course' =>	$data['subject'].'-'.$data['section'],
+					  'sem_ay' => substr($data['class_id'], 0, 5), 
+					  'instructor' => $data['instructor'], 
+					  'pdf' => $data['filename'],
+					  'college' => $data['college_code'],
+					  'department' => $data['department_code']);
+			
+		$this->report_per_class->saveToDatabase($data);
 	}
 }
 ?>

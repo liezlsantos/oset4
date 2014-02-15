@@ -33,5 +33,11 @@ class Home extends CI_Controller
 		$data['SET']=$this->SET_model->getRecords();
 		$this->load->view('admin/error_database', $data);
 	}
+	
+	public function logout()
+	{
+		$this->session->unset_userdata('logged_in');
+		redirect('login', 'refresh');
+	}
 		
 }

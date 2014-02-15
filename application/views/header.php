@@ -1,7 +1,7 @@
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 		
-	<script src="<?php echo base_url('javascript/jquery-1.9.1.js');?>"></script>
-	<script src="<?php echo base_url('javascript/jquery-ui.js');?>"></script>
+	<script src="<?php echo str_replace('http', 'https', base_url('javascript/jquery-1.9.1.js'));?>"></script>
+	<script src="<?php echo str_replace('http', 'https', base_url('javascript/jquery-ui.js'));?>"></script>
 	<script>
 		<?php 
 			$index = 0;
@@ -28,7 +28,7 @@
 			{
 				echo '
 				<div class="module-div2">
-					<h1>Administration</h1>
+					<a href="" class="no-style"><h1>Administration</h1></a>
 				</div>
 				
 				<div>
@@ -56,7 +56,7 @@
 			{
 				echo '
 				<div class="module-div2">
-					<h1>Clerk Utilities</h1>
+					<a href="" class="no-style"><h1>Clerk Utilities</h1></a>
 				</div>
 				
 				<div>
@@ -93,7 +93,7 @@
 			{
 				echo '
 				<div class="module-div2">
-					<h1>Information Security Analyst</h1>
+					<a class="no-style" href=""><h1>Information Security Analyst</h1></a>
 				</div>
 				
 				<div>				
@@ -105,11 +105,9 @@
 				';
 			}
 		?>
-		
 			<div class="module-div2">
-				<h1>Account Management</h1>
+				<a class="no-style" href=""><h1>Account Management</h1></a>
 			</div>
-		
 			<div>
 				<div class="module-div">
 					<a href="<?=base_url('/index.php/changepassword')?>" <?php if(strpos($_SERVER["PHP_SELF"],"changepassword")) echo 'class="current"'?>> Change password</a>

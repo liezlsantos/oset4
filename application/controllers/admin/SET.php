@@ -15,15 +15,14 @@ class SET extends CI_Controller
 	public function index() 
 	{
 		$data = $this->session->userdata('logged_in');
-		$data['records']=$this->SET_model->getRecords();
 		$data['SET']=$this->SET_model->getRecords();
 		$this->load->view('admin/SET', $data);	
 	}	
 		
 	public function submit() 
 	{
-		$data['extended_value'] = $this->input->post('academic_year').$this->input->post('semester');
-		$this->SET_model->updateRecord($data);
+		$data['sem_ay'] = $this->input->post('academic_year').$this->input->post('semester');
+		$this->SET_model->updateSETstatus($data);
 		
 		$this->classes->deleteAll();
 		$this->faculty->deleteAll();

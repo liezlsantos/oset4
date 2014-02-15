@@ -1,22 +1,25 @@
 <?php include('check.php'); ?>
 	<header>
 		<title>OSET 4.0</title>
-		<link href='<?=base_url('css/style.css')?>' rel='stylesheet' type='text/css'>
+		<link href='<?=str_replace('http', 'https', base_url('css/style.css'));?>' rel='stylesheet' type='text/css'>
 	</header>
 
 	<body>
 		<div class ='main-content-body loginbox'>			
-			<center>  
+			<center>
+				<img src="<?=str_replace('http', 'https', base_url('css/images/logo.jpg'));?>"
+							width="100px" align="middle"></img>
+				<font style="font-family:Georgia;font-size:20px">Online Student Evaluation of Teachers</font>
 				<br/><br/>
-				<font color = red><?php echo validation_errors(); ?><br/></font>
 				<?php echo form_open('login/submit', array('onSubmit'=>true)); ?> 
-				<table width="90%">
-					<tr><td>Username</tr> 
-					<tr><td><input type="text" name="username" size=25 required/> <br/><br/></tr>
-					<tr><td>Password</tr> 
-					<tr><td><input type="password" name="password" size=25 required/> <br/></tr>
+				<table cellpadding="3">
+					<tr><td colspan="2" align="center"><font color = red><?php echo validation_errors(); ?>&nbsp;</font></td></tr>
+					<tr><td>Username <td><input type="text" name="username" size=25 required/> <br/>
+					<tr><td><br/></td></tr>
+					</tr>
+					<tr><td>Password <td><input type="password" name="password" size=25 required/> <br/></tr>
 					<tr>
-						<td colspan=2 align="center"><br/><br/><input type="submit" class="button" name="submit" value="Log In" />
+						<td colspan=2 align="center"><br/><br/><input type="submit" class="button" name="submit" value="Login" />
 					</tr>
 				</table>
 				<?php form_close();?>

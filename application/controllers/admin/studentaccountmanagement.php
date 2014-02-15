@@ -116,7 +116,7 @@ class StudentAccountManagement extends CI_Controller
 			$rows[] = "______________________________________________________________________________________";
 		}
 	
-		$this->student->updateFlagsAfterGeneratingPasswords();
+		$this->SET_model->updateSETStatus(array('accounts_generated' => '1'));
 		$pdf_data = create_pdf($rows, 'students_passwords', true);		
 	}
 	

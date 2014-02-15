@@ -101,6 +101,22 @@ class CAS_SET_model extends CI_Model
 	//for reports
 	public function getReportPerClassData($oset_class_id)
 	{
+		$sql = $this->db->query("SELECT subject, section, instructor, college_code, department_code,
+		 class_id, no_of_respondents
+		 FROM class WHERE oset_class_id = '$oset_class_id'");
+	
+		$data['department_code'] = $sql->row()->department_code;	
+		$data['section'] = $sql->row()->section;
+		$data['college_code'] = $sql->row()->college_code;
+		$data['instructor'] = $sql->row()->instructor;
+		$data['class_id'] = $sql->row()->class_id;
+		$data['subject'] = $sql->row()->subject.'-'.$sql->row()->section;
+		$data['no_of_respondents'] = $sql->row()->no_of_respondents;	
+		$sem = substr($sql->row()->class_id, 0, 4);
+		$sem2 = $sem+1;
+		$data['sem_ay'] = substr($sql->row()->class_id, 4, 1).' / '.$sem.'-'.$sem2;		
+		$data['filename'] = $filename = './reports/report_per_class/'.$sql->row()->instructor.'-'.$sql->row()->class_id.'.pdf';		
+				
 		$data['part1_1'] = array('NR'=> 0, 'very active'=>0, 'somewhat active'=>0, 'not active'=>0, 'did not participate at all'=>0);	
 		$data['part1_2'] = array('NR'=> 0, 0=>0, 1=>0, '2-3'=>0, '4-5'=>0, 6=>0);	
 		$data['part1_3'] = array('NR'=> 0, 0=>0, 1=>0, '2-3'=>0, '4-5'=>0, 6=>0);	
@@ -122,6 +138,7 @@ class CAS_SET_model extends CI_Model
 									'Impact of teaching on students'=>0);	
 			
 		$sql = $this->db->query("SELECT * FROM cas_set WHERE oset_class_id ='$oset_class_id'");
+		
 		
 		foreach ($sql->result() as $row)
 		{
@@ -152,6 +169,28 @@ class CAS_SET_model extends CI_Model
 			$data['part3_42'][$row->$part]++; 
 		}
 		return $data;
+	}
+
+	public function generateReportPerClass($oset_class_id)
+	{
+		$this->load->helper('file');	
+		$this->load->model('report_per_class');
+		//pdf		
+		$this->load->helper(array('dompdf', 'file'));
+		$data = $this->getReportPerClassData($oset_class_id);
+		//archive report
+		$html = $this->load->view('set/casset_detailedreport_view', $data, TRUE);
+		$pdf_data = pdf_create($html, '' , FALSE);  
+		write_file($data['filename'], $pdf_data);
+		//save link to db	
+		$data = array('course' =>	$data['subject'].'-'.$data['section'],
+					  'sem_ay' => substr($data['class_id'], 0, 5), 
+					  'instructor' => $data['instructor'], 
+					  'pdf' => $data['filename'],
+					  'college' => $data['college_code'],
+					  'department' => $data['department_code']);
+			
+		$this->report_per_class->saveToDatabase($data);
 	}
 }
 ?>

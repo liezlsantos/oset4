@@ -2,7 +2,7 @@
 
 	<header>
 		<title>OSET 4.0</title>
-		<link href='<?=base_url('css/style.css')?>' rel='stylesheet' type='text/css'>
+		<link href='<?=str_replace('http', 'https', base_url('css/style.css'))?>' rel='stylesheet' type='text/css'>
 		<script>
 			function show(div, id)
 			{
@@ -94,7 +94,7 @@
 					</tr>
 					
 					<tr>
-						<td><td><br/><input type="submit" value="Add"><a href="account"><input type="button" value="Cancel"></a> 
+						<td><td><br/><input type="submit" value="Add"><a href="<?php echo base_url('index.php/admin/account')?>"><input type="button" value="Cancel"></a> 
 					</tr>
 				</table>
 				<?php form_close();?>
