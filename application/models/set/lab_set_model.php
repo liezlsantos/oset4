@@ -209,7 +209,7 @@ class LAB_SET_model extends CI_Model
 		$data = array('course' =>	$data['subject'].'-'.$data['section'],
 					  'sem_ay' => substr($data['class_id'], 0, 5), 
 					  'instructor' => $data['instructor'], 
-					  'pdf' => $data['filename'],
+					  'path' => $data['filename'],
 					  'college' => $data['college_code'],
 					  'department' => $data['department_code']);
 			

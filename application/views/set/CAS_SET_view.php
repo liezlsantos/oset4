@@ -45,6 +45,28 @@
 				else if(value == "others")
 					if(document.getElementById("others").checked)
 						document.getElementById(id).style.display = "block";
+			}
+			function validateForm()
+			{
+				var name, radios;
+				var valid = true;
+				for(var i = 1; i <= 39; i++)
+				{
+					name = "part3_"+i;
+					document.getElementById(name).style.backgroundColor = "#FFF";
+					radios = document.getElementsByName(name);
+					if(!(radios[0].checked || radios[1].checked || radios[2].checked || radios[3].checked || radios[4].checked || radios[5].checked)) 
+					{
+						valid = false;
+						document.getElementById(name).style.backgroundColor = "#FFCCCC";
+					}
+				}				
+				if(!valid)
+				{
+					document.getElementById('error_msg').style.display = "block";
+					document.body.scrollTop = document.documentElement.scrollTop = 0;
+				}
+				return valid;
 			}	
 		</script>
 	</header>
@@ -59,7 +81,7 @@
 				  else 
 				  {
 				  		echo '<h2>Evaluate '.$class['subject'].' - '.$class['instructor'].'</h2>';
-				  		echo '<form method="POST" action="'.base_url('index.php/student/set/cas_set/submit/'.$class['oset_class_id']).'">';
+				  		echo '<form method="POST" onSubmit="return validateForm()" action="'.base_url('index.php/student/set/cas_set/submit/'.$class['oset_class_id']).'">';
 				  }
 			?>
 			
@@ -246,7 +268,7 @@
 				</span>     
 				<hr>
 				<br/>
-				
+				<div align="center" id="error_msg" style="display:none; color: red; font-size:13px;">Please fill-up required fields. <br/><br/></div>
 				<table class="SET">
 					<tr id="header">
 						<th colspan="2" align="left">My teacher...</th>
@@ -304,9 +326,9 @@
 						foreach ($questions as $question)
 						{
 							echo
-							'<tr>
+							'<tr id="part3_'.$i.'">
 								<td>'.$i.'.</td>
-								<td>'.$question.'</td>';
+								<td>'.$question.'<font color="red"> *</font></td>';
 							if($i != 9 && $i != 18 && $i!=22 && $i!=21 && $i!=20 && $i!=27 && $i!=32)
 							{
 								echo'

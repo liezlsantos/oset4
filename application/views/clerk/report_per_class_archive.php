@@ -94,7 +94,7 @@
 			    	</tr>';
 				    	 
 			    	$i = 0;
-			    	foreach ($records['pdf'] as $link)
+			    	foreach ($records['path'] as $link)
 					{
 						echo 
 							"<tr>

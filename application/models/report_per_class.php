@@ -14,7 +14,7 @@ class Report_per_class extends CI_Model
 			$results['department'][] = $row->department;
 			$results['course'][] = $row->course;
 			$results['instructor'][] = $row->instructor;
-			$results['pdf'][] = $row->pdf;
+			$results['path'][] = $row->path;
 		}
 		return $results;
 	}	

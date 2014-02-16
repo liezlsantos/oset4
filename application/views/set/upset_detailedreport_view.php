@@ -399,7 +399,7 @@
 	<table class="records">
 		<tr>
 		<td colspan="8"><br/>
-		&nbsp; &nbsp; 0 - [NA/No Response] &nbsp; &nbsp; 1 - [Strongly Agree] &nbsp;&nbsp; 2 - [Agree] &nbsp;&nbsp; 3 - [Disagree] &nbsp;&nbsp; 4 - [Strongly Disagree]
+		&nbsp; &nbsp; 0 - [Not Applicable] &nbsp; &nbsp; 1 - [Strongly Agree] &nbsp;&nbsp; 2 - [Agree] &nbsp;&nbsp; 3 - [Disagree] &nbsp;&nbsp; 4 - [Strongly Disagree]
 		<br/><br/>
 		&nbsp; &nbsp;<span style="font-size: 12px">Reverse encoding for negatively oriented questions</span>
 		<br/><br/>
@@ -417,264 +417,262 @@
 		<tr>
 			<td width="2%">1.</td>
 			<td>Explains the course objectives, expectations and requirements of the course</td>
-			<td width="5%"><?php echo $part3a_1[0]; ?></td>
-			<td width="5%"><?php $sum = 0; $count = 0; echo $part3a_1['1']; $sum+= $part3a_1['1']; $count+=$part3a_1['1']; ?></td>
-			<td width="5%"><?php echo $part3a_1['2']; $sum+= $part3a_1['2']*2; $count+=$part3a_1['2'];?></td>
-			<td width="5%"><?php echo $part3a_1['3']; $sum+= $part3a_1['3']*3; $count+=$part3a_1['3'];?></td>
-			<td width="5%"><?php echo $part3a_1['4']; $sum+= $part3a_1['4']*4; $count+=$part3a_1['4'];?></td>
-			<td width="10%"><?php  if($count != 0) echo round($ave[1] = $sum/$count, 4); else echo 0;?></td>
+			<td width="5%"><?php echo $part3a_1[0]; $sum = 0; ?></td>
+			<td width="5%"><?php echo $part3a_1['1']; $sum+= $part3a_1['1']; ?></td>
+			<td width="5%"><?php echo $part3a_1['2']; $sum+= $part3a_1['2']*2; ?></td>
+			<td width="5%"><?php echo $part3a_1['3']; $sum+= $part3a_1['3']*3; ?></td>
+			<td width="5%"><?php echo $part3a_1['4']; $sum+= $part3a_1['4']*4; ?></td>
+			<td width="10%"><?php  if($no_of_respondents != 0) echo round($ave[1] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>2.</td>
 			<td>Comes to class unprepared for the lesson.</td>
-			<td><?php echo $part3a_2[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_2['1']; $sum+= $part3a_2['1']; $count+=$part3a_2['1']; ?></td>
-			<td><?php echo $part3a_2['2']; $sum+= $part3a_2['2']*2; $count+=$part3a_2['2'];?></td>
-			<td><?php echo $part3a_2['3']; $sum+= $part3a_2['3']*3; $count+=$part3a_2['3'];?></td>
-			<td><?php echo $part3a_2['4']; $sum+= $part3a_2['4']*4; $count+=$part3a_2['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[2] = $sum/$count, 4); else echo 0;?></td>
-		
+			<td><?php echo $part3a_2[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_2['1']; $sum+= $part3a_2['1']; ?></td>
+			<td><?php echo $part3a_2['2']; $sum+= $part3a_2['2']*2; ?></td>
+			<td><?php echo $part3a_2['3']; $sum+= $part3a_2['3']*3; ?></td>
+			<td><?php echo $part3a_2['4']; $sum+= $part3a_2['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[2] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>3.</td>
 			<td>Presents the subject matter clearly and systematically.</td>
-			<td><?php echo $part3a_3[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_3['1']; $sum+= $part3a_3['1']; $count+=$part3a_3['1']; ?></td>
-			<td><?php echo $part3a_3['2']; $sum+= $part3a_3['2']*2; $count+=$part3a_3['2'];?></td>
-			<td><?php echo $part3a_3['3']; $sum+= $part3a_3['3']*3; $count+=$part3a_3['3'];?></td>
-			<td><?php echo $part3a_3['4']; $sum+= $part3a_3['4']*4; $count+=$part3a_3['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[3] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_3[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_3['1']; $sum+= $part3a_3['1']; ?></td>
+			<td><?php echo $part3a_3['2']; $sum+= $part3a_3['2']*2; ?></td>
+			<td><?php echo $part3a_3['3']; $sum+= $part3a_3['3']*3; ?></td>
+			<td><?php echo $part3a_3['4']; $sum+= $part3a_3['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[3] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>4.</td>
 			<td>Relates the course to other fields and current issues/concerns.</td>
-			<td><?php echo $part3a_4[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_4['1']; $sum+= $part3a_4['1']; $count+=$part3a_4['1']; ?></td>
-			<td><?php echo $part3a_4['2']; $sum+= $part3a_4['2']*2; $count+=$part3a_4['2'];?></td>
-			<td><?php echo $part3a_4['3']; $sum+= $part3a_4['3']*3; $count+=$part3a_4['3'];?></td>
-			<td><?php echo $part3a_4['4']; $sum+= $part3a_4['4']*4; $count+=$part3a_4['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[4] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_4[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_4['1']; $sum+= $part3a_4['1']; ?></td>
+			<td><?php echo $part3a_4['2']; $sum+= $part3a_4['2']*2; ?></td>
+			<td><?php echo $part3a_4['3']; $sum+= $part3a_4['3']*3; ?></td>
+			<td><?php echo $part3a_4['4']; $sum+= $part3a_4['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[4] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>5.</td>
 			<td>Fosters a stimulating atmosphere which encourages students to participate in class discussions/activities.</td>
-			<td><?php echo $part3a_5[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_5['1']; $sum+= $part3a_5['1']; $count+=$part3a_5['1']; ?></td>
-			<td><?php echo $part3a_5['2']; $sum+= $part3a_5['2']*2; $count+=$part3a_5['2'];?></td>
-			<td><?php echo $part3a_5['3']; $sum+= $part3a_5['3']*3; $count+=$part3a_5['3'];?></td>
-			<td><?php echo $part3a_5['4']; $sum+= $part3a_5['4']*4; $count+=$part3a_5['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[5] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_5[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_5['1']; $sum+= $part3a_5['1']; ?></td>
+			<td><?php echo $part3a_5['2']; $sum+= $part3a_5['2']*2; ?></td>
+			<td><?php echo $part3a_5['3']; $sum+= $part3a_5['3']*3; ?></td>
+			<td><?php echo $part3a_5['4']; $sum+= $part3a_5['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[5] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>6.</td>
 			<td>Stimulates the students to study more about the subject.</td>
-			<td><?php echo $part3a_6[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_6['1']; $sum+= $part3a_6['1']; $count+=$part3a_6['1']; ?></td>
-			<td><?php echo $part3a_6['2']; $sum+= $part3a_6['2']*2; $count+=$part3a_6['2'];?></td>
-			<td><?php echo $part3a_6['3']; $sum+= $part3a_6['3']*3; $count+=$part3a_6['3'];?></td>
-			<td><?php echo $part3a_6['4']; $sum+= $part3a_6['4']*4; $count+=$part3a_6['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[6] = $sum/$count, 4); else echo 0;?></td>
-		
+			<td><?php echo $part3a_6[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_6['1']; $sum+= $part3a_6['1']; ?></td>
+			<td><?php echo $part3a_6['2']; $sum+= $part3a_6['2']*2; ?></td>
+			<td><?php echo $part3a_6['3']; $sum+= $part3a_6['3']*3; ?></td>
+			<td><?php echo $part3a_6['4']; $sum+= $part3a_6['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[6] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>7.</td>
 			<td>Does not encourage studetns to do their best.</td>
-			<td><?php echo $part3a_7[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_7['1']; $sum+= $part3a_7['1']; $count+=$part3a_7['1']; ?></td>
-			<td><?php echo $part3a_7['2']; $sum+= $part3a_7['2']*2; $count+=$part3a_7['2'];?></td>
-			<td><?php echo $part3a_7['3']; $sum+= $part3a_7['3']*3; $count+=$part3a_7['3'];?></td>
-			<td><?php echo $part3a_7['4']; $sum+= $part3a_7['4']*4; $count+=$part3a_7['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[7] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_7[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_7['1']; $sum+= $part3a_7['1']; ?></td>
+			<td><?php echo $part3a_7['2']; $sum+= $part3a_7['2']*2; ?></td>
+			<td><?php echo $part3a_7['3']; $sum+= $part3a_7['3']*3; ?></td>
+			<td><?php echo $part3a_7['4']; $sum+= $part3a_7['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[7] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>8.</td>
 			<td>Speaks clearly and audibly.</td>
-			<td><?php echo $part3a_8[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_8['1']; $sum+= $part3a_8['1']; $count+=$part3a_8['1']; ?></td>
-			<td><?php echo $part3a_8['2']; $sum+= $part3a_8['2']*2; $count+=$part3a_8['2'];?></td>
-			<td><?php echo $part3a_8['3']; $sum+= $part3a_8['3']*3; $count+=$part3a_8['3'];?></td>
-			<td><?php echo $part3a_8['4']; $sum+= $part3a_8['4']*4; $count+=$part3a_8['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[8] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_8[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_8['1']; $sum+= $part3a_8['1']; ?></td>
+			<td><?php echo $part3a_8['2']; $sum+= $part3a_8['2']*2; ?></td>
+			<td><?php echo $part3a_8['3']; $sum+= $part3a_8['3']*3; ?></td>
+			<td><?php echo $part3a_8['4']; $sum+= $part3a_8['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[8] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>9.</td>
 			<td>Uses appropriate teaching techniques and instructional materials.</td>
-			<td><?php echo $part3a_9[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_9['1']; $sum+= $part3a_9['1']; $count+=$part3a_9['1']; ?></td>
-			<td><?php echo $part3a_9['2']; $sum+= $part3a_9['2']*2; $count+=$part3a_9['2'];?></td>
-			<td><?php echo $part3a_9['3']; $sum+= $part3a_9['3']*3; $count+=$part3a_9['3'];?></td>
-			<td><?php echo $part3a_9['4']; $sum+= $part3a_9['4']*4; $count+=$part3a_9['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[9] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_9[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_9['1']; $sum+= $part3a_9['1']; ?></td>
+			<td><?php echo $part3a_9['2']; $sum+= $part3a_9['2']*2; ?></td>
+			<td><?php echo $part3a_9['3']; $sum+= $part3a_9['3']*3; ?></td>
+			<td><?php echo $part3a_9['4']; $sum+= $part3a_9['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[9] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>10.</td>
 			<td>Does not respect students' ideas and viewpoints.</td>
-			<td><?php echo $part3a_10[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_10['1']; $sum+= $part3a_10['1']; $count+=$part3a_10['1']; ?></td>
-			<td><?php echo $part3a_10['2']; $sum+= $part3a_10['2']*2; $count+=$part3a_10['2'];?></td>
-			<td><?php echo $part3a_10['3']; $sum+= $part3a_10['3']*3; $count+=$part3a_10['3'];?></td>
-			<td><?php echo $part3a_10['4']; $sum+= $part3a_10['4']*4; $count+=$part3a_10['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[10] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_10[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_10['1']; $sum+= $part3a_10['1']; ?></td>
+			<td><?php echo $part3a_10['2']; $sum+= $part3a_10['2']*2; ?></td>
+			<td><?php echo $part3a_10['3']; $sum+= $part3a_10['3']*3; ?></td>
+			<td><?php echo $part3a_10['4']; $sum+= $part3a_10['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[10] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>11.</td>
 			<td>Explains concepts again when he/she notes that the concept is not well understood.</td>
-			<td><?php echo $part3a_11[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_11['1']; $sum+= $part3a_11['1']; $count+=$part3a_11['1']; ?></td>
-			<td><?php echo $part3a_11['2']; $sum+= $part3a_11['2']*2; $count+=$part3a_11['2'];?></td>
-			<td><?php echo $part3a_11['3']; $sum+= $part3a_11['3']*3; $count+=$part3a_11['3'];?></td>
-			<td><?php echo $part3a_11['4']; $sum+= $part3a_11['4']*4; $count+=$part3a_11['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[11] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_11[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_11['1']; $sum+= $part3a_11['1']; ?></td>
+			<td><?php echo $part3a_11['2']; $sum+= $part3a_11['2']*2; ?></td>
+			<td><?php echo $part3a_11['3']; $sum+= $part3a_11['3']*3; ?></td>
+			<td><?php echo $part3a_11['4']; $sum+= $part3a_11['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[11] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>12.</td>
 			<td>Identifies and stresses important points.</td>
-			<td><?php echo $part3a_12[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_12['1']; $sum+= $part3a_12['1']; $count+=$part3a_12['1']; ?></td>
-			<td><?php echo $part3a_12['2']; $sum+= $part3a_12['2']*2; $count+=$part3a_12['2'];?></td>
-			<td><?php echo $part3a_12['3']; $sum+= $part3a_12['3']*3; $count+=$part3a_12['3'];?></td>
-			<td><?php echo $part3a_12['4']; $sum+= $part3a_12['4']*4; $count+=$part3a_12['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[12] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_12[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_12['1']; $sum+= $part3a_12['1']; ?></td>
+			<td><?php echo $part3a_12['2']; $sum+= $part3a_12['2']*2; ?></td>
+			<td><?php echo $part3a_12['3']; $sum+= $part3a_12['3']*3; ?></td>
+			<td><?php echo $part3a_12['4']; $sum+= $part3a_12['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[12] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>13.</td>
 			<td>Demonstrates thorough and broad knowledge of the subject of the course.</td>
-			<td><?php echo $part3a_13[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_13['1']; $sum+= $part3a_13['1']; $count+=$part3a_13['1']; ?></td>
-			<td><?php echo $part3a_13['2']; $sum+= $part3a_13['2']*2; $count+=$part3a_13['2'];?></td>
-			<td><?php echo $part3a_13['3']; $sum+= $part3a_13['3']*3; $count+=$part3a_13['3'];?></td>
-			<td><?php echo $part3a_13['4']; $sum+= $part3a_13['4']*4; $count+=$part3a_13['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[13] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_13[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_13['1']; $sum+= $part3a_13['1']; ?></td>
+			<td><?php echo $part3a_13['2']; $sum+= $part3a_13['2']*2; ?></td>
+			<td><?php echo $part3a_13['3']; $sum+= $part3a_13['3']*3; ?></td>
+			<td><?php echo $part3a_13['4']; $sum+= $part3a_13['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[13] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>14.</td>
 			<td>Uses evaluation measures and tests which adequately sample what was covered in the course.</td>
-			<td><?php echo $part3a_14[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_14['1']; $sum+= $part3a_14['1']; $count+=$part3a_14['1']; ?></td>
-			<td><?php echo $part3a_14['2']; $sum+= $part3a_14['2']*2; $count+=$part3a_14['2'];?></td>
-			<td><?php echo $part3a_14['3']; $sum+= $part3a_14['3']*3; $count+=$part3a_14['3'];?></td>
-			<td><?php echo $part3a_14['4']; $sum+= $part3a_14['4']*4; $count+=$part3a_14['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[14] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_14[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_14['1']; $sum+= $part3a_14['1']; ?></td>
+			<td><?php echo $part3a_14['2']; $sum+= $part3a_14['2']*2; ?></td>
+			<td><?php echo $part3a_14['3']; $sum+= $part3a_14['3']*3; ?></td>
+			<td><?php echo $part3a_14['4']; $sum+= $part3a_14['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[14] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td>15.</td>
 			<td>Gives constructive criticism of students' works.</td>
-			<td><?php echo $part3a_15[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_15['1']; $sum+= $part3a_15['1']; $count+=$part3a_15['1']; ?></td>
-			<td><?php echo $part3a_15['2']; $sum+= $part3a_15['2']*2; $count+=$part3a_15['2'];?></td>
-			<td><?php echo $part3a_15['3']; $sum+= $part3a_15['3']*3; $count+=$part3a_15['3'];?></td>
-			<td><?php echo $part3a_15['4']; $sum+= $part3a_15['4']*4; $count+=$part3a_15['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[15] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_15[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_15['1']; $sum+= $part3a_15['1']; ?></td>
+			<td><?php echo $part3a_15['2']; $sum+= $part3a_15['2']*2; ?></td>
+			<td><?php echo $part3a_15['3']; $sum+= $part3a_15['3']*3; ?></td>
+			<td><?php echo $part3a_15['4']; $sum+= $part3a_15['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[15] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td width="2%">16.</td>
 			<td width="62%">Is firm and consistent; strict but reasonable in disciplining students.</td>
-			<td><?php echo $part3a_16[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_16['1']; $sum+= $part3a_16['1']; $count+=$part3a_16['1']; ?></td>
-			<td><?php echo $part3a_16['2']; $sum+= $part3a_16['2']*2; $count+=$part3a_16['2'];?></td>
-			<td><?php echo $part3a_16['3']; $sum+= $part3a_16['3']*3; $count+=$part3a_16['3'];?></td>
-			<td><?php echo $part3a_16['4']; $sum+= $part3a_16['4']*4; $count+=$part3a_16['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[16] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_16[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_16['1']; $sum+= $part3a_16['1']; ?></td>
+			<td><?php echo $part3a_16['2']; $sum+= $part3a_16['2']*2; ?></td>
+			<td><?php echo $part3a_16['3']; $sum+= $part3a_16['3']*3; ?></td>
+			<td><?php echo $part3a_16['4']; $sum+= $part3a_16['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[16] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td width="2%">17.</td>
 			<td width="62%">Does not invite questions from students.</td>
-			<td><?php echo $part3a_17[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_17['1']; $sum+= $part3a_17['1']; $count+=$part3a_17['1']; ?></td>
-			<td><?php echo $part3a_17['2']; $sum+= $part3a_17['2']*2; $count+=$part3a_17['2'];?></td>
-			<td><?php echo $part3a_17['3']; $sum+= $part3a_17['3']*3; $count+=$part3a_17['3'];?></td>
-			<td><?php echo $part3a_17['4']; $sum+= $part3a_17['4']*4; $count+=$part3a_17['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[17] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_17[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_17['1']; $sum+= $part3a_17['1']; ?></td>
+			<td><?php echo $part3a_17['2']; $sum+= $part3a_17['2']*2; ?></td>
+			<td><?php echo $part3a_17['3']; $sum+= $part3a_17['3']*3; ?></td>
+			<td><?php echo $part3a_17['4']; $sum+= $part3a_17['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[17] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td width="2%">18.</td>
 			<td width="62%">Explains the grading procedure ans standards clearly and applies them.</td>
-			<td><?php echo $part3a_18[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_18['1']; $sum+= $part3a_18['1']; $count+=$part3a_18['1']; ?></td>
-			<td><?php echo $part3a_18['2']; $sum+= $part3a_18['2']*2; $count+=$part3a_18['2'];?></td>
-			<td><?php echo $part3a_18['3']; $sum+= $part3a_18['3']*3; $count+=$part3a_18['3'];?></td>
-			<td><?php echo $part3a_18['4']; $sum+= $part3a_18['4']*4; $count+=$part3a_18['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[18] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_18[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_18['1']; $sum+= $part3a_18['1']; ?></td>
+			<td><?php echo $part3a_18['2']; $sum+= $part3a_18['2']*2; ?></td>
+			<td><?php echo $part3a_18['3']; $sum+= $part3a_18['3']*3; ?></td>
+			<td><?php echo $part3a_18['4']; $sum+= $part3a_18['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[18] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td width="2%">19.</td>
 			<td width="62%">Does not invite through behaviour and general appearance.</td>
-			<td><?php echo $part3a_19[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_19['1']; $sum+= $part3a_19['1']; $count+=$part3a_19['1']; ?></td>
-			<td><?php echo $part3a_19['2']; $sum+= $part3a_19['2']*2; $count+=$part3a_19['2'];?></td>
-			<td><?php echo $part3a_19['3']; $sum+= $part3a_19['3']*3; $count+=$part3a_19['3'];?></td>
-			<td><?php echo $part3a_19['4']; $sum+= $part3a_19['4']*4; $count+=$part3a_19['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[19] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_19[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_19['1']; $sum+= $part3a_19['1']; ?></td>
+			<td><?php echo $part3a_19['2']; $sum+= $part3a_19['2']*2; ?></td>
+			<td><?php echo $part3a_19['3']; $sum+= $part3a_19['3']*3; ?></td>
+			<td><?php echo $part3a_19['4']; $sum+= $part3a_19['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[19] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td width="2%">20.</td>
 			<td width="62%">Explains the grading procedure ans standards clearly and applies them.</td>
-			<td><?php echo $part3a_20[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_20['1']; $sum+= $part3a_20['1']; $count+=$part3a_20['1']; ?></td>
-			<td><?php echo $part3a_20['2']; $sum+= $part3a_20['2']*2; $count+=$part3a_20['2'];?></td>
-			<td><?php echo $part3a_20['3']; $sum+= $part3a_20['3']*3; $count+=$part3a_20['3'];?></td>
-			<td><?php echo $part3a_20['4']; $sum+= $part3a_20['4']*4; $count+=$part3a_20['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[20] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_20[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_20['1']; $sum+= $part3a_20['1']; ?></td>
+			<td><?php echo $part3a_20['2']; $sum+= $part3a_20['2']*2; ?></td>
+			<td><?php echo $part3a_20['3']; $sum+= $part3a_20['3']*3; ?></td>
+			<td><?php echo $part3a_20['4']; $sum+= $part3a_20['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[20] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td width="2%">21.</td>
 			<td width="62%">Admits errors in the presentation of subject matter, and in evaluation.</td>
-			<td><?php echo $part3a_21[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_21['1']; $sum+= $part3a_21['1']; $count+=$part3a_21['1']; ?></td>
-			<td><?php echo $part3a_21['2']; $sum+= $part3a_21['2']*2; $count+=$part3a_21['2'];?></td>
-			<td><?php echo $part3a_21['3']; $sum+= $part3a_21['3']*3; $count+=$part3a_21['3'];?></td>
-			<td><?php echo $part3a_21['4']; $sum+= $part3a_21['4']*4; $count+=$part3a_21['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[21] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_21[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_21['1']; $sum+= $part3a_21['1']; ?></td>
+			<td><?php echo $part3a_21['2']; $sum+= $part3a_21['2']*2; ?></td>
+			<td><?php echo $part3a_21['3']; $sum+= $part3a_21['3']*3; ?></td>
+			<td><?php echo $part3a_21['4']; $sum+= $part3a_21['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[21] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td width="2%">22.</td>
 			<td width="62%">Answers students' questions adequately.</td>
-			<td><?php echo $part3a_22[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_22['1']; $sum+= $part3a_22['1']; $count+=$part3a_22['1']; ?></td>
-			<td><?php echo $part3a_22['2']; $sum+= $part3a_22['2']*2; $count+=$part3a_22['2'];?></td>
-			<td><?php echo $part3a_22['3']; $sum+= $part3a_22['3']*3; $count+=$part3a_22['3'];?></td>
-			<td><?php echo $part3a_22['4']; $sum+= $part3a_22['4']*4; $count+=$part3a_22['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[22] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_22[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_22['1']; $sum+= $part3a_22['1']; ?></td>
+			<td><?php echo $part3a_22['2']; $sum+= $part3a_22['2']*2; ?></td>
+			<td><?php echo $part3a_22['3']; $sum+= $part3a_22['3']*3; ?></td>
+			<td><?php echo $part3a_22['4']; $sum+= $part3a_22['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[22] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td width="2%">23.</td>
 			<td width="62%">Is not available for consultation.</td>
-			<td><?php echo $part3a_23[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_23['1']; $sum+= $part3a_23['1']; $count+=$part3a_23['1']; ?></td>
-			<td><?php echo $part3a_23['2']; $sum+= $part3a_23['2']*2; $count+=$part3a_23['2'];?></td>
-			<td><?php echo $part3a_23['3']; $sum+= $part3a_23['3']*3; $count+=$part3a_23['3'];?></td>
-			<td><?php echo $part3a_23['4']; $sum+= $part3a_23['4']*4; $count+=$part3a_23['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[23] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_23[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_23['1']; $sum+= $part3a_23['1']; ?></td>
+			<td><?php echo $part3a_23['2']; $sum+= $part3a_23['2']*2; ?></td>
+			<td><?php echo $part3a_23['3']; $sum+= $part3a_23['3']*3; ?></td>
+			<td><?php echo $part3a_23['4']; $sum+= $part3a_23['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[23] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td width="2%">24.</td>
 			<td width="62%">Is able to make students comprehend and appreciate complex ideas.</td>
-			<td><?php echo $part3a_24[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_24['1']; $sum+= $part3a_24['1']; $count+=$part3a_24['1']; ?></td>
-			<td><?php echo $part3a_24['2']; $sum+= $part3a_24['2']*2; $count+=$part3a_24['2'];?></td>
-			<td><?php echo $part3a_24['3']; $sum+= $part3a_24['3']*3; $count+=$part3a_24['3'];?></td>
-			<td><?php echo $part3a_24['4']; $sum+= $part3a_24['4']*4; $count+=$part3a_24['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[24] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_24[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_24['1']; $sum+= $part3a_24['1']; ?></td>
+			<td><?php echo $part3a_24['2']; $sum+= $part3a_24['2']*2; ?></td>
+			<td><?php echo $part3a_24['3']; $sum+= $part3a_24['3']*3; ?></td>
+			<td><?php echo $part3a_24['4']; $sum+= $part3a_24['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[24] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td width="2%">25.</td>
 			<td width="62%">Gives unreasonable course requirements and assignments.</td>
-			<td><?php echo $part3a_25[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_25['1']; $sum+= $part3a_25['1']; $count+=$part3a_25['1']; ?></td>
-			<td><?php echo $part3a_25['2']; $sum+= $part3a_25['2']*2; $count+=$part3a_25['2'];?></td>
-			<td><?php echo $part3a_25['3']; $sum+= $part3a_25['3']*3; $count+=$part3a_25['3'];?></td>
-			<td><?php echo $part3a_25['4']; $sum+= $part3a_25['4']*4; $count+=$part3a_25['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[25] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_25[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_25['1']; $sum+= $part3a_25['1']; ?></td>
+			<td><?php echo $part3a_25['2']; $sum+= $part3a_25['2']*2; ?></td>
+			<td><?php echo $part3a_25['3']; $sum+= $part3a_25['3']*3; ?></td>
+			<td><?php echo $part3a_25['4']; $sum+= $part3a_25['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[25] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 		<tr>
 			<td width="2%">26.</td>
 			<td>Uses comprehensive, up-to-date and relevant reading list.</td>
-			<td><?php echo $part3a_26[0]; ?></td>
-			<td><?php $sum = 0; $count = 0; echo $part3a_26['1']; $sum+= $part3a_26['1']; $count+=$part3a_26['1']; ?></td>
-			<td><?php echo $part3a_26['2']; $sum+= $part3a_26['2']*2; $count+=$part3a_26['2'];?></td>
-			<td><?php echo $part3a_26['3']; $sum+= $part3a_26['3']*3; $count+=$part3a_26['3'];?></td>
-			<td><?php echo $part3a_26['4']; $sum+= $part3a_26['4']*4; $count+=$part3a_26['4'];?></td>
-			<td><?php  if($count != 0) echo round($ave[26] = $sum/$count, 4); else echo 0;?></td>
+			<td><?php echo $part3a_26[0]; $sum = 0; ?></td>
+			<td><?php echo $part3a_26['1']; $sum+= $part3a_26['1']; ?></td>
+			<td><?php echo $part3a_26['2']; $sum+= $part3a_26['2']*2; ?></td>
+			<td><?php echo $part3a_26['3']; $sum+= $part3a_26['3']*3; ?></td>
+			<td><?php echo $part3a_26['4']; $sum+= $part3a_26['4']*4; ?></td>
+			<td><?php  if($no_of_respondents != 0) echo round($ave[26] = $sum/$no_of_respondents, 4); else echo 0;?></td>
 		</tr>
 	</table>
 	<br/>

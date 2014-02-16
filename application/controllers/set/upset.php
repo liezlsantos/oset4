@@ -25,9 +25,14 @@ class Upset extends CI_Controller
 	public function evaluate($oset_class_id)
 	{
 		$data = $this->session->userdata('logged_in');
-		$data['preview'] = false;
-		$data['class'] = $this->classes->getInformation($oset_class_id);
-		$this->load->view('set/UP_SET_view', $data);	
+		if($this->upset_model->checkIfEvaluated($oset_class_id, $data['student_id']) == 0)
+		{
+			$data['preview'] = false;
+			$data['class'] = $this->classes->getInformation($oset_class_id);
+			$this->load->view('set/UP_SET_view', $data);
+		}
+		else 
+			redirect("student/home", "refresh");	
 	}
 	
 	public function submit($oset_class_id)
@@ -148,14 +153,9 @@ class Upset extends CI_Controller
 			
 			//compute score
 			$score = 0;
-			$countNA = 0;
 			for ($i = 1; $i <= 26; $i++)
-			{
-				if($data['part3a_'.$i] == 0) 
-					$countNA++; 
 				$score += $data['part3a_'.$i]; 
-			}
-			$score /= (26 - $countNA);
+			$score /= 26;
 			
 			$data2['student_id'] = $user_data['student_id'];
 			$data2['score'] = $score;
@@ -183,43 +183,5 @@ class Upset extends CI_Controller
 			$this->upset_model->generateReportPerClass($oset_class_id);
 		redirect(base_url($filename), 'refresh');
 	}
-	
-	/*public function generateReportPerClass($oset_class_id)
-	{
-		$this->load->helper('file');
-		
-		$class = $this->classes->getInformation($oset_class_id);
-		$filename = './reports/report_per_class/'.$class['instructor_code'].'-'.$class['class_id'].'.pdf';
-		
-		if(!file_exists($filename))
-		{
-			//pdf		
-			$this->load->helper(array('dompdf', 'file'));
-			//pdf header
-			$data = $this->upset_model->getReportPerClassData($class['oset_class_id']);
-			$data['instructor'] = $class['instructor'];
-			$data['subject'] = $class['subject'].'-'.$class['section'];
-			$data['no_of_respondents'] = $class['no_of_respondents'];	
-			$sem = substr($class['class_id'], 0, 4);
-			$sem2 = $sem+1;
-			$data['sem_ay'] = substr($class['class_id'], 4, 1).' / '.$sem.'-'.$sem2;		
-				
-			//archive report
-			$html = $this->load->view('set/upset_detailedreport_view', $data, TRUE);
-			$pdf_data = pdf_create($html, '' , FALSE);  
-			write_file($filename, $pdf_data);
-			
-			//save link to db	
-			$data = array('course' =>	$class['subject'].'-'.$class['section'],
-						  'sem_ay' => substr($class['class_id'], 0, 5), 
-						  'instructor' => $class['instructor_code'], 
-						  'pdf' => $filename,
-						  'college' => $class['college_code'],
-						  'department' => $class['department_code']);
-			
-			$this->report_per_class->saveToDatabase($data);
-		}
-		redirect(base_url($filename), 'refresh');
-	}*/
-	
+
 }

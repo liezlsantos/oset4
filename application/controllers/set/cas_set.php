@@ -25,9 +25,14 @@ class Cas_set extends CI_Controller
 	public function evaluate($oset_class_id)
 	{
 		$data = $this->session->userdata('logged_in');
-		$data['preview'] = false;
-		$data['class'] = $this->classes->getInformation($oset_class_id);
-		$this->load->view('set/CAS_SET_view', $data);	
+		if($this->cas_set_model->checkIfEvaluated($oset_class_id, $data['student_id']) == 0)
+		{
+			$data['preview'] = false;
+			$data['class'] = $this->classes->getInformation($oset_class_id);
+			$this->load->view('set/CAS_SET_view', $data);
+		}
+		else 
+			redirect("student/home", "refresh");	
 	}
 	
 	public function submit($oset_class_id)
