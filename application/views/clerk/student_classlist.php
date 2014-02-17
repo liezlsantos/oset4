@@ -5,8 +5,8 @@
 		<link href='<?=base_url('css/style.css')?>' rel='stylesheet' type='text/css'>
 	</header>
 
-	<body class="wrapper">
-		
+	<body>
+		<div class="wrapper">
 		<?php include('header.php'); ?>
 		
 		<div class = "right">
@@ -47,5 +47,5 @@
 				echo '<a href="'.base_url('/index.php/clerk/studentaccount/').'">Back to list of students </a>';
 		?>
 	</div>
-
+	</div>
 	</body>

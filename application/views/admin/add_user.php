@@ -22,8 +22,8 @@
 		</script>
 	</header>
 
-	<body class="wrapper">
-		
+	<body>
+		<div class="wrapper">
 		<?php include('header.php'); ?>
 		
 		<div class = "right">
@@ -99,6 +99,6 @@
 				</table>
 				<?php form_close();?>
 			</div>
-
+		</div>
 		</div>
 	</body>

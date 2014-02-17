@@ -5,8 +5,8 @@
 		<link href='<?=base_url('css/style.css')?>' rel='stylesheet' type='text/css'>
 	</header>
 
-	<body class="wrapper">
-		
+	<body>
+		<div class="wrapper">
 		<span class="nostyle">
 		<?php include('header.php'); ?>
 		</span>
@@ -68,5 +68,5 @@
 		</form>
 		
 		</div>
-
+		</div>
 	</body>

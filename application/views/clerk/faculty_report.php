@@ -24,8 +24,8 @@
 		<link href='<?=base_url('css/style.css')?>' rel='stylesheet' type='text/css'>
 	</header>
 
-	<body class="wrapper">
-		
+	<body>
+		<div class="wrapper">
 		<?php include('header.php'); ?>
 		
 		<div class = "right">
@@ -54,12 +54,12 @@
 				{
 					echo '
 						<tr>
-							<th width="20%">Name</th>
+							<th>Name</th>
 							<th width="20%">Subject</td>
-							<th width="8%">Units</td>
-							<th width="11%">No. of Students</td>
-							<th width="11%">No. of Students Evaluated</td>
-							<th width="9%">Score</td>
+							<th width="6%">Units</td>
+							<th style="white-space:nowrap;">No. of Students</td>
+							<th style="white-space:nowrap;">No. of Respondents</td>
+							<th width="8%">Score</td>
 							<th>Total</td>
 							<th>Rating</td>
 						</tr>
@@ -123,5 +123,5 @@
 		</table>
 		
 		</div>
-
+		</div>
 	</body>

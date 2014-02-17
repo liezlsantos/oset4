@@ -5,12 +5,11 @@
 	<script src="<?php echo base_url('javascript/jquery-ui.js');?>"></script>
 	<script>
 		$(document).ready(function() {
-			$("#accordion").accordion({active:0});
+			$( "#accordion" ).accordion({active: 0, heightStyle: "content"});
 		});
 	</script>
 	
 	<div class="header">
-		<img alt="OSET header" class="banner" src="<?php echo base_url('css/images/oset.jpg');?>">
 		<div class="loginbar">
 		<?php
 			if($preview)
@@ -18,7 +17,7 @@
 			else
 				echo "Welcome ".ucwords(strtolower(substr($name, strpos($name, ",")+2)));
 		?>
-		<a href="<?php echo base_url('/index.php/login/logout');?>">Logout</a></div>
+		<a href="<?php echo base_url('/index.php/login/logout');?>">Logout</a> &nbsp;</div>
 	</div>
 		
 	<div class="left">
@@ -35,7 +34,9 @@
 					<div class="module-div" class="current">
 						<h1>Account Management</h1>
 						<a href="'.base_url('/index.php/admin/account').'"'; if(strpos($_SERVER["PHP_SELF"],"admin/account")) echo 'class="current"'; echo'> View User Accounts</a>	
-						<a href="'.base_url('/index.php/admin/studentaccountmanagement').'"'; if(strpos($_SERVER["PHP_SELF"],"admin/studentaccountmanagement")) echo 'class="current"'; echo'">Generate Student Accounts</a>
+						<a href="'.base_url('/index.php/admin/studentaccountmanagement').'"'; if(strpos($_SERVER["PHP_SELF"],"admin/studentaccountmanagement") && !strpos($_SERVER["PHP_SELF"],"admin/studentaccountmanagement/changepassword")) echo 'class="current"'; echo'">Generate Student Accounts</a>
+						<a href="'.base_url('/index.php/admin/studentaccountmanagement/changepassword').'"'; if(strpos($_SERVER["PHP_SELF"],"admin/studentaccountmanagement/changepassword")) echo 'class="current"'; 
+						echo '">Change Student\'s Password</a>
 					</div>
 
 					<div class="module-div">
@@ -46,9 +47,9 @@
 					<div class="module-div">
 						<h1>SET </h1>
 						<a href="'.base_url('/index.php/admin/SET').'"'; if(strpos($_SERVER["PHP_SELF"],"admin/SET")) echo 'class="current"'; echo'"> Setup</a>
-						<a href="'.base_url('/index.php/admin/setinstrumentmanagement').'"'; if(strpos($_SERVER["PHP_SELF"],"admin/setinstrument") || strpos($_SERVER["PHP_SELF"],"admin/set/")) echo 'class="current"'; echo'"> SET Instrument Management</a>
+						<a href="'.base_url('/index.php/admin/setinstrumentmanagement').'"'; if(strpos($_SERVER["PHP_SELF"],"preview")) echo 'class="current"'; echo'"> SET Instrument Management</a>
 					</div>
-				</div>';		
+				</div>';	
 			}
 			if(isset($isClerk))
 			{
@@ -132,8 +133,6 @@
 				<div>
 					<div class="module-div">
 						<a href="'.base_url('/index.php/student/home').'" class="current">View Classes</a>
-					</div>
-					<div class="module-div">
 						<a href="'.base_url('/index.php/login/logout').'">Logout</a>
 					</div>
 				</div>';

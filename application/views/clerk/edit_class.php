@@ -12,8 +12,8 @@
 		
 	</header>
 
-	<body class="wrapper">
-		
+	<body>
+		<div class="wrapper">
 		<?php include('header.php'); ?>
 		
 		<div class = "right">
@@ -49,11 +49,11 @@
 		
 		<br/><br/>
 		<?php
-			if(($_SESSION['subject_keyword']) || ($_SESSION['department_keyword']))
+			if(isset($_SESSION['subject_keyword']) || isset($_SESSION['department_keyword']))
 				echo '<a href="'.base_url('/index.php/clerk/classmanagement/search').'">Back to search results</a>';
 			else 
 				echo '<a href="'.base_url('/index.php/clerk/classmanagement/').'">Back to list of classes </a>';
 		?>
 	</div>
-
+	</div>
 	</body>

@@ -5,8 +5,8 @@
 		<link href='<?=base_url('css/style.css')?>' rel='stylesheet' type='text/css'>
 	</header>
 
-	<body class="wrapper">
-		
+	<body>
+		<div class="wrapper">
 		<?php include('header.php'); ?>
 		<div class = "right">
 		
@@ -102,5 +102,5 @@
 		?>
 			
 	</div>
-
+	</div>
 	</body>

@@ -1,17 +1,16 @@
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 		
-	<script src="<?php echo str_replace('http', 'https', base_url('javascript/jquery-1.9.1.js'));?>"></script>
-	<script src="<?php echo str_replace('http', 'https', base_url('javascript/jquery-ui.js'));?>"></script>
+	<script src="<?php echo str_replace('http', 'https', base_url('js/jquery-1.9.1.js'));?>"></script>
+	<script src="<?php echo str_replace('http', 'https', base_url('js/jquery-ui.js'));?>"></script>
 	
 	<script>
 		$(document).ready(function() {
-			$("#accordion").accordion({active:0});
-		});
+			$( "#accordion" ).accordion({active: 0, heightStyle: "content"});
+		});	
 	</script>
 	
 	<div class="header">
-		<img alt="OSET header" class="banner" src="<?php echo base_url('css/images/oset.jpg');?>">
-		<div class="loginbar">Welcome <?php echo $first_name; ?>. <a href="<?php echo base_url('/index.php/login/logout');?>">Logout</a></div>
+		<div class="loginbar">Welcome <?php echo $first_name; ?>. <a href="<?php echo base_url('/index.php/login/logout');?>">Logout</a> &nbsp;</div>
 	</div>
 		
 	<div class="left">
@@ -61,7 +60,7 @@
 							echo 'class="current"'; echo '">Classes-Faculty Selection</a>
 						<a href="'.base_url('/index.php/clerk/studentaccount').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/studentaccount")) echo 'class="current"'; echo'">List of Students</a>
 						<a href="'.base_url('/index.php/clerk/studentaccount').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/studentaccount")) echo 'class="current"'; echo'">List of Students</a>
-						<a href="'.base_url('/index.php/clerk/setinstrumentassignment').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/setinstrumentassignment") && strpos($_SERVER["PHP_SELF"],"set")) echo 'class="current"'; echo '">Assignment of SET Instrument</a>
+						<a href="'.base_url('/index.php/clerk/setinstrumentassignment').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/setinstrumentassignment") && strpos($_SERVER["PHP_SELF"],"set")) echo 'class="current"'; echo '">SET Instrument Assignment</a>
 				</div>';
 				
 				if($SET['accounts_generated'])

@@ -3,8 +3,8 @@
 		<link href='<?=base_url('css/style.css')?>' rel='stylesheet' type='text/css'>
 	</header>
 
-	<body class="wrapper">
-		
+	<body>
+		<div class="wrapper">
 		<?php include('header.php'); 
 			function convertToString($sem_ay)
 			{ 
@@ -117,5 +117,5 @@
 		<br/><br/>
 		
 		</div>
-
+		</div>
 	</body>

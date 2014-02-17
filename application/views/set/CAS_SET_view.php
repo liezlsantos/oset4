@@ -71,8 +71,8 @@
 		</script>
 	</header>
 
-	<body class="wrapper">
-		
+	<body>
+		<div class="wrapper">
 		<?php include('header.php'); ?>
 		
 		<div class = "right">
@@ -94,7 +94,7 @@
 				<table class="SET">
 					<tr>
 						<td>1. How active have you been participating in this class (eg. by way of recitation, reporting, class discussion, other class activities)
-						&nbsp; &nbsp;
+						<br/>&nbsp;&nbsp;
 							<select name="part1_1">
 								<option value="NR"></option>
 								<option>very active</option>
@@ -390,5 +390,5 @@
 			</div>
 		
 		</div>
-	
+		</div>
 	</body>

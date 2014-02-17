@@ -5,8 +5,8 @@
 		<link href='<?=base_url('css/style.css')?>' rel='stylesheet' type='text/css'>
 	</header>
 
-	<body class="wrapper">
-		
+	<body>
+		<div class="wrapper">
 		<?php include('header.php'); ?>
 		<div class = "right">
 		
@@ -25,5 +25,5 @@
 		
 		<iframe src='<?php echo base_url('/reports/students_with_unevaluated_classes_'.$user_college_code.'.pdf');?>' width="100%" height="1000px;"  />
 		</div>
-
+		</div>
 	</body>

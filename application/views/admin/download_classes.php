@@ -12,8 +12,8 @@
 	
 	</header>
 
-	<body class="wrapper">
-		
+	<body>
+		<div class="wrapper">
 		<?php include('header.php'); ?>
 		
 		<div class = "right">
@@ -52,5 +52,5 @@
 		?>
 			
 	</div>
-
+	</div>
 	</body>

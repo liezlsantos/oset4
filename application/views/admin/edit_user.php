@@ -22,8 +22,8 @@
 		</script>
 	</header>
 
-	<body class="wrapper" onLoad="show('passwordDiv', 'changePassword'), show('collegeDiv','isClerk');">
-		
+	<body onLoad="show('passwordDiv', 'changePassword'), show('collegeDiv','isClerk');">
+		<div class="wrapper">
 		<?php include('header.php'); ?>
 		
 		<div class = "right">
@@ -108,6 +108,6 @@
 				</table>
 				<?php form_close();?>
 			</div>
-
+		</div>
 		</div>
 	</body>

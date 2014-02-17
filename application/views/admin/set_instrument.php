@@ -5,8 +5,8 @@
 		<link href='<?=base_url('css/style.css')?>' rel='stylesheet' type='text/css'>	
 	</header>
 
-	<body class="wrapper">
-		
+	<body>
+		<div class="wrapper">
 		<?php include('header.php'); ?>
 		
 		<div class = "right">
@@ -49,5 +49,5 @@
 			<br/><br/><a href="setinstrumentmanagement/add"><input type="button" value="Upload New SET Instrument" /></a>
 	
 	</div>
-
+	</div>
 	</body>
