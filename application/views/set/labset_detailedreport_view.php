@@ -376,7 +376,7 @@
 	<table class="records">
 		<tr>
 		<td colspan="8"><br/>
-		&nbsp; &nbsp; 0 - [NA/No Response] &nbsp; &nbsp; 1 - [Strongly Agree] &nbsp;&nbsp; 2 - [Agree] &nbsp;&nbsp; 3 - [Disagree] &nbsp;&nbsp; 4 - [Strongly Disagree]
+		&nbsp; &nbsp; 0 - [Not Applicable] &nbsp; &nbsp; 1 - [Strongly Agree] &nbsp;&nbsp; 2 - [Agree] &nbsp;&nbsp; 3 - [Disagree] &nbsp;&nbsp; 4 - [Strongly Disagree]
 		<br/><br/>
 		&nbsp; &nbsp; <span style="font-size: 12px">Reverse encoding for negatively oriented questions</span>
 		<br/><br/>

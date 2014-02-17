@@ -19,7 +19,7 @@
 		<div class = "right">
 		
 		<h2> User Accounts </h2>
-		<br/>
+		
 		<div id="formcss">
 			<?php echo form_open('admin/account/search', array('onSubmit'=>true)); 
 			 	  if (!isset($keyword)) $keyword = "";?>		 

@@ -31,7 +31,7 @@
 			<h2> Add New User </h2>
 			
 			<div id="formcss">
-				<span class="error_msg"><?php if(isset($error_msg)) echo $error_msg; ?></span><br/><br/>
+				<span class="error_msg"><?php if(isset($error_msg)) echo $error_msg."<br/>"; ?><br/></span>
 				<?php echo form_open('admin/account/submit', array('onSubmit'=>true)); ?> 
 				<table>
 					<tr>

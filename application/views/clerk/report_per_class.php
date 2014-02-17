@@ -33,9 +33,7 @@
 		<?php echo form_open('clerk/reportmanagement/searchreportperclass', array('onSubmit'=>true)); ?>
 		<table>
 			<tr>
-				<td>A.Y. Sem: </td>
-				<td><input type="text" size="15" value='<?php echo ' '.$sem.' '.$year.'-'.$year2; ?>' readOnly></td>
-				<td>&nbsp; Department: </td>
+				<td>Department: </td>
 				<td>
 					<select name="department">
 						<option value = "">All departments</option>

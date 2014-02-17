@@ -16,6 +16,12 @@
 	</script>
 	
 	<div class="header">
+		&nbsp; &nbsp; 
+		<img height="109px" style="margin-top: 5px;" src="<?php echo base_url('css/images/logo.png'); ?>" align="middle"></img>
+		&nbsp; &nbsp; 
+		<font class="title">Online Student Evaluation of Teachers</font>
+		<div class="subtitle">
+			University of the Philippines Manila</div>
 		<div class="loginbar">Welcome <?php echo $first_name; ?>. <a href="<?php echo base_url('/index.php/login/logout');?>">Logout</a> &nbsp;</div>
 	</div>
 		

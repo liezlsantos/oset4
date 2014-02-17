@@ -14,22 +14,22 @@
 			<h2> Add New SET Instrument </h2>
 			
 			<div id="formcss">
-				<span class="error_msg"><?php if(isset($error_msg)) echo $error_msg; ?></span><br/><br/>
+				<span class="error_msg"><?php if(isset($error_msg)) echo $error_msg."<br/>"; ?></span><br/>
 				<?php echo form_open_multipart('admin/setinstrumentmanagement/submit', array('onSubmit'=>true)); ?> 
 				<table>
 					<tr>
 					<td width="200px">SET Instrument ID : <font color="red">*</font></td>
-					<td class="element"><input type="text" value="<?php echo $set_id; ?>" readonly=""></td>
+					<td class="element"><input type="text" name="id" value="<?php echo $set_id; ?>" readonly=""></td>
 					</tr>
 					
 					<tr>
 					<td>SET Name : <font color="red">*</font></td>
-					<td class="element"><input type="text" name="name" value="" required></td>
+					<td class="element"><input type="text" name="name" value="<?php if(isset($SET_name)) echo $SET_name; ?>" required></td>
 					</tr>
 					
 					<tr>
 					<td>Table Name : <font color="red">*</font></td>
-					<td class="element"><input type="text" name="table_name" value="" required></td>
+					<td class="element"><input type="text" name="table_name" value="<?php if(isset($table_name)) echo $table_name; ?>" required></td>
 					</tr>
 										
 					<tr>

@@ -7,7 +7,7 @@
 	<body>
 		<div class ='main-content-body loginbox'>			
 			<center>
-				<img src="<?=str_replace('http', 'https', base_url('css/images/logo.jpg'));?>"
+				<img src="<?=base_url('css/images/logo.jpg');?>"
 							width="100px" align="middle"></img>
 				<font style="font-family:Georgia;font-size:20px">Online Student Evaluation of Teachers</font>
 				<br/><br/>

@@ -60,6 +60,15 @@ class SET_instrument extends CI_Model
 		return false;
 	}
 	
+	public function checkTableName($table_name)
+	{
+		$sql = $this->db->query("SELECT * FROM set_instrument WHERE table_name = '$table_name'");
+		if($sql->num_rows() == 0)
+			return TRUE;
+		else 
+			return FALSE;
+	}
+	
 	public function isEmpty()
 	{
 		$sql = $this->db->query("SELECT * FROM set_instrument");

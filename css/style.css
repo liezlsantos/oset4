@@ -19,7 +19,7 @@ div.wrapper {
   background: none repeat scroll 0% 0% rgb(255, 255, 255);
   border-radius: 4px 4px 4px 4px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
-  min-height: 120%;
+  min-height: 900px;
   margin-top: -8px;
   padding-bottom: 100px;
   margin-bottom: 80px;
@@ -28,14 +28,30 @@ div.wrapper {
 .header {
     left: 0;
     margin-left: 0px;
-    background: url('images/oset.jpg');
+    background: url('images/headerbg.jpg');
     height: 120px;
     margin-bottom: 30px;
     width: 100%;
 }
 
+.title{
+	font-family:Georgia;
+	font-size: 30px;
+	color:white; 
+	text-shadow: 2px 2px 5px #000;
+}
+
+.subtitle{
+	color:white; 
+	margin: -33px 0px 5px 380px; 
+	text-shadow: 2px 1px 5px #000;
+	font-size: 17px; 
+	font-family: Century Gothic
+}
+
 img.banner {
-  	height: 200px;
+  	height: 109px;
+    box-shadow: 8px 8px 8px #FFFFFF;
 } 
 
 div.loginbar{
@@ -47,7 +63,6 @@ div.loginbar{
 	width: 100%;
 	background-color: #FFF;
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
-	margin-top: 109px;
 }
 
 
@@ -60,7 +75,7 @@ div.loginbar{
 }
 
 .loginbox{
-	margin: 12% auto;
+	margin: 10% auto;
     width: 480px;
     height: 320px;
 }
@@ -107,7 +122,8 @@ div.left {
 		border-bottom: 1px solid #ccc;
 		color: maroon;
 		font-size: 13px;
-		padding-left: 10px;
+		padding-left: 12px;
+		margin-left: -2px !important;
 	}
 	
 	.module-div a{
@@ -138,6 +154,7 @@ div.left {
 		font-size: 14px;
 		font-weight: normal;
 		color: white !important;
+		margin-left: 3px;
 	}
 	
 	.module-div2 a {
@@ -242,11 +259,6 @@ a.no-style:hover{
 	text-decoration: none;
 }
 
-/*! jQuery UI - v1.10.4 - 2014-01-17
-* http://jqueryui.com
-* Includes: jquery.ui.core.css, jquery.ui.accordion.css, jquery.ui.autocomplete.css, jquery.ui.button.css, jquery.ui.datepicker.css, jquery.ui.dialog.css, jquery.ui.menu.css, jquery.ui.progressbar.css, jquery.ui.resizable.css, jquery.ui.selectable.css, jquery.ui.slider.css, jquery.ui.spinner.css, jquery.ui.tabs.css, jquery.ui.tooltip.css, jquery.ui.theme.css
-* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Verdana%2CArial%2Csans-serif&fwDefault=normal&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=cccccc&bgTextureHeader=highlight_soft&bgImgOpacityHeader=75&borderColorHeader=aaaaaa&fcHeader=222222&iconColorHeader=222222&bgColorContent=ffffff&bgTextureContent=flat&bgImgOpacityContent=75&borderColorContent=aaaaaa&fcContent=222222&iconColorContent=222222&bgColorDefault=e6e6e6&bgTextureDefault=glass&bgImgOpacityDefault=75&borderColorDefault=d3d3d3&fcDefault=555555&iconColorDefault=888888&bgColorHover=dadada&bgTextureHover=glass&bgImgOpacityHover=75&borderColorHover=999999&fcHover=212121&iconColorHover=454545&bgColorActive=ffffff&bgTextureActive=glass&bgImgOpacityActive=65&borderColorActive=aaaaaa&fcActive=212121&iconColorActive=454545&bgColorHighlight=fbf9ee&bgTextureHighlight=glass&bgImgOpacityHighlight=55&borderColorHighlight=fcefa1&fcHighlight=363636&iconColorHighlight=2e83ff&bgColorError=fef1ec&bgTextureError=glass&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=aaaaaa&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=aaaaaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
-* Copyright 2014 jQuery Foundation and other contributors; Licensed MIT */
 
 /* Layout helpers
 ----------------------------------*/
@@ -311,18 +323,8 @@ a.no-style:hover{
 	background-repeat: no-repeat;
 }
 
-
 /* Misc visuals
 ----------------------------------*/
-
-/* Overlays */
-.ui-widget-overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
 .ui-accordion .ui-accordion-header {
 	display: block;
 	cursor: pointer;
@@ -359,41 +361,6 @@ a.no-style:hover{
 	cursor: default;
 }
 
-
-/* Component containers
-----------------------------------*/
-.ui-widget {
-	font-family: Verdana,Arial,sans-serif;
-	font-size: 1.1em;
-}
-.ui-widget .ui-widget {
-	font-size: 1em;
-}
-.ui-widget input,
-.ui-widget select,
-.ui-widget textarea,
-.ui-widget button {
-	font-family: Verdana,Arial,sans-serif;
-	font-size: 1em;
-}
-.ui-widget-content {
-	border: 0px solid #aaaaaa;
-	background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
-	color: #222222;
-}
-.ui-widget-content a {
-	color: #222222;
-}
-.ui-widget-header {
-	border: 1px solid #aaaaaa;
-	background: #cccccc url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
-	color: #222222;
-	font-weight: bold;
-}
-.ui-widget-header a {
-	color: #222222;
-}
-
 /* Interaction states
 ----------------------------------*/
 .ui-state-default,
@@ -404,102 +371,6 @@ a.no-style:hover{
 	font-weight: normal;
 	color: #555555;
 }
-.ui-state-default a,
-.ui-state-default a:link,
-.ui-state-default a:visited {
-	color: #555555;
-	text-decoration: none;
-}
-.ui-state-hover,
-.ui-widget-content .ui-state-hover,
-.ui-widget-header .ui-state-hover,
-.ui-state-focus,
-.ui-widget-content .ui-state-focus,
-.ui-widget-header .ui-state-focus {
-	border: 1px solid #999999;
-	background: #dadada url(images/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x;
-	font-weight: normal;
-	color: #212121;
-}
-.ui-state-hover a,
-.ui-state-hover a:hover,
-.ui-state-hover a:link,
-.ui-state-hover a:visited,
-.ui-state-focus a,
-.ui-state-focus a:hover,
-.ui-state-focus a:link,
-.ui-state-focus a:visited {
-	color: #212121;
-	text-decoration: none;
-}
-.ui-state-active,
-.ui-widget-content .ui-state-active,
-.ui-widget-header .ui-state-active {
-	border: 1px solid #aaaaaa;
-	background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
-	font-weight: normal;
-	color: #212121;
-}
-.ui-state-active a,
-.ui-state-active a:link,
-.ui-state-active a:visited {
-	color: #212121;
-	text-decoration: none;
-}
-
-/* Interaction Cues
-----------------------------------*/
-.ui-state-highlight,
-.ui-widget-content .ui-state-highlight,
-.ui-widget-header .ui-state-highlight {
-	border: 1px solid #fcefa1;
-	background: #fbf9ee url(images/ui-bg_glass_55_fbf9ee_1x400.png) 50% 50% repeat-x;
-	color: #363636;
-}
-.ui-state-highlight a,
-.ui-widget-content .ui-state-highlight a,
-.ui-widget-header .ui-state-highlight a {
-	color: #363636;
-}
-.ui-state-error,
-.ui-widget-content .ui-state-error,
-.ui-widget-header .ui-state-error {
-	border: 1px solid #cd0a0a;
-	background: #fef1ec url(images/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x;
-	color: #cd0a0a;
-}
-.ui-state-error a,
-.ui-widget-content .ui-state-error a,
-.ui-widget-header .ui-state-error a {
-	color: #cd0a0a;
-}
-.ui-state-error-text,
-.ui-widget-content .ui-state-error-text,
-.ui-widget-header .ui-state-error-text {
-	color: #cd0a0a;
-}
-.ui-priority-primary,
-.ui-widget-content .ui-priority-primary,
-.ui-widget-header .ui-priority-primary {
-	font-weight: bold;
-}
-.ui-priority-secondary,
-.ui-widget-content .ui-priority-secondary,
-.ui-widget-header .ui-priority-secondary {
-	opacity: .7;
-	filter:Alpha(Opacity=70);
-	font-weight: normal;
-}
-.ui-state-disabled,
-.ui-widget-content .ui-state-disabled,
-.ui-widget-header .ui-state-disabled {
-	opacity: .35;
-	filter:Alpha(Opacity=35);
-	background-image: none;
-}
-.ui-state-disabled .ui-icon {
-	filter:Alpha(Opacity=35); /* For IE8 - See #6059 */
-}
 
 /* Icons
 ----------------------------------*/
@@ -508,13 +379,6 @@ a.no-style:hover{
 .ui-icon {
 	width: 16px;
 	height: 16px;
-}
-.ui-icon,
-.ui-widget-content .ui-icon {
-	background-image: url(images/ui-icons_222222_256x240.png);
-}
-.ui-widget-header .ui-icon {
-	background-image: url(images/ui-icons_222222_256x240.png);
 }
 .ui-state-default .ui-icon {
 	background-image: url(images/ui-icons_FFFFFF_256x240.png);
@@ -526,44 +390,8 @@ a.no-style:hover{
 .ui-state-active .ui-icon {
 	background-image: url(images/ui-icons_FFFFFF_256x240.png);
 }
-.ui-state-highlight .ui-icon {
-	background-image: url(images/ui-icons_2e83ff_256x240.png);
-}
-.ui-state-error .ui-icon,
-.ui-state-error-text .ui-icon {
-	background-image: url(images/ui-icons_cd0a0a_256x240.png);
-}
 
 /* positioning */
-.ui-icon-triangle-1-n { background-position: 0 -16px; }
-.ui-icon-triangle-1-ne { background-position: -16px -16px; }
 .ui-icon-triangle-1-e { background-position: -32px -16px; }
-.ui-icon-triangle-1-se { background-position: -48px -16px; }
 .ui-icon-triangle-1-s { background-position: -64px -16px; }
-.ui-icon-triangle-1-sw { background-position: -80px -16px; }
-.ui-icon-triangle-1-w { background-position: -96px -16px; }
-.ui-icon-triangle-1-nw { background-position: -112px -16px; }
-.ui-icon-triangle-2-n-s { background-position: -128px -16px; }
-.ui-icon-triangle-2-e-w { background-position: -144px -16px; }
-
-
-/* Overlays */
-.ui-widget-overlay {
-	background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;
-	opacity: .3;
-	filter: Alpha(Opacity=30);
-}
-.ui-widget-shadow {
-	margin: -8px 0 0 -8px;
-	padding: 8px;
-	background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;
-	opacity: .3;
-	filter: Alpha(Opacity=30);
-	border-radius: 8px;
-}
-
-
-
-
-
 

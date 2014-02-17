@@ -65,35 +65,48 @@ class Account extends CI_Controller
 		}
 		else
 		{
-			$valid = $this->user->checkUsername($this->input->post('username'));
-
-			if(!$valid)
+			if(!($this->input->post('isAdmin') || $this->input->post('isClerk') || $this->input->post('isAnalyst')))
 			{
 				$data = $this->session->userdata('logged_in');
-				$data['error_msg'] = "Username already exists.";
 				$data['user'] = $this->input->post();
-				$data['user']['user_type'] = $this->getUserRoleCode();	
+				$data['user']['user_type'] = $this->getUserRoleCode();
+				$data['error_msg'] = "Please check at least one user role.";	
 				$this->load->model('college');
-				$data['colleges'] = $this->college->getRecords();			
+				$data['colleges'] = $this->college->getRecords();
 				$this->load->view('admin/add_user', $data);
 			}
-			else
-			{
-				$salt = substr(MD5(uniqid(rand(), true)), 0, 6);
-				$data= array(
-					'username' => $this->input->post('username'),
-					'first_name' => $this->input->post('first_name'),
-					'last_name' => $this->input->post('last_name'),
-					'user_type' => $this->getUserRoleCode(),
-					'salt' => $salt,
-					'password' => MD5($this->input->post('password').$salt)
-					);
+			else 
+			{	
+				$valid = $this->user->checkUsername($this->input->post('username'));
+	
+				if(!$valid)
+				{
+					$data = $this->session->userdata('logged_in');
+					$data['error_msg'] = "Username already exists.";
+					$data['user'] = $this->input->post();
+					$data['user']['user_type'] = $this->getUserRoleCode();	
+					$this->load->model('college');
+					$data['colleges'] = $this->college->getRecords();			
+					$this->load->view('admin/add_user', $data);
+				}
+				else
+				{
+					$salt = substr(MD5(uniqid(rand(), true)), 0, 6);
+					$data= array(
+						'username' => $this->input->post('username'),
+						'first_name' => $this->input->post('first_name'),
+						'last_name' => $this->input->post('last_name'),
+						'user_type' => $this->getUserRoleCode(),
+						'salt' => $salt,
+						'password' => MD5($this->input->post('password').$salt)
+						);
+					
+					if($this->input->post('isClerk'))
+						$data['college_code'] = $this->input->post('college_code');
 				
-				if($this->input->post('isClerk'))
-					$data['college_code'] = $this->input->post('college_code');
-			
-				$username = $this->user->saveToDatabase($data);
-				redirect('admin/account', 'refresh');
+					$username = $this->user->saveToDatabase($data);
+					redirect('admin/account', 'refresh');
+				}
 			}
 		}
 	}
