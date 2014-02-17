@@ -1,6 +1,6 @@
 body {
 	font: 13px "proxima-nova", Helvetica, Arial, sans-serif;
-	background: #DDDDDD;
+	background: #EEEEED;
 } 
 
 .main-content-body {
@@ -118,12 +118,11 @@ div.left {
 		padding: 6px 10px 6px 18px;
 		text-decoration: none;
 		font-size: 13px;
-		margin-left: -2px;
+		margin-left: -3px;
 	}
 	
 	.module-div a:hover {
 		background: #ccc;
-		margin-left: -2px;
 	}
 	
 	.module-div a.current, #oset-lc div.module-div a.current:hover {
@@ -132,6 +131,7 @@ div.left {
 	
 	.module-div2 {
 		margin: 0 1%;
+		margin-left: -2px !important;
 	}
 	
 	.module-div2 h1{
