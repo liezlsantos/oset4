@@ -10,7 +10,7 @@ class Home extends CI_Controller
 
 	public function index() 
 	{
-		if($this->session->userdata('logged_in') && $_SESSION['login'])
+		if($this->session->userdata('logged_in'))
 		{
 			$data = $this->session->userdata('logged_in');
 			if(isset($data['student_id']))

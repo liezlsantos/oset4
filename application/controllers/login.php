@@ -29,7 +29,6 @@ class Login extends CI_Controller
 			$this->load->view('login_view');
 		else{
 			$userdata = $this->session->userdata('logged_in');
-			$_SESSION['login'] = TRUE;
 			if(isset($userdata['username']))
 				redirect('home', 'refresh');
 			else
@@ -76,7 +75,6 @@ class Login extends CI_Controller
 				);
 			}	
 			$this->session->set_userdata('logged_in', $sess_array);
-			$_SESSION['login'] = TRUE;
 			return TRUE;
 		}
 		else
