@@ -53,63 +53,10 @@
 					<div class="module-div">
 						<h1>SET </h1>
 						<a href="'.base_url('/index.php/admin/SET').'"'; if(strpos($_SERVER["PHP_SELF"],"admin/SET")) echo 'class="current"'; echo'"> Setup</a>
-						<a href="'.base_url('/index.php/admin/setinstrumentmanagement').'"'; if(strpos($_SERVER["PHP_SELF"],"preview")) echo 'class="current"'; echo'"> SET Instrument Management</a>
+						<a href="'.base_url('/index.php/admin/setinstrumentmanagement').'"'; if(strpos($_SERVER["PHP_SELF"],"admin/setinstrument")) echo 'class="current"'; echo'"> SET Instrument Management</a>
 					</div>
-				</div>';	
-			}
-			if(isset($isClerk))
-			{
-				echo '
-				<div class="module-div2">
-					<h1>Clerk Utilities</h1>
-				</div>
-				
-				<div>
-					<div class="module-div">
-						<h1>Class Management</h1>
-						<a href="'.base_url('/index.php/clerk/classmanagement').'"'; 
-						if(strpos($_SERVER["PHP_SELF"],"clerk/classmanagement") 
-						&& !strpos($_SERVER["PHP_SELF"],"clerk/classmanagement/view")) 
-							echo 'class="current"'; echo '">Classes-Faculty Selection</a>
-						<a href="'.base_url('/index.php/clerk/studentaccount').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/studentaccount")) echo 'class="current"'; echo'">List of Students</a>';
-				
-						if($SET['accounts_generated'])
-						{
-							echo '<a href="'.base_url('/index.php/clerk/setinstrumentassignment').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/setinstrumentassignment") && strpos($_SERVER["PHP_SELF"],"set")) echo 'class="current"'; 
-							echo '">Assignment of SET Instrument</a>';
-						}
-		 			echo '</div>';
-				
-				if($SET['accounts_generated'])
-				{
-				echo '
-					<div class="module-div">
-						<h1>Evaluation Management</h1>			
-						<a href="'.base_url('/index.php/clerk/evaluationmanagement/open').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/evaluationmanagement/open")) echo 'class="current"'; echo'">Open Evaluation</a>
-						<a href="'.base_url('/index.php/clerk/evaluationmanagement/close').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/evaluationmanagement/close")) echo 'class="current"'; echo'">Close Evaluation</a>
-						<a href="'.base_url('/index.php/clerk/evaluationmanagement/status').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/evaluationmanagement/status")) echo 'class="current"'; echo'">Evaluation Status</a>
-						<a href="'.base_url('/index.php/clerk/evaluationmanagement/status').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/evaluationmanagement/studentstatus")) echo 'class="current"'; echo'">Student Evaluation Status</a>
-					</div>
-				';
-				}
-				echo '</div>';
-			}	
-			if(isset($isAnalyst))
-			{
-				echo '
-				<div class="module-div2">
-					<h1>Information Security Analyst</h1>
-				</div>
-				
-				<div>				
-					<div class="module-div">
-						<h1>SET</h1>			
-						<a href="" ></a>
-					</div>
-				</div>
-				';
-			}
-			
+				</div>';		
+			}			
 			if($preview)
 			{
 				echo '
