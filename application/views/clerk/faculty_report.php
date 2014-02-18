@@ -1,24 +1,3 @@
-<?php include('check.php');
-
-	function getRating($score)
-	{
-		$rating = "";
-		if($score >= 1)
-		{
-			if ($score <= 1.24)
-				$rating = "Outstanding";
-			elseif ($score <= 1.75)
-				$rating = "Very satisfactory";
-			elseif ($score <= 2.25)
-				$rating = "Satisfactory";
-			elseif ($score <= 2.75)
-				$rating = "Fair";
-			else 
-				$rating = "Needs improvement";
-		}
-		return $rating;
-	}
-?>	
 	<header>
 		<title>OSET 4.0</title>
 		<link href='<?=base_url('css/style.css')?>' rel='stylesheet' type='text/css'>
@@ -27,10 +6,9 @@
 	<body>
 		<div class="wrapper">
 		<?php include('header.php'); ?>
-		
+	
 		<div class = "right">
 		<h2>Faculty Summarized Report <?php echo "(".$user_college_name.")"; ?></h2>
-		
 		<div class="tabs">
 		<table cellpadding="3">
 			<tr>
@@ -39,7 +17,6 @@
 			</tr>
 		</table>
 		</div>
-		
 		<br/>
 		<a href="<?php echo base_url('index.php/clerk/reportmanagement/facultysummarizedreportdownload/'.$user_college_code);?>">
 				Download</a> this faculty summarized report for 
@@ -48,6 +25,15 @@
 		
 		<br/><br/>
 				
+		<?php echo form_open('clerk/reportmanagement/searchfacultysummarizedreport', array('onSubmit'=>true)); ?>
+		<table>
+			<tr>
+				<td>Instructor's name: </td>
+				<td><input type="text" size="15" name="instructor" <?php if(isset($search['instructor'])) echo "value=".$search['instructor']; ?> ></td>
+				<td>&nbsp;<input type="submit" value="Search"></td>
+			</tr>
+		</table>
+		<?php echo form_close(); ?>
 		<table class="records">
 			<?php 
 				if(isset($instructors))
@@ -116,12 +102,18 @@
 						';
 						$j++;
 					}
+				echo "</table>";
 				}
 				else
-					echo "There is no instructor whose all classes are already closed for evaluation.";
-			?>
-		</table>
-		
+				{
+					if(!isset($search))
+						echo "There is no instructor whose all classes are already closed for evaluation.";
+					else
+						echo "No instructor found.";
+				}
+				if(isset($search))
+					echo "<br/><br/><a href='".base_url('index.php/clerk/reportmanagement/facultysummarizedreport')."'>Back to all instructors </a>";
+			?>		
 		</div>
 		</div>
 	</body>

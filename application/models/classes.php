@@ -63,10 +63,10 @@ class Classes extends CI_Model
 	}
 
 	//faculty summarized report
-	public function getFacultyWithAllClassesClosed($college)
+	public function getFacultyWithAllClassesClosed($college, $instructor)
 	{
 		$sql = $this->db->query("SELECT DISTINCT instructor, name FROM class, faculty WHERE 
-		instructor = instructor_code AND college_code = '$college' AND instructor NOT IN 
+		instructor = instructor_code AND college_code = '$college' AND name LIKE '%$instructor%' AND instructor NOT IN 
 		(SELECT DISTINCT instructor FROM class WHERE open < '2' AND activated = '1') AND activated='1'
 		ORDER BY name");
 		

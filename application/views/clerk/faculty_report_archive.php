@@ -94,7 +94,9 @@
 			else 
 			{
 				echo 'No report found.';
-			}	
+			}
+			if($search['sem_ay'] != "")
+				echo '<br/><br/><a href="'.base_url('index.php/clerk/reportmanagement/facultysummarizedreportarchive').'">Back to all reports</a>';	
 		   ?>
 		</div>
 	

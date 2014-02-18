@@ -1,6 +1,6 @@
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-	<script src="<?php echo str_replace('http', 'https', base_url('js/jquery-1.9.1.js'));?>"></script>
-	<script src="<?php echo str_replace('http', 'https', base_url('js/jquery-ui.js'));?>"></script>
+	<script src="<?php if(strpos($_SERVER["PHP_SELF"],"changepassword")) echo str_replace('http', 'https', base_url('js/jquery-1.9.1.js')); else echo base_url('js/jquery-1.9.1.js');?>"></script>
+	<script src="<?php if(strpos($_SERVER["PHP_SELF"],"changepassword")) echo str_replace('http', 'https', base_url('js/jquery-ui.js')); else echo base_url('js/jquery-ui.js');?>"></script>
 	<script>
 		<?php 
 			$index = 0;
@@ -114,8 +114,6 @@
 			<div>
 				<div class="module-div">
 					<a href="<?=base_url('/index.php/changepassword')?>" <?php if(strpos($_SERVER["PHP_SELF"],"changepassword")) echo 'class="current"'?>> Change password</a>
-				</div>
-				<div class="module-div">
 					<a href="<?=base_url('/index.php/login/logout')?>">Logout</a>
 				</div>
 			</div>

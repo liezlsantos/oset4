@@ -1,8 +1,8 @@
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 		
-	<script src="<?php echo str_replace('http', 'https', base_url('js/jquery-1.9.1.js'));?>"></script>
-	<script src="<?php echo str_replace('http', 'https', base_url('js/jquery-ui.js'));?>"></script>
-	
+	<script src="<?php if(strpos($_SERVER["PHP_SELF"],"add") || strpos($_SERVER["PHP_SELF"],"edit") || strpos($_SERVER["PHP_SELF"],"changepassword")) echo str_replace('http', 'https', base_url('js/jquery-1.9.1.js')); else echo base_url('js/jquery-1.9.1.js'); ?>"></script>
+	<script src="<?php if(strpos($_SERVER["PHP_SELF"],"add") || strpos($_SERVER["PHP_SELF"],"edit") || strpos($_SERVER["PHP_SELF"],"changepassword")) echo str_replace('http', 'https', base_url('js/jquery-ui.js')); else echo base_url('js/jquery-ui.js'); ?>"></script>
+
 	<script>
 		$(document).ready(function() {
 			$( "#accordion" ).accordion({active: 0, heightStyle: "content"});

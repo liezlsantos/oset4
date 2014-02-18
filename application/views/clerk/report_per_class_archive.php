@@ -36,8 +36,7 @@
 		<?php echo form_open('clerk/reportmanagement/searchreportperclassarchive', array('onSubmit'=>true)); ?>
 		<table>
 			<tr>
-				<td>A.Y. Sem: </td>
-				<td>
+				<td>A.Y. Sem: 
 					<select name="sem_ay">
 						<?php
 							if(!isset($search['sem_ay']))
@@ -55,10 +54,9 @@
 							else
 								echo '<option value ='.$SET['semester'].'>'.convertToString($SET['semester']).'</option>'
 						?>
-					</select>&nbsp; &nbsp;
+					</select>&nbsp;
 				</td>
-				<td>Department: </td>
-				<td width="220">
+				<td>Department: 
 					<select name="department">
 						<option value = "">All departments</option>
 						<?php
@@ -72,11 +70,10 @@
 								echo '>'.$departments['department_name'][$i].'</option>';
 							}
 						?>	
-					</select>
+					</select>&nbsp;
 				</td>
-				<td>&nbsp; &nbsp; Subject:</td>
-				<td><input type="text" size="15" name="subject" <?php if(isset($search['subject'])) echo "value=".$search['subject']; ?> ></td>
-				<td>&nbsp;<input type="submit" value="Search"></td>
+				<td>Subject: <input type="text" size="15" name="subject" <?php if(isset($search['subject'])) echo "value=".$search['subject']; ?> >&nbsp; </td>
+				<td valign="bottom"><input type="submit" value="Search"></td>
 			</tr>
 		</table>
 		<?php echo form_close(); ?>

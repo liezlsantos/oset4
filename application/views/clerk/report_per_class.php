@@ -33,8 +33,8 @@
 		<?php echo form_open('clerk/reportmanagement/searchreportperclass', array('onSubmit'=>true)); ?>
 		<table>
 			<tr>
-				<td>Department: </td>
-				<td>
+				<td>A.Y. Sem: <input size="10" value="<?php echo $sem.' '.$year.'-'.$year2; ?>" readOnly>&nbsp;&nbsp;</td>
+				<td>Department: 
 					<select name="department">
 						<option value = "">All departments</option>
 						<?php
@@ -48,11 +48,10 @@
 								echo '>'.$departments['department_name'][$i].'</option>';
 							}
 						?>	
-					</select>
+					</select>&nbsp;&nbsp;
 				</td>
-				<td>&nbsp; &nbsp; Subject:</td>
-				<td><input type="text" size="15" name="subject" <?php if(isset($search['subject'])) echo "value=".$search['subject']; ?> ></td>
-				<td>&nbsp;<input type="submit" value="Search"></td>
+				<td>Subject: <input type="text" size="15" name="subject" <?php if(isset($search['subject'])) echo "value=".$search['subject']; ?> >&nbsp;&nbsp;</td>
+				<td><input type="submit" value="Search"></td>
 			</tr>
 		</table>
 		<?php echo form_close(); ?>
@@ -86,7 +85,9 @@
 			else 
 			{
 				echo 'There is no class which evaluation process is already closed.';
-			}	
+			}
+			if(isset($search['subject']))
+					echo "<br/><br/><a href='".base_url('index.php/clerk/reportmanagement/reportperclass')."'>Back to all classes </a>";	
 		   ?>
 		</div>
 	
