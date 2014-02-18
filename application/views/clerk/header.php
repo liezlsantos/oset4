@@ -80,7 +80,7 @@
 				echo '
 					<div class="module-div">
 						<h1>Evaluation Management</h1>			
-						<a href="'.base_url('/index.php/clerk/evaluationmanagement/open').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/evaluationmanagement/open") || strpos($_SERVER["PHP_SELF"],"clerk/evaluationmanagement/close")) echo 'class="current"'; echo'">Evaluation Mode</a>
+						<a href="'.base_url('/index.php/clerk/evaluationmanagement/open').'"'; if(strpos($_SERVER["PHP_SELF"],"open") || strpos($_SERVER["PHP_SELF"],"close")) echo 'class="current"'; echo'">Evaluation Mode</a>
 						<a href="'.base_url('/index.php/clerk/evaluationmanagement/status').'"'; if(strpos($_SERVER["PHP_SELF"],"status")) echo 'class="current"'; echo'">Evaluation Status</a>
 					</div>					
 				';

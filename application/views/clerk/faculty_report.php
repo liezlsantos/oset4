@@ -29,7 +29,7 @@
 		<table>
 			<tr>
 				<td>Instructor's name: </td>
-				<td><input type="text" size="15" name="instructor" <?php if(isset($search['instructor'])) echo "value=".$search['instructor']; ?> ></td>
+				<td><input type="text" size="15" name="instructor" <?php if(isset($search['instructor'])) echo "value='".$search['instructor']; ?>' ></td>
 				<td>&nbsp;<input type="submit" value="Search"></td>
 			</tr>
 		</table>

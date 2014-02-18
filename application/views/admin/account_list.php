@@ -64,7 +64,7 @@
 					}
 				}
 				else
-					echo "No record found.";
+					echo "No record found.<br/>";
 			?>
 		</table>
 		

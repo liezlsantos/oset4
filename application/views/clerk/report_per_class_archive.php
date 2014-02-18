@@ -72,7 +72,7 @@
 						?>	
 					</select>&nbsp;
 				</td>
-				<td>Subject: <input type="text" size="15" name="subject" <?php if(isset($search['subject'])) echo "value=".$search['subject']; ?> >&nbsp; </td>
+				<td>Subject: <input type="text" size="15" name="subject" <?php if(isset($search['subject'])) echo "value='".$search['subject']; ?>' >&nbsp; </td>
 				<td valign="bottom"><input type="submit" value="Search"></td>
 			</tr>
 		</table>

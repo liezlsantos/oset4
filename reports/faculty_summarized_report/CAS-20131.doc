@@ -20,7 +20,7 @@
 	<table width="100%">
 		<tr>
 			<td>College: CAS</td>
-			<td>Date: February 18, 2014, 5:56 pm</td>
+			<td>Date: February 18, 2014, 10:19 pm</td>
 		</tr>
 		<tr>
 			<td>Sem/AY: 1 / 2013-2014</td>
@@ -30,35 +30,6 @@
 	<br/>
 	
 	<table border='1'>
-		
-					<tr>
-						<th>Name</th>
-						<th width="20%">Subject</td>
-						<th width="8%">Units</td>
-						<th width="11%">No. of Students</td>
-						<th width="11%">No. of Students Evaluated</td>
-						<th width="9%">Score</td>
-						<th>Total</td>
-						<th>Rating</td>
-					</tr>
-				
-						<tr>
-							<th align="center" valign="middle" rowspan=2>GREGORIO BAES</th>
-							<td>CMSC 142 / TJK</td>
-							<td align="center">3</td>
-							<td align="center">17</td>
-							<td align="center">1</td>
-							<td align="right">2.3077</td>
-							<td align="right">6.9231</td>
-							<td align="center">Fair</td>
-						</tr>
-						<tr>
-							<td><b>TOTAL</b></td>
-							<td align="center"><b>3</b></td>
-							<td colspan = 3></td>
-							<td align="right"><b>2.3077</b></td>
-							<td align="center"><b>Fair</b></td>
-						</tr>
-						</table>	
+		There is no instructor whose all classes are already closed for evaluation.	</table>	
 </body>
 </html>
