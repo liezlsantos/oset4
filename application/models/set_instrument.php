@@ -76,5 +76,23 @@ class SET_instrument extends CI_Model
 			return TRUE;
 		else 
 			return FALSE;
-	}		
+	}
+	
+	public function createTables($model, $table)
+	{
+		$this->load->model('set/'.$model);
+		$this->$model->createTable();
+		//create another table for archive
+		$table_archive = $table.'_archive';
+		$this->db->query("CREATE TABLE $table_archive LIKE $table");
+		$this->db->query("ALTER TABLE `$table_archive` DROP `oset_class_id`,
+						  ADD  `sem_ay` VARCHAR(5) NOT NULL AFTER  `response_id` ,
+						  ADD  `name` VARCHAR( 80 ) NOT NULL AFTER  `student_id` ,
+						  ADD  `yearlevel` TINYINT NOT NULL AFTER  `name` ,
+						  ADD  `program` VARCHAR( 30 ) NOT NULL AFTER  `yearlevel` ,
+						  ADD  `college_code` VARCHAR( 10 ) NOT NULL AFTER  `program` ,
+						  ADD  `section` VARCHAR( 10 ) NOT NULL AFTER  `college_code` ,
+						  ADD  `subject` VARCHAR( 20 ) NOT NULL AFTER  `section` ,
+						  ADD  `instructor` VARCHAR( 50 ) NOT NULL AFTER  `subject`");
+	}
 }

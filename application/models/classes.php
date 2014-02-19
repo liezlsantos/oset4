@@ -47,7 +47,7 @@ class Classes extends CI_Model
 	{
 		$sql = $this->db->query("SELECT oset_class_id, instructor, 
 		model_name, class_id FROM class, set_instrument WHERE open='2' AND 
-		class.set_instrument_id = set_instrument.set_instrument_id ORDER BY oset_class_id");
+		class.set_instrument_id = set_instrument.set_instrument_id");
 		
 		if ($sql->num_rows() == 0){
 			return null;

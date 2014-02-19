@@ -1,6 +1,7 @@
 <html>
 <header>
 	<link href='<?=base_url('css/style.css')?>' rel="stylesheet" type="text/css">
+	<style>body{background-color: none;}</style>
 </header>
 
 <body>

@@ -20,7 +20,7 @@
 	<table width="100%">
 		<tr>
 			<td>College: CAS</td>
-			<td>Date: February 18, 2014, 10:19 pm</td>
+			<td>Date: February 19, 2014, 2:21 pm</td>
 		</tr>
 		<tr>
 			<td>Sem/AY: 1 / 2013-2014</td>
@@ -30,6 +30,805 @@
 	<br/>
 	
 	<table border='1'>
-		There is no instructor whose all classes are already closed for evaluation.	</table>	
+		
+					<tr>
+						<th>Name</th>
+						<th width="20%">Subject</td>
+						<th width="8%">Units</td>
+						<th width="11%">No. of Students</td>
+						<th width="11%">No. of Students Evaluated</td>
+						<th width="9%">Score</td>
+						<th>Total</td>
+						<th>Rating</td>
+					</tr>
+				
+						<tr>
+							<th align="center" valign="middle" rowspan=3>ARIEL BETAN</th>
+							<td>CMSC 10 / HAB</td>
+							<td align="center">1</td>
+							<td align="center">14</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						<tr>
+							<td>CMSC 10 / HCD2</td>
+							<td align="center">1</td>
+							<td align="center">17</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td><b>TOTAL</b></td>
+							<td align="center"><b>0</b></td>
+							<td colspan = 3></td>
+							<td align="right"><b>0</b></td>
+							<td align="center"><b></b></td>
+						</tr>
+					
+						<tr>
+							<th align="center" valign="middle" rowspan=8>AVEGAIL CARPIO</th>
+							<td>CMSC 10 / HCD1</td>
+							<td align="center">1</td>
+							<td align="center">14</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						<tr>
+							<td>CMSC 110 LAB / TGI</td>
+							<td align="center">1</td>
+							<td align="center">15</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 110 LEC / TJKX</td>
+							<td align="center">2</td>
+							<td align="center">15</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 198 (SP) / MJK</td>
+							<td align="center">3</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MAB</td>
+							<td align="center">3</td>
+							<td align="center">11</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MCD</td>
+							<td align="center">3</td>
+							<td align="center">10</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MEYIX</td>
+							<td align="center">3</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td><b>TOTAL</b></td>
+							<td align="center"><b>0</b></td>
+							<td colspan = 3></td>
+							<td align="right"><b>0</b></td>
+							<td align="center"><b></b></td>
+						</tr>
+					
+						<tr>
+							<th align="center" valign="middle" rowspan=5>BERNIE TERRADO</th>
+							<td>CMSC 11 LAB / SCD1</td>
+							<td align="center">1</td>
+							<td align="center">15</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						<tr>
+							<td>CMSC 11 LAB / SEYIX1</td>
+							<td align="center">1</td>
+							<td align="center">14</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 120 LAB / SAB1</td>
+							<td align="center">1</td>
+							<td align="center">18</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 120 LEC / SEYZ</td>
+							<td align="center">1</td>
+							<td align="center">18</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td><b>TOTAL</b></td>
+							<td align="center"><b>0</b></td>
+							<td colspan = 3></td>
+							<td align="right"><b>0</b></td>
+							<td align="center"><b></b></td>
+						</tr>
+					
+						<tr>
+							<th align="center" valign="middle" rowspan=6>CHRISTOPHER GEORGE DUMANON</th>
+							<td>CMSC 11 LEC / SAZB</td>
+							<td align="center">2</td>
+							<td align="center">45</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						<tr>
+							<td>CMSC 11 LEC / SCDX</td>
+							<td align="center">2</td>
+							<td align="center">41</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 161 LAB / SIYKX</td>
+							<td align="center">1</td>
+							<td align="center">9</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 161 LEC / SEZG</td>
+							<td align="center">2</td>
+							<td align="center">9</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 22 LEC / SGYZ</td>
+							<td align="center">1</td>
+							<td align="center">33</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td><b>TOTAL</b></td>
+							<td align="center"><b>0</b></td>
+							<td colspan = 3></td>
+							<td align="right"><b>0</b></td>
+							<td align="center"><b></b></td>
+						</tr>
+					
+						<tr>
+							<th align="center" valign="middle" rowspan=12>GEOFFREY SOLANO</th>
+							<td>CMSC 110 LEC / TGIX</td>
+							<td align="center">2</td>
+							<td align="center">39</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						<tr>
+							<td>CMSC 124 LEC / HCDX</td>
+							<td align="center">2</td>
+							<td align="center">23</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 131 LAB / FCD</td>
+							<td align="center">1</td>
+							<td align="center">18</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 131 LAB / TCD</td>
+							<td align="center">1</td>
+							<td align="center">18</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 131 LEC / HEZG</td>
+							<td align="center">2</td>
+							<td align="center">36</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 171 / TEYZ</td>
+							<td align="center">1</td>
+							<td align="center">33</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 191 (GA) / FEYIX</td>
+							<td align="center">3</td>
+							<td align="center">19</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 198 (SP) / MJK</td>
+							<td align="center">3</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MAB</td>
+							<td align="center">3</td>
+							<td align="center">11</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MCD</td>
+							<td align="center">3</td>
+							<td align="center">10</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MEYIX</td>
+							<td align="center">3</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td><b>TOTAL</b></td>
+							<td align="center"><b>0</b></td>
+							<td colspan = 3></td>
+							<td align="right"><b>0</b></td>
+							<td align="center"><b></b></td>
+						</tr>
+					
+						<tr>
+							<th align="center" valign="middle" rowspan=2>GREGORIO BAES</th>
+							<td>CMSC 142 / TJK</td>
+							<td align="center">3</td>
+							<td align="center">17</td>
+							<td align="center">10</td>
+							<td align="right">2.1769</td>
+							<td align="right">6.5308</td>
+							<td align="center">Satisfactory</td>
+						</tr>
+						<tr>
+							<td><b>TOTAL</b></td>
+							<td align="center"><b>3</b></td>
+							<td colspan = 3></td>
+							<td align="right"><b>2.1769</b></td>
+							<td align="center"><b>Satisfactory</b></td>
+						</tr>
+					
+						<tr>
+							<th align="center" valign="middle" rowspan=5>JOANNA MARIELLE  JIMENEZ</th>
+							<td>CMSC 11 LAB / SCD2</td>
+							<td align="center">1</td>
+							<td align="center">14</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						<tr>
+							<td>CMSC 11 LAB / SEYIX2</td>
+							<td align="center">1</td>
+							<td align="center">13</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 120 LAB / SAB1</td>
+							<td align="center">1</td>
+							<td align="center">18</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 22 LAB / SIYKX1</td>
+							<td align="center">1</td>
+							<td align="center">16</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td><b>TOTAL</b></td>
+							<td align="center"><b>0</b></td>
+							<td colspan = 3></td>
+							<td align="right"><b>0</b></td>
+							<td align="center"><b></b></td>
+						</tr>
+					
+						<tr>
+							<th align="center" valign="middle" rowspan=10>MA SHEILA MAGBOO</th>
+							<td>CMSC 128 LAB / WDE1</td>
+							<td align="center">1</td>
+							<td align="center">13</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						<tr>
+							<td>CMSC 128 LAB / WDE2</td>
+							<td align="center">1</td>
+							<td align="center">10</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 128 LEC / WBYCY</td>
+							<td align="center">2</td>
+							<td align="center">23</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 197 (SEMINAR) / SIYKX</td>
+							<td align="center">1</td>
+							<td align="center">11</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 197 (SEMINAR) / SJYZ</td>
+							<td align="center">1</td>
+							<td align="center">11</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 198 (SP) / MJK</td>
+							<td align="center">3</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MAB</td>
+							<td align="center">3</td>
+							<td align="center">11</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MCD</td>
+							<td align="center">3</td>
+							<td align="center">10</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MEYIX</td>
+							<td align="center">3</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td><b>TOTAL</b></td>
+							<td align="center"><b>0</b></td>
+							<td colspan = 3></td>
+							<td align="right"><b>0</b></td>
+							<td align="center"><b></b></td>
+						</tr>
+					
+						<tr>
+							<th align="center" valign="middle" rowspan=12>MARVIN JOHN IGNACIO</th>
+							<td>CMSC 10 / FCD</td>
+							<td align="center">1</td>
+							<td align="center">14</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						<tr>
+							<td>CMSC 10 / TAB</td>
+							<td align="center">1</td>
+							<td align="center">17</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 10 / TCD</td>
+							<td align="center">1</td>
+							<td align="center">14</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 110 LAB / FIYKX1</td>
+							<td align="center">1</td>
+							<td align="center">19</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 110 LAB / FIYKX2</td>
+							<td align="center">1</td>
+							<td align="center">20</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 124 LAB / FEYIX</td>
+							<td align="center">1</td>
+							<td align="center">11</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 124 LAB / HIYKX</td>
+							<td align="center">1</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 126 LAB / TEYIX</td>
+							<td align="center">1</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 126 LEC / HIXY</td>
+							<td align="center">1</td>
+							<td align="center">13</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 127 LAB / HCD1</td>
+							<td align="center">1</td>
+							<td align="center">16</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 127 LEC / HEZG</td>
+							<td align="center">2</td>
+							<td align="center">17</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td><b>TOTAL</b></td>
+							<td align="center"><b>0</b></td>
+							<td colspan = 3></td>
+							<td align="right"><b>0</b></td>
+							<td align="center"><b></b></td>
+						</tr>
+					
+						<tr>
+							<th align="center" valign="middle" rowspan=9>RICHARD BRYANN CHUA</th>
+							<td>CMSC 123 LAB / FCD</td>
+							<td align="center">1</td>
+							<td align="center">20</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						<tr>
+							<td>CMSC 123 LAB / TCD</td>
+							<td align="center">1</td>
+							<td align="center">20</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 123 LEC / FABX</td>
+							<td align="center">2</td>
+							<td align="center">40</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 191 (ITPM) / FIYKX</td>
+							<td align="center">3</td>
+							<td align="center">17</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 198 (SP) / MJK</td>
+							<td align="center">3</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MAB</td>
+							<td align="center">3</td>
+							<td align="center">11</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MCD</td>
+							<td align="center">3</td>
+							<td align="center">10</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MEYIX</td>
+							<td align="center">3</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td><b>TOTAL</b></td>
+							<td align="center"><b>0</b></td>
+							<td colspan = 3></td>
+							<td align="right"><b>0</b></td>
+							<td align="center"><b></b></td>
+						</tr>
+					
+						<tr>
+							<th align="center" valign="middle" rowspan=9>VINCENT PETER MAGBOO</th>
+							<td>CMSC 141 / SCD</td>
+							<td align="center">3</td>
+							<td align="center">17</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						<tr>
+							<td>CMSC 197 (SEMINAR) / SIYKX</td>
+							<td align="center">1</td>
+							<td align="center">11</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 197 (SEMINAR) / SJYZ</td>
+							<td align="center">1</td>
+							<td align="center">11</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 197 (SEMINAR) / TCXY</td>
+							<td align="center">1</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 198 (SP) / MJK</td>
+							<td align="center">3</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MAB</td>
+							<td align="center">3</td>
+							<td align="center">11</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MCD</td>
+							<td align="center">3</td>
+							<td align="center">10</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td>CMSC 199 (RM) / MEYIX</td>
+							<td align="center">3</td>
+							<td align="center">12</td>
+							<td align="center">0</td>
+							<td align="right">0.0000</td>
+							<td align="right">0.0000</td>
+							<td align="center"></td>
+						</tr>
+						
+						<tr>
+							<td><b>TOTAL</b></td>
+							<td align="center"><b>0</b></td>
+							<td colspan = 3></td>
+							<td align="right"><b>0</b></td>
+							<td align="center"><b></b></td>
+						</tr>
+						</table>	
 </body>
 </html>

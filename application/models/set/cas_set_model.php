@@ -183,7 +183,7 @@ class CAS_SET_model extends CI_Model
 		$pdf_data = pdf_create($html, '' , FALSE);  
 		write_file($data['filename'], $pdf_data);
 		//save link to db	
-		$data = array('course' =>	$data['subject'].'-'.$data['section'],
+		$data = array('course' =>	$data['subject'],
 					  'sem_ay' => substr($data['class_id'], 0, 5), 
 					  'instructor' => $data['instructor'], 
 					  'path' => $data['filename'],

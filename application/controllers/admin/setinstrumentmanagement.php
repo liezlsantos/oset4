@@ -83,7 +83,8 @@ class setinstrumentmanagement extends CI_Controller
 					$data['table_name'] = $this->input->post("table_name");
 					$this->set_instrument->saveToDatabase($data);
 		
-					redirect('admin/set/'.$data['controller_name'].'/createTable', 'refresh');
+					$this->set_instrument->createTables($data['model_name'], $data['table_name']);
+					redirect("admin/setinstrumentmanagement", "refresh");
 				}
 				else
 				{
@@ -134,19 +135,6 @@ class setinstrumentmanagement extends CI_Controller
 	    }
 	}
 	
-	public function update($set_id)
-	{
-		$data['name'] = $this->input->post("name");
-		$this->set_instrument->updateRecord($data, $set_id);
-		redirect('admin/setinstrumentmanagement', 'refresh');
-	}
-	
-	public function setasdefault($set_id)
-	{
-		$this->set_instrument->setAsDefault($set_id);
-		redirect('admin/setinstrumentmanagement', 'refresh');
-	}
-
 	public function duplicateFiles()
 	{
 		$duplicateView = false;
@@ -192,5 +180,18 @@ class setinstrumentmanagement extends CI_Controller
 			$error_msg .= " Make necessary changes inside the php files as well.";
 		}
 		return $error_msg;
+	}
+
+	public function update($set_id)
+	{
+		$data['name'] = $this->input->post("name");
+		$this->set_instrument->updateRecord($data, $set_id);
+		redirect('admin/setinstrumentmanagement', 'refresh');
+	}
+	
+	public function setasdefault($set_id)
+	{
+		$this->set_instrument->setAsDefault($set_id);
+		redirect('admin/setinstrumentmanagement', 'refresh');
 	}
 }

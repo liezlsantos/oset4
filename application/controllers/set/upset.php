@@ -151,6 +151,10 @@ class Upset extends CI_Controller
 			//insert to set table
 			$this->upset_model->saveResponse($data);
 			
+			//insert to set table archive ($data, tablename)
+			$this->load->model('archive_tables');
+			$this->archive_tables->saveResponse($data, 'up_set');
+			
 			//compute score
 			$score = 0;
 			for ($i = 1; $i <= 26; $i++)
@@ -167,12 +171,6 @@ class Upset extends CI_Controller
 			$this->upset_model->updateEvalStatus($oset_class_id, $user_data['student_id'], $data3);
 		}
 		redirect("student/home", "refresh");	
-	}
-	
-	public function createTable()
-	{
-		$this->upset_model->createTable();
-		redirect('admin/setinstrumentmanagement', 'refresh');
 	}
 
 	public function generateReportPerClass($oset_class_id)

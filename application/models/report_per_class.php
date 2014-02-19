@@ -5,7 +5,7 @@ class Report_per_class extends CI_Model
 	public function getRecords($college, $sem_ay, $course, $department)
 	{
 		$sql = $this->db->query("SELECT * FROM report_per_class WHERE sem_ay = '$sem_ay' AND college='$college'
-									AND department LIKE '%$department%' AND course LIKE '%$course%'");
+									AND department LIKE '%$department%' AND course LIKE '%$course%' ORDER BY course");
 		if ($sql->num_rows() == 0){
 			return null;
 		}

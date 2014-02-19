@@ -59,10 +59,13 @@ class Cas_set extends CI_Controller
 			{
 				$data['part3_'.$i] = $this->input->post('part3_'.$i);
 			}
-			
 			//insert to set table
 			$this->cas_set_model->saveResponse($data);
 			
+			//insert to set table archive ($data, tablename)
+			$this->load->model('archive_tables');
+			$this->archive_tables->saveResponse($data, 'cas_set');
+		
 			//compute score
 			$score = 0;
 			
@@ -90,17 +93,11 @@ class Cas_set extends CI_Controller
 			$data2['score'] = $score;
 			$data2['oset_class_id'] = $oset_class_id;
 			$this->cas_set_model->saveScore($data2);
-			
+			//save eval status
 			$data3['evaluated'] = 1;
 			$this->cas_set_model->updateEvalStatus($oset_class_id, $user_data['student_id'], $data3);
 		}
 		redirect("student/home", "refresh");	
-	}
-	
-	public function createTable()
-	{
-		$this->cas_set_model->createTable();
-		redirect('admin/setinstrumentmanagement', 'refresh');
 	}
 	
 	public function generateReportPerClass($oset_class_id)

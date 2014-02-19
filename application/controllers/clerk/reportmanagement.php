@@ -84,6 +84,7 @@ class Reportmanagement extends CI_Controller
 
 	public function updateFacultyReport($instructor)
 	{
+		$ins = $instructor;
 		$data = $this->session->userdata('logged_in');
 		$instructors = $this->classes->getFacultyWithAllClassesClosed($data['user_college_code'], $instructor);
 		$data['instructors'] = $instructors;
@@ -117,8 +118,11 @@ class Reportmanagement extends CI_Controller
 		//create file		
 		$html = $this->load->view('clerk/summarized_faculty_report', $data, TRUE);
 		$this->load->helper('file');
-		//doc file
-		write_file($path.'.doc', $html);
+		if(!$ins)
+		{
+			//doc file
+			write_file($path.'.doc', $html);
+		}
 	}
 	
 	public function facultysummarizedreportdownload($college)

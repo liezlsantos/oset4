@@ -123,6 +123,10 @@ class Lab_set extends CI_Controller
 			//insert to set table
 			$this->lab_set_model->saveResponse($data);
 			
+			//insert to set table archive ($data, tablename)
+			$this->load->model('archive_tables');
+			$this->archive_tables->saveResponse($data, 'lab_set');
+			
 			//compute score
 			$score = 0;
 			for ($i = 1; $i <= 16; $i++)
@@ -140,12 +144,6 @@ class Lab_set extends CI_Controller
 			$this->lab_set_model->updateEvalStatus($oset_class_id, $user_data['student_id'], $data3);
 		}
 		redirect("student/home", "refresh");	
-	}
-	
-	public function createTable()
-	{
-		$this->lab_set_model->createTable();
-		redirect('admin/setinstrumentmanagement', 'refresh');
 	}
 	
 	public function generateReportPerClass($oset_class_id)

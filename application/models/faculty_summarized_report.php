@@ -5,7 +5,7 @@ class Faculty_summarized_report extends CI_Model
 	public function getRecords($college, $sem_ay)
 	{
 		$sql = $this->db->query("SELECT sem_ay, college, path, college_name FROM faculty_summarized_report, 
-		college WHERE college = '$college' AND college = college_code AND sem_ay LIKE '%$sem_ay%'");
+		college WHERE college = '$college' AND college = college_code AND sem_ay LIKE '%$sem_ay%' ORDER BY sem_ay");
 		if ($sql->num_rows() == 0){
 			return null;
 		}
