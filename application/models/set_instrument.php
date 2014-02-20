@@ -14,6 +14,7 @@ class SET_instrument extends CI_Model
 			$results['name'][] = $row->name;
 			$results['controller_name'][] = $row->controller_name;
 			$results['model_name'][] = $row->model_name;
+			$results['table_name'][] = $row->table_name;
 			$results['set_as_default'][] = $row->set_as_default;
 		}
 		return $results;
@@ -85,14 +86,15 @@ class SET_instrument extends CI_Model
 		//create another table for archive
 		$table_archive = $table.'_archive';
 		$this->db->query("CREATE TABLE $table_archive LIKE $table");
-		$this->db->query("ALTER TABLE `$table_archive` DROP `oset_class_id`,
+		$this->db->query("ALTER TABLE `$table_archive` 
 						  ADD  `sem_ay` VARCHAR(5) NOT NULL AFTER  `response_id` ,
 						  ADD  `name` VARCHAR( 80 ) NOT NULL AFTER  `student_id` ,
 						  ADD  `yearlevel` TINYINT NOT NULL AFTER  `name` ,
 						  ADD  `program` VARCHAR( 30 ) NOT NULL AFTER  `yearlevel` ,
-						  ADD  `college_code` VARCHAR( 10 ) NOT NULL AFTER  `program` ,
-						  ADD  `section` VARCHAR( 10 ) NOT NULL AFTER  `college_code` ,
+						  ADD  `section` VARCHAR( 10 ) NOT NULL AFTER  `oset_class_id` ,
 						  ADD  `subject` VARCHAR( 20 ) NOT NULL AFTER  `section` ,
-						  ADD  `instructor` VARCHAR( 50 ) NOT NULL AFTER  `subject`");
+						  ADD  `instructor` VARCHAR( 50 ) NOT NULL AFTER  `subject`,
+						  ADD  `department_code` VARCHAR( 10 ) NOT NULL AFTER  `instructor` ,
+						  ADD  `college_code` VARCHAR( 10 ) NOT NULL AFTER  `department_code`");
 	}
 }

@@ -92,13 +92,12 @@
 			{
 				echo '
 				<div class="module-div2">
-					<h1>Information Security Analyst</h1>
+					<a class="no-style" href=""><h1>Info Security Analyst</h1></a>
 				</div>
-				
 				<div>				
 					<div class="module-div">
-						<h1>SET</h1>			
-						<a href="" ></a>
+						<h1>Export Data</h1>			
+						<a href="'.base_url('/index.php/infoanalyst/exportdata').'"';  if(strpos($_SERVER["PHP_SELF"],"export")) echo 'class="current"'; echo'>Archive Tables</a>
 					</div>
 				</div>
 				';
