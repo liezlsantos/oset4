@@ -30,7 +30,9 @@ class Changepassword extends CI_Controller
 			if($this->input->post('password1')!= $this->input->post('password2'))
 			{
 				$data = $this->session->userdata('logged_in');
-				$data['msg'] = "Passwords do not match.";	
+				$data['msg'] = "Passwords do not match.";
+				$this->load->model('SET_model');
+				$data['SET']=$this->SET_model->getRecords();	
 				$this->load->view('change_password', $data);
 			}
 			else 
@@ -38,6 +40,8 @@ class Changepassword extends CI_Controller
 				if(MD5($this->input->post('password').$session_array['salt'])!= $session_array['password'])
 				{
 					$data = $this->session->userdata('logged_in');
+					$this->load->model('SET_model');
+					$data['SET']=$this->SET_model->getRecords();
 					$data['msg'] = "Invalid password.";	
 					$this->load->view('change_password', $data);
 				}

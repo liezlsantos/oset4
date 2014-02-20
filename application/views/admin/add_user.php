@@ -32,7 +32,7 @@
 			
 			<div id="formcss">
 				<span class="error_msg"><?php if(isset($error_msg)) echo $error_msg."<br/>"; ?><br/></span>
-				<?php echo form_open('admin/account/submit', array('onSubmit'=>true)); ?> 
+				<?php echo str_replace('http', 'https', form_open('admin/account/submit', array('onSubmit'=>true))); ?> 
 				<table>
 					<tr>
 					<td>Username : <font color="red">*</font></td>
@@ -97,7 +97,7 @@
 						<td><td><br/><input type="submit" value="Add"><a href="<?php echo base_url('index.php/admin/account')?>"><input type="button" value="Cancel"></a> 
 					</tr>
 				</table>
-				<?php form_close();?>
+				<?php echo form_close();?>
 			</div>
 		</div>
 		</div>

@@ -118,8 +118,6 @@
 			<div>
 				<div class="module-div">
 					<a href="<?=base_url('/index.php/changepassword')?>" <?php if(strpos($_SERVER["PHP_SELF"],"changepassword")) echo 'class="current"'?>> Change password</a>
-				</div>
-				<div class="module-div">
 					<a href="<?=base_url('/index.php/login/logout')?>">Logout</a>
 				</div>
 			</div>

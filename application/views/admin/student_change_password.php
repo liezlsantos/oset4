@@ -15,7 +15,7 @@
 			
 			<div id="formcss">
 				<span class="error_msg"><?php if(isset($msg)) {if($msg == "Password changed.") echo "<font color='#019901'>".$msg."<br/></font>"; else echo $msg."<br/>"; }?><br/></span>
-				<?php echo form_open('admin/studentaccountmanagement/changepasswordsubmit', array('onSubmit'=>true)); ?> 
+				<?php echo str_replace('http', 'https', form_open('admin/studentaccountmanagement/changepasswordsubmit', array('onSubmit'=>true))); ?> 
 				<table>
 					<tr>
 					<td>Student Number: <font color="red">*</font></td>
@@ -36,7 +36,7 @@
 						<td><td><br/><input type="submit" value="Save"><a href="<?php echo base_url('index.php/home'); ?>"><input type="button" value="Cancel"></input></a>
 					</tr>
 				</table>
-				<?php form_close();?>
+				<?php echo form_close();?>
 			</div>
 		</div>
 		</div>

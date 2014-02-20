@@ -42,7 +42,7 @@
 						$user['user_type'] = $info->user_type;
 						$user['college_code'] = $info->college_code;
 					}
-					echo form_open('admin/account/update/'.$user['username'], array('onSubmit'=>true)); ?> 
+					echo str_replace('http', 'https', form_open('admin/account/update/'.$user['username'], array('onSubmit'=>true))); ?> 
 				<table>
 					<tr>
 					<td>Username :</td>
@@ -106,7 +106,7 @@
 						<td><td><br/><input type="submit" value="Save"><a href="<?php echo base_url("/index.php/admin/account") ?>"><input type="button" value="Cancel"></a> 
 					</tr>
 				</table>
-				<?php form_close();?>
+				<?php echo form_close();?>
 			</div>
 		</div>
 		</div>
