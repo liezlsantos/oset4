@@ -10,10 +10,11 @@
 				<img src="<?=base_url('css/images/logo.jpg');?>"
 							width="100px" align="middle"></img>
 				<font style="font-family:Georgia;font-size:20px">Online Student Evaluation of Teachers</font>
-				<br/><br/>
 				<?php echo str_replace('http', 'https', form_open('login/submit', array('onSubmit'=>true))); ?> 
 				<table cellpadding="3">
 					<tr><td colspan="2" align="center"><font color = red><?php echo validation_errors(); ?>&nbsp;</font></td></tr>
+					<tr><td colspan="2">For student used your student number (20xx-xxx)</td></tr>
+					<tr><td>&nbsp;</td></tr>
 					<tr><td>Username <td><input type="text" name="username" size=25 required/> <br/>
 					<tr><td><br/></td></tr>
 					</tr>
