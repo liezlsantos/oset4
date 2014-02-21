@@ -65,7 +65,6 @@
 						&& !strpos($_SERVER["PHP_SELF"],"clerk/classmanagement/view")) 
 							echo 'class="current"'; echo '">Classes-Faculty Selection</a>
 						<a href="'.base_url('/index.php/clerk/studentaccount').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/studentaccount")) echo 'class="current"'; echo'">List of Students</a>
-						<a href="'.base_url('/index.php/clerk/studentaccount').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/studentaccount")) echo 'class="current"'; echo'">List of Students</a>
 						<a href="'.base_url('/index.php/clerk/setinstrumentassignment').'"'; if(strpos($_SERVER["PHP_SELF"],"clerk/setinstrumentassignment") && strpos($_SERVER["PHP_SELF"],"set")) echo 'class="current"'; echo '">SET Instrument Assignment</a>
 				</div>';
 				

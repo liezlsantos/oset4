@@ -36,7 +36,7 @@
 	
 		<br/><br/>
 		<?php
-			if(($_SESSION['student_keyword']))
+			if(isset($_SESSION['student_keyword']))
 				echo '
 				<form id="search_form" method="POST" action="'.base_url('/index.php/clerk/studentaccount/search').'">
 					<input type="hidden" value="'.$_SESSION['student_keyword'].'" name="name">

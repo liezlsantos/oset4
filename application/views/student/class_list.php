@@ -25,7 +25,7 @@
 						"<tr>
 							<td>".$records['subject'][$i]."</td>
 							<td>".$records['section'][$i]."</td>
-							<td>".$records['instructor'][$i]."</td>
+							<td>".ucwords(strtolower($records['instructor'][$i]))."</td>
 							<td>";
 						if($records['evaluated'][$i])	
 							echo "<font color='green'>Evaluated</font>";

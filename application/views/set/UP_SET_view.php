@@ -80,8 +80,8 @@
 						echo '<h2>Preview of SET Instrument (UP Diliman SET)</h2>';
 				  else 
 				  {
-				  		echo '<h2>Evaluate '.$class['subject'].' - '.$class['instructor'].'</h2>';
-				  		echo '<form method="POST" onSubmit="return validateForm();" action="'.base_url('index.php/student/set/upset/submit/'.$class['oset_class_id']).'">';
+				  		echo '<h2>Evaluate '.$class['subject'].' - '.ucwords(strtolower($class['instructor'])).'</h2>';
+					  	echo '<form method="POST" onSubmit="return validateForm();" action="'.base_url('index.php/student/set/upset/submit/'.$class['oset_class_id']).'">';
 				  }
 			?>
 			
