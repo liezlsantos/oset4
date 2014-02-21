@@ -79,7 +79,13 @@ class SET_instrument extends CI_Model
 			return FALSE;
 	}
 	
-	public function createTables($model, $table)
+	public function createTables($model)
+	{
+		$this->load->model('set/'.$model);
+		$this->$model->createTable();	 
+	}
+	
+	/*public function createTables($model, $table)
 	{
 		$this->load->model('set/'.$model);
 		$this->$model->createTable();
@@ -96,5 +102,7 @@ class SET_instrument extends CI_Model
 						  ADD  `instructor` VARCHAR( 50 ) NOT NULL AFTER  `subject`,
 						  ADD  `department_code` VARCHAR( 10 ) NOT NULL AFTER  `instructor` ,
 						  ADD  `college_code` VARCHAR( 10 ) NOT NULL AFTER  `department_code`");
-	}
+		 
+		 
+	}*/
 }

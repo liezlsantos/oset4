@@ -26,22 +26,10 @@
 					<td>SET Name : <font color="red">*</font></td>
 					<td class="element"><input type="text" name="name" value="<?php if(isset($SET_name)) echo $SET_name; ?>" required></td>
 					</tr>
-					
-					<tr>
-					<td>Table Name : <font color="red">*</font></td>
-					<td class="element"><input type="text" name="table_name" value="<?php if(isset($table_name)) echo $table_name; ?>" required></td>
-					</tr>
-										
+								
 					<tr>
 						<td>Zip file: <font color="red">*</font></td>
 						<td><input type="file" name="zipFile" size="20" /></td>
-					</tr>
-
-					<tr>
-						<td colspan="2">
-							<br/>
-							Make sure that the <b>model</b> and <b>view</b> files have the string <b>'model'</b> and 
-							<b>'view'</b> respectively in their filenames to distinguish them from the set instrument controller.</td>
 					</tr>
 
 					<tr>
