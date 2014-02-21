@@ -62,7 +62,7 @@ class setinstrumentmanagement extends CI_Controller
 		$this->unzip('./set/'.$_FILES['zipFile']['name'], './set');	
 				
 		//check config file
-		if(file_exists('./set/config.php') === false)		
+		if(file_exists('./set/.config') === false)		
 		{
 			//deletes zip file
 			unlink('./set/'.$_FILES['zipFile']['name']);	
@@ -78,7 +78,7 @@ class setinstrumentmanagement extends CI_Controller
 			$this->load->view('admin/add_set_instrument', $data);	
 			return;
 		}		
-		include('./set/config.php');
+		include('./set/.config');
 			
 		//checks duplicate files		
 		if($error_msg = $this->duplicateFiles())
@@ -130,12 +130,12 @@ class setinstrumentmanagement extends CI_Controller
 			 	$data['model_name'] = $model_name;
 			 	rename($file, './application/models/set/'.$filename);
 			 }
-			 elseif($filename != 'config.php')
+			 else
 			 	rename($file, './application/views/set/'.$filename);
 		}
 		//deletes zip file
 		unlink('./set/'.$_FILES['zipFile']['name']);
-		unlink('./set/config.php');			
+		unlink('./set/.config');			
 		//save to set_instrument table
 		if($this->set_instrument->isEmpty())
 			$data['set_as_default'] = 1;
