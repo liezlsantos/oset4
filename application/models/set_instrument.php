@@ -53,12 +53,6 @@ class SET_instrument extends CI_Model
 	public function saveToDatabase($data)
 	{
 		$result = $this->db->insert('set_instrument',$data);
-		
-		if($result){
-			return $this->db->insert_id();
-		}
-
-		return false;
 	}
 	
 	public function checkTableName($table_name)

@@ -136,6 +136,7 @@ class setinstrumentmanagement extends CI_Controller
 		//deletes zip file
 		unlink('./set/'.$_FILES['zipFile']['name']);
 		unlink('./set/.config');			
+		
 		//save to set_instrument table
 		if($this->set_instrument->isEmpty())
 			$data['set_as_default'] = 1;
@@ -144,7 +145,13 @@ class setinstrumentmanagement extends CI_Controller
 		$data['table_name'] = $table_name;
 		$this->set_instrument->saveToDatabase($data);
 	
+		//create SET instrument table (e.g. up_set)
 		$this->set_instrument->createTables($data['model_name']);
+		
+		//write blank csv file
+		$file = './csv/'.$table_name.'.csv';
+		write_file($file, "");
+		
 		redirect("admin/setinstrumentmanagement", "refresh");
 	}
 
