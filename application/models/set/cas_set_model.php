@@ -90,6 +90,9 @@ class CAS_SET_model extends CI_Model
 		$this->db->where('oset_class_id', $oset_class_id);
 		$value['no_of_respondents'] = $count;
 		$this->db->update('class', $value);
+		
+		$this->load->model('audit_trail');
+		$this->audit_trail->saveToDatabase("Evaluated a class"); 
 	}
 	
 	public function checkIfEvaluated($oset_class_id, $student_id)

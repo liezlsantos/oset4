@@ -42,6 +42,8 @@
 						<a href="'.base_url('/index.php/admin/studentaccountmanagement').'"'; if(strpos($_SERVER["PHP_SELF"],"admin/studentaccountmanagement") && !strpos($_SERVER["PHP_SELF"],"admin/studentaccountmanagement/changepassword")) echo 'class="current"'; echo'">Generate Student Accounts</a>
 						<a href="'.base_url('/index.php/admin/studentaccountmanagement/changepassword').'"'; if(strpos($_SERVER["PHP_SELF"],"admin/studentaccountmanagement/changepassword")) echo 'class="current"'; 
 						echo '">Change Student\'s Password</a>
+						<a href="'.base_url('/index.php/admin/audittrail').'"'; if(strpos($_SERVER["PHP_SELF"],"audittrail")) echo 'class="current"'; 
+						echo '">Audit Trail</a>
 					</div>
 
 					<div class="module-div">

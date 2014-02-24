@@ -62,11 +62,11 @@
 								</td>
 							 </tr>";
 					}
+					echo "</table>";
 				}
 				else
 					echo "No record found.<br/>";
 			?>
-		</table>
 		
 		<?php 
 			if($keyword)

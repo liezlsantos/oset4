@@ -4,7 +4,7 @@ class User extends CI_Model
 {
 	public function login($username, $password)
 	{
-		$sql = $this->db->query("SELECT username, password, user_type, first_name, college_code, salt FROM users WHERE username='$username'");
+		$sql = $this->db->query("SELECT username, password, user_type, first_name, last_name, college_code, salt FROM users WHERE username='$username'");
 		$row = $sql->row();
 		
 		if($row)
@@ -33,24 +33,24 @@ class User extends CI_Model
 	public function saveToDatabase($data)
 	{
 		$result = $this->db->insert('users',$data);
-		
-		if($result){
-			return $this->db->insert_id();
-		}
-
-		return false;
+		$this->load->model('audit_trail');
+		$this->audit_trail->saveToDatabase('Added user account');
 	}
 	
 	public function updateRecord($data, $id)
 	{
 		$this->db->where('username', $id);
-		$this->db->update('users', $data); 
+		$this->db->update('users', $data);
+		$this->load->model('audit_trail');
+		$this->audit_trail->saveToDatabase('Updated user account');
 	}
 	
 	public function deleteRecord($id)
 	{
 		$this->db->where('username', $id);
 		$this->db->delete('users'); 
+		$this->load->model('audit_trail');
+		$this->audit_trail->saveToDatabase('Deleted user account');
 	}
 	
 	public function getInfo($username)

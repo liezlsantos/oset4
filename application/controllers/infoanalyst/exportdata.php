@@ -7,7 +7,6 @@ class Exportdata extends CI_Controller
 		parent::__construct();
 		$this->load->model('SET_model');
 		$this->load->model('set_instrument');
-		$this->load->model('archive_tables');
 		$this->load->model('college');
 		$this->load->model('department');
 	}
