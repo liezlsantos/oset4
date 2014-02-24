@@ -33,7 +33,7 @@ class Csv extends CI_Model
 		foreach ($sql->result() as $row)
 		{
 			if(!isset($data[$row->Field]))	
-				$data[$row->Field] = '""';
+				$data[$row->Field] = '"NR"';
 			$response .= $data[$row->Field].',';
 		}
 		$response = rtrim($response, ",");
