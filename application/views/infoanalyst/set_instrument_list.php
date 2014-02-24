@@ -28,7 +28,11 @@
 									<td align='center'>".$records['set_instrument_id'][$i]."</td>
 									<td>".$records['name'][$i]."</td>
 									<td>".$records['table_name'][$i]."</td>
-									<td><a href='".base_url('index.php/infoanalyst/exportdata/downloadCSV/'.$records['table_name'][$i])."'>Export data from this table</a></td>";
+									<td>";
+							if(!$records['isEmpty'][$i])		
+								echo "<a href='".base_url('index.php/infoanalyst/exportdata/downloadCSV/'.$records['table_name'][$i])."'>Export data from this table</a></td>";
+							else 
+								echo "This table is empty.";	
 							echo "</tr>";
 					}
 					
