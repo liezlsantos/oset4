@@ -147,11 +147,11 @@ class Student extends CI_Model
 			$activatedStudents[] = $row->student_id;
 		}
 	
-		$query = "INSERT INTO student (student_id, name, college_code, program, yearlevel) VALUES ";
+		$query = "INSERT INTO student (student_id, name, college_code, program) VALUES ";
 		$i = 0;
 		foreach ($activatedStudents as $activatedStudent)
 		{
-			$sql = $this->db_crs->query("SELECT s.studentid, unit, program, yearlevel, lastname, firstname from osetuser_students_view s, osetuser_studentterms_view st where s.studentid = st.studentid AND s.studentid = '$activatedStudent'");
+			$sql = $this->db_crs->query("SELECT s.studentid, unit, program, lastname, firstname from osetuser_students_view s, osetuser_studentterms_view st where s.studentid = st.studentid AND s.studentid = '$activatedStudent'");
 			$row = $sql->row();
 			
 			$unit = $row->unit;
@@ -159,13 +159,13 @@ class Student extends CI_Model
 				$unit = 'NTTCHP';
 		
 			 $query .= '("'.$row->studentid.'", "'.$row->lastname . ', ' . $row->firstname.'",
-			 			"'.$row->unit.'", "'.$row->program.'", "'.$row->yearlevel.'"), ';
+			 			"'.$row->unit.'", "'.$row->program.'"), ';
 				
 			if($i % 50 == 0)
 			{
 				$query = substr($query, 0, strlen($query)-2);
 				$sql = $this->db->query($query);
-				$query = "INSERT INTO student (student_id, name, college_code, program, yearlevel) VALUES ";
+				$query = "INSERT INTO student (student_id, name, college_code, program) VALUES ";
 			}
 			$i++;			
 		}

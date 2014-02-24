@@ -9,7 +9,7 @@
 		<?php include('header.php'); ?>
 		
 		<div class = "right">
-			<h2> Archive Tables </h2>
+			<h2> SET Instrument Tables </h2>
 			
 			<?php
 			if(count($records['name']))
@@ -19,17 +19,16 @@
 					<tr>
 						<th width="120px">SET Instrument ID</th>
 						<th>SET Instrument Name</th>
-						<th>Archive Table</th>
+						<th>Table Name</th>
 						<th></th>
 					</tr>';
 				
 					for ($i = 0; $i <count($records['name']); $i++) {
-							$table = $records['table_name'][$i]."_archive";
 							echo "<tr>
 									<td align='center'>".$records['set_instrument_id'][$i]."</td>
 									<td>".$records['name'][$i]."</td>
-									<td>".$table."</td>
-									<td><a href='".base_url('index.php/infoanalyst/exportdata/search/'.$records['set_instrument_id'][$i])."'>Export data from this table</a></td>";
+									<td>".$records['table_name'][$i]."</td>
+									<td><a href='".base_url('index.php/infoanalyst/exportdata/downloadCSV/'.$records['table_name'][$i])."'>Export data from this table</a></td>";
 							echo "</tr>";
 					}
 					

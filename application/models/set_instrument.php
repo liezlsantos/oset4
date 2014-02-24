@@ -18,8 +18,8 @@ class SET_instrument extends CI_Model
 			$results['set_as_default'][] = $row->set_as_default;
 		}
 		return $results;
-	}	
-	
+	}
+		
 	public function getInfo($id)
 	{
 		$sql = $this->db->query("SELECT * FROM set_instrument WHERE set_instrument_id = '$id'");

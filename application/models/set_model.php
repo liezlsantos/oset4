@@ -23,10 +23,15 @@ class SET_model extends CI_Model
 		$this->db->update('set_status', array('accounts_generated' => '0'));	
 		$this->db->query('TRUNCATE score_per_respondent');
 		$sql = $this->db->query('SELECT table_name FROM set_instrument');
+		$this->load->helper('file');
 		if($sql->num_rows() > 0)
 		{
 			foreach ($sql->result() as $row)
+			{		
 				$this->db->query('TRUNCATE '.$row->table_name);
+				$file = './csv/'.$row->table_name.'.csv';
+				write_file($file, "");
+			}
 		}
 	}
 }
