@@ -24,6 +24,7 @@ class Csv extends CI_Model
 			$data[$key] = '"'.$val.'"';
 		}
 		
+		$data['student_id'] = substr_replace($data['student_id'], '-', 5, 0);
 		$response = "\n".$data['student_id'].','.$data['name'].','.$data['program'].','.
 		$data['subject'].','.$data['section'].','.$data['instructor'].','.
 		$data['department_code'].','.$data['college_code'].',';
@@ -39,18 +40,6 @@ class Csv extends CI_Model
 		$response = rtrim($response, ",");
 		
 		$fp = fopen('./csv/'.$table.'.csv', 'a');
-		
-		//write column header
-		if(file_get_contents('./csv/'.$table.'.csv') == "")
-		{
-			$header = '"student_number","student_name","student_program","subject","section","instructor","department_code","college_code",';
-			foreach ($sql->result() as $row)
-				$header .= '"'.$row->Field.'",';
-	
-			$header = rtrim($header, ",");
-			fwrite($fp, $header);
-		
-		}	
 		fwrite($fp, $response);
 		fclose($fp);
 	}

@@ -183,7 +183,7 @@
 	<div align="right">Weighted Average (Part I): <?php if(isset($ave1)){if($sum = array_sum($ave1)) echo round($sum/count($ave1), 4); else echo 0;} else echo 0; ?></div> 
 	<br/><br/>
 
-	<b>PART II-A. THE COURSE</b>
+	<br/><b>PART II-A. THE COURSE</b>
 	
 	<br/><br/>
 	<table class="records">

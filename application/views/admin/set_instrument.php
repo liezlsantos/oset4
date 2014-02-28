@@ -14,6 +14,8 @@
 		<h2> SET Instrument Management </h2>
 		
 		<?php
+			if(isset($_SESSION['msg'])) {echo "<center><font color=green>".$_SESSION['msg']."</font><br/><br/></center>"; unset($_SESSION['msg']);}
+		
 			if(count($records['name']))
 			{
 					echo'

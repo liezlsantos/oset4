@@ -41,19 +41,29 @@ class setinstrumentmanagement extends CI_Controller
 		if(!$_FILES['zipFile']['name'])
 		{
 			$data = $this->session->userdata('logged_in');
-			$data['SET']=$this->SET_model->getRecords();
-			$data['set_id']=$this->set_instrument->getNextSetID();
+			$data['SET'] = $this->SET_model->getRecords();
+			$data['set_id'] = $this->set_instrument->getNextSetID();
 			$data['SET_name'] = $this->input->post('name');
-			$data['table_name'] = $this->input->post('table_name');
 			$data['error_msg'] = "No zip file selected.";
 			$this->load->view('admin/add_set_instrument', $data);	
 			return;
 		}
 		
-		$config['allowed_types'] = 'zip';
-		$config['max_size']	= '5000';
+		//check if directories are writable
+		if(!is_writable('./set') || !is_writable('./application/controllers/set') || !is_writable('./application/models/set') || !is_writable('./application/views/set'))
+		{
+			$data = $this->session->userdata('logged_in');
+			$data['SET'] = $this->SET_model->getRecords();
+			$data['set_id'] = $this->set_instrument->getNextSetID();
+			$data['SET_name'] = $this->input->post('name');
+			$data['error_msg'] = "Folders needed to upload set instrument are not writable.";
+			$this->load->view('admin/add_set_instrument', $data);	
+			return;			
+		}	
 				
 		//upload zip file
+		$config['allowed_types'] = 'zip';
+		$config['max_size']	= '5000';
 		$config['upload_path'] = './set';
 		$config['file_name'] = $_FILES['zipFile']['name']; 
 		$this->load->library('upload', $config);
@@ -136,6 +146,9 @@ class setinstrumentmanagement extends CI_Controller
 		//deletes zip file
 		unlink('./set/'.$_FILES['zipFile']['name']);
 		unlink('./set/.config');			
+			
+		//create SET instrument table (e.g. up_set)
+		$this->set_instrument->createTables($data['model_name']);
 		
 		//save to set_instrument table
 		if($this->set_instrument->isEmpty())
@@ -144,15 +157,27 @@ class setinstrumentmanagement extends CI_Controller
 		$data['set_instrument_id'] = $this->input->post("id");
 		$data['table_name'] = $table_name;
 		$this->set_instrument->saveToDatabase($data);
-	
-		//create SET instrument table (e.g. up_set)
-		$this->set_instrument->createTables($data['model_name']);
 		
-		//write blank csv file
-		$file = './csv/'.$table_name.'.csv';
-		write_file($file, "");
-		
+		$this->writeCSV($table_name);
+		$_SESSION['msg'] = 'SET instrument uploaded. Please reset the directories\' permission to unwritable.';
 		redirect("admin/setinstrumentmanagement", "refresh");
+	}
+
+	public function writeCSV($table_name)
+	{
+		//create file
+		$file = './csv/'.$table_name.'.csv';
+		$fp = fopen($file, 'w');
+		//write column header
+		$header = '"student_number","student_name","student_program","subject","section","instructor","department_code","college_code",';
+		$fields = $this->set_instrument->getFields($table_name);
+		
+		foreach ($fields as $row)
+			$header .= '"'.$row->Field.'",';
+		$header = rtrim($header, ",");
+		
+		fwrite($fp, $header);
+		fclose($fp);
 	}
 
 	public function unzip($source, $destination)

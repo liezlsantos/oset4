@@ -16,17 +16,14 @@ class SET_instrument extends CI_Model
 			$results['model_name'][] = $row->model_name;
 			$results['table_name'][] = $row->table_name;
 			$results['set_as_default'][] = $row->set_as_default;
-			$results['isEmpty'][] = $this->isEmptyTable($row->table_name);
 		}
 		return $results;
 	}
 	
-	public function isEmptyTable($table)
+	public function getFields($table)
 	{
-		$sql = $this->db->query("SELECT * FROM $table");
-		if($sql->num_rows() == 0)
-			return true;
-		return false;
+		$sql = $this->db->query("SHOW COLUMNS FROM $table WHERE Field NOT IN ('response_id', 'student_id', 'oset_class_id')");
+		return $sql->result();
 	}
 		
 	public function getInfo($id)

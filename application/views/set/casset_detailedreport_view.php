@@ -160,7 +160,8 @@
 			<td><?php echo $part2_4['PE'] ?></td>
 		</tr>
 	</table>
-	<br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/>
+	
 	<table class="records">
 		<tr>
 		<td colspan="8"><br/>
@@ -391,7 +392,7 @@
 			$wa = array_sum($ave)/136; 
 		?>
 		<div align="right">Weighted Average (Part III): <?php echo round($wa, 4) ?></div> 
-		<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 	<table class="records">
 		<tr>
 			<td colspan="6">40. What are the teacher's strong points?</td>

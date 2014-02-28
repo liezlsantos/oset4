@@ -29,9 +29,26 @@ class SET_model extends CI_Model
 			foreach ($sql->result() as $row)
 			{		
 				$this->db->query('TRUNCATE '.$row->table_name);
-				$file = './csv/'.$row->table_name.'.csv';
-				write_file($file, "");
+				$this->writeCSV($row->table_name);
 			}
 		}
+	}
+	
+	public function writeCSV($table_name)
+	{
+		$this->load->model('set_instrument');
+		//create file
+		$file = './csv/'.$table_name.'.csv';
+		$fp = fopen($file, 'w');
+		//write column header
+		$header = '"student_number","student_name","student_program","subject","section","instructor","department_code","college_code",';
+		$fields = $this->set_instrument->getFields($table_name);
+		
+		foreach ($fields as $row)
+			$header .= '"'.$row->Field.'",';
+		$header = rtrim($header, ",");
+		
+		fwrite($fp, $header);
+		fclose($fp);
 	}
 }
