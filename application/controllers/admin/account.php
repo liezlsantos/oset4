@@ -12,17 +12,27 @@ class Account extends CI_Controller
 	public function index() 
 	{
 		$data = $this->session->userdata('logged_in');
-		$data['records']=$this->user->getRecords('');
-		$data['SET']=$this->SET_model->getRecords();
+		$data['records'] = $this->user->getRecords('');
+		$data['SET'] = $this->SET_model->getRecords();
+		unset($_SESSION['keyword']);
 		$this->load->view('admin/account_list', $data);	
 	}	
 		
 	public function search()
 	{	
 		$data = $this->session->userdata('logged_in'); 
-		$data['records']=$this->user->getRecords($this->input->post('keyword'));
-		$data['keyword']=$this->input->post('keyword');
-		$data['SET']=$this->SET_model->getRecords();
+		if(empty($_POST))
+		{
+			$data['records'] = $this->user->getRecords($_SESSION['keyword']);
+			$data['keyword'] = $_SESSION['keyword'];
+		}
+		else 
+		{
+			$data['records'] = $this->user->getRecords($this->input->post('keyword'));
+			$_SESSION['keyword'] = $this->input->post('keyword');
+			$data['keyword'] = $this->input->post('keyword');
+		}
+		$data['SET'] = $this->SET_model->getRecords();
 		$this->load->view('admin/account_list', $data);
 	}
 	
@@ -31,14 +41,18 @@ class Account extends CI_Controller
 		$data = $this->session->userdata('logged_in'); 
 		$this->load->model('college');
 		$data['colleges'] = $this->college->getRecords();
-		$data['SET']=$this->SET_model->getRecords();
+		$data['SET'] = $this->SET_model->getRecords();
+		$data['msg'] = "User account added.";
 		$this->load->view('admin/add_user', $data);
 	}
 	
 	public function delete($username)
 	{
 		$this->user->deleteRecord($username);
-		redirect('admin/account', 'refresh');
+		$_SESSION['msg'] = "User account deleted.";
+		if(!isset($_SESSION['keyword']))
+			$_SESSION['keyword'] = "";
+		redirect('admin/account/search', 'refresh');
 	}
 	
 	public function edit($username)
@@ -105,7 +119,8 @@ class Account extends CI_Controller
 						$data['college_code'] = $this->input->post('college_code');
 				
 					$username = $this->user->saveToDatabase($data);
-					redirect('admin/account', 'refresh');
+					$_SESSION['msg'] = "User account added.";
+					redirect('admin/account/', 'refresh');
 				}
 			}
 		}
@@ -144,7 +159,8 @@ class Account extends CI_Controller
 					$data['college_code'] = "";
 				
 				$this->user->updateRecord($data, $username);
-				redirect('admin/account', 'refresh');
+				$_SESSION['msg'] = "User account updated.";
+				redirect('admin/account/search', 'refresh');
 			}
 		}
 		else
@@ -161,7 +177,8 @@ class Account extends CI_Controller
 				$data['college_code'] = "";
 			
 			$this->user->updateRecord($data, $username);
-			redirect('admin/account', 'refresh');
+			$_SESSION['msg'] = "User account updated.";
+			redirect('admin/account/search', 'refresh');
 		}
 		
 	}

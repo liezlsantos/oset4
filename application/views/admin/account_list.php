@@ -35,6 +35,8 @@
 		
 		<br/><a href="<?=base_url('/index.php/admin/account/add')?>"> + Add new user</a><br/><br/>
 			<?php
+				if(isset($_SESSION['msg'])) {echo "<center><font color=green>".$_SESSION['msg']."</font><br/><br/></center>"; unset($_SESSION['msg']);}
+		
 				if(count($records['username']))
 				{
 					echo'

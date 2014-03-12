@@ -7,7 +7,6 @@ class Login extends CI_Controller
 		parent::__construct();
 		$this->load->model('user','',TRUE);
 		$this->load->model('college','',TRUE);
-		$this->load->library('session');
 	}
 
 	public function index() 
@@ -15,11 +14,15 @@ class Login extends CI_Controller
 		if($this->session->userdata('logged_in'))
 			redirect('home', 'refresh');
 		else
+		{
+			session_destroy();
 			$this->load->view('login_view');	
+		}
 	}	
 	
 	public function submit()
 	{
+		$this->load->library('session');
 		$this->load->library('form_validation');
 
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
