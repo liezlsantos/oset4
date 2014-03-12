@@ -289,7 +289,7 @@
 						<th align="left">Part B.</th>
 					</tr>
 					<tr>
-						<td>1. Does the class has a syllabus or expanded outline for the course?
+						<td>1. Does the class have a syllabus or expanded outline for the course?
 							<input type="radio" name="part2b_1" value="yes" onClick="show('partB1_1')">Yes</input>
 							<input type="radio" name="part2b_1" value="no" onClick="hide('partB1_1'); hide('partB1_1_1')">No</input>
 						</td>	
@@ -553,7 +553,7 @@
 					</tr>
 					<tr id="part3a_18">
 						<td>18.</td>
-						<td>Explains the grading procedure ans standards clearly and applies them. <font color="red"> *</font></td>
+						<td>Treats students tactfully; does not embarrass them.<font color="red"> *</font></td>
 						<td align="center"><input type="radio" name="part3a_18" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_18" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_18" value="3"></input></td>
