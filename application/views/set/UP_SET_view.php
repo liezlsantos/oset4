@@ -553,7 +553,11 @@
 					</tr>
 					<tr id="part3a_18">
 						<td>18.</td>
+<<<<<<< HEAD
 						<td>Treats students tactfully; does not embarrass them. <font color="red"> *</font></td>
+=======
+						<td>Treats students tactfully; does not embarrass them.<font color="red"> *</font></td>
+>>>>>>> 36a844f2b3524b4c7e294ad0ba9a5de3bf188404
 						<td align="center"><input type="radio" name="part3a_18" value="1"></input></td>
 						<td align="center"><input type="radio" name="part3a_18" value="2"></input></td>
 						<td align="center"><input type="radio" name="part3a_18" value="3"></input></td>
