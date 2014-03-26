@@ -208,6 +208,7 @@ table.records td, table.records th{
 table.records th{
 	background: url('images/add.png');
 	color: #fff;
+	/*background-color: #006633;*/
 }
 
 table.records th a{

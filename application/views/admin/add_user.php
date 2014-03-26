@@ -64,7 +64,7 @@
 					</tr>
 					
 					<tr>
-						<td id="College_Code-label"><div name="collegeDiv" <?php if(strpos($user_type, '2') === false || $user_type == 0) echo 'style="display:none;"';?> >College : <font color="red">*</font></div></td>
+						<td><div name="collegeDiv" <?php if(strpos($user_type, '2') === false || $user_type == 0) echo 'style="display:none;"';?> >College : <font color="red">*</font></div></td>
 						<td class="element">
 							<div name="collegeDiv" <?php if(strpos($user_type, '2') === false || $user_type == 0) echo 'style="display:none;"';?>>
 							<?php if(!isset($user['college_code'])) $user['college_code'] = "CAMP";?>

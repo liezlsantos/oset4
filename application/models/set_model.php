@@ -39,6 +39,8 @@ class SET_model extends CI_Model
 		$this->load->model('set_instrument');
 		//create file
 		$file = './csv/'.$table_name.'.csv';
+		if(file_exists($file))
+			unlink($file);
 		$fp = fopen($file, 'w');
 		//write column header
 		$header = '"student_number","student_name","student_program","subject","section","instructor","department_code","college_code",';

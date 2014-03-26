@@ -12,7 +12,7 @@
 				<font style="font-family:Georgia;font-size:20px">Online Student Evaluation of Teachers</font>
 				<?php echo str_replace('http', 'https', form_open('login/submit', array('onSubmit'=>true))); ?> 
 				<table cellpadding="3">
-					<tr><td colspan="2" align="center"><font color = red><?php echo validation_errors(); ?>&nbsp;</font></td></tr>
+					<tr><td colspan="2" align="center"><font color = red><?php if(validation_errors()) echo validation_errors(); else echo "<br/>"; ?>&nbsp;</font></td></tr>
 					<tr><td></td></tr>
 					<tr><td>Username <td><input type="text" name="username" size=25 placeholder="20XX-XXXX" required/> <br/>
 					<tr><td><br/></td></tr>

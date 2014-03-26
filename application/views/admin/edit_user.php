@@ -69,7 +69,7 @@
 					</tr>
 					
 					<tr>
-						<td><div name="collegeDiv" style="display:none;">College : <font color="red">*</font></div></td>
+						<td><div name="collegeDiv" style="display:none;">College : <font color="red">*</font></div><br/></td>
 						<td class="element">
 							<div name="collegeDiv" style="display:none;">
 							<select name="college_code" id="college_code">
