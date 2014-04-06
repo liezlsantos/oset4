@@ -142,6 +142,7 @@ class Lab_set extends CI_Controller
 			
 			$data3['evaluated'] = 1;
 			$this->lab_set_model->updateEvalStatus($oset_class_id, $user_data['student_id'], $data3);
+			$_SESSION['msg'] = "Class evaluated.";
 		}
 		redirect("student/home", "refresh");	
 	}

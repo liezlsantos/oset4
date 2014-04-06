@@ -23,15 +23,10 @@
 					</tr>
 					
 					<tr>
-					<td>New password : <font color="red">*</font></td>
-					<td class="element"><input type="password" name="password1" id="password" value="" required></td>
+					<td>New password : </td>
+					<td class="element"><?php echo $password; ?> <input type="hidden" name="password" id="password" value="<?php echo $password; ?>" readOnly></td>
 					</tr>
-					
-					<tr>
-					<td>Confirm password : <font color="red">*</font></td>
-					<td class="element"><input type="password" name="password2" id="password2" value="" required></td>
-					</tr>
-					
+				
 					<tr>
 						<td><td><br/><input type="submit" value="Save"><a href="<?php echo base_url('index.php/home'); ?>"><input type="button" value="Cancel"></input></a>
 					</tr>

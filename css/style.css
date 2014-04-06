@@ -75,13 +75,22 @@ div.loginbar{
 }
 
 .loginbox{
-	margin: 10% auto;
-    width: 480px;
-    height: 340px;
+	margin: 8px 8px;
+	margin-right: 0px;
+    height: 250px;
+    padding: 10px;
+    background-color: #DDD;
+}
+
+.loginform{
+	margin-left: 8px;
+    background-color: #EEE;
+    padding: 6px 8px;
+    color: #666;
 }
 
 .loginbox input{
-	font: 15px "Helvetica";
+	font: 13px "Helvetica";
 	text-indent: 2px;
 	height: 27px;
 	color: #333;
@@ -95,17 +104,29 @@ div.loginbar{
 
 input.button{
 	border: 1px solid rgba(0, 0, 0, 0.0);
-    border-radius: 4px 4px 4px 4px;
-	font: 13px Helvetica;
-	padding: 0px 20px;
+    border-radius: 2px;
+	font: 12px Helvetica;
+	padding: 2px 20px;
 	background-color: maroon;
-	height: 29px;
+	height: 25px;
 	color: #FFF8DC;
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
 }
 
 input.button:hover{
 	background-color: #a11;
+}
+
+div.left2 {
+	margin-top: 8px;
+	float: left;
+	width: 230px;
+}
+
+div.right2 {
+	margin-top: 35px;
+	margin-left: 250px;
+	width: 75%;
 }
 
 div.left {

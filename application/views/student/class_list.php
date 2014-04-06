@@ -10,6 +10,11 @@
 		
 		<div class = "right">
 			<h2>List of Classes</h2>
+		
+			<?php
+			if(isset($_SESSION['msg'])) {echo "<center><font color=green>".$_SESSION['msg']."</font><br/><br/></center>"; unset($_SESSION['msg']);}
+			?>
+			
 			<table class = "records">
 				<tr>
 					<th>Subject</th>

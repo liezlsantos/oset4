@@ -23,8 +23,15 @@ class Account extends CI_Controller
 		$data = $this->session->userdata('logged_in'); 
 		if(empty($_POST))
 		{
-			$data['records'] = $this->user->getRecords($_SESSION['keyword']);
-			$data['keyword'] = $_SESSION['keyword'];
+			if($_SESSION['keyword'])
+			{
+				$data['records'] = $this->user->getRecords($_SESSION['keyword']);
+				$data['keyword'] = $_SESSION['keyword'];
+			}
+			else
+			{
+				$data['records'] = $this->user->getRecords('');	
+			}
 		}
 		else 
 		{

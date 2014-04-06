@@ -95,7 +95,9 @@ class Cas_set extends CI_Controller
 			$this->cas_set_model->saveScore($data2);
 			//save eval status
 			$data3['evaluated'] = 1;
-			$this->cas_set_model->updateEvalStatus($oset_class_id, $user_data['student_id'], $data3);
+			$this->cas_set_model->updateEvalStatus($oset_class_id, $user_data['student_id'], $data3);	
+			
+			$_SESSION['msg'] = "Class evaluated.";
 		}
 		redirect("student/home", "refresh");	
 	}

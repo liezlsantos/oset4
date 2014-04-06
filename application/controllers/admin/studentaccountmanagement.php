@@ -32,6 +32,7 @@ class StudentAccountManagement extends CI_Controller
 	{
 		 $data = $this->session->userdata('logged_in');
 		 $data['SET']=$this->SET_model->getRecords();
+		 $data['password'] = substr(MD5(uniqid(rand(), true)), 0, 8);
 		 $this->load->view('admin/student_change_password', $data);	
 	}
 	
@@ -40,28 +41,23 @@ class StudentAccountManagement extends CI_Controller
 		$data = $this->session->userdata('logged_in');
 		$data['SET']=$this->SET_model->getRecords();
 		
-		if($this->input->post('password1')!= $this->input->post('password2'))
+		$student_number = str_replace("-", "", $this->input->post('student_number'));
+				
+		if(!($row = $this->student->getInfo($student_number)))
 		{
 			$data['student_number'] = $this->input->post('student_number');
-			$data['msg'] = "Passwords do not match.";
+			$data['password'] = $this->input->post('password');
+			$data['msg'] = "Invalid student number.";
 		}
 		else
 		{
-			$student_number = str_replace("-", "", $this->input->post('student_number'));
-				
-			if(!($row = $this->student->getInfo($student_number)))
-			{
-				$data['student_number'] = $this->input->post('student_number');
-				$data['msg'] = "Invalid student number.";
-			}
-			else
-			{
-				$salt = $row->salt;
-				$data2 = array('password' => MD5($this->input->post('password1').$salt));	
-				$this->student->update($data2, $student_number);
-				$data['msg'] = "Password changed.";
-			}				
-		}
+			$salt = $row->salt;
+			$data2 = array('password' => MD5($this->input->post('password').$salt));	
+			$this->student->update($data2, $student_number);
+			$data['password'] = substr(MD5(uniqid(rand(), true)), 0, 8);
+			$data['msg'] = "Password changed.";
+		}				
+		
 		$this->load->view('admin/student_change_password', $data);
 	}
 	
