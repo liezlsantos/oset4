@@ -35,6 +35,7 @@
 			mysql_query("INSERT INTO users (username, first_name, last_name, user_type, salt, password) 
 				VALUES('$username', '$fname', '$lname', '1', '$salt', MD5('$password'))");
 			
+			$_SESSION['done'] = TRUE;
 			header('Location: end.php');					
 		}
 	}	
