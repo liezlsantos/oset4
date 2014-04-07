@@ -11,12 +11,17 @@ class Login extends CI_Controller
 
 	public function index() 
 	{
-		if($this->session->userdata('logged_in'))
-			redirect('home', 'refresh');
-		else
-		{
-			session_destroy();
-			$this->load->view('login_view');	
+		if(file_exists('./install'))
+			header('Location: '.base_url('install'));
+			//redirect("install", "refresh");
+		else {
+			if($this->session->userdata('logged_in'))
+				redirect('home', 'refresh');
+			else
+			{
+				session_destroy();
+				$this->load->view('login_view');	
+			}
 		}
 	}	
 	
