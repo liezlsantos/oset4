@@ -17,14 +17,20 @@
 		$MY_SQL = FALSE;
 		$next_flag= FALSE;
 	}
-	if(!is_writable(dirname(__DIR__).'/application/config/database.php')){
+	if(!is_writable(dirname(__DIR__).'/application/config/database.php') || !is_writable(dirname(__DIR__).'/application/config/config.php')){
 		$config_writable = FALSE;
 		$next_flag = FALSE;
 	}
 	if(!is_writable('../csv') || !is_writable('../set') || !is_writable('../reports')){
 		$folders_writable = FALSE;
 		$next_flag = FALSE;
-	}	
+	}
+	if(is_writable(dirname(__DIR__).'/application/config/config.php'))	
+	{
+		$fh = fopen('../application/config/config.php', 'a');
+		fwrite($fh, "\n\$config['base_url']	= 'http://".str_replace("install/stepone.php", "", $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'])."';");
+		fclose($fh);
+	}
 		
 	if($next_flag)
 		$_SESSION['proceedToStep2'] = TRUE;
@@ -99,7 +105,7 @@
 					</tr>
 					<tr>
 						<td>Configuration settings</td>
-						<td>Must be writable (application/config/database.php)</td>
+						<td>Must be writable (application/config/database.php and application/config/config.php)</td>
 						<td><?php if($config_writable) echo "<font color=green>Writable</font>"; else echo 
 							"<font color=red>Not writable</font>"; ?></td>
 					</tr>

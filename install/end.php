@@ -63,7 +63,7 @@
 				<br/><br/>
 				<font color=green><b>REMINDERS:</b></font>
 				<ul>
-					<li>Set the configuration file (application/config/database.php) to be unwritable for non-owner users. <br/><br/></li>
+					<li>Set the configuration file (application/config/config.php and application/config/database.php) to be unwritable for non-owner users. <br/><br/></li>
 					<li>Delete the installation folder (oset4/install/)</li>
 				</ul>
 				</div>

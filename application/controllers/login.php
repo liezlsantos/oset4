@@ -12,8 +12,7 @@ class Login extends CI_Controller
 	public function index() 
 	{
 		if(file_exists('./install'))
-			header('Location: '.base_url('install'));
-			//redirect("install", "refresh");
+			header('Location: http://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'].'install');
 		else {
 			if($this->session->userdata('logged_in'))
 				redirect('home', 'refresh');

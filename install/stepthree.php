@@ -73,7 +73,7 @@
 				
 				?>
 				<table>
-					<tr><td>IP Address/Hostname:</td>
+					<tr><td width="200px">IP Address/Hostname:</td>
 						<td><input type="text" name="hostcrs" value="<?php if(isset($_SESSION['hostcrs'])) echo $_SESSION['hostcrs']; ?>"></td>
 					</tr>
 					<tr><td>Port Number:</td>

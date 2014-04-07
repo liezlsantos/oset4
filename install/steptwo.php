@@ -73,7 +73,7 @@
 				
 				?>
 				<table>
-					<tr><td>IP Address/Hostname:</td>
+					<tr><td width="200px">IP Address/Hostname:</td>
 						<td><input type="text" name="host" value="<?php if(isset($_SESSION['host'])) echo $_SESSION['host']; ?>"></td>
 					</tr>
 					<tr><td>Database Name:</td>

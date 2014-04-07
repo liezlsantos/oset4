@@ -92,9 +92,9 @@
 					';
 				}
 				?>
-				<form action="stepfive.php" method=POST>
+				<a href="stepfive.php">
 				<input type="submit" value="Next Step" <?php if(!$next_flag) echo "disabled";?>></a>
-				</form>
+				</a>
 			</div>
 		</div>	
 	</body>
