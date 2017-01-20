@@ -1,73 +1,66 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 
-class StudentAccountManagement extends CI_Controller 
-{
-	public function __construct()
-	{
+if (!defined('BASEPATH')) {
+    exit('No direct script access allowed');
+}
+
+class StudentAccountManagement extends CI_Controller {
+
+	public function __construct() {
 		parent::__construct();
 		$this->load->model('student');
 		$this->load->model('SET_model');
 	}
 
-	public function index() 
-	{
+	public function index() {
 		 $data = $this->session->userdata('logged_in');
 		 $data['SET']=$this->SET_model->getRecords();
-		 $this->load->view('admin/student_accounts', $data);	
-	}	
-	
-	public function download()
-	{
-		if($this->student->accountGenerated() == FALSE)
-		{
-			$this->student->importClasslist();	
+		 $this->load->view('admin/student_accounts', $data);
+	}
+
+	public function download() {
+		if ($this->student->accountGenerated() == false) {
+			$this->student->importClasslist();
 			$this->student->importStudents();
 			redirect('admin/studentaccountmanagement/generatePassword');
-		}
-		else
+		} else {
 			redirect('admin/studentaccountmanagement', 'refresh');
+		}
 	}
-	
-	public function changePassword()
-	{
+
+	public function changePassword() {
 		 $data = $this->session->userdata('logged_in');
 		 $data['SET']=$this->SET_model->getRecords();
 		 $data['password'] = substr(MD5(uniqid(rand(), true)), 0, 8);
-		 $this->load->view('admin/student_change_password', $data);	
+		 $this->load->view('admin/student_change_password', $data);
 	}
-	
-	public function changePasswordSubmit()
-	{
+
+	public function changePasswordSubmit() {
 		$data = $this->session->userdata('logged_in');
 		$data['SET']=$this->SET_model->getRecords();
-		
+
 		$student_number = str_replace("-", "", $this->input->post('student_number'));
-				
-		if(!($row = $this->student->getInfo($student_number)))
-		{
+
+		if (!($row = $this->student->getInfo($student_number))) {
 			$data['student_number'] = $this->input->post('student_number');
 			$data['password'] = $this->input->post('password');
 			$data['msg'] = "Invalid student number.";
-		}
-		else
-		{
+		} else {
 			$salt = $row->salt;
-			$data2 = array('password' => MD5($this->input->post('password').$salt));	
+			$data2 = array('password' => MD5($this->input->post('password').$salt));
 			$this->student->update($data2, $student_number);
 			$data['password'] = substr(MD5(uniqid(rand(), true)), 0, 8);
 			$data['msg'] = "Password changed.";
-		}				
-		
+		}
+
 		$this->load->view('admin/student_change_password', $data);
 	}
-	
-	public function generatePassword()
-	{
+
+	public function generatePassword() {
 		$res = $this->student->getRecords("", "");
-		
+
 		$i = 0;
-		foreach ($res['student_id'] as $student_id)
-		{
+		foreach ($res['student_id'] as $student_id) {
 			$students[$i]['name'] = $res['name'][$i];
 			$students[$i]['student_id'] = $student_id;
 			$students[$i]['college'] = $res['college_code'][$i];
@@ -75,20 +68,20 @@ class StudentAccountManagement extends CI_Controller
 			$students[$i]['pass'] = $pass;
 			$salt = substr(MD5(uniqid(rand(), true)), 0, 6);
 			$hashedPass = MD5($pass.$salt);
-			
+
 			$data = array(
-					'password' => $hashedPass,
-					'salt' => $salt
-					);
-					
+				'password' => $hashedPass,
+				'salt' => $salt
+			);
+
 			$this->student->update($data, $student_id);
-		
+
 			$i++;
 		}
-		
+
 		$this->load->helper(array('dompdf', 'file'));
 		$this->load->helper('file');
-		
+
        	$college = $students[0]['college'];
 
 		$rows[] = "UNIVERSITY OF THE PHILIPPINES MANILA";
@@ -97,23 +90,23 @@ class StudentAccountManagement extends CI_Controller
 		$rows[] = " ";
 		$rows[] = "COLLEGE: ".strtoupper($college);
 		$rows[] = " ";
-	
-		foreach ($students as $student)
-		{
-			if($student['college'] != $college)
-			{
+
+		foreach ($students as $student) {
+			if ($student['college'] != $college) {
 				$college = $student['college'];
 				$rows[] = " ";
 				$rows[] = "College: ".$college;
 				$rows[] = " ";
 			}
 			$rows[] = $student['name'];
-			$rows[] = "Username: ".str_pad(substr_replace($student['student_id'], '-', 4, 0), 20). "Password: ".$student['pass'];
+			$rows[] = "Username: ".
+				str_pad(substr_replace($student['student_id'], '-', 4, 0), 20).
+				"Password: ".$student['pass'];
 			$rows[] = "______________________________________________________________________________________";
 		}
-	
+
 		$this->SET_model->updateSETStatus(array('accounts_generated' => '1'));
-		$pdf_data = create_pdf($rows, 'students_passwords', true);		
+		$pdf_data = create_pdf($rows, 'students_passwords', true);
 	}
-	
+
 }

@@ -1,253 +1,248 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 
-class setinstrumentmanagement extends CI_Controller 
-{
-	public function __construct()
-	{
-		parent::__construct();
-		$this->load->model('set_instrument');
-		$this->load->model('SET_model');
-	}
+if (!defined('BASEPATH')) {
+    exit('No direct script access allowed');
+}
 
-	public function index() 
-	{
-		$data = $this->session->userdata('logged_in');
-		$data['records']=$this->set_instrument->getRecords();
-		$data['SET']=$this->SET_model->getRecords();
-		$this->load->view('admin/set_instrument', $data);	
-	}	
-		
-	public function add() 
-	{
-		$data = $this->session->userdata('logged_in');
-		$data['SET']=$this->SET_model->getRecords();
-		$data['set_id']=$this->set_instrument->getNextSetID();
-		$this->load->view('admin/add_set_instrument', $data);	
-	}	
-	
-	public function edit($set_id) 
-	{
-		$data = $this->session->userdata('logged_in');
-		$data['SET']=$this->SET_model->getRecords();
-		$data['set'] = $this->set_instrument->getInfo($set_id);
-		$this->load->view('admin/edit_set_instrument', $data);	
-	}	
-	
-	public function submit()
-	{
-		$this->load->helper('file');
-		
-		//check if there's a zip file
-		if(!$_FILES['zipFile']['name'])
-		{
-			$data = $this->session->userdata('logged_in');
-			$data['SET'] = $this->SET_model->getRecords();
-			$data['set_id'] = $this->set_instrument->getNextSetID();
-			$data['SET_name'] = $this->input->post('name');
-			$data['error_msg'] = "No zip file selected.";
-			$this->load->view('admin/add_set_instrument', $data);	
-			return;
-		}
-		
-		//check if directories are writable
-		if(!is_writable('./set') || !is_writable('./application/controllers/set') || !is_writable('./application/models/set') || !is_writable('./application/views/set'))
-		{
-			$data = $this->session->userdata('logged_in');
-			$data['SET'] = $this->SET_model->getRecords();
-			$data['set_id'] = $this->set_instrument->getNextSetID();
-			$data['SET_name'] = $this->input->post('name');
-			$data['error_msg'] = "Folders needed to upload set instrument are not writable.";
-			$this->load->view('admin/add_set_instrument', $data);	
-			return;			
-		}	
-				
-		//upload zip file
-		$config['allowed_types'] = 'zip';
-		$config['max_size']	= '5000';
-		$config['upload_path'] = './set';
-		$config['file_name'] = $_FILES['zipFile']['name']; 
-		$this->load->library('upload', $config);
-		$this->upload->initialize($config); 
-		$this->upload->do_upload('zipFile');
-		$this->unzip('./set/'.$_FILES['zipFile']['name'], './set');	
-				
-		//check config file
-		if(file_exists('./set/.config') === false)		
-		{
-			//deletes zip file
-			unlink('./set/'.$_FILES['zipFile']['name']);	
-			foreach (glob("./set/*.php") as $file) {
-				unlink($file);
-			}
-					
-			$data = $this->session->userdata('logged_in');
-			$data['SET']=$this->SET_model->getRecords();
-			$data['set_id']=$this->set_instrument->getNextSetID();
-			$data['SET_name'] = $this->input->post('name');
-			$data['error_msg'] = "No config file uploaded";
-			$this->load->view('admin/add_set_instrument', $data);	
-			return;
-		}		
-		include('./set/.config');
-			
-		//checks duplicate files		
-		if($error_msg = $this->duplicateFiles())
-		{
-			//deletes zip file
-			unlink('./set/'.$_FILES['zipFile']['name']);	
-			foreach (glob("./set/*.*") as $file) {
-				unlink($file);
-			}
-					
-			$data = $this->session->userdata('logged_in');
-			$data['SET']=$this->SET_model->getRecords();
-			$data['set_id']=$this->set_instrument->getNextSetID();
-			$data['SET_name'] = $this->input->post('name');
-			$data['error_msg'] = $error_msg;
-			$this->load->view('admin/add_set_instrument', $data);	
-			return;
-		}
-		
-		//check duplicate tables
-		if(!$this->set_instrument->checkTableName($table_name))
-		{
-			//deletes zip file
-			unlink('./set/'.$_FILES['zipFile']['name']);	
-			foreach (glob("./set/*.*") as $file) {
-				unlink($file);
-			}
-			
-			$data = $this->session->userdata('logged_in');
-			$data['SET']=$this->SET_model->getRecords();
-			$data['set_id']=$this->set_instrument->getNextSetID();
-			$data['SET_name'] = $this->input->post('name');
-			$data['error_msg'] = "Table name already exists.";
-			$this->load->view('admin/add_set_instrument', $data);	
-			return;
-		}
-		
-		//move to respective folder
-		//get filenames of php
-		foreach (glob("./set/*.php") as $file) {
-			 $filename = substr($file, 6);	
-			 if($filename == $controller_name.'.php')
-			 {
-			 	$data['controller_name'] = $controller_name; 
-			 	rename($file, './application/controllers/set/'.$filename);
-			 }
-			 elseif($filename == $model_name.'.php')
-			 {
-			 	$data['model_name'] = $model_name;
-			 	rename($file, './application/models/set/'.$filename);
-			 }
-			 else
-			 	rename($file, './application/views/set/'.$filename);
-		}
-		//deletes zip file
-		unlink('./set/'.$_FILES['zipFile']['name']);
-		unlink('./set/.config');			
-			
-		//create SET instrument table (e.g. up_set)
-		$this->set_instrument->createTables($data['model_name']);
-		
-		//save to set_instrument table
-		if($this->set_instrument->isEmpty())
-			$data['set_as_default'] = 1;
-		$data['name'] = $this->input->post("name");
-		$data['set_instrument_id'] = $this->input->post("id");
-		$data['table_name'] = $table_name;
-		$this->set_instrument->saveToDatabase($data);
-		
-		$this->writeCSV($table_name);
-		$_SESSION['msg'] = 'SET instrument uploaded. Please reset the directories\' permission to unwritable.';
-		redirect("admin/setinstrumentmanagement", "refresh");
-	}
+class setinstrumentmanagement extends CI_Controller {
 
-	public function writeCSV($table_name)
-	{
-		//create file
-		$file = './csv/'.$table_name.'.csv';
-		$fp = fopen($file, 'w');
-		//write column header
-		$header = '"student_number","student_name","student_program","subject","section","instructor","department_code","college_code",';
-		$fields = $this->set_instrument->getFields($table_name);
-		
-		foreach ($fields as $row)
-			$header .= '"'.$row->Field.'",';
-		$header = rtrim($header, ",");
-		
-		fwrite($fp, $header);
-		fclose($fp);
-	}
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('set_instrument');
+        $this->load->model('SET_model');
+    }
 
-	public function unzip($source, $destination)
-	{
-	   if (file_exists($source) === true){
-	   		$zip = new ZipArchive();
-	   		if ($zip->open($source) === true){
-	    		$zip->extractTo($destination);
-	    	}
-	    	return $zip->close();
-	    }
-	}
-	
-	public function duplicateFiles()
-	{
-		$duplicateView = false;
-		$duplicateModel = false;
-		$duplicateController = false;
-		
-		foreach (glob("./set/*.php") as $file) {
-   			 $filename = substr($file, 6);	
-			 if(strpos($file, "view"))	
-			 {
-			 	if(file_exists('./application/views/set/'.$filename))
-					$duplicateView = true;
-			 }
-			 elseif(strpos($file, "model"))
-			 {
-			 	if(file_exists('./application/models/set/'.$filename))
-					$duplicateModel = true;
-			 }
-			 else
-			 {
-			 	if(file_exists('./application/controllers/set/'.$filename))
-					$duplicateController = true;
-			 }
-  		}
-		$error_msg = false;
-		if($duplicateController || $duplicateModel || $duplicateView)
-		{
-			$error_msg = "Duplicate files: Please rename the ";
-			if($duplicateController && $duplicateModel && $duplicateView)
-				$error_msg .= "controller, model and view files.";
-			elseif($duplicateModel && $duplicateView)
-				$error_msg .= "model and view files.";
-			elseif($duplicateModel && $duplicateController)
-				$error_msg .= "controller and model files.";
-			elseif($duplicateController && $duplicateView)
-				$error_msg .= "controller and view files.";
-			elseif($duplicateController)
-				$error_msg .= "controller file.";
-			elseif($duplicateModel)
-				$error_msg .= "model file.";
-			elseif($duplicateView)
-				$error_msg .= "view file.";
-			$error_msg .= " Make necessary changes inside the php files as well.";
-		}
-		return $error_msg;
-	}
+    public function index() {
+        $data = $this->session->userdata('logged_in');
+        $data['records']=$this->set_instrument->getRecords();
+        $data['SET']=$this->SET_model->getRecords();
+        $this->load->view('admin/set_instrument', $data);
+    }
 
-	public function update($set_id)
-	{
-		$data['name'] = $this->input->post("name");
-		$this->set_instrument->updateRecord($data, $set_id);
-		redirect('admin/setinstrumentmanagement', 'refresh');
-	}
-	
-	public function setasdefault($set_id)
-	{
-		$this->set_instrument->setAsDefault($set_id);
-		redirect('admin/setinstrumentmanagement', 'refresh');
-	}
+    public function add() {
+        $data = $this->session->userdata('logged_in');
+        $data['SET']=$this->SET_model->getRecords();
+        $data['set_id']=$this->set_instrument->getNextSetID();
+        $this->load->view('admin/add_set_instrument', $data);
+    }
+
+    public function edit($set_id) {
+        $data = $this->session->userdata('logged_in');
+        $data['SET']=$this->SET_model->getRecords();
+        $data['set'] = $this->set_instrument->getInfo($set_id);
+        $this->load->view('admin/edit_set_instrument', $data);
+    }
+
+    public function submit() {
+        $this->load->helper('file');
+
+        //check if there's a zip file
+        if (!$_FILES['zipFile']['name']) {
+            $data = $this->session->userdata('logged_in');
+            $data['SET'] = $this->SET_model->getRecords();
+            $data['set_id'] = $this->set_instrument->getNextSetID();
+            $data['SET_name'] = $this->input->post('name');
+            $data['error_msg'] = "No zip file selected.";
+            $this->load->view('admin/add_set_instrument', $data);
+            return;
+        }
+
+        //check if directories are writable
+        if (!is_writable('./set') ||
+            !is_writable('./application/controllers/set') ||
+            !is_writable('./application/models/set') ||
+            !is_writable('./application/views/set')) {
+            $data = $this->session->userdata('logged_in');
+            $data['SET'] = $this->SET_model->getRecords();
+            $data['set_id'] = $this->set_instrument->getNextSetID();
+            $data['SET_name'] = $this->input->post('name');
+            $data['error_msg'] = "Folders needed to upload set instrument are not writable.";
+            $this->load->view('admin/add_set_instrument', $data);
+            return;
+        }
+
+        //upload zip file
+        $config['allowed_types'] = 'zip';
+        $config['max_size']    = '5000';
+        $config['upload_path'] = './set';
+        $config['file_name'] = $_FILES['zipFile']['name'];
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+        $this->upload->do_upload('zipFile');
+        $this->unzip('./set/'.$_FILES['zipFile']['name'], './set');
+
+        //check config file
+        if (file_exists('./set/.config') === false) {
+
+            //deletes zip file
+            unlink('./set/'.$_FILES['zipFile']['name']);
+            foreach (glob("./set/*.php") as $file) {
+                unlink($file);
+            }
+
+            $data = $this->session->userdata('logged_in');
+            $data['SET']=$this->SET_model->getRecords();
+            $data['set_id']=$this->set_instrument->getNextSetID();
+            $data['SET_name'] = $this->input->post('name');
+            $data['error_msg'] = "No config file uploaded";
+            $this->load->view('admin/add_set_instrument', $data);
+            return;
+        }
+        include('./set/.config');
+
+        //checks duplicate files
+        if ($error_msg = $this->duplicateFiles()) {
+            //deletes zip file
+            unlink('./set/'.$_FILES['zipFile']['name']);
+
+            foreach (glob("./set/*.*") as $file) {
+                unlink($file);
+            }
+
+            $data = $this->session->userdata('logged_in');
+            $data['SET']=$this->SET_model->getRecords();
+            $data['set_id']=$this->set_instrument->getNextSetID();
+            $data['SET_name'] = $this->input->post('name');
+            $data['error_msg'] = $error_msg;
+            $this->load->view('admin/add_set_instrument', $data);
+            return;
+        }
+
+        //check duplicate tables
+        if (!$this->set_instrument->checkTableName($table_name)) {
+            //deletes zip file
+            unlink('./set/'.$_FILES['zipFile']['name']);
+            foreach (glob("./set/*.*") as $file) {
+                unlink($file);
+            }
+
+            $data = $this->session->userdata('logged_in');
+            $data['SET']=$this->SET_model->getRecords();
+            $data['set_id']=$this->set_instrument->getNextSetID();
+            $data['SET_name'] = $this->input->post('name');
+            $data['error_msg'] = "Table name already exists.";
+            $this->load->view('admin/add_set_instrument', $data);
+            return;
+        }
+
+        //move to respective folder
+        //get filenames of php
+        foreach (glob("./set/*.php") as $file) {
+            $filename = substr($file, 6);
+            if ($filename == $controller_name.'.php') {
+                $data['controller_name'] = $controller_name;
+                rename($file, './application/controllers/set/'.$filename);
+            } elseif ($filename == $model_name.'.php') {
+                $data['model_name'] = $model_name;
+                rename($file, './application/models/set/'.$filename);
+            } else {
+                rename($file, './application/views/set/'.$filename);
+            }
+        }
+        //deletes zip file
+        unlink('./set/'.$_FILES['zipFile']['name']);
+        unlink('./set/.config');
+
+        //create SET instrument table (e.g. up_set)
+        $this->set_instrument->createTables($data['model_name']);
+
+        //save to set_instrument table
+        if ($this->set_instrument->isEmpty()) {
+            $data['set_as_default'] = 1;
+        }
+        $data['name'] = $this->input->post("name");
+        $data['set_instrument_id'] = $this->input->post("id");
+        $data['table_name'] = $table_name;
+        $this->set_instrument->saveToDatabase($data);
+
+        $this->writeCSV($table_name);
+        $_SESSION['msg'] = 'SET instrument uploaded. Please reset the directories\' permission to unwritable.';
+        redirect("admin/setinstrumentmanagement", "refresh");
+    }
+
+    public function writeCSV($table_name) {
+        //create file
+        $file = './csv/'.$table_name.'.csv';
+        $fp = fopen($file, 'w');
+
+        //write column header
+        $header = '"student_number","student_name","student_program","subject","section","instructor","department_code","college_code",';
+        $fields = $this->set_instrument->getFields($table_name);
+
+        foreach ($fields as $row) {
+            $header .= '"'.$row->Field.'",';
+        }
+        $header = rtrim($header, ",");
+
+        fwrite($fp, $header);
+        fclose($fp);
+    }
+
+    public function unzip($source, $destination) {
+       if (file_exists($source) === true) {
+            $zip = new ZipArchive();
+
+            if ($zip->open($source) === true) {
+                $zip->extractTo($destination);
+            }
+            return $zip->close();
+        }
+    }
+
+    public function duplicateFiles() {
+        $duplicateView = false;
+        $duplicateModel = false;
+        $duplicateController = false;
+
+        foreach (glob("./set/*.php") as $file) {
+            $filename = substr($file, 6);
+            if (strpos($file, "view")) {
+                if (file_exists('./application/views/set/'.$filename)) {
+                    $duplicateView = true;
+                }
+            } elseif (strpos($file, "model")) {
+                if (file_exists('./application/models/set/'.$filename)) {
+                    $duplicateModel = true;
+                }
+            } else {
+                if(file_exists('./application/controllers/set/'.$filename)) {
+                    $duplicateController = true;
+                }
+            }
+        }
+
+        $error_msg = false;
+        if ($duplicateController || $duplicateModel || $duplicateView) {
+            $error_msg = "Duplicate files: Please rename the ";
+            if ($duplicateController && $duplicateModel && $duplicateView) {
+                $error_msg .= "controller, model and view files.";
+            } elseif ($duplicateModel && $duplicateView) {
+                $error_msg .= "model and view files.";
+            } elseif($duplicateModel && $duplicateController) {
+                $error_msg .= "controller and model files.";
+            } elseif($duplicateController && $duplicateView) {
+                $error_msg .= "controller and view files.";
+            } elseif($duplicateController) {
+                $error_msg .= "controller file.";
+            } elseif($duplicateModel) {
+                $error_msg .= "model file.";
+            } elseif($duplicateView) {
+                $error_msg .= "view file.";
+            }
+            $error_msg .= " Make necessary changes inside the php files as well.";
+        }
+        return $error_msg;
+    }
+
+    public function update($set_id) {
+        $data['name'] = $this->input->post("name");
+        $this->set_instrument->updateRecord($data, $set_id);
+        redirect('admin/setinstrumentmanagement', 'refresh');
+    }
+
+    public function setasdefault($set_id) {
+        $this->set_instrument->setAsDefault($set_id);
+        redirect('admin/setinstrumentmanagement', 'refresh');
+    }
+
 }
